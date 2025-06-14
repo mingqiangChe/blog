@@ -3,8 +3,8 @@ title: '新篇章 新开始'
 date: '2025-06-14'
 description: '新的开始 希望美好的开始'
 tags: ['祝福']
-author: '车明强'
-cover: '/blog/cover/DSC0445.jpg'
+author: 'Thomas che'
+cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
 ---
 
 # 希望

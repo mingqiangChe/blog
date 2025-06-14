@@ -31,7 +31,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  pt-32">
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
@@ -191,7 +191,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         )}
 
         {/* 调试信息 - 仅开发环境显示 */}
-        {process.env.NODE_ENV === 'development' && (
+        {/* {process.env.NODE_ENV === 'development' && (
           <div className="mt-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50">
             <h3 className="text-white font-bold mb-4">🔧 调试信息</h3>
             <div className="text-slate-300 space-y-2">
@@ -221,7 +221,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               </details>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

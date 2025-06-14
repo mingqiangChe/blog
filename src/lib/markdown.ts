@@ -127,6 +127,7 @@ export function getAllPosts(locale: string): BlogPost[] {
             tags,
             author: matterResult.data.author || '',
             readingTime,
+            cover: matterResult.data.cover || '',
           } as BlogPost;
 
           console.log(`✅ 成功处理文章:`, {
@@ -135,6 +136,7 @@ export function getAllPosts(locale: string): BlogPost[] {
             tags: post.tags,
             author: post.author,
             readingTime: post.readingTime,
+            cover: matterResult.data.cover || '',
           });
 
           return post;

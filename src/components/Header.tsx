@@ -47,7 +47,7 @@ export default function Header({ locale }: HeaderProps) {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = 50;
+      const maxScroll = 120;
       const alpha = Math.min(scrollY / maxScroll, 1);
       setBgAlpha(alpha);
     };
