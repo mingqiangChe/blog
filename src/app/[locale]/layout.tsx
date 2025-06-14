@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
+import ProgressBar from '@/components/ProgressBar';
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -20,6 +20,8 @@ export default async function LocaleLayout({
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* 监听进度条 */}
+      <ProgressBar></ProgressBar>
       <Header locale={locale} />
       <main className="flex-grow">{children}</main>
       <Footer locale={locale} />
