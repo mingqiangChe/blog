@@ -19,7 +19,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
     <main className="min-h-screen pt-94">
       <div className="flex items-center justify-center">
         <img
-          src="/self/DSC0443.jpg"
+          src="https://avatars.githubusercontent.com/u/85379334?v=4"
           alt="头像"
           className="w-24 h-24 rounded-full object-cover"
         />
