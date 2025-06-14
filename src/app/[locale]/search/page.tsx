@@ -1,3 +1,3 @@
 export default function Search() {
-  <h1>搜索界面</h1>;
+  return <h1>放置工具</h1>;
 }

@@ -48,8 +48,7 @@ export default function Header({ locale }: HeaderProps) {
               href={`/${locale}`}
               className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
             >
-              <span className="text-2xl">🌟</span>
-              <span>{locale === 'zh' ? 'Cheche博客' : 'Cheche Blog'}</span>
+              <span>{locale === 'zh' ? '车明强博客' : 'Thomas Che Blog'}</span>
             </Link>
           </div>
 
