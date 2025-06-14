@@ -23,6 +23,16 @@ cheche-next-blog/
 ├── postcss.config.mjs # PostCSS 配置
 └── tsconfig.json # TypeScript 配置
 
+layout.tsx：布局文件，多个页面共享 UI
+
+page.tsx：页面文件，定义路由的实际内容
+
+loading.tsx：加载状态文件
+
+error.tsx：错误处理文件
+
+not-found.tsx：404 页面文件
+
 # 核心技术栈
 
 Next.js 14 + App Router：现代化的 React 框架
