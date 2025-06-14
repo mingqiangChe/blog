@@ -16,12 +16,38 @@ export default function LanguageSwitcher({
 
   const locales = ['en', 'zh'];
 
-  // 使用本地化的语言名称显示
-  const languageNames = useMemo(() => {
-    return new Intl.DisplayNames([currentLocale], {
-      type: 'language',
-    });
+  // 验证locale格式并提供默认值
+  const validLocale = useMemo(() => {
+    if (!currentLocale || typeof currentLocale !== 'string') {
+      return 'en'; // 默认值
+    }
+
+    // 检查是否为支持的locale
+    if (locales.includes(currentLocale)) {
+      return currentLocale;
+    }
+
+    return 'en'; // fallback到默认值
   }, [currentLocale]);
+
+  // 安全地创建DisplayNames实例
+  const languageNames = useMemo(() => {
+    try {
+      return new Intl.DisplayNames([validLocale], {
+        type: 'language',
+      });
+    } catch (error) {
+      console.warn(
+        'Failed to create DisplayNames for locale:',
+        validLocale,
+        error
+      );
+      // 返回一个fallback的DisplayNames实例
+      return new Intl.DisplayNames(['en'], {
+        type: 'language',
+      });
+    }
+  }, [validLocale]);
 
   const getLanguageName = (locale: string) => {
     try {
@@ -31,7 +57,7 @@ export default function LanguageSwitcher({
     }
   };
 
-  // 备用的静态语言名称
+  // 静态语言名称作为备用
   const localeNames = {
     en: 'English',
     zh: '中文',
@@ -50,7 +76,7 @@ export default function LanguageSwitcher({
     segments[1] = newLocale;
     const newPath = segments.join('/');
     router.push(newPath);
-    setIsOpen(false); // 切换后关闭下拉菜单
+    setIsOpen(false);
   };
 
   return (
@@ -61,7 +87,7 @@ export default function LanguageSwitcher({
       >
         <span className="text-xl">🌐</span>
         <span className="text-sm font-medium">
-          {localeNames[currentLocale as keyof typeof localeNames]}
+          {localeNames[validLocale as keyof typeof localeNames] || validLocale}
         </span>
         <svg
           className={`w-4 h-4 transition-transform ${
@@ -82,7 +108,6 @@ export default function LanguageSwitcher({
 
       {isOpen && (
         <>
-          {/* 点击外部区域关闭下拉菜单 */}
           <div
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
@@ -95,12 +120,12 @@ export default function LanguageSwitcher({
                 className={`
                   block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors first:rounded-t-md last:rounded-b-md
                   ${
-                    locale === currentLocale
+                    locale === validLocale
                       ? 'bg-blue-50 text-blue-700 font-medium dark:bg-blue-900 dark:text-blue-300'
                       : 'text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700'
                   }
                 `}
-                disabled={locale === currentLocale}
+                disabled={locale === validLocale}
               >
                 {localeNames[locale as keyof typeof localeNames]}
               </button>
