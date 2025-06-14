@@ -15,6 +15,7 @@ export interface BlogPost {
   tags?: string[]; // 添加标签支持
   author?: string; // 可选：作者信息
   readingTime?: number; // 可选：阅读时间
+  cover?: string; // 添加封面图片字段
 }
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
@@ -190,7 +191,8 @@ export async function getPostBySlug(
       tags: processTags(matterResult.data.tags),
       author: matterResult.data.author || '',
       readingTime: calculateReadingTime(matterResult.content),
-    };
+      cover: matterResult.data.cover || '',
+    } as BlogPost;
 
     return post;
   } catch (error) {

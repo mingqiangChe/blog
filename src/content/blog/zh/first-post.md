@@ -4,6 +4,7 @@ date: '2025-06-14'
 description: '新的开始 希望美好的开始'
 tags: ['祝福']
 author: '车明强'
+cover: '/blog/cover/DSC0445.jpg'
 ---
 
 # 希望

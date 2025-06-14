@@ -4,6 +4,7 @@ date: '2025-06-14'
 description: '内容关于这个博客的架构 搭建'
 tags: ['架构', 'next', 'react']
 author: 'Thomas che'
+cover: '/blog/cover/DSC0445.jpg'
 ---
 
 # 欢

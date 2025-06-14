@@ -62,19 +62,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8 mt-32">
       <div className="grid relative grid-cols-1 lg:grid-cols-4 gap-8">
         {/* 主要内容区域 */}
         <div className="lg:col-span-3">
           <article className="prose prose-lg max-w-none dark:prose-invert">
             <header className="mb-8">
               {/* 返回博客列表链接 */}
-              <Link
+              {/* <Link
                 href={`/${locale}/blog`}
                 className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4 no-underline"
               >
                 ← {locale === 'zh' ? '返回博客列表' : 'Back to Blog'}
-              </Link>
+              </Link> */}
 
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 {post.title}
@@ -131,6 +131,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {/* 移动端目录 */}
               <MobileTableOfContents headings={headings} />
             </header>
+
+            {/* 封面图片 - 插入在标题下方、内容上方 */}
+            {post.cover && (
+              <div className="mb-8 flex justify-center">
+                <img
+                  src={post.cover}
+                  alt={post.title}
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                  style={{ maxHeight: '400px', objectFit: 'cover' }}
+                />
+              </div>
+            )}
 
             {/* Markdown 内容渲染 */}
             <ReactMarkdown

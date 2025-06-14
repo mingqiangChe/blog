@@ -17,93 +17,92 @@ export default function Header({ locale }: HeaderProps) {
       key: 'blog',
       href: `/${locale}/blog`,
       label: locale === 'zh' ? '博客' : 'Blog',
-      icon: '',
     },
     {
-      key: 'about',
-      href: `/${locale}/about`,
-      label: locale === 'zh' ? '关于我' : 'About',
-      icon: '',
+      key: 'search',
+      href: `/${locale}/search`,
+      label: locale === 'zh' ? '工具' : 'Search',
     },
 
     {
       key: 'milestone',
       href: `/${locale}/milestone`,
       label: locale === 'zh' ? '里程碑' : 'Milestone',
-      icon: '',
     },
     {
-      key: 'search',
-      href: `/${locale}/search`,
-      label: locale === 'zh' ? '工具' : 'Search',
-      icon: '',
+      key: 'about',
+      href: `/${locale}/about`,
+      label: locale === 'zh' ? '关于我' : 'About',
     },
   ];
 
-  const isActiveRoute = (href: string) => {
-    return pathname.startsWith(href);
-  };
+  const isActiveRoute = (href: string) => pathname.startsWith(href);
 
-  // 判断是否滚动一段距离
-  const [scrolled, setScrolled] = useState(false);
+  // ✅ 加一个 mounted 状态避免 hydration mismatch
+  const [mounted, setMounted] = useState(false);
+  const [bgAlpha, setBgAlpha] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    setMounted(true);
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const maxScroll = 50;
+      const alpha = Math.min(scrollY / maxScroll, 1);
+      setBgAlpha(alpha);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // 避免 hydration 报错
+  if (!mounted) return null;
+
   return (
     <header
-      className={`sticky top-0 z-50 ${scrolled ? ' bg-[#20293a] ' : ''}   `}
+      className="fixed top-0 left-0 w-full h-16 text-white transition-colors duration-300 z-50"
+      style={{ backgroundColor: `rgba(32, 41, 58, ${bgAlpha})` }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo区域 */}
-          <div className="flex-shrink-0">
-            <Link
-              href={`/${locale}`}
-              className="flex items-center space-x-2 text-xl font-bold text-white-900  transition-colors"
-            >
-              <span>{locale === 'zh' ? '车车' : 'Thomas Che Blog'}</span>
-            </Link>
-          </div>
+          {/* Logo */}
+          <Link
+            href={`/${locale}`}
+            className="flex items-center space-x-2 text-xl font-bold text-white"
+          >
+            <span>{locale === 'zh' ? '车车' : 'Thomas Che Blog'}</span>
+          </Link>
 
-          {/* 桌面端导航菜单 */}
+          {/* 桌面导航 */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navigationItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`
-                    flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors text-white-700
-                      ${
-                        isActiveRoute(item.href)
-                          ? ' border-b-2 border-b-white-100'
-                          : ''
-                      }
-                  `}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors text-white ${
+                    isActiveRoute(item.href) ? 'border-b-2 border-white' : ''
+                  }`}
                 >
-                  {/* <span>{item.icon}</span> */}
                   <span>{item.label}</span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* 语言切换器和移动端菜单按钮 */}
+          {/* 语言切换和移动菜单 */}
           <div className="flex items-center space-x-4">
             <LanguageSwitcher currentLocale={locale} />
 
-            {/* 移动端菜单按钮 */}
             <button
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="sr-only">打开主菜单</span>
               {!isMenuOpen ? (
                 <svg
-                  className="block h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -117,7 +116,7 @@ export default function Header({ locale }: HeaderProps) {
                 </svg>
               ) : (
                 <svg
-                  className="block h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -134,7 +133,7 @@ export default function Header({ locale }: HeaderProps) {
           </div>
         </div>
 
-        {/* 移动端菜单 */}
+        {/* 移动菜单 */}
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
@@ -142,17 +141,13 @@ export default function Header({ locale }: HeaderProps) {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`
-                    flex items-center space-x-3 px-3 py-2 rounded-md text-base font-medium transition-colors
-                    ${
-                      isActiveRoute(item.href)
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'text-gray-700 hover:text-blue-900 hover:bg-gray-100'
-                    }
-                  `}
                   onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActiveRoute(item.href)
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'text-gray-700 hover:text-blue-900 hover:bg-gray-100'
+                  }`}
                 >
-                  {/* <span className="text-xl">{item.icon}</span> */}
                   <span>{item.label}</span>
                 </Link>
               ))}
