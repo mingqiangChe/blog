@@ -9,14 +9,14 @@ import Link from 'next/link';
 import MobileTableOfContents from '@/components/MobileTableOfContents';
 
 interface BlogPostPageProps {
-  params: Promise<{
+  params: {
     locale: string;
     slug: string;
-  }>;
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { locale, slug } = await params;
+  const { locale, slug } = params;
 
   // 根据slug和locale获取文章
   const post = await getPostBySlug(slug, locale);
@@ -27,6 +27,39 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // 提取文章标题用于目录
   const headings = extractHeadings(post.content);
+
+  // 维护已用id集合，避免重复id
+  const usedIds = new Set<string>();
+
+  // 递归提取纯文本
+  function extractText(children: any): string {
+    if (typeof children === 'string') return children;
+    if (Array.isArray(children)) return children.map(extractText).join('');
+    if (children && typeof children === 'object' && 'props' in children) {
+      return extractText(children.props.children);
+    }
+    return '';
+  }
+
+  // 生成唯一id
+  function generateUniqueId(children: any): string {
+    let baseId = extractText(children)
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+
+    if (!baseId) baseId = 'heading';
+
+    let uniqueId = baseId;
+    let counter = 1;
+    while (usedIds.has(uniqueId)) {
+      uniqueId = `${baseId}-${counter}`;
+      counter++;
+    }
+    usedIds.add(uniqueId);
+    return uniqueId;
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -88,7 +121,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               )}
 
-              {/* 文章描述 - 修复重复问题 */}
+              {/* 文章描述 */}
               {post.description && (
                 <p className="text-lg text-gray-600 dark:text-gray-400 italic border-l-4 border-blue-500 pl-4 mb-6">
                   {post.description}
@@ -104,36 +137,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               components={{
                 code: CodeBlock,
                 h1: ({ children, ...props }) => (
-                  <h1 id={generateId(children)} {...props}>
+                  <h1 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h1>
                 ),
                 h2: ({ children, ...props }) => (
-                  <h2 id={generateId(children)} {...props}>
+                  <h2 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h2>
                 ),
                 h3: ({ children, ...props }) => (
-                  <h3 id={generateId(children)} {...props}>
+                  <h3 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h3>
                 ),
                 h4: ({ children, ...props }) => (
-                  <h4 id={generateId(children)} {...props}>
+                  <h4 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h4>
                 ),
                 h5: ({ children, ...props }) => (
-                  <h5 id={generateId(children)} {...props}>
+                  <h5 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h5>
                 ),
                 h6: ({ children, ...props }) => (
-                  <h6 id={generateId(children)} {...props}>
+                  <h6 id={generateUniqueId(children)} {...props}>
                     {children}
                   </h6>
                 ),
-                // 自定义链接渲染
                 a: ({ href, children, ...props }) => (
                   <a
                     href={href}
@@ -148,7 +180,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {children}
                   </a>
                 ),
-                // 自定义图片渲染
                 img: ({ src, alt, ...props }) => (
                   <img
                     src={src}
@@ -198,12 +229,4 @@ export async function generateStaticParams() {
     locale: post.locale,
     slug: post.slug,
   }));
-}
-
-function generateId(children: any): string {
-  const text = typeof children === 'string' ? children : children.toString();
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-');
 }

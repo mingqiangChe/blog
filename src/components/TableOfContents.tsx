@@ -30,11 +30,12 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
       }
     );
 
-    // 观察所有标题元素
     headings.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.observe(element);
+        }
       }
     });
 
@@ -42,19 +43,17 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   }, [headings]);
 
   const scrollToHeading = (id: string) => {
+    if (!id) return;
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   if (headings.length === 0) return null;
 
   return (
-    <nav className="sticky top-8 max-h-screen overflow-y-auto">
+    <nav className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4">
       <div className="border-l-2 border-gray-200 pl-4">
         <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
           目录

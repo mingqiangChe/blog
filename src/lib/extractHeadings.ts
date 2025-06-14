@@ -8,7 +8,7 @@ export interface HeadingItem {
 export function extractHeadings(content: string): HeadingItem[] {
   const headingRegex = /^(#{1,6})\s+(.+)$/gm;
   const headings: HeadingItem[] = [];
-  const usedIds = new Set<string>(); // 跟踪已使用的id
+  const usedIds = new Set<string>();
   let match;
 
   while ((match = headingRegex.exec(content)) !== null) {
@@ -16,9 +16,9 @@ export function extractHeadings(content: string): HeadingItem[] {
     const title = match[2].trim();
     let id = generateId(title);
 
-    // 如果id为空或已存在，生成唯一id
+    // 如果id为空或重复，生成唯一id
     if (!id || usedIds.has(id)) {
-      id = generateUniqueId(title, usedIds, headings.length);
+      id = generateUniqueId(id || 'heading', usedIds);
     }
 
     usedIds.add(id);
@@ -28,34 +28,22 @@ export function extractHeadings(content: string): HeadingItem[] {
   return headings;
 }
 
+// 生成id，传入的是字符串标题
 function generateId(title: string): string {
+  if (!title) return '';
   return title
     .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/^-+|-+$/g, ''); // 移除开头和结尾的短横线
+    .replace(/[^\w\s-]/g, '') // 去除非字母数字、空格、短横线
+    .trim()
+    .replace(/\s+/g, '-'); // 空格替换为短横线
 }
 
-function generateUniqueId(
-  title: string,
-  usedIds: Set<string>,
-  index: number
-): string {
-  let baseId = generateId(title);
-
-  // 如果基础id为空，使用默认格式
-  if (!baseId) {
-    baseId = `heading-${index + 1}`;
-  }
-
-  // 如果id已存在，添加数字后缀
-  let counter = 1;
+function generateUniqueId(baseId: string, usedIds: Set<string>): string {
   let uniqueId = baseId;
-
+  let counter = 1;
   while (usedIds.has(uniqueId)) {
     uniqueId = `${baseId}-${counter}`;
     counter++;
   }
-
   return uniqueId;
 }
