@@ -1,38 +1,29 @@
 // c创建支持语法高亮的代码块组件
-// components/CodeBlock.tsx
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-
+import { ReactMarkdownProps } from 'react-markdown/lib/complex-types';
 interface CodeBlockProps {
-  node?: any;
   inline?: boolean;
   className?: string;
   children: React.ReactNode;
 }
 
 export default function CodeBlock({
-  node,
   inline,
-  className = '',
+  className,
   children,
-  ...props
-}: CodeBlockProps) {
-  const hasLang = /language-(\w+)/.exec(className || '');
+}: ReactMarkdownProps['components']['code']) {
+  const match = /language-(\w+)/.exec(className || '');
 
-  return hasLang ? (
-    <SyntaxHighlighter
-      style={oneDark}
-      language={hasLang[1]}
-      PreTag="div"
-      className="rounded-md"
-      showLineNumbers={true}
-      {...props}
-    >
+  if (inline) {
+    return <code className={className}>{children}</code>;
+  }
+
+  return match ? (
+    <SyntaxHighlighter language={match[1]} style={oneDark} showLineNumbers>
       {String(children).replace(/\n$/, '')}
     </SyntaxHighlighter>
   ) : (
-    <code className={className} {...props}>
-      {children}
-    </code>
+    <code className={className}>{children}</code>
   );
 }

@@ -1,0 +1,88 @@
+// 目录导航组件
+'use client';
+import { useEffect, useState } from 'react';
+
+interface HeadingItem {
+  id: string;
+  title: string;
+  level: number;
+}
+
+interface TableOfContentsProps {
+  headings: HeadingItem[];
+}
+
+export default function TableOfContents({ headings }: TableOfContentsProps) {
+  const [activeId, setActiveId] = useState<string>('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-100px 0px -66%',
+        threshold: 0.1,
+      }
+    );
+
+    // 观察所有标题元素
+    headings.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [headings]);
+
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  if (headings.length === 0) return null;
+
+  return (
+    <nav className="sticky top-8 max-h-screen overflow-y-auto">
+      <div className="border-l-2 border-gray-200 pl-4">
+        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+          目录
+        </h3>
+        <ul className="space-y-2">
+          {headings.map(({ id, title, level }) => (
+            <li key={id}>
+              <button
+                onClick={() => scrollToHeading(id)}
+                className={`
+                  block w-full text-left text-sm transition-colors duration-200
+                  ${level === 1 ? 'font-semibold' : ''}
+                  ${level === 2 ? 'pl-4' : ''}
+                  ${level === 3 ? 'pl-8' : ''}
+                  ${level >= 4 ? 'pl-12' : ''}
+                  ${
+                    activeId === id
+                      ? 'text-blue-600 font-medium dark:text-blue-400'
+                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                  }
+                `}
+              >
+                {title}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}
