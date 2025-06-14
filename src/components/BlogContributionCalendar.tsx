@@ -1,4 +1,3 @@
-// components/BlogContributionCalendar.tsx
 import React from 'react';
 
 interface BlogPost {
@@ -99,18 +98,16 @@ export default function BlogContributionCalendar({
   const monthLabels = getMonthLabels(year);
 
   return (
-    <div className="bg-gray-900 p-6 rounded-lg">
+    <div className="bg-gray-900 p-3 sm:p-6 rounded-lg overflow-x-auto">
       {/* 标题和统计 */}
-      <div className="text-white mb-4">
-        <span className="text-sm">
-          {totalContributions} contributions in {year}
-        </span>
+      <div className="text-white mb-4 text-sm">
+        {totalContributions} contributions in {year}
       </div>
 
       {/* 日历主体 */}
-      <div className="relative">
+      <div className="relative min-w-[500px] sm:min-w-0">
         {/* 月份标签 */}
-        <div className="flex text-xs text-gray-400 mb-2 ml-10">
+        <div className="flex text-xs sm:text-sm text-gray-400 mb-2 ml-10">
           {monthLabels.map((month, index) => (
             <div
               key={month}
@@ -124,7 +121,7 @@ export default function BlogContributionCalendar({
 
         <div className="flex">
           {/* 星期标签 */}
-          <div className="flex flex-col text-xs text-gray-400 mr-2">
+          <div className="flex flex-col text-xs sm:text-sm text-gray-400 mr-2">
             <div style={{ height: '12px' }}></div>
             <div style={{ height: '12px', lineHeight: '12px' }}>Mon</div>
             <div style={{ height: '12px' }}></div>
@@ -142,7 +139,12 @@ export default function BlogContributionCalendar({
                   <div
                     key={`${weekIndex}-${dayIndex}`}
                     title={`${day.count} contributions on ${day.date}`}
-                    className="w-3 h-3 m-0.5 rounded-sm cursor-pointer hover:outline hover:outline-1 hover:outline-white"
+                    className="
+                      w-3 h-3 m-0.5
+                      sm:w-4 sm:h-4 sm:m-0.5
+                      rounded-sm cursor-pointer
+                      hover:outline hover:outline-1 hover:outline-white
+                    "
                     style={{
                       backgroundColor: getColor(day.count),
                     }}
@@ -155,7 +157,7 @@ export default function BlogContributionCalendar({
       </div>
 
       {/* 图例 */}
-      <div className="flex items-center justify-between mt-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4 gap-2">
         <div className="text-xs text-gray-400">
           Learn how we count contributions
         </div>

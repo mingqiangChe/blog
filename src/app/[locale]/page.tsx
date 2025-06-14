@@ -16,7 +16,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
   const year = 2025;
   const recentPosts = posts.slice(0, 6);
   return (
-    <main className="min-h-screen p-32">
+    <main className="min-h-screen pt-94">
       <div className="flex items-center justify-center">
         <img
           src="/self/DSC0443.jpg"
@@ -34,12 +34,12 @@ export default async function Home({ params }: LocaleLayoutProps) {
       </div>
 
       {/* 文章贡献日历 */}
-      <div className="flex items-center justify-center mt-8">
+      <div className="flex items-center justify-center pt-32">
         <BlogContributionCalendar posts={posts} year={year} />
       </div>
 
       {/* 最近的文章 */}
-      <div className="mt-8">
+      <div className="flex items-center justify-center pt-32 pb-32">
         {/* 这里可以添加最近文章列表 */}
         <RecentPosts posts={recentPosts} />
       </div>

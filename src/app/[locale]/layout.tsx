@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper';
 import Footer from '@/components/Footer';
 import ProgressBar from '@/components/ProgressBar';
+import { getAllPosts } from '@/lib/markdown';
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -18,6 +19,7 @@ export default async function LocaleLayout({
 }: LocaleLayoutProps) {
   // 使用 await 获取 params
   const { locale } = await params;
+  const posts = getAllPosts(locale);
   return (
     <div
       className="flex flex-col min-h-screen bg-cover bg-center"
@@ -25,7 +27,7 @@ export default async function LocaleLayout({
     >
       {/* 监听进度条 */}
       <ProgressBar></ProgressBar>
-      <Header locale={locale} />
+      <Header posts={posts} locale={locale} />
       <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       <Footer locale={locale} />
     </div>

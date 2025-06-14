@@ -35,7 +35,7 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                   《{post.title}》
                 </div>
                 <div className="text-xs text-slate-200/80 flex items-center gap-2">
-                  <span>大大的小蜗牛</span>
+                  {/* <span>Lucky</span> */}
                   {post.author && (
                     <span className="ml-2 text-purple-300">@{post.author}</span>
                   )}
