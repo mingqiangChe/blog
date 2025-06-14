@@ -1,5 +1,6 @@
 // app/[locale]/page.tsx - 多语言首页
 import BlogContributionCalendar from '@/components/BlogContributionCalendar';
+import RecentPosts from '@/components/RecentPosts';
 import { getAllPosts } from '@/lib/markdown';
 
 interface LocaleLayoutProps {
@@ -13,7 +14,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
   // 获取当前语言的所有文章
   const posts = getAllPosts(locale);
   const year = 2025;
-
+  const recentPosts = posts.slice(0, 6);
   return (
     <main className="min-h-screen p-32">
       <div className="flex items-center justify-center">
@@ -38,7 +39,10 @@ export default async function Home({ params }: LocaleLayoutProps) {
       </div>
 
       {/* 最近的文章 */}
-      <div className="mt-8">{/* 这里可以添加最近文章列表 */}</div>
+      <div className="mt-8">
+        {/* 这里可以添加最近文章列表 */}
+        <RecentPosts posts={recentPosts} />
+      </div>
     </main>
   );
 }
