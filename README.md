@@ -9,19 +9,38 @@
 # 项目结构
 
 cheche-next-blog/
-├── app/ # 应用路由器（核心目录）
-│ ├── favicon.ico # 网站图标
-│ ├── globals.css # 全局样式
-│ ├── layout.tsx # 根布局文件
-│ └── page.tsx # 首页（路径"/"）
-├── public/ # 静态资源目录
-│ ├── next.svg
-│ └── vercel.svg
-├── next.config.mjs # Next.js 配置文件
-├── package.json # 项目依赖和脚本
-├── tailwind.config.ts # Tailwind 配置
-├── postcss.config.mjs # PostCSS 配置
-└── tsconfig.json # TypeScript 配置
+├── app/
+│ ├── [locale]/
+│ │ ├── layout.tsx # 国际化布局
+│ │ ├── page.tsx # 多语言首页
+│ │ ├── blog/
+│ │ │ ├── page.tsx # 博客列表
+│ │ │ └── [slug]/
+│ │ │ └── page.tsx # 博客详情
+│ │ ├── tools/
+│ │ │ └── page.tsx # 工具页面
+│ │ └── about/
+│ │ └── page.tsx # 个人介绍
+│ ├── globals.css
+│ └── layout.tsx
+├── components/
+│ ├── Header.tsx # 导航组件
+│ ├── LanguageSwitcher.tsx # 语言切换
+│ ├── BlogPost.tsx # 博客组件
+│ └── CodeBlock.tsx # 代码高亮组件
+├── content/
+│ ├── blog/
+│ │ ├── en/ # 英文博客
+│ │ └── zh/ # 中文博客
+├── lib/
+│ ├── markdown.ts # Markdown 处理
+│ ├── i18n.ts # 国际化配置
+├── public/
+│ └── locales/ # 翻译文件
+│ ├── en/
+│ └── zh/
+├── i18nConfig.js # 国际化路由配置
+└── middleware.ts # 中间件
 
 layout.tsx：布局文件，多个页面共享 UI
 
@@ -53,3 +72,29 @@ react-markdown：Markdown 渲染
 
 pnpm
 node 20
+
+## locale
+
+中英文切换
+[locale]
+/en - 英文首页
+
+/zh - 中文首页
+
+/en/blog - 英文博客页面
+
+/zh/blog - 中文博客页面
+
+/en/about - 英文关于页面
+
+/zh/about - 中文关于页面
+
+middleware.ts 控制 形成映射关系
+
+export default async function Page({
+params,
+}: {
+params: Promise<{ locale: string }>
+}) {
+const { locale } = await params
+} 可以获取
