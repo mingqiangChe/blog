@@ -1,0 +1,97 @@
+.bg {
+  min-height: 100vh;
+  background: rgba(30, 30, 30, 0.6); /* 半透明暗色 */
+  backdrop-filter: blur(10px);
+  padding: 128px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.groupTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--group-title-color, #fff);
+  margin-bottom: 16px;
+}
+
+/* page.module.css */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 240px)
+  ); /* 固定宽度240px */
+  gap: 20px;
+  /* 删除 justify-content: center; 让卡片左对齐 */
+  padding: 0 16px;
+}
+
+.card {
+  width: 240px; /* 固定卡片宽度 */
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* 移动端也不居中，保持左对齐 */
+    padding: 0 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none; /* 移除最大宽度限制 */
+    /* 删除 margin: 0 auto; 避免居中 */
+  }
+}
+
+/* 平板端适配 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+    /* 删除 margin: 0 auto; 避免容器居中 */
+  }
+}
