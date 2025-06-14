@@ -24,7 +24,7 @@ interface ProjectItem {
 
 const profileData = {
   name: '车明强',
-  title: 'Front-End Developer · UI/UX Designer',
+  title: 'Front-End Developer',
   location: '广州',
   email: 'thomaschefowshu@gmail.com',
   socialLinks: [
@@ -174,6 +174,8 @@ const skills: SkillCategory[] = [
       { name: 'React', level: 'sometimes' },
       { name: 'Next.js', level: 'sometimes' },
       { name: 'Vue3', level: 'often' },
+      { name: 'Node', level: 'sometimes' },
+      { name: '微信小程序', level: 'often' },
     ],
   },
   {
@@ -192,6 +194,7 @@ const skills: SkillCategory[] = [
       { name: 'Cursor', level: 'often' },
       { name: 'Git', level: 'often' },
       { name: 'apifox', level: 'often' },
+      { name: 'Uni', level: 'often' },
     ],
   },
   {
