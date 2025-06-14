@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 
 interface HeaderProps {
@@ -14,15 +14,22 @@ export default function Header({ locale }: HeaderProps) {
 
   const navigationItems = [
     {
+      key: 'blog',
+      href: `/${locale}/blog`,
+      label: locale === 'zh' ? '博客' : 'Blog',
+      icon: '',
+    },
+    {
       key: 'about',
       href: `/${locale}/about`,
       label: locale === 'zh' ? '关于我' : 'About',
       icon: '',
     },
+
     {
-      key: 'blog',
-      href: `/${locale}/blog`,
-      label: locale === 'zh' ? '博客' : 'Blog',
+      key: 'milestone',
+      href: `/${locale}/milestone`,
+      label: locale === 'zh' ? '里程碑' : 'Milestone',
       icon: '',
     },
     {
@@ -37,8 +44,18 @@ export default function Header({ locale }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
+  // 判断是否滚动一段距离
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <header className="sticky top-0 z-50  backdrop-blur-md  ">
+    <header
+      className={`sticky top-0 z-50 ${scrolled ? ' bg-[#20293a] ' : ''}   `}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo区域 */}
@@ -47,7 +64,7 @@ export default function Header({ locale }: HeaderProps) {
               href={`/${locale}`}
               className="flex items-center space-x-2 text-xl font-bold text-white-900  transition-colors"
             >
-              <span>{locale === 'zh' ? '车明强博客' : 'Thomas Che Blog'}</span>
+              <span>{locale === 'zh' ? '车车' : 'Thomas Che Blog'}</span>
             </Link>
           </div>
 

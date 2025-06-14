@@ -1,6 +1,12 @@
 //  博客列表页
 import { getAllPosts, debugDirectoryStructure } from '@/lib/markdown';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '博客列表',
+  description: '查看车明强发布的所有博客文章。',
+};
 
 interface BlogPageProps {
   params: Promise<{ locale: string }>;

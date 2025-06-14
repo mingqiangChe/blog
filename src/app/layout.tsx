@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -14,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Cheche Blog',
+  title: {
+    default: 'Thomasche Blog',
+    template: '%s | Thomasche Blog',
+  },
   description: '车明强的个人博客 - Che Mingqiang Personal Blog',
 };
 
