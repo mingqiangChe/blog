@@ -1,18 +1,22 @@
-// app/[locale]/layout.tsx
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }];
 }
 
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = params;
+// 在这里添加 async 关键字
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
+  // 使用 await 获取 params
+  const { locale } = await params;
 
   return (
     <div className="flex flex-col min-h-screen">

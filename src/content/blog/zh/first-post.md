@@ -1,9 +1,9 @@
-## <!-- content/blog/zh/first-post.md -->
-
-title: "我的第一篇 Next.js 博客"
-date: "2025-06-14"
-description: "使用 Next.js 和 React 创建现代化博客的完整指南"
-
+---
+title: '我的第一篇Next.js博客'
+date: '2025-06-14'
+description: '使用Next.js和React创建现代化博客的完整指南'
+tags: ['Next.js', 'React', 'TypeScript', 'Web开发']
+author: '车明强'
 ---
 
 # 欢迎来到我的博客

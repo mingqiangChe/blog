@@ -1,4 +1,3 @@
-// components/LanguageSwitcher.tsx
 'use client';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useMemo } from 'react';

@@ -15,22 +15,22 @@ export default function Header({ locale }: HeaderProps) {
 
   const navigationItems = [
     {
-      key: 'blog',
-      href: `/${locale}/blog`,
-      label: locale === 'zh' ? '博客' : 'Blog',
-      icon: '📝',
-    },
-    {
       key: 'about',
       href: `/${locale}/about`,
       label: locale === 'zh' ? '关于我' : 'About',
-      icon: '👤',
+      icon: '',
     },
     {
-      key: 'tools',
-      href: `/${locale}/tools`,
-      label: locale === 'zh' ? '工具' : 'Tools',
-      icon: '🛠️',
+      key: 'blog',
+      href: `/${locale}/blog`,
+      label: locale === 'zh' ? '博客' : 'Blog',
+      icon: '',
+    },
+    {
+      key: 'search',
+      href: `/${locale}/search`,
+      label: locale === 'zh' ? '工具' : 'Search',
+      icon: '',
     },
   ];
 
@@ -69,7 +69,7 @@ export default function Header({ locale }: HeaderProps) {
                     }
                   `}
                 >
-                  <span>{item.icon}</span>
+                  {/* <span>{item.icon}</span> */}
                   <span>{item.label}</span>
                 </Link>
               ))}
@@ -137,7 +137,7 @@ export default function Header({ locale }: HeaderProps) {
                   `}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  {/* <span className="text-xl">{item.icon}</span> */}
                   <span>{item.label}</span>
                 </Link>
               ))}
