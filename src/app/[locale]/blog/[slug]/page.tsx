@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="grid relative grid-cols-1 lg:grid-cols-4 gap-8">
         {/* 主要内容区域 */}
         <div className="lg:col-span-3">
           <article className="prose prose-lg max-w-none dark:prose-invert">
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* 右侧目录导航 */}
-        <div className="lg:col-span-1">
+        <div className="fixed top-16 right-16 lg:col-span-1 overflow-visible">
           <div className="hidden lg:block">
             <TableOfContents headings={headings} />
           </div>

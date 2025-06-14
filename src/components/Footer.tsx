@@ -8,12 +8,13 @@ export default function Footer({ locale }: FooterProps) {
   const footerText = {
     zh: {
       copyright: `© ${currentYear} Cheche博客. 保留所有权利.`,
-      builtWith: '基于 Next.js 构建',
+      builtWith: '备案号：鲁ICP备2024107635号-1版权所有 © 2024',
       contact: '联系我',
     },
     en: {
       copyright: `© ${currentYear} Cheche Blog. All rights reserved.`,
-      builtWith: 'Built with Next.js',
+      builtWith:
+        'Record number: Lu ICP No. 2024107635-1Copyright ©  two thousand and twenty-four',
       contact: 'Contact Me',
     },
   };
@@ -38,7 +39,7 @@ export default function Footer({ locale }: FooterProps) {
               {content.contact}
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/mingqiangChe?tab=repositories"
               className="text-sm text-gray-300 hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"

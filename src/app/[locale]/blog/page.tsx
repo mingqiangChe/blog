@@ -36,7 +36,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         )}
       </div> */}
 
-      <h1 className="text-4xl font-bold text-red-900 mb-8">
+      <h1 className="text-4xl font-bold text-white-900 mb-8">
         {locale === 'zh' ? '博客文章' : 'Blog Posts'}
       </h1>
 
@@ -48,7 +48,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
             className="block border-b border-gray-200 pb-8 group hover:no-underline"
           >
             <article>
-              <h2 className="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+              <h2 className="text-2xl font-semibold text-white-900 group-hover:text-blue-600 transition-colors mb-2">
                 {post.title}
               </h2>
 
