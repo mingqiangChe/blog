@@ -3,33 +3,16 @@ import React from 'react';
 
 const milestonesData = [
   {
-    section: '阿里云',
+    section: '博客搭建',
     items: [
       {
-        dateEn: 'Oct 9, 2024',
-        dateCn: '2024 年 10 月 9 日',
-        title:
-          'Hugo 部署至阿里云 边缘安全加速 ESA Edge Security Acceleration。',
-        description: `2024 年 10 月 9 日，Hugo 部署至阿里云边缘安全加速（ESA），提升访问速度和安全性。`,
-        image:
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-      },
-    ],
-  },
-  {
-    section: 'Shiki',
-    items: [
-      {
-        dateEn: 'Aug 15, 2024',
-        dateCn: '2024 年 8 月 15 日',
-        title: '切换代码高亮工具为 Shiki',
+        dateEn: 'June 15, 2025',
+        dateCn: '2025 年 6 月 15 日',
+        title: 'next搭建博客网站',
         description: (
           <>
-            经过 2 个月测试后，把博客的代码语法高亮器切换到 <code>Shiki</code>。
-            细节可参考文章：在 Hugo 中使用 Shiki·1050 字·3 分钟代码。 Shiki
-            是基于 VS Code
-            语法高亮引擎的工具，支持多种编程语言和主题，无需维护自定义正则表达式或
-            CSS。
+            之前网站过于简陋
+            且风格不是很好。突然看到别人网站很舒服，就想搞一个。他们都介绍模版，我这边是借助ai然后一步步搞出来。
           </>
         ),
         image:
@@ -38,13 +21,39 @@ const milestonesData = [
     ],
   },
   {
-    section: '火山引擎',
+    section: '前端开发',
     items: [
       {
-        dateEn: 'Jul 20, 2024',
-        dateCn: '2024 年 7 月 20 日',
-        title: '博客 www 子域名解析到火山引擎实现分区解析',
-        description: `国内解析到阿里云 OSS 和 CDN，国外解析到 Cloudflare Pages，分担 CDN 流量压力。`,
+        dateEn: 'June 1, 2020',
+        dateCn: '2020 年 6 月 1 日',
+        title: '前端开发',
+        description: `成为一名前端开发工程师`,
+        image:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      },
+    ],
+  },
+  {
+    section: '计算机生',
+    items: [
+      {
+        dateEn: 'September 1, 2017',
+        dateCn: '2017 年 9 月 1 日',
+        title: '理科生',
+        description: `计算机理科生 在这一年选择专科计算机放弃本科艺体生`,
+        image:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      },
+    ],
+  },
+  {
+    section: '艺体生',
+    items: [
+      {
+        dateEn: 'June 15, 2016',
+        dateCn: '2016 年 6 月 15 日',
+        title: '编导艺体生身份',
+        description: `编导艺体生 在这一年选择`,
         image:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
       },
