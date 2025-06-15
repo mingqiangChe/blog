@@ -30,7 +30,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
       </div>
 
       <div className="flex items-center justify-center font-bold">
-        「向生活比个耶✌️」
+        「把今天当作人生最后一天」
       </div>
 
       {/* 文章贡献日历 */}
