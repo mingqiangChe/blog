@@ -16,7 +16,11 @@ export default function ClientLayoutWrapper({
   }, []);
 
   return (
-    <div className={` flex-grow ${scrolled ? 'inset-0 bg-black/40' : ''}`}>
+    <div
+      className={`flex-grow ${
+        scrolled ? 'inset-0 bg-black/40 backdrop-blur-md' : ''
+      }`}
+    >
       {children}
     </div>
   );
