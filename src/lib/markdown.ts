@@ -280,7 +280,7 @@ export function debugDirectoryStructure(): void {
                   }", 标签=${JSON.stringify(matterResult.data.tags)}`
                 );
               } catch (error) {
-                console.log(`❌ 无法读取 ${file}:`, error.message);
+                console.log(`❌ 无法读取 ${file}:`, error);
               }
             }
           });

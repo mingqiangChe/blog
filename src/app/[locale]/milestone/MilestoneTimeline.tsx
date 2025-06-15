@@ -1,6 +1,6 @@
 // MilestonePage.tsx
 import React from 'react';
-
+import Image from 'next/image';
 const milestonesData = [
   {
     section: '博客搭建',
@@ -101,9 +101,11 @@ export default function MilestonePage() {
                       </p>
 
                       {image && (
-                        <img
+                        <Image
                           src={image}
                           alt={title}
+                          width={800}
+                          height={600}
                           className="rounded-lg border border-slate-600 shadow-md max-w-full h-auto object-contain"
                         />
                       )}

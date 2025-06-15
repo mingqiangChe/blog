@@ -15,22 +15,19 @@ export default function LanguageSwitcher({
 
   const locales = ['en', 'zh'];
 
-  // 验证locale格式并提供默认值
-  const validLocale = useMemo(() => {
+  const validLocale: string = useMemo(() => {
     if (!currentLocale || typeof currentLocale !== 'string') {
-      return 'en'; // 默认值
+      return 'en';
     }
 
-    // 检查是否为支持的locale
-    if (locales.includes(currentLocale)) {
+    if (locales.includes(currentLocale as string)) {
       return currentLocale;
     }
 
-    return 'en'; // fallback到默认值
-  }, [currentLocale]);
+    return 'en';
+  }, [currentLocale, locales]);
 
-  // 安全地创建DisplayNames实例
-  const languageNames = useMemo(() => {
+  const languageNames: Intl.DisplayNames = useMemo(() => {
     try {
       return new Intl.DisplayNames([validLocale], {
         type: 'language',
@@ -41,7 +38,6 @@ export default function LanguageSwitcher({
         validLocale,
         error
       );
-      // 返回一个fallback的DisplayNames实例
       return new Intl.DisplayNames(['en'], {
         type: 'language',
       });

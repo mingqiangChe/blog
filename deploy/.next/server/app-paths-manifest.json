@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/blog/page": "app/[locale]/blog/page.js",
+  "/[locale]/milestone/page": "app/[locale]/milestone/page.js",
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/search/page": "app/[locale]/search/page.js",
+  "/[locale]/blog/tags/[tag]/page": "app/[locale]/blog/tags/[tag]/page.js",
+  "/[locale]/blog/[slug]/page": "app/[locale]/blog/[slug]/page.js"
+}

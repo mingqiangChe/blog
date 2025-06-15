@@ -20,8 +20,30 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.iyf.tv',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.nikon-asia.com',
+        port: '',
+        pathname: '/**',
+      },
+
+      {
+        protocol: 'https',
+        hostname: 'r2cdn.perplexity.ai',
+        port: '',
+        pathname: '/**',
+      },
       // 你还可以继续添加你用到的其他图片域名
     ],
+  },
+  eslint: {
+    ignoreDuringBuilds: true, //控制打包eslint检查
   },
 };
 

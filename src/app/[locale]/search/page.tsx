@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-
+import Image from 'next/image';
 export const metadata: Metadata = {
   title: '工具列表',
   description: '便捷工具',
@@ -82,6 +82,12 @@ const navData: NavGroup[] = [
         title: 'github',
         url: 'https://github.com/',
         desc: 'github',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/756775g.jpeg',
+        title: 'nextjs',
+        url: 'https://nextjs.org/',
+        desc: 'nextjs react',
       },
       {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765757756ffgh.png',
@@ -196,9 +202,11 @@ export default function SearchNavPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src={item.icon}
                     alt={item.title}
+                    width={32}
+                    height={32}
                     className={styles.icon}
                   />
                   <div>

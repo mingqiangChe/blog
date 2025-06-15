@@ -98,3 +98,21 @@ params: Promise<{ locale: string }>
 }) {
 const { locale } = await params
 } 可以获取
+
+# 打包
+
+[text](scripts/build-deploy.js) 打包 node 脚本
+构建并创建部署文件
+pnpm build:deploy
+
+或者分步执行
+pnpm build
+node scripts/build-deploy.js
+
+构建并打包为 zip
+pnpm build:deploy:zip
+
+清理部署文件
+pnpm deploy:clean
+
+# 部署

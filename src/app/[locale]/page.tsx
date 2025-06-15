@@ -2,7 +2,7 @@
 import BlogContributionCalendar from '@/components/BlogContributionCalendar';
 import RecentPosts from '@/components/RecentPosts';
 import { getAllPosts } from '@/lib/markdown';
-
+import Image from 'next/image';
 interface LocaleLayoutProps {
   params: Promise<{ locale: string }>;
 }
@@ -18,10 +18,12 @@ export default async function Home({ params }: LocaleLayoutProps) {
   return (
     <main className="min-h-screen pt-94">
       <div className="flex items-center justify-center">
-        <img
+        <Image
           src="https://avatars.githubusercontent.com/u/85379334?v=4"
           alt="头像"
-          className="w-24 h-24 rounded-full object-cover"
+          width={96} // 指定宽度
+          height={96} // 指定高度
+          className="rounded-full object-cover"
         />
       </div>
 

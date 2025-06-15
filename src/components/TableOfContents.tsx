@@ -16,13 +16,27 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
+    const headingElements = headings
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (headingElements.length === 0) return;
+
+    let currentActiveId = '';
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+        const visibleHeadings = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (visibleHeadings.length > 0) {
+          const topHeadingId = visibleHeadings[0].target.id;
+          if (topHeadingId !== currentActiveId) {
+            currentActiveId = topHeadingId;
+            setActiveId(topHeadingId);
           }
-        });
+        }
       },
       {
         rootMargin: '-100px 0px -66%',
@@ -30,14 +44,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
       }
     );
 
-    headings.forEach(({ id }) => {
-      if (id) {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.observe(element);
-        }
-      }
-    });
+    headingElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, [headings]);
@@ -47,6 +54,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', `#${id}`);
     }
   };
 
@@ -61,8 +69,12 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
         <ul className="space-y-2">
           {headings.map(({ id, title, level }) => (
             <li key={id}>
-              <button
-                onClick={() => scrollToHeading(id)}
+              <a
+                href={`#${id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToHeading(id);
+                }}
                 className={`
                   block w-full text-left text-sm transition-colors duration-200
                   ${level === 1 ? 'font-semibold' : ''}
@@ -77,7 +89,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                 `}
               >
                 {title}
-              </button>
+              </a>
             </li>
           ))}
         </ul>

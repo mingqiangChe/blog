@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { FiX, FiSearch } from 'react-icons/fi';
 import type { BlogPost } from '@/lib/markdown';
+import Image from 'next/image';
 
 interface BlogSearchModalProps {
   posts: BlogPost[];
@@ -92,7 +93,7 @@ export default function BlogSearchModal({
               className="block rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 transition hover:scale-105 hover:shadow-2xl flex flex-col p-4"
             >
               <div className="relative h-36 w-full overflow-hidden rounded-lg mb-3">
-                <img
+                <Image
                   src={post.cover || '/default-cover.jpg'}
                   alt={post.title}
                   className="object-cover w-full h-full"

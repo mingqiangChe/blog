@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { BlogPost } from '@/lib/markdown';
-
+import Image from 'next/image';
 interface RecentPostsProps {
   posts: BlogPost[];
 }
@@ -22,12 +22,16 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
           >
             {/* 封面 */}
             <div className="relative h-44 md:h-40 w-full overflow-hidden">
-              <img
-                src={post.cover || '/default-cover.jpg'}
-                alt={post.title}
-                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
-                loading="lazy"
-              />
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src={post.cover || '/default-cover.jpg'}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+
               {/* 标题和作者遮罩 */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
               <div className="absolute bottom-5 left-0 w-full px-5">

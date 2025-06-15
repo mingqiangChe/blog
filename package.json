@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:deploy": "pnpm build && node scripts/build-deploy.js",
+    "build:deploy:zip": "pnpm build:deploy && cd deploy && zip -r ../deploy.zip .",
+    "deploy:clean": "rm -rf deploy deploy.zip",
     "start": "next start",
     "lint": "next lint"
   },
@@ -38,6 +41,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "fs-extra": "^11.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
