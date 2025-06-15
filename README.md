@@ -102,17 +102,31 @@ const { locale } = await params
 # 打包
 
 [text](scripts/build-deploy.js) 打包 node 脚本
-构建并创建部署文件
-pnpm build:deploy
 
-或者分步执行
-pnpm build
-node scripts/build-deploy.js
+# 本地
 
-构建并打包为 zip
-pnpm build:deploy:zip
+pnpm install
+pnpm run build
+pnpm run build:deploy # 复制构建产物到 deploy 目录
 
-清理部署文件
-pnpm deploy:clean
+# 上传 deploy 到服务器
 
-# 部署
+# 服务器
+
+cd deploy
+
+# 如果使用 standalone 模式，直接运行
+
+cd .next/standalone
+
+node server.js
+
+# 否则安装依赖并启动
+
+pnpm install --prod
+pnpm run start
+
+# 重启
+
+sudo nginx -t
+sudo systemctl reload nginx
