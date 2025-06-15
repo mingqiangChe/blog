@@ -88,6 +88,12 @@
           "hostname": "www.nikon-asia.com",
           "port": "",
           "pathname": "/**"
+        },
+        {
+          "protocol": "https",
+          "hostname": "r2cdn.perplexity.ai",
+          "port": "",
+          "pathname": "/**"
         }
       ],
       "unoptimized": false

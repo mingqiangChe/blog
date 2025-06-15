@@ -1,18 +1,24 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* globals.css */
+
+/* Tailwind 基础导入 */
+
+/* 引入 Tailwind Typography 插件的样式（如果需要） */
+/* 如果你在 tailwind.config.js 中配置了 typography 插件，这里不需要额外引入 */
+
+/* 主题色变量 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* 字体变量示例，需在项目中定义对应字体 */
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* 深色模式变量 */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,26 +26,35 @@
   }
 }
 
+/* 全局样式 */
 body {
-  background: var(--background);
+  @apply bg-white text-gray-900 font-sans;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-html {
-  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
 }
 
-/* 为标题添加滚动偏移，避免被固定头部遮挡 */
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* 标题滚动偏移，防止锚点被固定头部遮挡 */
 h1[id],
 h2[id],
 h3[id],
 h4[id],
 h5[id],
 h6[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 5rem; /* 根据你的固定头部高度调整 */
+  /* 使用 Tailwind apply 也可以：
+  @apply scroll-mt-20;
+  */
 }
 
-/* 目录滚动条样式 */
+/* 目录滚动条样式 - WebKit */
 .toc-scroll::-webkit-scrollbar {
   width: 4px;
 }
@@ -55,4 +70,10 @@ h6[id] {
 
 .toc-scroll::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+/* 目录滚动条样式 - Firefox */
+.toc-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
 }

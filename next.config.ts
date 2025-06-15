@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
-const nextConfig = {
+
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -32,7 +33,6 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-
       {
         protocol: 'https',
         hostname: 'r2cdn.perplexity.ai',
@@ -43,7 +43,7 @@ const nextConfig = {
     ],
   },
   eslint: {
-    ignoreDuringBuilds: true, //控制打包eslint检查
+    ignoreDuringBuilds: true, // 控制打包时 ESLint 检查
   },
 };
 

@@ -9,24 +9,22 @@ cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
 
 # Docker 部署 Next.js 应用完整指南
 
-![Perplexity Logo](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
-
 ## 📋 准备工作
 
 ### 1. 安装 Docker
 
-```bash
-# Windows/Mac: 下载 Docker Desktop
-# https://www.docker.com/products/docker-desktop
+```
+Windows/Mac: 下载 Docker Desktop
+https://www.docker.com/products/docker-desktop
 
-# Ubuntu/Debian
+ Ubuntu/Debian
 sudo apt update
 sudo apt install docker.io docker-compose
 
-# CentOS/RHEL
+ CentOS/RHEL
 sudo yum install docker docker-compose
 
-# 验证安装
+ 验证安装
 docker --version
 docker-compose --version
 ```
@@ -46,63 +44,65 @@ your-nextjs-project/
 └── Dockerfile (即将创建)
 ```
 
+![Perplexity Logo](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
+
 ## 🐳 创建 Dockerfile
 
 在项目根目录创建 `Dockerfile`：
 
-```dockerfile
-# 多阶段构建，优化镜像大小
+```
+多阶段构建，优化镜像大小
 FROM node:18-alpine AS base
 
-# 启用 pnpm
+启用 pnpm
 RUN corepack enable pnpm
 
-# 设置工作目录
+ 设置工作目录
 WORKDIR /app
 
-# 复制 package 文件
+复制 package 文件
 COPY package.json pnpm-lock.yaml ./
 
-# ========== 依赖安装阶段 ==========
+ ========== 依赖安装阶段 ==========
 FROM base AS deps
-# 安装生产依赖
+ 安装生产依赖
 RUN pnpm install --frozen-lockfile --prod
 
-# ========== 构建阶段 ==========
+========== 构建阶段 ==========
 FROM base AS builder
-# 复制所有文件
+复制所有文件
 COPY . .
-# 安装所有依赖（包括 devDependencies）
+安装所有依赖（包括 devDependencies）
 RUN pnpm install --frozen-lockfile
-# 构建应用
+ 构建应用
 RUN pnpm build
 
-# ========== 运行阶段 ==========
+========== 运行阶段 ==========
 FROM node:18-alpine AS runner
 WORKDIR /app
 
-# 设置环境变量
+ 设置环境变量
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# 创建非 root 用户
+ 创建非 root 用户
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# 复制构建产物
+复制构建产物
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
-# 切换到非 root 用户
+切换到非 root 用户
 USER nextjs
 
-# 暴露端口
+暴露端口
 EXPOSE 3000
 
-# 启动应用
+ 启动应用
 CMD ["node", "server.js"]
 ```
 
@@ -110,7 +110,7 @@ CMD ["node", "server.js"]
 
 ### 1. 更新 `next.config.js`
 
-```javascript
+```
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone', // 启用 standalone 模式
@@ -130,8 +130,8 @@ module.exports = nextConfig;
 
 ### 2. 创建 `.dockerignore`
 
-```dockerignore
-# 忽略不需要的文件，减小构建上下文
+```
+ 忽略不需要的文件，减小构建上下文
 node_modules
 .next
 .git
@@ -185,39 +185,39 @@ services:
 
 ### 方法一：使用 Docker 命令
 
-```bash
-# 1. 构建镜像
+```yaml
+1. 构建镜像
 docker build -t my-nextjs-app .
 
-# 2. 运行容器
+2. 运行容器
 docker run -p 3000:3000 \
-  -e NODE_ENV=production \
-  -e NEXT_PUBLIC_SITE_URL=https://your-domain.com \
-  -e NEXT_PUBLIC_SITE_NAME="Cheche Blog" \
-  --name nextjs-container \
-  my-nextjs-app
+-e NODE_ENV=production \
+-e NEXT_PUBLIC_SITE_URL=https://your-domain.com \
+-e NEXT_PUBLIC_SITE_NAME="Cheche Blog" \
+--name nextjs-container \
+my-nextjs-app
 
-# 3. 后台运行
+3. 后台运行
 docker run -d -p 3000:3000 \
-  -e NODE_ENV=production \
-  --name nextjs-container \
-  --restart unless-stopped \
-  my-nextjs-app
+-e NODE_ENV=production \
+--name nextjs-container \
+--restart unless-stopped \
+my-nextjs-app
 ```
 
 ### 方法二：使用 Docker Compose
 
 ```bash
-# 1. 构建并启动
+ 1. 构建并启动
 docker-compose up --build
 
-# 2. 后台运行
+ 2. 后台运行
 docker-compose up -d
 
-# 3. 查看日志
+ 3. 查看日志
 docker-compose logs -f
 
-# 4. 停止服务
+ 4. 停止服务
 docker-compose down
 ```
 
@@ -316,7 +316,7 @@ docker run --env-file .env.production -p 3000:3000 my-nextjs-app
 ### 1. 多阶段构建优化
 
 ```dockerfile
-# 使用更小的基础镜像
+使用更小的基础镜像
 FROM node:18-alpine AS base
 
 # 只复制必要文件
