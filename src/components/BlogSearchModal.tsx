@@ -96,6 +96,7 @@ export default function BlogSearchModal({
                 <Image
                   src={post.cover || '/default-cover.jpg'}
                   alt={post.title}
+                  fill
                   className="object-cover w-full h-full"
                   loading="lazy"
                 />

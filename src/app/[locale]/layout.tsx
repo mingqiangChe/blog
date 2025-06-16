@@ -23,7 +23,10 @@ export default async function LocaleLayout({
   return (
     <div
       className="flex flex-col min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/self/DSC04463.jpg')" }}
+      style={{
+        backgroundImage:
+          "url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg')",
+      }}
     >
       {/* 监听进度条 */}
       <ProgressBar></ProgressBar>

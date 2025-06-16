@@ -108,7 +108,7 @@ CMD ["node", "server.js"]
 
 ## ⚙️ 配置 Next.js
 
-### 1. 更新 `next.config.js`
+### 1. 更新 next.config.js
 
 ```
 /** @type {import('next').NextConfig} */
@@ -128,7 +128,7 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-### 2. 创建 `.dockerignore`
+### 2. 创建 .dockerignore
 
 ```
  忽略不需要的文件，减小构建上下文
@@ -164,11 +164,11 @@ services:
       - NEXT_PUBLIC_SITE_URL=https://your-domain.com
       - NEXT_PUBLIC_SITE_NAME=Cheche Blog
     restart: unless-stopped
-    # 可选：挂载数据卷
-    # volumes:
-    #   - ./data:/app/data
+     可选：挂载数据卷
+     volumes:
+       - ./data:/app/data
 
-  # 可选：添加 Nginx 反向代理
+  可选：添加 Nginx 反向代理
   nginx:
     image: nginx:alpine
     ports:
@@ -226,54 +226,54 @@ docker-compose down
 ### 容器管理
 
 ```bash
-# 查看运行中的容器
+ 查看运行中的容器
 docker ps
 
-# 查看所有容器
+查看所有容器
 docker ps -a
 
-# 停止容器
+停止容器
 docker stop nextjs-container
 
-# 启动容器
+ 启动容器
 docker start nextjs-container
 
-# 重启容器
+重启容器
 docker restart nextjs-container
 
-# 删除容器
+删除容器
 docker rm nextjs-container
 ```
 
 ### 镜像管理
 
 ```bash
-# 查看镜像
+ 查看镜像
 docker images
 
-# 删除镜像
+删除镜像
 docker rmi my-nextjs-app
 
-# 清理未使用的镜像
+清理未使用的镜像
 docker image prune
 
-# 查看镜像构建历史
+查看镜像构建历史
 docker history my-nextjs-app
 ```
 
 ### 调试命令
 
 ```bash
-# 进入容器内部
+进入容器内部
 docker exec -it nextjs-container sh
 
-# 查看容器日志
+ 查看容器日志
 docker logs nextjs-container
 
-# 实时查看日志
+实时查看日志
 docker logs -f nextjs-container
 
-# 查看容器资源使用情况
+ 查看容器资源使用情况
 docker stats nextjs-container
 ```
 
@@ -284,30 +284,30 @@ docker stats nextjs-container
 #### 1. 构建失败
 
 ```bash
-# 清理 Docker 缓存
+ 清理 Docker 缓存
 docker system prune -a
 
-# 重新构建（不使用缓存）
+ 重新构建（不使用缓存）
 docker build --no-cache -t my-nextjs-app .
 ```
 
 #### 2. 端口被占用
 
 ```bash
-# 查看端口占用
+ 查看端口占用
 lsof -i :3000
 
-# 使用不同端口
+使用不同端口
 docker run -p 3001:3000 my-nextjs-app
 ```
 
 #### 3. 环境变量问题
 
 ```bash
-# 检查容器内环境变量
+ 检查容器内环境变量
 docker exec nextjs-container env
 
-# 使用 .env 文件
+ 使用 .env 文件
 docker run --env-file .env.production -p 3000:3000 my-nextjs-app
 ```
 
@@ -319,23 +319,23 @@ docker run --env-file .env.production -p 3000:3000 my-nextjs-app
 使用更小的基础镜像
 FROM node:18-alpine AS base
 
-# 只复制必要文件
+只复制必要文件
 COPY package.json pnpm-lock.yaml ./
 
-# 清理缓存
+清理缓存
 RUN pnpm store prune
 ```
 
 ### 2. 镜像大小优化
 
 ```bash
-# 查看镜像大小
+查看镜像大小
 docker images my-nextjs-app
 
-# 分析镜像层
+分析镜像层
 docker history my-nextjs-app
 
-# 使用 dive 工具分析
+使用 dive 工具分析
 dive my-nextjs-app
 ```
 
@@ -344,23 +344,23 @@ dive my-nextjs-app
 ### 1. 推送到 Docker Hub
 
 ```bash
-# 登录 Docker Hub
+ 登录 Docker Hub
 docker login
 
-# 标记镜像
+标记镜像
 docker tag my-nextjs-app username/my-nextjs-app:latest
 
-# 推送镜像
+推送镜像
 docker push username/my-nextjs-app:latest
 ```
 
 ### 2. 在服务器上部署
 
 ```bash
-# 拉取镜像
+ 拉取镜像
 docker pull username/my-nextjs-app:latest
 
-# 运行容器
+运行容器
 docker run -d -p 80:3000 \
   --name production-app \
   --restart unless-stopped \
