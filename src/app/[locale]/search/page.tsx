@@ -48,6 +48,12 @@ const navData: NavGroup[] = [
         url: 'https://www.perplexity.ai/',
         desc: '韩国ai pro一年',
       },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/5644654654.png',
+        title: 'ins',
+        url: 'https://www.instagram.com/eallion',
+        desc: 'ins',
+      },
     ],
   },
 
@@ -118,12 +124,12 @@ const navData: NavGroup[] = [
         url: 'https://www.youtube.com/',
         desc: '观看影片',
       },
-      // {
-      //   icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765575g.png',
-      //   title: 'avhub',
-      //   url: 'https://avhub.vercel.app/',
-      //   desc: '成人影视',
-      // },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765575g.png',
+        title: 'vidhub',
+        url: 'https://vidhub.me/',
+        desc: '在线观看视频库',
+      },
     ],
   },
   {
@@ -151,6 +157,36 @@ const navData: NavGroup[] = [
         title: '蓝湖',
         url: 'https://lanhuapp.com/',
         desc: '软件原型设计',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        title: '站酷',
+        url: 'https://www.zcool.com.cn/',
+        desc: '图片素材',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        title: '熊猫压缩',
+        url: 'https://tinypng.com/',
+        desc: '图片压缩',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        title: '颜色识别',
+        url: 'https://color.eallion.com/',
+        desc: '认识颜色',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        title: '紫薇学习',
+        url: 'https://iztro.com/',
+        desc: '紫薇学习',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        title: '全网热点',
+        url: 'https://hot.eallion.com/#/',
+        desc: '全网热点',
       },
     ],
   },
