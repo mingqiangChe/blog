@@ -8,7 +8,7 @@
     "build:deploy": "pnpm build && node scripts/build-deploy.js",
     "build:deploy:zip": "pnpm build:deploy && cd deploy && zip -r ../deploy.zip .",
     "deploy:clean": "rm -rf deploy deploy.zip",
-    "start": "next start",
+    "start": "node .next/standalone/server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "styled-jsx": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

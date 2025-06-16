@@ -11,14 +11,37 @@ async function buildDeploy() {
 
     console.log('🚀 开始复制部署文件...');
 
-    // 复制必需的文件和文件夹
-    const filesToCopy = [
-      { src: '.next', dest: path.join(deployDir, '.next') },
-      { src: 'public', dest: path.join(deployDir, 'public') },
-      { src: 'package.json', dest: path.join(deployDir, 'package.json') },
-    ];
+    // 复制 .next/standalone 到 deploy/standalone
+    const standaloneSrc = path.join('.next', 'standalone');
+    const standaloneDest = path.join(deployDir, 'standalone');
+    if (await fs.pathExists(standaloneSrc)) {
+      await fs.copy(standaloneSrc, standaloneDest);
+      console.log(`✅ 复制: ${standaloneSrc} -> ${standaloneDest}`);
+    } else {
+      console.log(`❌ 未找到: ${standaloneSrc}`);
+    }
 
-    // 可选文件（如果存在则复制）
+    // 复制 .next/static 到 deploy/standalone/.next/static
+    const staticSrc = path.join('.next', 'static');
+    const staticDest = path.join(deployDir, 'standalone', '.next', 'static');
+    if (await fs.pathExists(staticSrc)) {
+      await fs.copy(staticSrc, staticDest);
+      console.log(`✅ 复制: ${staticSrc} -> ${staticDest}`);
+    } else {
+      console.log(`❌ 未找到: ${staticSrc}`);
+    }
+
+    // 复制 public 到 deploy/standalone/public
+    const publicSrc = 'public';
+    const publicDest = path.join(deployDir, 'standalone', 'public');
+    if (await fs.pathExists(publicSrc)) {
+      await fs.copy(publicSrc, publicDest);
+      console.log(`✅ 复制: ${publicSrc} -> ${publicDest}`);
+    } else {
+      console.log(`⚠️ 未找到: ${publicSrc}`);
+    }
+
+    // 复制可选和根部 package.json
     const optionalFiles = [
       'next.config.js',
       'next.config.mjs',
@@ -29,18 +52,6 @@ async function buildDeploy() {
       'tailwind.config.js',
       'tsconfig.json',
     ];
-
-    // 复制必需文件
-    for (const file of filesToCopy) {
-      if (await fs.pathExists(file.src)) {
-        await fs.copy(file.src, file.dest);
-        console.log(`✅ 复制: ${file.src} -> ${file.dest}`);
-      } else {
-        console.log(`⚠️  文件不存在: ${file.src}`);
-      }
-    }
-
-    // 复制可选文件
     for (const file of optionalFiles) {
       if (await fs.pathExists(file)) {
         await fs.copy(file, path.join(deployDir, file));
@@ -48,17 +59,16 @@ async function buildDeploy() {
       }
     }
 
-    // 创建简化的 package.json（只包含生产依赖）
+    // 创建简化的 package.json（只包含生产依赖和 start 脚本）
     const originalPackage = await fs.readJson('package.json');
     const deployPackage = {
       name: originalPackage.name,
       version: originalPackage.version,
       scripts: {
-        start: originalPackage.scripts.start,
+        start: 'node standalone/server.js',
       },
       dependencies: originalPackage.dependencies || {},
     };
-
     await fs.writeJson(path.join(deployDir, 'package.json'), deployPackage, {
       spaces: 2,
     });
