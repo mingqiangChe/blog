@@ -23,7 +23,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // 提取标题用于目录
   const headings = extractHeadings(post.content);
-
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 mt-32 ">
       <div className="grid relative grid-cols-1 lg:grid-cols-4 gap-8">
@@ -113,7 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* 目录导航 */}
-        <div className="fixed top-16 right-16 lg:col-span-1 overflow-visible">
+        <div className="fixed top-20 right-16 z-50 overflow-visible">
           <div className="hidden lg:block">
             <TableOfContents headings={headings} />
           </div>

@@ -20,6 +20,8 @@ export default async function LocaleLayout({
   // 使用 await 获取 params
   const { locale } = await params;
   const posts = getAllPosts(locale);
+  // 判断当前路径是否是/blog/**
+
   return (
     <div
       className="flex flex-col min-h-screen bg-cover bg-center"

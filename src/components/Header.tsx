@@ -50,7 +50,7 @@ export default function Header({ locale, posts }: HeaderProps) {
     setMounted(true);
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = 120;
+      const maxScroll = 60;
       const alpha = Math.min(scrollY / maxScroll, 1);
       setBgAlpha(alpha);
     };
