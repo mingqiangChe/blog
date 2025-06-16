@@ -3,6 +3,7 @@ import BlogContributionCalendar from '@/components/BlogContributionCalendar';
 import RecentPosts from '@/components/RecentPosts';
 import { getAllPosts } from '@/lib/markdown';
 import Image from 'next/image';
+import VideoCard from '@/components/VideoCard';
 interface LocaleLayoutProps {
   params: Promise<{ locale: string }>;
 }
@@ -39,11 +40,16 @@ export default async function Home({ params }: LocaleLayoutProps) {
       <div className="flex items-center justify-center pt-32">
         <BlogContributionCalendar posts={posts} year={year} />
       </div>
-
       {/* 最近的文章 */}
       <div className="flex items-center justify-center pt-32 pb-32">
         {/* 这里可以添加最近文章列表 */}
         <RecentPosts posts={recentPosts} />
+      </div>
+      <div className="flex items-center justify-center pt-32 pb-32">
+        <VideoCard
+          src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/mov_1750092393646.mov"
+          title="video"
+        />
       </div>
     </main>
   );
