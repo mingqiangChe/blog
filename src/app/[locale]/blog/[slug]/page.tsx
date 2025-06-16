@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-sm  white:text-gray-400 mb-6">
                 <time>
                   {new Date(post.date).toLocaleDateString(locale, {
                     year: 'numeric',
@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
 
               {post.description && (
-                <p className="text-lg text-gray-600 dark:text-gray-400 italic border-l-4 border-blue-500 pl-4 mb-6">
+                <p className="text-lg text-white-600 white:text-white-400 italic border-l-4 border-blue-500 pl-4 mb-6">
                   {post.description}
                 </p>
               )}

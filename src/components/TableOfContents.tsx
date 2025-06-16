@@ -61,7 +61,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4">
+    <nav className="sticky top-22 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4">
       <div className="border-l-2 border-gray-200 pl-4">
         <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
           目录
@@ -81,10 +81,11 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                   ${level === 2 ? 'pl-4' : ''}
                   ${level === 3 ? 'pl-8' : ''}
                   ${level >= 4 ? 'pl-12' : ''}
+                  text-white
                   ${
                     activeId === id
-                      ? 'text-blue-600 font-medium dark:text-blue-400'
-                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                      ? 'text-blue-400 font-medium'
+                      : 'hover:text-blue-400'
                   }
                 `}
               >
