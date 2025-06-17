@@ -1,3 +1,4 @@
+// src/app/[locale]/layout.tsx
 import i18nConfig from '../../../i18nConfig';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
@@ -11,7 +12,7 @@ import zhMessages from '../../../messages/zh.json';
 
 const messagesMap = {
   en: enMessages,
-  zh: zhMessages
+  zh: zhMessages,
 } as const;
 
 type Locale = keyof typeof messagesMap;
@@ -40,23 +41,19 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const posts = getAllPosts(safeLocale);
 
   return (
-    <html lang={safeLocale}>
-      <body>
-        <NextIntlClientProvider locale={safeLocale} messages={messagesMap[safeLocale]}>
-          <div
-            className="flex flex-col min-h-screen bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg')",
-            }}
-          >
-            <ProgressBar />
-            <Header posts={posts} locale={safeLocale} />
-            <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
-            <Footer locale={safeLocale} />
-          </div>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={safeLocale} messages={messagesMap[safeLocale]}>
+      <div
+        className="flex flex-col min-h-screen bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg')",
+        }}
+      >
+        <ProgressBar />
+        <Header posts={posts} locale={safeLocale} />
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+        <Footer locale={safeLocale} />
+      </div>
+    </NextIntlClientProvider>
   );
 }
