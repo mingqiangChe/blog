@@ -8,7 +8,7 @@
 
 # 项目结构
 
-cheche-next-blog/
+blog/
 ├── app/
 │ ├── [locale]/
 │ │ ├── layout.tsx # 国际化布局
@@ -34,30 +34,16 @@ cheche-next-blog/
 │ │ └── zh/ # 中文博客
 ├── lib/
 │ ├── markdown.ts # Markdown 处理
-│ ├── i18n.ts # 国际化配置
-├── public/
-│ └── locales/ # 翻译文件
-│ ├── en/
-│ └── zh/
 ├── i18nConfig.js # 国际化路由配置
 └── middleware.ts # 中间件
 ├── next-intl.config.mjs      ← 只给 next-intl 插件用
 ├── i18nConfig.js             ← 只给 next-i18n-router 用
-
-
-your-project/
 ├── i18n/                      # 国际化相关代码和配置
 │   ├── request.ts             # next-intl 请求配置
 │   ├── routing.ts             # 路由国际化配置
 ├── messages/                  # 多语言 JSON 文件
 │   ├── en.json
 │   └── zh.json
-├── public/                    # 静态资源（图片、favicon 等）
-│   └── locales/               # 也可放语言包，但不适合模块导入
-│       ├── en/
-│       │   └── translation.json
-│       └── zh/
-│           └── translation.json
 ├── next-intl.config.mjs       # next-intl 插件配置
 ├── next.config.js             # next.js 配置
 ├── tsconfig.json              # 路径别名配置
@@ -90,36 +76,20 @@ gray-matter：Markdown 元数据解析
 
 react-markdown：Markdown 渲染
 
-# 运行
+# 开发思路
+
+父组件（或页面、布局）默认是服务端组件（Server Component），它负责数据获取、SEO、渲染静态内容，性能更好。
+
+子组件只在需要交互、状态管理、浏览器 API 等客户端功能时，单独加 "use client"，让它成为客户端组件（Client Component）。
+
+这样父组件在服务器渲染，子组件在客户端渲染，二者共存，互不冲突。
+
+
+
+# 运行环境
 
 pnpm
 node 20
-
-## locale
-
-中英文切换
-[locale]
-/en - 英文首页
-
-/zh - 中文首页
-
-/en/blog - 英文博客页面
-
-/zh/blog - 中文博客页面
-
-/en/about - 英文关于页面
-
-/zh/about - 中文关于页面
-
-middleware.ts 控制 形成映射关系
-
-export default async function Page({
-params,
-}: {
-params: Promise<{ locale: string }>
-}) {
-const { locale } = await params
-} 可以获取
 
 # 打包
 
@@ -141,7 +111,7 @@ cd deploy
 
 cd .next/standalone
 
-node server.js
+pm2 start server.js
 
 # 否则安装依赖并启动
 
@@ -152,3 +122,4 @@ pnpm run start
 
 sudo nginx -t
 sudo systemctl reload nginx
+
