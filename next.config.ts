@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
-
+import createNextIntlPlugin from 'next-intl/plugin';
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -49,4 +50,5 @@ const nextConfig: NextConfig = {
   // basePath: '/blog',//通过 /blog 路径访问 Next.js 应用，建议在 next.config.js 中配置：生成的静态资源路径和路由都会带上 /blog 前缀
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
+

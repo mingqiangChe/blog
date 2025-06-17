@@ -7,11 +7,11 @@ import VideoCard from '@/components/VideoCard';
 interface LocaleLayoutProps {
   params: Promise<{ locale: string }>;
 }
-
+// 引入国际化部分
+import Page_h from './components/Page_h';
 export default async function Home({ params }: LocaleLayoutProps) {
   // 使用 await 获取 params
   const { locale } = await params;
-
   // 获取当前语言的所有文章
   const posts = getAllPosts(locale);
   const year = 2025;
@@ -27,15 +27,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
           className="rounded-full object-cover"
         />
       </div>
-
-      <div className="flex items-center justify-center mt-4 text-3xl font-bold">
-        车车
-      </div>
-
-      <div className="flex items-center justify-center font-bold">
-        「把今天当作人生最后一天」
-      </div>
-
+      <Page_h />
       {/* 文章贡献日历 */}
       <div className="flex items-center justify-center pt-32">
         <BlogContributionCalendar posts={posts} year={year} />

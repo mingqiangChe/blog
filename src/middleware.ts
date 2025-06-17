@@ -1,6 +1,6 @@
 // middleware.ts
 import { i18nRouter } from 'next-i18n-router';
-import i18nConfig from './i18nConfig';
+import i18nConfig from '../i18nConfig';
 
 export function middleware(request: any) {
   return i18nRouter(request, i18nConfig);

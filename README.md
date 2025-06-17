@@ -41,6 +41,28 @@ cheche-next-blog/
 │ └── zh/
 ├── i18nConfig.js # 国际化路由配置
 └── middleware.ts # 中间件
+├── next-intl.config.mjs      ← 只给 next-intl 插件用
+├── i18nConfig.js             ← 只给 next-i18n-router 用
+
+
+your-project/
+├── i18n/                      # 国际化相关代码和配置
+│   ├── request.ts             # next-intl 请求配置
+│   ├── routing.ts             # 路由国际化配置
+├── messages/                  # 多语言 JSON 文件
+│   ├── en.json
+│   └── zh.json
+├── public/                    # 静态资源（图片、favicon 等）
+│   └── locales/               # 也可放语言包，但不适合模块导入
+│       ├── en/
+│       │   └── translation.json
+│       └── zh/
+│           └── translation.json
+├── next-intl.config.mjs       # next-intl 插件配置
+├── next.config.js             # next.js 配置
+├── tsconfig.json              # 路径别名配置
+└── package.json
+
 
 layout.tsx：布局文件，多个页面共享 UI
 
