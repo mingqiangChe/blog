@@ -91,7 +91,7 @@ node 20
 
 # 打包
 
-[text](scripts/build-deploy.js) 打包 node 脚本
+scripts/build-deploy.js 打包 node 脚本
 
 # 本地
 
