@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import { photos, Photo } from './photo';
 import LazyImageCard from './components/LazyImageCard';
 import dynamic from 'next/dynamic';
-
+import ScrollToTopButton from './components/ScrollToTopButton';
 const ClientLightbox = dynamic(() => import('./components/ClientLightbox'), {
   ssr: false,
 });
@@ -101,6 +101,7 @@ const PhotoGallery: React.FC = () => {
           onNext={handleNext}
         />
       )}
+      <ScrollToTopButton />
     </div>
   );
 };
