@@ -1,8 +1,16 @@
 .bg {
+  background: linear-gradient(
+      135deg,
+      rgba(30, 30, 30, 0.7) 0%,
+      rgba(44, 62, 80, 0.5) 100%
+    ),
+    url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
-  background: rgba(30, 30, 30, 0.6); /* 半透明暗色 */
-  backdrop-filter: blur(10px);
-  padding: 128px 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -90,6 +98,11 @@
 
 /* 平板端适配 */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .bg {
+    background-attachment: scroll;
+    background-image: none;
+    background-color: #161e31;
+  }
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
     /* 删除 margin: 0 auto; 避免容器居中 */

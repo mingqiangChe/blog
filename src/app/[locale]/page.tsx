@@ -17,7 +17,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
   const recentPosts = posts.slice(0, 6);
 
   return (
-    <main className="min-h-screen pt-94">
+    <main className="home-bg min-h-screen bg-no-repeat bg-top overflow-x-hidden pt-24">
       <div className="flex items-center justify-center">
         <Image
           src="https://avatars.githubusercontent.com/u/85379334?v=4"

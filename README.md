@@ -9,18 +9,20 @@
 # 项目结构
 
 blog/
+
 - app/
   - [locale]/
-    - layout.tsx    # 国际化布局
-    - page.tsx      # 多语言首页
+    - layout.tsx # 国际化布局
+    - page.tsx # 多语言首页
     - blog/
-      - page.tsx    # 博客列表
+      - page.tsx # 博客列表
       - [slug]/
-        - page.tsx  # 博客详情
-    - tools/
-      - page.tsx    # 工具页面
+        - page.tsx # 博客详情
+    - search/
+      - page.tsx # 工具页面
+      - page.module.css # 工具样式 import styles from './page.module.css'; styles.bg
     - about/
-      - page.tsx    # 个人介绍
+      - page.tsx # 个人介绍
   - globals.css
   - layout.tsx
 - components/
@@ -46,7 +48,6 @@ blog/
 - next.config.js
 - tsconfig.json
 - package.json
-
 
 layout.tsx：布局文件，多个页面共享 UI
 
@@ -81,8 +82,6 @@ react-markdown：Markdown 渲染
 子组件只在需要交互、状态管理、浏览器 API 等客户端功能时，单独加 "use client"，让它成为客户端组件（Client Component）。
 
 这样父组件在服务器渲染，子组件在客户端渲染，二者共存，互不冲突。
-
-
 
 # 运行环境
 
@@ -120,4 +119,3 @@ pnpm run start
 
 sudo nginx -t
 sudo systemctl reload nginx
-

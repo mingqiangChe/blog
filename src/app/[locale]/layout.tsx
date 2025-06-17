@@ -30,7 +30,10 @@ export async function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
   const { locale } = params;
 
   if (!i18nConfig.locales.includes(locale)) {
@@ -41,14 +44,11 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const posts = getAllPosts(safeLocale);
 
   return (
-    <NextIntlClientProvider locale={safeLocale} messages={messagesMap[safeLocale]}>
-      <div
-        className="flex flex-col min-h-screen bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg')",
-        }}
-      >
+    <NextIntlClientProvider
+      locale={safeLocale}
+      messages={messagesMap[safeLocale]}
+    >
+      <div className="flex flex-col min-h-screen bg-cover bg-center">
         <ProgressBar />
         <Header posts={posts} locale={safeLocale} />
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>

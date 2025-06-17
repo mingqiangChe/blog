@@ -77,3 +77,23 @@ h6[id] {
   scrollbar-width: thin;
   scrollbar-color: #c1c1c1 #f1f1f1;
 }
+/*背景处理 其他在各自module.css*/
+/* 桌面端 */
+.home-bg {
+  background-image: url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-image: none;
+    background-color: #161e31;
+  }
+}

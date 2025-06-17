@@ -147,7 +147,6 @@ const navData: NavGroup[] = [
         url: 'https://trade.longportapp.com/',
         desc: '买港美股',
       },
-   
     ],
   },
   {
