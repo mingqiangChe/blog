@@ -9,45 +9,43 @@
 # 项目结构
 
 blog/
-├── app/
-│ ├── [locale]/
-│ │ ├── layout.tsx # 国际化布局
-│ │ ├── page.tsx # 多语言首页
-│ │ ├── blog/
-│ │ │ ├── page.tsx # 博客列表
-│ │ │ └── [slug]/
-│ │ │ └── page.tsx # 博客详情
-│ │ ├── tools/
-│ │ │ └── page.tsx # 工具页面
-│ │ └── about/
-│ │ └── page.tsx # 个人介绍
-│ ├── globals.css
-│ └── layout.tsx
-├── components/
-│ ├── Header.tsx # 导航组件
-│ ├── LanguageSwitcher.tsx # 语言切换
-│ ├── BlogPost.tsx # 博客组件
-│ └── CodeBlock.tsx # 代码高亮组件
-├── content/
-│ ├── blog/
-│ │ ├── en/ # 英文博客
-│ │ └── zh/ # 中文博客
-├── lib/
-│ ├── markdown.ts # Markdown 处理
-├── i18nConfig.js # 国际化路由配置
-└── middleware.ts # 中间件
-├── next-intl.config.mjs      ← 只给 next-intl 插件用
-├── i18nConfig.js             ← 只给 next-i18n-router 用
-├── i18n/                      # 国际化相关代码和配置
-│   ├── request.ts             # next-intl 请求配置
-│   ├── routing.ts             # 路由国际化配置
-├── messages/                  # 多语言 JSON 文件
-│   ├── en.json
-│   └── zh.json
-├── next-intl.config.mjs       # next-intl 插件配置
-├── next.config.js             # next.js 配置
-├── tsconfig.json              # 路径别名配置
-└── package.json
+- app/
+  - [locale]/
+    - layout.tsx    # 国际化布局
+    - page.tsx      # 多语言首页
+    - blog/
+      - page.tsx    # 博客列表
+      - [slug]/
+        - page.tsx  # 博客详情
+    - tools/
+      - page.tsx    # 工具页面
+    - about/
+      - page.tsx    # 个人介绍
+  - globals.css
+  - layout.tsx
+- components/
+  - Header.tsx
+  - LanguageSwitcher.tsx
+  - BlogPost.tsx
+  - CodeBlock.tsx
+- content/
+  - blog/
+    - en/
+    - zh/
+- lib/
+  - markdown.ts
+- i18nConfig.js
+- middleware.ts
+- next-intl.config.mjs
+- i18n/
+  - request.ts
+  - routing.ts
+- messages/
+  - en.json
+  - zh.json
+- next.config.js
+- tsconfig.json
+- package.json
 
 
 layout.tsx：布局文件，多个页面共享 UI
