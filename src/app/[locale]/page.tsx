@@ -1,4 +1,3 @@
-// app/[locale]/page.tsx - 多语言首页
 import BlogContributionCalendar from '@/components/BlogContributionCalendar';
 import RecentPosts from '@/components/RecentPosts';
 import { getAllPosts } from '@/lib/markdown';
@@ -16,6 +15,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
   const posts = getAllPosts(locale);
   const year = 2025;
   const recentPosts = posts.slice(0, 6);
+
   return (
     <main className="min-h-screen pt-94">
       <div className="flex items-center justify-center">
