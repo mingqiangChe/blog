@@ -113,7 +113,7 @@ const navData: NavGroup[] = [
         desc: '观看影片',
       },
       {
-        icon: 'https://www.iyf.tv/assets/images/player_logo.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%B9%85%E5%BA%A6%E8%90%A8%E8%8A%AC.jpg',
         title: '爱壹帆',
         url: 'https://www.iyf.tv/',
         desc: '观看影片',
@@ -125,7 +125,7 @@ const navData: NavGroup[] = [
         desc: '观看影片',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765575g.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A3%9E%E6%B4%92%E8%8C%83%E5%BE%B7%E8%90%A8%E5%85%AC%E5%8F%B8%E6%B3%95.png',
         title: 'vidhub',
         url: 'https://vidhub.me/',
         desc: '在线观看视频库',
@@ -141,6 +141,13 @@ const navData: NavGroup[] = [
         url: 'https://www.binance.com/zh-CN/my/dashboard',
         desc: '比特币',
       },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        title: '长桥',
+        url: 'https://trade.longportapp.com/',
+        desc: '买港美股',
+      },
+   
     ],
   },
   {
@@ -159,31 +166,31 @@ const navData: NavGroup[] = [
         desc: '软件原型设计',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/zhanku.png',
         title: '站酷',
         url: 'https://www.zcool.com.cn/',
         desc: '图片素材',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%86%8A%E7%8C%AB%E5%8E%8B%E7%BC%A9.jpg',
         title: '熊猫压缩',
         url: 'https://tinypng.com/',
         desc: '图片压缩',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A2%9C%E8%89%B2%E8%AF%86%E5%88%AB.jpg',
         title: '颜色识别',
         url: 'https://color.eallion.com/',
         desc: '认识颜色',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0.jpg',
         title: '紫薇学习',
         url: 'https://iztro.com/',
         desc: '紫薇学习',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/56456633gg.jpeg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%85%A8%E7%BD%91%E7%83%AD%E7%82%B9.png',
         title: '全网热点',
         url: 'https://hot.eallion.com/#/',
         desc: '全网热点',

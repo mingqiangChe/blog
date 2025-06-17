@@ -78,7 +78,7 @@ export default function LanguageSwitcher({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50 transition-colors dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700"
+        className="flex items-center space-x-2 px-3 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50 transition-colors dark:bg-gray-800 dark:border-gray-600 dark:text-dark dark:hover:bg-gray-700 text-black"
       >
         <span className="text-xl">🌐</span>
         <span className="text-sm font-medium">
