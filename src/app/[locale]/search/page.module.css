@@ -4,13 +4,14 @@
       rgba(30, 30, 30, 0.7) 0%,
       rgba(44, 62, 80, 0.5) 100%
     ),
-    url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg');
+    url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04452.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 96px;
 }
 
 .container {
