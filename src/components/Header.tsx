@@ -29,6 +29,11 @@ export default function Header({ locale, posts }: HeaderProps) {
       label: locale === 'zh' ? '工具' : 'Search',
     },
     {
+      key: 'album',
+      href: `/${locale}/album`,
+      label: locale === 'zh' ? '摄影' : 'Album',
+    },
+    {
       key: 'milestone',
       href: `/${locale}/milestone`,
       label: locale === 'zh' ? '里程碑' : 'Milestone',

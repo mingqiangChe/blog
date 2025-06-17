@@ -1,0 +1,67 @@
+.page-bg {
+  min-height: 100vh;
+  padding: 120px 60px 60px;
+  background: linear-gradient(135deg, #23272f 0%, #181c22 100%);
+  min-height: 100vh;
+}
+
+.masonry-grid {
+  display: flex;
+  margin-left: -24px;
+  width: auto;
+}
+.masonry-grid_column {
+  padding-left: 24px;
+  background-clip: padding-box;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.18s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: filter 0.2s;
+}
+.card-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 16px 14px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 80%, transparent 100%);
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.card:hover .card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .page-bg {
+    padding: 88px 0 0;
+  }
+  .masonry-grid {
+    margin-left: -8px;
+  }
+  .masonry-grid_column {
+    padding-left: 8px;
+  }
+}
