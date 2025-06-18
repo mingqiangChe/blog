@@ -45,7 +45,25 @@ export default function Header({ locale, posts }: HeaderProps) {
     },
   ];
 
-  const isActiveRoute = (href: string) => pathname.startsWith(href);
+  const locales = ['zh', 'en'];
+
+  // 去除路径开头的语言前缀（如果有）
+  function stripLocale(path: string) {
+    for (const locale of locales) {
+      if (path.startsWith(`/${locale}/`) || path === `/${locale}`) {
+        return path.replace(`/${locale}`, '') || '/';
+      }
+    }
+    return path;
+  }
+  
+  const normalizedPathname = stripLocale(pathname);
+  
+  const isActiveRoute = (href: string) => {
+    const normalizedHref = stripLocale(href);
+    return normalizedPathname === normalizedHref || normalizedPathname.startsWith(normalizedHref + '/');
+  };
+  
 
   const [mounted, setMounted] = useState(false);
   const [bgAlpha, setBgAlpha] = useState(0);
