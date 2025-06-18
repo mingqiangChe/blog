@@ -16,6 +16,13 @@ const breakpointColumnsObj = {
   700: 1,
 };
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '摄影作品',
+  description: '车明强摄影作品',
+};
+
 const PhotoGallery: React.FC = () => {
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const [selectedTip, setSelectedTip] = useState<string>('全部');
