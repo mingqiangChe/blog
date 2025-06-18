@@ -79,7 +79,20 @@ const navData: NavGroup[] = [
         desc: 'chatgpt',
       },
     ],
+  }, {
+    group: '文本',
+    items: [
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/logo_blogger_40px.png',
+        title: '博文',
+        url: 'https://www.blogger.com/blog/posts/7101707795822442267?hl=zh-CN&tab=jj',
+        desc: '博文 博客文记录',
+      },
+    ],
   },
+
+
+
   {
     group: '开发',
     items: [
@@ -88,7 +101,15 @@ const navData: NavGroup[] = [
         title: 'github',
         url: 'https://github.com/',
         desc: 'github',
+      }, {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/5464654564.png',
+        title: '码上掘金',
+        url: 'https://code.juejin.cn/',
+        desc: '在线开发编辑器',
       },
+
+
+
       {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/756775g.jpeg',
         title: 'nextjs',
@@ -101,6 +122,8 @@ const navData: NavGroup[] = [
         url: 'https://home.console.aliyun.com/home/dashboard/ProductAndService',
         desc: '服务器',
       },
+
+
     ],
   },
   {
@@ -129,12 +152,28 @@ const navData: NavGroup[] = [
         title: 'vidhub',
         url: 'https://vidhub.me/',
         desc: '在线观看视频库',
+      }, {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A3%9E%E6%B4%92%E8%8C%83%E5%BE%B7%E8%90%A8%E5%85%AC%E5%8F%B8%E6%B3%95.png',
+        title: 'acfun',
+        url: 'https://www.acfun.cn/',
+        desc: '以前的b',
       },
+
+
+
+
+
     ],
   },
   {
     group: '金融',
     items: [
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        title: '大盘云图',
+        url: 'ttps://dapanyuntu.com/',
+        desc: '大股 大风向',
+      },
       {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/576575dsse.png',
         title: '币安',
@@ -146,6 +185,16 @@ const navData: NavGroup[] = [
         title: '长桥',
         url: 'https://trade.longportapp.com/',
         desc: '买港美股',
+      }, {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        title: 'cbndata',
+        url: 'https://www.cbndata.com/',
+        desc: '金融世界观 消息',
+      }, {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        title: 'millennialmoney',
+        url: 'https://millennialmoney.com/',
+        desc: '金融世界观 消息',
       },
     ],
   },
@@ -226,6 +275,72 @@ const navData: NavGroup[] = [
       },
     ],
   },
+  {
+    group: '社区',
+    items: [
+      {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: '少数派',
+        url: 'https://sspai.com/',
+        desc: '社区 消息',
+      },  {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'classcentral',
+        url: 'https://www.classcentral.com/?utm_source=gapis.money',
+        desc: '学习 证书 外国大学',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'discord',
+        url: 'https://discord.com/channels/662267976984297473/952771221915840552',
+        desc: '聊天室',
+      },
+  
+      
+    ],
+  },
+  
+  {
+    group: '小小工具',
+    items: [
+      {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: '验证手机号',
+        url: 'https://sms-activate.io',
+        desc: '虚拟手机验证',
+      },
+      {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'youtube下载器',
+        url: 'https://youtube.iiilab.com/',
+        desc: '视频下载器',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'b站下载器',
+        url: 'https://snapany.com/zh/bilibili',
+        desc: '视频下载器',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: '两元店',
+        url: 'https://liangyuandian.club/#/dashboard',
+        desc: 't',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: '7lol',
+        url: 'https://7lol.lol/',
+        desc: 't',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'mac 软件',
+        url: 'https://www.mac618.com/',
+        desc: 'mac电脑破解软件',
+      },
+
+
+
+    ],
+  },
+
+
 ];
 
 export default function SearchNavPage() {
