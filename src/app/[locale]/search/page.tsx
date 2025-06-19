@@ -37,7 +37,7 @@ const navData: NavGroup[] = [
       },
 
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765575g.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/443254%E7%AA%81%E7%84%B6%E5%8F%91%E7%AC%AC%E4%B8%89%E4%B8%AA.png',
         title: 'youtube',
         url: 'https://www.youtube.com/',
         desc: '观看影片',
@@ -102,13 +102,11 @@ const navData: NavGroup[] = [
         url: 'https://github.com/',
         desc: 'github',
       }, {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/5464654564.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/43254235%E9%AB%98%E8%BE%BE%E5%9B%9B%E7%82%B9%E5%8D%81%E5%88%86%E6%84%9F%E5%8A%A8.jpg',
         title: '码上掘金',
         url: 'https://code.juejin.cn/',
         desc: '在线开发编辑器',
       },
-
-
 
       {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/756775g.jpeg',
@@ -142,7 +140,7 @@ const navData: NavGroup[] = [
         desc: '观看影片',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/765575g.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/443254%E7%AA%81%E7%84%B6%E5%8F%91%E7%AC%AC%E4%B8%89%E4%B8%AA.png',
         title: 'youtube',
         url: 'https://www.youtube.com/',
         desc: '观看影片',
@@ -169,7 +167,7 @@ const navData: NavGroup[] = [
     group: '金融',
     items: [
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/dapanyuntu.png',
         title: '大盘云图',
         url: 'ttps://dapanyuntu.com/',
         desc: '大股 大风向',
@@ -186,12 +184,12 @@ const navData: NavGroup[] = [
         url: 'https://trade.longportapp.com/',
         desc: '买港美股',
       }, {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/cbndata.jpg',
         title: 'cbndata',
         url: 'https://www.cbndata.com/',
         desc: '金融世界观 消息',
       }, {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%A1%A5%E8%AF%81%E5%88%B8ico.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%8A%AF%E5%BE%97%E4%B8%8A%E5%B9%BF%E6%B3%9B%E5%A4%A7%E4%BD%BF%E9%A6%86%E5%92%8C%E5%8A%9F%E5%A4%AB%E5%A4%A7%E5%B8%88%E7%9A%84%E8%AF%9D%E5%A4%A7%E6%A6%82%E5%A6%82%E6%AD%A4.jpg',
         title: 'millennialmoney',
         url: 'https://millennialmoney.com/',
         desc: '金融世界观 消息',
@@ -248,17 +246,17 @@ const navData: NavGroup[] = [
     group: '社区',
     items: [
       {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%A2%B5%E8%92%82%E5%86%88%E6%98%AF%E5%BE%B7%E5%9B%BD%E6%94%BE43.png',
         title: '少数派',
         url: 'https://sspai.com/',
         desc: '社区 消息',
       },  {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%AD%A4%E6%AC%A1%E5%85%85%E5%88%86%E7%9A%84%E5%8F%91%E5%A4%A7%E6%B0%B4%E8%8C%83%E5%BE%B7%E8%90%A8%E5%8F%91.jpg',
         title: 'classcentral',
         url: 'https://www.classcentral.com/?utm_source=gapis.money',
         desc: '学习 证书 外国大学',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/disco%E5%A6%82%E6%9E%9C%E5%A4%A7%E5%A4%A7%E6%92%92%E5%8F%91%E5%88%B0%E4%BB%98.png',
         title: 'discord',
         url: 'https://discord.com/channels/662267976984297473/952771221915840552',
         desc: '聊天室',
@@ -300,41 +298,41 @@ const navData: NavGroup[] = [
     group: '小小工具',
     items: [
       {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/sms-activat.jpg',
         title: '验证手机号',
         url: 'https://sms-activate.io',
         desc: '虚拟手机验证',
       },
       {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%9C%A8.jpg',
         title: 'youtube下载器',
         url: 'https://youtube.iiilab.com/',
         desc: '视频下载器',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%98%BB%E5%9C%A8.jpg',
         title: 'b站下载器',
         url: 'https://snapany.com/zh/bilibili',
         desc: '视频下载器',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/mac%E7%A0%B4%E8%A7%A3.jpg',
         title: '两元店',
         url: 'https://liangyuandian.club/#/dashboard',
         desc: 't',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/7lol.png',
         title: '7lol',
         url: 'https://7lol.lol/',
         desc: 't',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/mac%E7%A0%B4%E8%A7%A3.jpg',
         title: 'mac 软件',
         url: 'https://www.mac618.com/',
         desc: 'mac电脑破解软件',
       }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
-        title: 'md在线样式编辑复制',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/md%E5%9C%A8%E7%BA%BF.png',
+        title: 'md在线样式',
         url: 'https://markdown.lovejade.cn/',
-        desc: 'md文件在线编辑 在线查看md样式 方便复制',
+        desc: '在线查看md样式',
       },
     ],
   },

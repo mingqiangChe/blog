@@ -6,12 +6,13 @@ import Image from 'next/image';
 interface RecentPostsProps {
   posts: BlogPost[];
 }
-
+import { useTranslations } from 'next-intl';
 export default function RecentPosts({ posts }: RecentPostsProps) {
+  const t = useTranslations('PageIndex');
   return (
     <section>
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-        最近的文章
+        {t('sect1')}
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {posts.map((post) => (
