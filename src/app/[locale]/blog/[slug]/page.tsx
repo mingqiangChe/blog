@@ -5,7 +5,7 @@ import { extractHeadings } from '@/lib/extractHeadings';
 import TableOfContents from '@/components/TableOfContents';
 import Link from 'next/link';
 import MobileTableOfContents from '@/components/MobileTableOfContents';
-import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer'; // 直接导入，无 dynamic
+import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer';
 import Image from 'next/image';
 
 interface BlogPostPageProps {
@@ -24,17 +24,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // 提取标题用于目录
   const headings = extractHeadings(post.content);
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 mt-32 bg-red"  >
+    <div
+      className="mx-auto px-4 py-8 pt-36 pl-12"
+      style={{ backgroundColor: '#786048' }}
+    >
       <div className="grid relative grid-cols-1 lg:grid-cols-4 gap-8">
         {/* 主要内容 */}
         <div className="lg:col-span-3">
-          <article className="prose prose-lg max-w-none dark:prose-invert">
+          <article className="prose prose-lg max-w-none" style={{ color: '#F8F6F2' }}>
             <header className="mb-8">
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
                 {post.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm  white:text-gray-400 mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: '#CFC6B8' }}>
                 <time>
                   {new Date(post.date).toLocaleDateString(locale, {
                     year: 'numeric',
@@ -74,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
 
               {post.description && (
-                <p className="text-lg text-white-600 white:text-white-400 italic border-l-4 border-blue-500 pl-4 mb-6">
+                <p className="text-lg italic border-l-4 border-blue-500 pl-4 mb-6" style={{ color: '#D6CFC2' }}>
                   {post.description}
                 </p>
               )}
@@ -83,7 +86,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </header>
 
             {post.cover && (
-              <div className="mb-8 flex justify-center">
+              <div className="mb-8 flex justify-center mb-36">
                 <div className="relative w-full" style={{ height: '400px' }}>
                   <Image
                     src={post.cover}
@@ -96,7 +99,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
 
             {/* 这里使用客户端组件渲染 Markdown 内容 */}
-            <ClientMarkdownRenderer content={post.content} />
+            <div style={{ color: '#F8F6F2' }}>
+              <ClientMarkdownRenderer content={post.content} />
+            </div>
 
             <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="flex justify-between items-center">

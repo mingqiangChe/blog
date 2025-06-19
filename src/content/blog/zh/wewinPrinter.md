@@ -243,9 +243,7 @@ function print_tag1001(Texts) {
 
 ## 封装XML打印体
 
-`
-
-```
+````
 // 里面标明使用1001模板
 export default    function generatePrintXML(dataList) {
     var xml = '<Data>';
