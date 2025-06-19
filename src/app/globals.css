@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
-/* globals.css */
 
 /* Tailwind 基础导入 */
 
@@ -17,7 +16,6 @@
   --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Fira Code', monospace;
 }
-
 /* 深色模式变量 */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -48,7 +46,8 @@ h3[id],
 h4[id],
 h5[id],
 h6[id] {
-  scroll-margin-top: 5rem; /* 根据你的固定头部高度调整 */
+  scroll-margin-top: 5rem;
+  /* 根据你的固定头部高度调整 */
   /* 使用 Tailwind apply 也可以：
   @apply scroll-mt-20;
   */
@@ -77,6 +76,7 @@ h6[id] {
   scrollbar-width: thin;
   scrollbar-color: #c1c1c1 #f1f1f1;
 }
+
 /*背景处理 其他在各自module.css*/
 /* 桌面端 */
 .home-bg {
@@ -95,5 +95,41 @@ h6[id] {
     background-attachment: scroll;
     background-image: none;
     background-color: #161e31;
+  }
+}
+
+/* 滚动条 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* 全局滚动条样式 */
+  ::-webkit-scrollbar {
+    @apply w-2;
+    /* 宽度 */
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+    /* 滚动条轨道颜色 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-lg;
+    /* 滚动条滑块颜色和圆角 */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+    /* 滑块悬停颜色 */
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #9ca3af #f3f4f6;
+    /* thumb color track color */
   }
 }

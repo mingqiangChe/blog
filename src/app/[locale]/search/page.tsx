@@ -244,6 +244,26 @@ const navData: NavGroup[] = [
         desc: '全网热点',
       },
     ],
+  },  {
+    group: '社区',
+    items: [
+      {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: '少数派',
+        url: 'https://sspai.com/',
+        desc: '社区 消息',
+      },  {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'classcentral',
+        url: 'https://www.classcentral.com/?utm_source=gapis.money',
+        desc: '学习 证书 外国大学',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'discord',
+        url: 'https://discord.com/channels/662267976984297473/952771221915840552',
+        desc: '聊天室',
+      },
+    ],
   },
 
   {
@@ -275,30 +295,7 @@ const navData: NavGroup[] = [
       },
     ],
   },
-  {
-    group: '社区',
-    items: [
-      {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
-        title: '少数派',
-        url: 'https://sspai.com/',
-        desc: '社区 消息',
-      },  {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
-        title: 'classcentral',
-        url: 'https://www.classcentral.com/?utm_source=gapis.money',
-        desc: '学习 证书 外国大学',
-      }, {
-        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
-        title: 'discord',
-        url: 'https://discord.com/channels/662267976984297473/952771221915840552',
-        desc: '聊天室',
-      },
-  
-      
-    ],
-  },
-  
+
   {
     group: '小小工具',
     items: [
@@ -333,10 +330,12 @@ const navData: NavGroup[] = [
         title: 'mac 软件',
         url: 'https://www.mac618.com/',
         desc: 'mac电脑破解软件',
+      }, {
+        icon: 'https://www.nikon-asia.com/media/logo/websites/17/Symbol_100x100mm.jpg',
+        title: 'md在线样式编辑复制',
+        url: 'https://markdown.lovejade.cn/',
+        desc: 'md文件在线编辑 在线查看md样式 方便复制',
       },
-
-
-
     ],
   },
 
