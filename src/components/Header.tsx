@@ -16,60 +16,34 @@ export default function Header({ locale, posts }: HeaderProps) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [bgAlpha, setBgAlpha] = useState(0);
 
   const navigationItems = [
-    {
-      key: 'blog',
-      href: `/${locale}/blog`,
-      label: locale === 'zh' ? '博客' : 'Blog',
-    },
-    {
-      key: 'search',
-      href: `/${locale}/search`,
-      label: locale === 'zh' ? '工具' : 'Search',
-    },
-    {
-      key: 'album',
-      href: `/${locale}/album`,
-      label: locale === 'zh' ? '摄影' : 'Album',
-    },
-    {
-      key: 'milestone',
-      href: `/${locale}/milestone`,
-      label: locale === 'zh' ? '里程碑' : 'Milestone',
-    },
-    {
-      key: 'about',
-      href: `/${locale}/about`,
-      label: locale === 'zh' ? '关于我' : 'About',
-    },
+    { key: 'blog', href: `/${locale}/blog`, label: locale === 'zh' ? '博客' : 'Blog' },
+    { key: 'search', href: `/${locale}/search`, label: locale === 'zh' ? '工具' : 'Search' },
+    { key: 'album', href: `/${locale}/album`, label: locale === 'zh' ? '摄影' : 'Album' },
+    { key: 'milestone', href: `/${locale}/milestone`, label: locale === 'zh' ? '里程碑' : 'Milestone' },
+    { key: 'about', href: `/${locale}/about`, label: locale === 'zh' ? '关于我' : 'About' },
   ];
 
   const locales = ['zh', 'en'];
 
-  // 去除路径开头的语言前缀（如果有）
   function stripLocale(path: string) {
-    for (const locale of locales) {
-      if (path.startsWith(`/${locale}/`) || path === `/${locale}`) {
-        return path.replace(`/${locale}`, '') || '/';
+    for (const loc of locales) {
+      if (path.startsWith(`/${loc}/`) || path === `/${loc}`) {
+        return path.replace(`/${loc}`, '') || '/';
       }
     }
     return path;
   }
-  
+
   const normalizedPathname = stripLocale(pathname);
-  
   const isActiveRoute = (href: string) => {
     const normalizedHref = stripLocale(href);
     return normalizedPathname === normalizedHref || normalizedPathname.startsWith(normalizedHref + '/');
   };
-  
-
-  const [mounted, setMounted] = useState(false);
-  const [bgAlpha, setBgAlpha] = useState(0);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const maxScroll = 60;
@@ -89,111 +63,98 @@ export default function Header({ locale, posts }: HeaderProps) {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [showSearch]);
 
-  if (!mounted) return null;
-
   return (
     <>
       <header
-        className="fixed top-0 left-0 w-full h-16 text-white transition-colors duration-300 z-50"
-        style={{ backgroundColor: `rgba(32, 41, 58, ${bgAlpha})` }}
+        className="fixed top-0 left-0 w-full h-16 z-50 backdrop-blur-md border-b border-blue-600 transition-colors duration-300"
+        style={{ backgroundColor: `rgba(10, 14, 30, ${0.6 + 0.4 * bgAlpha})` }}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link
-              href={`/${locale}`}
-              className="flex items-center space-x-2 text-xl font-bold text-white"
-            >
-              <span>{locale === 'zh' ? '车车' : 'Thomas Che Blog'}</span>
-            </Link>
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+          <Link
+            href={`/${locale}`}
+            className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent select-none"
+          >
+            {locale === 'zh' ? '车车' : 'Thomas Che Blog'}
+          </Link>
 
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors text-white ${
-                      isActiveRoute(item.href) ? 'border-b-2 border-white' : ''
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <LanguageSwitcher currentLocale={locale} />
-              <button
-                className="p-2 rounded-full hover:bg-slate-700 transition"
-                onClick={() => setShowSearch(true)}
-                aria-label="搜索"
+          {/* PC端导航 */}
+          <div className="hidden md:flex space-x-10">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`relative px-3 py-2 font-semibold text-white transition-all rounded-md cursor-pointer select-none
+                  ${
+                    isActiveRoute(item.href)
+                      ? 'bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_15px_rgba(14,165,233,0.7)]'
+                      : 'hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(14,165,233,0.5)]'
+                  }
+                `}
               >
-                <FiSearch className="w-6 h-6" />
-              </button>
-              <button
-                className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                <span className="sr-only">打开主菜单</span>
-                {!isMenuOpen ? (
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                {item.label}
+                {isActiveRoute(item.href) && (
+                  <span className="absolute bottom-0 left-0 right-0 h-1 bg-cyan-400 rounded-full animate-pulse" />
                 )}
-              </button>
-            </div>
+              </Link>
+            ))}
           </div>
 
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center space-x-3 px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                      isActiveRoute(item.href)
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'text-gray-700 hover:text-blue-900 hover:bg-gray-100'
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* 右侧操作区 */}
+          <div className="flex items-center space-x-4">
+            <LanguageSwitcher currentLocale={locale} />
+
+            <button
+              onClick={() => setShowSearch(true)}
+              aria-label="搜索"
+              className="p-2 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              <FiSearch className="w-6 h-6 text-white" />
+            </button>
+
+            {/* 移动端菜单按钮 */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="打开主菜单"
+              className="md:hidden p-2 rounded-md text-white hover:bg-blue-700 transition-colors"
+            >
+              {!isMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
         </nav>
+
+        {/* 移动端菜单 */}
+        {isMenuOpen && (
+          <div className="md:hidden fixed top-16 left-0 right-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900/95 backdrop-blur-xl border-t border-blue-700/50 shadow-lg rounded-b-3xl p-4 space-y-3 z-40">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-5 py-3 rounded-xl text-lg font-semibold transition-colors cursor-pointer select-none
+                  ${
+                    isActiveRoute(item.href)
+                      ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-[0_0_15px_rgba(14,165,233,0.7)]'
+                      : 'text-gray-300 hover:text-white hover:bg-blue-800/60 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)]'
+                  }
+                `}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </header>
-      {showSearch && (
-        <BlogSearchModal posts={posts} onClose={() => setShowSearch(false)} />
-      )}
+
+      {/* 搜索弹窗 */}
+      {showSearch && <BlogSearchModal posts={posts} onClose={() => setShowSearch(false)} />}
     </>
   );
 }
