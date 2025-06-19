@@ -7,7 +7,7 @@ const items = [
     {
         id: '1',
         title: '非自然死亡',
-        href: 'huangque',
+        href: 'unnaturalDeath',
         type: '电视剧',
         cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/p2554348811.webp',
         year: 2024,

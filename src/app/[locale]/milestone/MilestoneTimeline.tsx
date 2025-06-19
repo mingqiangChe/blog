@@ -1,121 +1,88 @@
-// MilestonePage.tsx
-import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-const milestonesData = [
-  {
-    section: '博客搭建',
-    items: [
-      {
-        dateEn: 'June 15, 2025',
-        dateCn: '2025 年 6 月 15 日',
-        title: 'next搭建博客网站',
-        description: (
-          <>
-            之前网站过于简陋
-            且风格不是很好。突然看到别人网站很舒服，就想搞一个。他们都介绍模版，我这边是借助ai然后一步步搞出来。
-          </>
-        ),
-        image:
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-      },
-    ],
-  },
-  {
-    section: '前端开发',
-    items: [
-      {
-        dateEn: 'June 1, 2020',
-        dateCn: '2020 年 6 月 1 日',
-        title: '前端开发',
-        description: `成为一名前端开发工程师`,
-        image:
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-      },
-    ],
-  },
-  {
-    section: '计算机生',
-    items: [
-      {
-        dateEn: 'September 1, 2017',
-        dateCn: '2017 年 9 月 1 日',
-        title: '理科生',
-        description: `计算机理科生 在这一年选择专科计算机放弃本科艺体生`,
-        image:
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-      },
-    ],
-  },
-  {
-    section: '艺体生',
-    items: [
-      {
-        dateEn: 'June 15, 2016',
-        dateCn: '2016 年 6 月 15 日',
-        title: '编导艺体生身份',
-        description: `编导艺体生 在这一年选择`,
-        image:
-          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-      },
-    ],
-  },
-];
+import { getAllPosts } from '@/lib/markdown';
+import FuturisticHistoryBg from './components/FuturisticHistoryBg'
 
-export default function MilestonePage() {
+function formatDateZh(dateStr: string) {
+  const d = new Date(dateStr);
+  return `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日`;
+}
+function formatDateEn(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+export default function MilestoneTimeline() {
+  // 只展示 isMilestone 的文章
+  const posts = getAllPosts('zh').filter(post => post.isMilestone !== false);
+
+  if (!posts.length) {
+    return <div className="text-center text-gray-500 py-20">暂无里程碑数据</div>;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-black py-16 px-6 pt-36">
-      <div className="max-w-5xl mx-auto bg-slate-900/40 backdrop-blur-lg rounded-3xl p-12 shadow-[0_0_30px_#4f46e5] border border-indigo-600/50">
-        <h1 className="text-6xl font-extrabold text-indigo-400 mb-20 text-center tracking-widest drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]">
-          里程碑
-        </h1>
-
-        {milestonesData.map(({ section, items }) => (
-          <section key={section} className="mb-24">
-            <h2 className="text-4xl font-semibold text-indigo-400 border-b-4 border-indigo-600 pb-4 mb-16 tracking-wide drop-shadow-[0_0_8px_rgba(99,102,241,0.7)]">
-              {section}
-            </h2>
-
-            <div className="relative border-l-4 border-gradient-to-b from-indigo-500 to-purple-600 pl-14 space-y-20">
-              {items.map(({ dateEn, dateCn, title, description, image }, idx) => (
-                <article
-                  key={idx}
-                  className="relative flex flex-col md:flex-row md:items-start md:space-x-12"
-                >
-                  {/* 时间点圆 */}
-                  <span className="absolute -left-9 top-3 w-8 h-8 bg-gradient-to-tr from-indigo-400 to-purple-600 rounded-full border-4 border-black shadow-[0_0_15px_#7c3aed] animate-pulse"></span>
-
-                  {/* 日期 */}
-                  <time className="text-indigo-300 font-semibold w-44 flex-shrink-0 mb-8 md:mb-0 md:text-right select-none tracking-wide">
-                    <div className="text-xl">{dateEn}</div>
-                    <div className="text-sm text-indigo-500">{dateCn}</div>
-                  </time>
-
-                  {/* 内容 */}
-                  <div className="flex-1 bg-black/40 backdrop-blur-md rounded-2xl p-8 shadow-[0_0_25px_#7c3aed] hover:shadow-[0_0_40px_#a78bfa] transition-shadow duration-500 cursor-pointer">
-                    <h3 className="text-3xl font-bold text-indigo-300 mb-6 tracking-tight drop-shadow-[0_0_6px_rgba(139,92,246,0.9)]">
-                      {title}
-                    </h3>
-                    <p className="text-indigo-200 mb-8 prose prose-indigo max-w-none">
-                      {description}
-                    </p>
-
-                    {image && (
-                      <Image
-                        src={image}
-                        alt={title}
-                        width={800}
-                        height={600}
-                        className="rounded-xl border border-indigo-700 shadow-lg max-w-full h-auto object-contain"
-                      />
-                    )}
-                  </div>
-                </article>
-              ))}
+  <FuturisticHistoryBg>
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-gray-200 py-12 px-4 pt-24">
+      <div className="max-w-3xl mx-auto">
+        {posts.map((post) => (
+          <section key={post.slug} className="relative mb-16">
+            {/* 时间线 */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 flex flex-col items-center">
+              <div className="w-2 h-2 bg-blue-400 rounded-full mt-6 mb-2"></div>
+              <div className="flex-1 w-1 bg-gradient-to-b from-blue-400 to-transparent"></div>
             </div>
+            {/* 标题和描述 */}
+            <h2 className="ml-12 text-2xl font-bold text-gray-700 mb-2">{post.title}</h2>
+            <div className="ml-12 text-gray-500 text-base mb-4 flex items-center">
+              {formatDateZh(post.date)}，{post.description}
+              <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{formatDateEn(post.date)}</span>
+            </div>
+            {/* 卡片（Link包裹） */}
+            <Link
+              href={`/zh/blog/${encodeURIComponent(post.slug)}`}
+              className="group ml-12 block relative rounded-3xl overflow-hidden bg-white/90 backdrop-blur-lg border border-cyan-300/30 shadow-lg hover:shadow-cyan-500/50 cursor-pointer transition-all duration-300"
+              style={{ width: '100%', minHeight: 200 }}
+            >
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                {/* 封面 */}
+                <div className="md:w-1/2 w-full">
+                  <div className="relative h-40 w-full rounded-xl overflow-hidden">
+                    <Image
+                      src={post.cover || 'https://img-blog.csdnimg.cn/20240203151657916.png'}
+                      alt={post.title}
+                      fill
+                      className="rounded-xl object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm"
+                      draggable={false}
+                      priority
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-white text-lg font-semibold bg-blue-600/80 px-4 py-1 rounded-full">
+                        《{post.title}》
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {/* 信息浮现层 */}
+                <div className="md:w-1/2 w-full flex flex-col justify-center py-4 px-2">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {post.tags?.map((tag) => (
+                      <span key={tag} className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="text-xs text-gray-400 mb-1">
+                    {post.author} · {formatDateEn(post.date)} · {post.readingTime}分钟 · {post.content.length}字
+                  </div>
+                  {/* 内容超出自动隐藏 */}
+                  {/* <div className="text-gray-700 text-sm line-clamp-2">{post.content}</div> */}
+                </div>
+              </div>
+              {/* 发光边框 */}
+              <span className="pointer-events-none absolute inset-0 rounded-3xl ring-2 ring-cyan-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </Link>
           </section>
         ))}
       </div>
     </div>
+  </FuturisticHistoryBg>
   );
 }
-

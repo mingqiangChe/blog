@@ -16,6 +16,7 @@ export interface BlogPost {
   author?: string; // 可选：作者信息
   readingTime?: number; // 可选：阅读时间
   cover?: string; // 添加封面图片字段
+  isMilestone?: boolean; // 是否是里程碑
 }
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
@@ -128,6 +129,7 @@ export function getAllPosts(locale: string): BlogPost[] {
             author: matterResult.data.author || '',
             readingTime,
             cover: matterResult.data.cover || '',
+            isMilestone: matterResult.data.isMilestone === true || matterResult.data.isMilestone === 'true', // 支持字符串/布尔
           } as BlogPost;
 
           console.log(`✅ 成功处理文章:`, {
