@@ -21,6 +21,7 @@ export default function Header({ locale, posts }: HeaderProps) {
   const navigationItems = [
     { key: 'blog', href: `/${locale}/blog`, label: locale === 'zh' ? '博客' : 'Blog' },
     { key: 'search', href: `/${locale}/search`, label: locale === 'zh' ? '工具' : 'Search' },
+    { key: 'media', href: `/${locale}/media`, label: locale === 'zh' ? '书影剧' : 'media' },
     { key: 'album', href: `/${locale}/album`, label: locale === 'zh' ? '摄影' : 'Album' },
     { key: 'milestone', href: `/${locale}/milestone`, label: locale === 'zh' ? '里程碑' : 'Milestone' },
     { key: 'about', href: `/${locale}/about`, label: locale === 'zh' ? '关于我' : 'About' },

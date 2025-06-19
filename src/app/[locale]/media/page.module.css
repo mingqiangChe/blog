@@ -1,0 +1,8 @@
+/* 卡片浮现动画和未来感边框（如需补充） */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
