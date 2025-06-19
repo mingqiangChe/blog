@@ -17,7 +17,6 @@ export default function BlogSearchModal({
 }: BlogSearchModalProps) {
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  console.log('传入的文章列表 posts:', posts);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -53,7 +52,11 @@ export default function BlogSearchModal({
     <div className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/40 backdrop-blur-sm">
       <div
         ref={modalRef}
-        className="w-full max-w-2xl mt-8 sm:mt-24 mx-auto rounded-2xl bg-slate-900/90 backdrop-blur-lg shadow-2xl p-6 relative border border-slate-700 max-h-[90vh] flex flex-col"
+        className="
+          w-full max-w-2xl mt-8 sm:mt-24 mx-auto rounded-2xl 
+          bg-slate-900/90 backdrop-blur-lg shadow-2xl p-6 relative border border-slate-700 
+          max-h-[90vh] flex flex-col overflow-x-hidden
+        "
         style={{ minHeight: '300px' }}
       >
         <button
@@ -69,17 +72,24 @@ export default function BlogSearchModal({
           <input
             ref={inputRef}
             value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              console.log('当前搜索关键词:', e.target.value);
-            }}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder="输入关键词搜索文章…"
             className="flex-1 bg-transparent outline-none text-white placeholder-slate-400 text-lg"
             style={{ minWidth: 0 }}
           />
         </div>
 
-        <div className="flex-1 overflow-y-auto space-y-3 pb-2">
+        <div
+          className="
+            flex-1 overflow-y-auto overflow-x-hidden space-y-3 pb-2
+            scrollbar-thin
+            scrollbar-thumb-rounded-full
+            scrollbar-thumb-cyan-400/70
+            scrollbar-track-transparent
+            hover:scrollbar-thumb-cyan-300/90
+            transition-all
+          "
+        >
           {results.length === 0 && (
             <div className="text-slate-400 text-center py-10">
               没有找到相关内容
@@ -90,14 +100,17 @@ export default function BlogSearchModal({
               key={post.slug}
               href={`/blog/${post.slug}`}
               onClick={onClose}
-              className="block rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 transition hover:scale-105 hover:shadow-2xl flex flex-col p-4"
+              className="
+                block rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 
+                transition hover:scale-105 hover:shadow-2xl flex flex-col p-4
+              "
             >
               <div className="relative h-36 w-full overflow-hidden rounded-lg mb-3">
                 <Image
                   src={post.cover || '/default-cover.jpg'}
                   alt={post.title}
                   fill
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full max-w-full"
                   loading="lazy"
                 />
               </div>
