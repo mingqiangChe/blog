@@ -4,7 +4,17 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { navData } from './tools';
 
-function CategorySelector({ groups, selectedGroup, onSelectGroup }) {
+interface Group {
+  group: string;
+}
+
+// 定义组件 props 类型
+interface CategorySelectorProps {
+  groups: Group[];
+  selectedGroup: string;
+  onSelectGroup: (group: string) => void;
+}
+function CategorySelector({ groups, selectedGroup, onSelectGroup }: CategorySelectorProps) {
   return (
     <select
       value={selectedGroup}
