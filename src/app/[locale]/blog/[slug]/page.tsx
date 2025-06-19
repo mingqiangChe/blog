@@ -117,11 +117,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* 目录导航 */}
           <div className="hidden lg:block">
             <div className="sticky top-24 z-50">
-              <div className="rounded-xl bg-white/10 backdrop-blur border border-cyan-400/20 p-4 shadow-lg">
+              <div
+                className="rounded-xl bg-white/10 backdrop-blur border border-cyan-400/20 p-4 shadow-lg h-[500px] overflow-y-auto scrollbar scrollbar-thumb-cyan-400 scrollbar-track-white/10"
+                style={{ scrollbarWidth: 'thin' }} // Firefox 支持
+              >
                 <TableOfContents headings={headings} />
               </div>
             </div>
           </div>
+
         </div>
         {/* 可选：页面角落加个发光霓虹球/粒子动效等 */}
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-2xl pointer-events-none"></div>

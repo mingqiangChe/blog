@@ -61,7 +61,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="sticky top-22 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4">
+    <nav className="">
       <div className="border-l-2 border-gray-200 pl-4">
         <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
           目录
