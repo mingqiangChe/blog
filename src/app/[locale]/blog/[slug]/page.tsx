@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="hidden lg:block">
             <div className="sticky top-24 z-50">
               <div
-                className="rounded-xl bg-white/10 backdrop-blur border border-cyan-400/20 p-4 shadow-lg h-[500px] overflow-y-auto scrollbar scrollbar-thumb-cyan-400 scrollbar-track-white/10"
+                className="rounded-xl bg-white/10 backdrop-blur border border-cyan-400/20 p-4 shadow-lg h-[800px] overflow-y-auto scrollbar scrollbar-thumb-cyan-400 scrollbar-track-white/10"
                 style={{ scrollbarWidth: 'thin' }} // Firefox 支持
               >
                 <TableOfContents headings={headings} />
