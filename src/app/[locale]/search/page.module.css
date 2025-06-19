@@ -85,7 +85,7 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  padding: 0 96px;
+  padding: 36px 96px 128px;
 }
 
 /* 搜索框和下拉框 */
