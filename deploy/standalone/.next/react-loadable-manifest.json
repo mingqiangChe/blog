@@ -1883,7 +1883,7 @@
     "id": 75997,
     "files": []
   },
-  "app/[locale]/album/page.tsx -> ./components/ClientLightbox": {
+  "app/[locale]/album/components/PhotoGalleryClient.tsx -> ./ClientLightbox": {
     "id": 53459,
     "files": [
       "static/css/57cae671176964c8.css",

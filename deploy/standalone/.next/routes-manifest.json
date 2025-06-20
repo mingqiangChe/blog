@@ -65,6 +65,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/[locale]/media",
+      "regex": "^/([^/]+?)/media(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/media(?:/)?$"
+    },
+    {
       "page": "/[locale]/milestone",
       "regex": "^/([^/]+?)/milestone(?:/)?$",
       "routeKeys": {

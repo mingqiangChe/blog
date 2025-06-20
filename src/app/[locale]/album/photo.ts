@@ -25,30 +25,16 @@ export const photos: Photo[] = [
     desc: '暂时无',
     tip: '洱海环行',
   },
-  // {
-  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04443.jpg',
-  //   desc: '暂时无',
-  //   tip: '洱海环行',
-  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04442.jpg',
     desc: '暂时无',
     tip: '洱海环行',
   },
-  // {
-  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04441.jpg',
-  //   desc: '暂时无',
-  //   tip: '洱海环行',
-  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04459.jpg',
     desc: '暂时无',
     tip: '洱海环行',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg',
-    desc: '8778',
-    tip: '洱海环行',
-  },
+
   // ...更多图片
 ];

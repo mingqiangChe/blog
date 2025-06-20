@@ -23,7 +23,7 @@ export default function InkClouds() {
         cloudColor1: [30, 50, 60],
         cloudColor2: [220, 230, 240],
         backgroundColor: [255, 255, 255],
-      });
+      } as any);
     }
 
     loadKlouds();
