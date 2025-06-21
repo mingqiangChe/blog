@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'chemingqiang.oss-cn-shenzhen.aliyuncs.com',
+        port: '',
+        pathname: '/bag_1/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
