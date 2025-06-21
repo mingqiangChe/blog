@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
-
 /* Tailwind 基础导入 */
 
 /* 引入 Tailwind Typography 插件的样式（如果需要） */

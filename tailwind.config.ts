@@ -1,31 +1,18 @@
-// 配置Tailwind CSS支持暗黑模式
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,jsx,ts,tsx,html}',
+    './src/**/*.{js,jsx,ts,tsx,html,css}',
   ],
-  darkMode: 'selector', // 手动切换模式
+  darkMode: 'class',
   theme: {
-    extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: 'none',
-            color: 'inherit',
-            a: {
-              color: 'inherit',
-              textDecoration: 'underline',
-              fontWeight: 'normal',
-            },
-          },
-        },
-      },
-    },
+    extend: {},
   },
-  plugins: [require('tailwind-scrollbar'), require('@tailwindcss/typography')],
+  plugins: [typography, require('tailwind-scrollbar')],
 };
+
 export default config;

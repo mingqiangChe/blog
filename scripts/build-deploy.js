@@ -41,7 +41,7 @@ async function buildDeploy() {
       console.log(`⚠️ 未找到: ${publicSrc}`);
     }
 
-    // 复制可选和根部 package.json
+    // 复制可选配置文件到 deploy 根目录
     const optionalFiles = [
       'next.config.js',
       'next.config.mjs',
@@ -59,7 +59,7 @@ async function buildDeploy() {
       }
     }
 
-    // 创建简化的 package.json（只包含生产依赖和 start 脚本）
+    // 创建简化的 package.json（只包含生产依赖）
     const originalPackage = await fs.readJson('package.json');
     const deployPackage = {
       name: originalPackage.name,
@@ -69,9 +69,8 @@ async function buildDeploy() {
       },
       dependencies: originalPackage.dependencies || {},
     };
-    await fs.writeJson(path.join(deployDir, 'package.json'), deployPackage, {
-      spaces: 2,
-    });
+    const packageJsonPath = path.join(deployDir, 'package.json');
+    await fs.writeJson(packageJsonPath, deployPackage, { spaces: 2 });
 
     console.log('🎉 部署文件准备完成！');
     console.log(`📁 部署文件位置: ${path.resolve(deployDir)}`);
