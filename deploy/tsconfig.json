@@ -12,8 +12,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "jsx": "preserve", // 或者 "react"
-    "types": ["react", "node"], // 确保包含 react
+    "jsx": "preserve",
+    "types": ["react", "node"],
     "plugins": [
       {
         "name": "next"

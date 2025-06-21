@@ -99,8 +99,7 @@ export default function PhotoGalleryClient() {
           photos={filteredPhotos}
           currentIdx={lightboxIdx}
           onClose={() => setLightboxIdx(null)}
-          onPrev={handlePrev}
-          onNext={handleNext}
+          onChangeIndex={setLightboxIdx}
         />
       )}
       <ScrollToTopButton />

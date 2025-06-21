@@ -95,7 +95,7 @@ export default function BookMovieGallery() {
               <div className="flex flex-wrap gap-2 mt-3 items-center">
                 {item.rating && (
                   <span className="text-yellow-400 font-semibold text-sm drop-shadow-lg">
-                    ★ {item.rating}
+                    ★ {item.rating.valueOf()}
                   </span>
                 )}
                 {item.tags?.map((tag) => (

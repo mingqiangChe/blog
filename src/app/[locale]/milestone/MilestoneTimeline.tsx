@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts } from '@/lib/markdown';
-import FuturisticHistoryBg from './components/FuturisticHistoryBg'
+import FuturisticHistoryBg from './components/FuturisticHistoryBg';
 
 function formatDateZh(dateStr: string) {
   const d = new Date(dateStr);
@@ -9,15 +9,21 @@ function formatDateZh(dateStr: string) {
 }
 function formatDateEn(dateStr: string) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 }
 
 export default function MilestoneTimeline() {
   // 只展示 isMilestone 的文章
-  const posts = getAllPosts('zh').filter(post => post.isMilestone !== false);
+  const posts = getAllPosts('zh').filter((post) => post.isMilestone !== false);
 
   if (!posts.length) {
-    return <div className="text-center text-gray-500 py-20">暂无里程碑数据</div>;
+    return (
+      <div className="text-center text-gray-500 py-20">暂无里程碑数据</div>
+    );
   }
 
   return (
@@ -32,10 +38,14 @@ export default function MilestoneTimeline() {
                 <div className="flex-1 w-1 bg-gradient-to-b from-blue-400 to-transparent"></div>
               </div>
               {/* 标题和描述 */}
-              <h2 className="ml-12 text-2xl font-bold text-gray-700 mb-2">{post.title}</h2>
+              <h2 className="ml-12 text-2xl font-bold text-gray-700 mb-2">
+                {post.title}
+              </h2>
               <div className="ml-12 text-gray-500 text-base mb-4 flex items-center">
                 {formatDateZh(post.date)}，{post.description}
-                <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{formatDateEn(post.date)}</span>
+                <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                  {formatDateEn(post.date)}
+                </span>
               </div>
               {/* 卡片（Link包裹） */}
               <Link
@@ -48,7 +58,10 @@ export default function MilestoneTimeline() {
                   <div className="md:w-1/2 w-full">
                     <div className="relative h-40 w-full rounded-xl overflow-hidden">
                       <Image
-                        src={post.cover || 'https://img-blog.csdnimg.cn/20240203151657916.png'}
+                        src={
+                          post.cover ||
+                          'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
+                        }
                         alt={post.title}
                         fill
                         className="rounded-xl object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm"
@@ -66,11 +79,23 @@ export default function MilestoneTimeline() {
                   <div className="md:w-1/2 w-full flex flex-col justify-center py-4 px-2">
                     <div className="flex flex-wrap gap-2 mb-2">
                       {post.tags?.map((tag) => (
-                        <span key={tag} className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">{tag}</span>
+                        <span
+                          key={tag}
+                          className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
                       ))}
                     </div>
                     <div className="text-xs text-gray-400 mb-1">
-                      {post.author} · {formatDateEn(post.date)} · {post.readingTime}分钟 · {post.content.length}字
+                      {post.author} · {formatDateEn(post.date)} · {post.author}{' '}
+                      · {formatDateEn(post.date)} ·
+                      {typeof post.readingTime === 'number'
+                        ? `${post.readingTime}分钟 · `
+                        : ''}
+                      {typeof post.content === 'string'
+                        ? `${post.content.length}字`
+                        : ''}
                     </div>
                     {/* 内容超出自动隐藏 */}
                     {/* <div className="text-gray-700 text-sm line-clamp-2">{post.content}</div> */}

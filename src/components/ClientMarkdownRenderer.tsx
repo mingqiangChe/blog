@@ -2,23 +2,17 @@
 
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw'; // 新增
 import Image from 'next/image';
 import CodeBlock from './CodeBlock';
 
-// 生成稳定 id 的函数
 const generateId = (text: string) =>
   text
     .toLowerCase()
     .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-type HeadingProps = {
-  children?: React.ReactNode;
-  [key: string]: any;
-};
-
-// Heading 组件工厂，不使用 JSX，改用 React.createElement
-const Heading = (Tag: keyof HTMLElementTagNameMap) => (props: HeadingProps) => {
+const Heading = (Tag: keyof HTMLElementTagNameMap) => (props: any) => {
   const { children, ...rest } = props;
   const text = Array.isArray(children)
     ? children.join('')
@@ -27,14 +21,11 @@ const Heading = (Tag: keyof HTMLElementTagNameMap) => (props: HeadingProps) => {
   return React.createElement(Tag, { id, ...rest }, children);
 };
 
-type ClientMarkdownRendererProps = {
-  content: string;
-};
-
 export default function ClientMarkdownRenderer({
   content,
-}: ClientMarkdownRendererProps) {
-  // 自定义 ReactMarkdown 渲染组件映射，img 也用 React.createElement 包装
+}: {
+  content: string;
+}) {
   const components = {
     code: CodeBlock,
     h1: Heading('h1'),
@@ -52,7 +43,6 @@ export default function ClientMarkdownRenderer({
       const safeWidth = Number(width) || 800;
       const safeHeight = Number(height) || 600;
 
-      // 注意：next/image 组件仍然是 React 组件，这里用 React.createElement 调用
       return React.createElement(Image, {
         src: imageSrc,
         alt: alt || '图片',
@@ -65,5 +55,9 @@ export default function ClientMarkdownRenderer({
     },
   };
 
-  return React.createElement(ReactMarkdown, { components }, content);
+  return (
+    <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]}>
+      {content}
+    </ReactMarkdown>
+  );
 }

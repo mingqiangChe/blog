@@ -1,33 +1,42 @@
-'use client';
-import React from 'react';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
-import type { Photo } from '../photo';
+import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
+
+interface Photo {
+  url: string;
+  desc: string;
+  tip: string;
+}
 
 interface ClientLightboxProps {
   photos: Photo[];
   currentIdx: number;
   onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
+  onChangeIndex: (index: number) => void;
 }
 
 const ClientLightbox: React.FC<ClientLightboxProps> = ({
   photos,
   currentIdx,
   onClose,
-  onPrev,
-  onNext,
-}) => (
-  <Lightbox
-    mainSrc={photos[currentIdx].url}
-    nextSrc={photos[(currentIdx + 1) % photos.length].url}
-    prevSrc={photos[(currentIdx + photos.length - 1) % photos.length].url}
-    onCloseRequest={onClose}
-    onMovePrevRequest={onPrev}
-    onMoveNextRequest={onNext}
-    imageCaption={photos[currentIdx].desc}
-  />
-);
+  onChangeIndex,
+}) => {
+  return (
+    <Lightbox
+      open={true}
+      slides={photos.map((p) => ({
+        src: p.url,
+        description: p.desc,
+        title: p.tip,
+      }))}
+      index={currentIdx}
+      close={onClose}
+      onSlideChange={onChangeIndex}
+      plugins={[Zoom, Captions]}
+    />
+  );
+};
 
 export default ClientLightbox;

@@ -7,20 +7,15 @@ author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/432368739_1369650111097904_677170420998236901_n.jpg'
 ---
 
-
-
-# WeWin打印机使用
+# WeWin 打印机使用
 
 1. 先按插件 [官网文档](https://soft-makeid.yuque.com/wwprint/api) 上面有
-2. 跑官网上demo测试打印机联通
-3. 根据打印内容设计打印模板建议以下步骤：1、code文件设置模板预览代码 可写死数据 2、在浏览器调用看是否调起 2、再设计代码打印模板 也就是浏览器调起后选择打印会出现的预览界面 也就是打印界面（如果未出现建议调整参数 我也是这么过来的~）
+2. 跑官网上 demo 测试打印机联通
+3. 根据打印内容设计打印模板建议以下步骤：1、code 文件设置模板预览代码 可写死数据 2、在浏览器调用看是否调起 2、再设计代码打印模板 也就是浏览器调起后选择打印会出现的预览界面 也就是打印界面（如果未出现建议调整参数 我也是这么过来的~）
 
+## code 文件配置设置
 
-
-## code文件配置设置
-
-
-````
+```
 /**
  * 导出版本：v1.0
  * 导出时间：6/29/2021, 8:57:28 AM
@@ -171,19 +166,18 @@ function print_tag1001(Texts) {
     var selValue = wps.GetLabelName();
 
     var label = new wps.Label();
-    label.labelWidth = 100;   // 标签宽度
-    label.labelHeight = 70;   // 标签高度
+    label.labelWidth = 100   // 标签高度
+    label.labelHeight = 80;   // 标签宽度
     label.rotate = wps.rotate.rotate90; // 横向打印
-
     if (selValue == 0) {
         wps.StartTag(label);
-        var leftX = 6;        // 左侧字段名X坐标，整体向中间偏移
-        var rightX = 30;       // 右侧字段值X坐标，整体向中间偏移
+        var leftX = 2;        // 左侧字段名X坐标，整体向中间偏移
+        var rightX = 24;       // 右侧字段值X坐标，整体向中间偏移
         var startY = 0;       // 起始Y坐标
-        var lineGap = 8;      // 行间距
-        var fontSize = 4.2;    // 字体大小
+        var lineGap = 9;      // 行间距
+        var fontSize = 4;    // 字体大小
         var underlineLength = 24; // 下划线长度
-        var labelWidth=30;
+        var labelWidth = 33;
 
         for (var idx = 0; idx < Texts.length; idx++) {
             var text = Texts[idx] || "";
@@ -193,78 +187,113 @@ function print_tag1001(Texts) {
 
             var y = startY + idx * lineGap;
 
-            // 左侧字段名，右对齐
+            // 左侧字段名，写死宽度和位置
             var leftText = new wps.TextBlock();
             leftText.str = [fieldLabel];
-            leftText.x = leftX;
+            leftText.x = leftX;           // 固定左侧X坐标
             leftText.y = y;
-            leftText.fontHeight = fontSize;
-            leftText.printWidth = labelWidth;   // 控制右对齐区域宽度 38
+            leftText.fontName = "Courier New";
+            leftText.fontWeight = 200;
+            leftText.fontHeight = fontSize; // 固定字体大小
+            leftText.printWidth = 38;  // 固定区域宽度
             leftText.maxH = 16.0;
             leftText.xoffset = 0.25;
             leftText.loffset = 0.13;
             leftText.rotate = wps.rotate.rotate0;
-            leftText.horizontal = wps.horizontal.left; // 左对齐
+            leftText.horizontal = wps.horizontal.left;
             leftText.vertical = wps.vertical.center;
             wps.PrintText(leftText);
 
-            // 右侧字段值，左对齐
+            // 右侧字段值，写死宽度和位置
             var rightText = new wps.TextBlock();
             rightText.str = [fieldValue];
-            rightText.x = rightX;
+            rightText.x = rightX;          // 固定右侧X坐标
             rightText.y = y;
+            rightText.fontName = "Courier New";
+            leftText.fontWeight = 200;
             rightText.fontHeight = fontSize;
-            rightText.printWidth = underlineLength;
+            rightText.printWidth = 120; // 固定宽度，避免撑开
             rightText.maxH = 16.0;
             rightText.xoffset = 0.25;
             rightText.loffset = 0.13;
             rightText.rotate = wps.rotate.rotate0;
-            rightText.horizontal = wps.horizontal.left; // 左对齐
+            rightText.horizontal = wps.horizontal.left;
             rightText.vertical = wps.vertical.center;
             wps.PrintText(rightText);
 
-            // 右侧字段值下方画下划线
-            var underlineStr = "_________________________";
+            // 右侧下划线，写死宽度和位置
+            var underlineStr = "__________________________________";
             var underlineText = new wps.TextBlock();
             underlineText.str = [underlineStr];
             underlineText.x = rightX;
-            underlineText.y = y + fontSize + 2;
-            underlineText.fontHeight = fontSize - 1;
-            underlineText.printWidth = underlineLength ;
+            underlineText.y = y + 7;
+            underlineText.fontHeight = 3.0;
+            underlineText.printWidth = 60;
             underlineText.horizontal = wps.horizontal.left;
             underlineText.vertical = wps.vertical.center;
+            underlineText.rotate = wps.rotate.rotate0;
             wps.PrintText(underlineText);
         }
-
         wps.EndTag();
     }
 }
-````
+```
 
-## 封装XML打印体
+## 封装 XML 打印体
 
-````
+```
 // 里面标明使用1001模板
-export default    function generatePrintXML(dataList) {
+function safeText(value) {
+    return value === '' ? '无' : value;
+}
+
+export default function generatePrintXML(dataList) {
     var xml = '<Data>';
     for (var i = 0; i < dataList.length; i++) {
         var data = dataList[i];
         xml += '<Print><EntityTypeId>1001</EntityTypeId>';
-        if (data.name) xml += '<Text>设备名称:' + data.name + '</Text>';
-        if (data.remark) xml += '<Text>备注:' + data.remark + '</Text>';
+        if (data.name != null) {
+            xml += '<Text>' + distributeLabel('设备名称') + ':' + safeText(data.name) + '</Text>';
+        }
+        if (data.remark != null) {
+            xml += '<Text>' + distributeLabel('备注') + ':' + safeText(data.remark) + '</Text>';
+        }
         xml += '</Print>';
     }
     xml += '</Data>';
     return xml;
 }
-````
+function distributeLabel(label, maxLen = 5) {
+    const chars = label.split('');
+    const count = chars.length;
+    if (count >= maxLen) return label; // 5字及以上不处理
+
+    // 计算每个字应该插入的位置
+    // 例如2字：[0, 4]，3字：[0, 2, 4]，4字：[0, 1, 3, 4]
+    let positions = [];
+    if (count === 1) {
+        positions = [2]; // 居中
+    } else {
+        for (let i = 0; i < count; i++) {
+            // 均匀分布到maxLen-1区间
+            positions.push(Math.round(i * (maxLen - 1) / (count - 1)));
+        }
+    }
+
+    let arr = new Array(maxLen).fill('\u3000'); // 全角空格
+    positions.forEach((pos, idx) => {
+        arr[pos] = chars[idx];
+    });
+    return arr.join('');
+}
+
+```
 
 ## 页面调用 支持批量
 
-
 根据对象长度决定打印个数
 
-````
+```
             var dataList = [
                 {
                     name: "设备A",
@@ -275,20 +304,28 @@ export default    function generatePrintXML(dataList) {
                     remark: "备注2"
                 }
             ];
-            
+
 checkAndPrint(dataList)
 
-function checkAndPrint(data) {
-	console.log([data], '标签打印数据');
-	const printXML = generatePrintXML(data)
+function checkAndPrint(dataList) {
+	console.log('标签打印数据:', dataList);
+	if (!Array.isArray(dataList) || dataList.length === 0) {
+		console.error('传入打印的数据必须是非空数组');
+		return;
+	}
+	const printXML = generatePrintXML(dataList);
+	console.log('printXML===============----', printXML);
+
 	wewin.LabelPrint(printXML, {
-		debug: false,//是否预览打印内容
+		debug: false,//如果下方为false 即使为true也会不预览
 		modal: false,
+		noView:'H50',//必须modal为false debug为false 这个设置之后才会不预览直接打印
 		alert: false,
 		isToCDATA: false,
 		imgPath: ''
 	}, function (data) {
-		console.log("打印回调：", data);
+		console.log('打印回调：', data);
 	});
+
 }
-````
+```
