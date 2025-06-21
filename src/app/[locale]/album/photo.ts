@@ -11,28 +11,43 @@ export const photos: Photo[] = [
     tip: '洱海环行',
   },
   {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04463.jpg',
+    desc: '这是我最喜欢 最有感觉的一张照片',
+    tip: '洱海环行',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04402.jpg',
+    desc: '算是露脸的一张了',
+    tip: '洱海环行',
+  },
+  {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04450.jpg',
-    desc: '暂时无',
+    desc: '洱海环行',
     tip: '洱海环行',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04444.jpg',
-    desc: '暂时无',
+    desc: '洱海环行',
     tip: '洱海环行',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04452.jpg',
-    desc: '暂时无',
+    desc: '想拍摄动态感的 奈何公路环境不允许 太危险',
     tip: '洱海环行',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04442.jpg',
-    desc: '暂时无',
+    desc: '洱海环行',
     tip: '洱海环行',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04459.jpg',
-    desc: '暂时无',
+    desc: '洱海环行',
+    tip: '洱海环行',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04474.jpg',
+    desc: '洱海环行',
     tip: '洱海环行',
   },
 
