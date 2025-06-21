@@ -14,7 +14,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/T062M0000040fQYR2k
 ## 第一集
 
 待重温 已经忘记
-![Perplexity Logo](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
 
 <video controls width="720" style="max-width: 100%;">
   <source src="https://v0.stream.tencentmusic.com/0b536uaxyaab24ak4lvz2bt2b5odpt2qc7aa.f160030.mp4?dis_k=a1498656aead1de61b6fb3347289576c&dis_t=1750513461&local=1&fromtag=1231014" type="video/mp4" />

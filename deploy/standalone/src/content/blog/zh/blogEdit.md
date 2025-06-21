@@ -97,10 +97,3 @@ cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
 ```js
 console.log('Hello world');
 ```
-
-## 加粗 斜体
-
-**这是加粗文本**
-_这是斜体文本_
-**_这是加粗且斜体文本_**
-~~这是删除线文本~~
