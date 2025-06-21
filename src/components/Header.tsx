@@ -19,12 +19,36 @@ export default function Header({ locale, posts }: HeaderProps) {
   const [bgAlpha, setBgAlpha] = useState(0);
 
   const navigationItems = [
-    { key: 'blog', href: `/${locale}/blog`, label: locale === 'zh' ? '博客' : 'Blog' },
-    { key: 'search', href: `/${locale}/search`, label: locale === 'zh' ? '工具' : 'Search' },
-    { key: 'media', href: `/${locale}/media`, label: locale === 'zh' ? '书影剧' : 'media' },
-    { key: 'album', href: `/${locale}/album`, label: locale === 'zh' ? '摄影' : 'Album' },
-    { key: 'milestone', href: `/${locale}/milestone`, label: locale === 'zh' ? '里程碑' : 'Milestone' },
-    { key: 'about', href: `/${locale}/about`, label: locale === 'zh' ? '关于我' : 'About' },
+    {
+      key: 'blog',
+      href: `/${locale}/blog`,
+      label: locale === 'zh' ? '博客' : 'Blog',
+    },
+    {
+      key: 'search',
+      href: `/${locale}/search`,
+      label: locale === 'zh' ? '工具' : 'Search',
+    },
+    {
+      key: 'media',
+      href: `/${locale}/media`,
+      label: locale === 'zh' ? '书影剧' : 'media',
+    },
+    {
+      key: 'album',
+      href: `/${locale}/album`,
+      label: locale === 'zh' ? '摄影' : 'Album',
+    },
+    {
+      key: 'milestone',
+      href: `/${locale}/milestone`,
+      label: locale === 'zh' ? '里程碑' : 'Milestone',
+    },
+    {
+      key: 'about',
+      href: `/${locale}/about`,
+      label: locale === 'zh' ? '关于我' : 'About',
+    },
   ];
 
   const locales = ['zh', 'en'];
@@ -41,7 +65,10 @@ export default function Header({ locale, posts }: HeaderProps) {
   const normalizedPathname = stripLocale(pathname);
   const isActiveRoute = (href: string) => {
     const normalizedHref = stripLocale(href);
-    return normalizedPathname === normalizedHref || normalizedPathname.startsWith(normalizedHref + '/');
+    return (
+      normalizedPathname === normalizedHref ||
+      normalizedPathname.startsWith(normalizedHref + '/')
+    );
   };
 
   useEffect(() => {
@@ -119,12 +146,32 @@ export default function Header({ locale, posts }: HeaderProps) {
               className="md:hidden p-2 rounded-md text-white hover:bg-blue-700 transition-colors"
             >
               {!isMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               )}
             </button>
@@ -155,7 +202,9 @@ export default function Header({ locale, posts }: HeaderProps) {
       </header>
 
       {/* 搜索弹窗 */}
-      {showSearch && <BlogSearchModal posts={posts} onClose={() => setShowSearch(false)} />}
+      {showSearch && (
+        <BlogSearchModal posts={posts} onClose={() => setShowSearch(false)} />
+      )}
     </>
   );
 }

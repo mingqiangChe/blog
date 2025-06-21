@@ -29,18 +29,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* 主要内容 */}
           <div className="lg:col-span-3">
-            <article className="prose prose-lg max-w-none prose-invert" style={{ color: '#e3f6ff' }}>
+            <article
+              className="prose prose-lg max-w-none prose-invert"
+              style={{ color: '#e3f6ff' }}
+            >
               <header className="mb-8">
                 <h1
                   className="text-4xl font-extrabold mb-4 neontext"
                   style={{
                     color: '#fff',
-                    textShadow: '0 0 16px #00fff7, 0 0 32px #00fff7'
+                    textShadow: '0 0 16px #00fff7, 0 0 32px #00fff7',
                   }}
                 >
                   {post.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: '#7de2fc' }}>
+                <div
+                  className="flex flex-wrap items-center gap-4 text-sm mb-6"
+                  style={{ color: '#7de2fc' }}
+                >
                   <time>
                     {new Date(post.date).toLocaleDateString(locale, {
                       year: 'numeric',
@@ -76,7 +82,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </div>
                 )}
                 {post.description && (
-                  <p className="text-lg italic border-l-4 border-cyan-400 pl-4 mb-6" style={{ color: '#b2fefa' }}>
+                  <p
+                    className="text-lg italic border-l-4 border-cyan-400 pl-4 mb-6"
+                    style={{ color: '#b2fefa' }}
+                  >
                     {post.description}
                   </p>
                 )}
@@ -91,6 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       alt={post.title}
                       fill
                       className="rounded-lg shadow-lg object-cover"
+                      sizes="(max-width: 768px) 100vw, 768px"
                     />
                   </div>
                 </div>
@@ -125,7 +135,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
           </div>
-
         </div>
         {/* 可选：页面角落加个发光霓虹球/粒子动效等 */}
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-2xl pointer-events-none"></div>

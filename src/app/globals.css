@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
-
 /* Tailwind 基础导入 */
 
 /* 引入 Tailwind Typography 插件的样式（如果需要） */
@@ -107,8 +106,6 @@ h6[id] {
 }
 
 /* 滚动条 */
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 @layer base {
@@ -149,7 +146,6 @@ h6[id] {
   }
 }
 
-
 /* 字体闪烁动画 */
 /* 霓虹文字基础发光 */
 .neontext {
@@ -157,18 +153,13 @@ h6[id] {
   font-weight: 900;
   font-size: 2.5rem;
   text-align: center;
-  text-shadow:
-    0 0 5px #0ff,
-    0 0 10px #0ff,
-    0 0 20px #0ff,
-    0 0 40px #0ff,
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff,
     0 0 80px #0ff;
   animation: neonflicker 3s infinite alternate;
 }
 
 /* 闪烁动画 */
 @keyframes neonflicker {
-
   0%,
   18%,
   22%,
@@ -176,11 +167,7 @@ h6[id] {
   53%,
   57%,
   100% {
-    text-shadow:
-      0 0 5px #0ff,
-      0 0 10px #0ff,
-      0 0 20px #0ff,
-      0 0 40px #0ff,
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff,
       0 0 80px #0ff;
   }
 

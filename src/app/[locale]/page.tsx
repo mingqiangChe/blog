@@ -25,6 +25,7 @@ export default async function Home({ params }: LocaleLayoutProps) {
           width={96} // 指定宽度
           height={96} // 指定高度
           className="rounded-full object-cover"
+          priority
         />
       </div>
       <Page_h />
