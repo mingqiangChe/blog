@@ -51,6 +51,84 @@ export const photos: Photo[] = [
     tip: '洱海环行',
   },
   {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1810.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1750.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1760.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1702.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1716.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1677.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1749.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1761.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1776.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1759.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1806.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1769.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1814.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1709.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/dms_PixCake/DSC_1678.jpg',
+    desc: '长沙模特',
+    tip: '大梅沙',
+  },
+  {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0280dtdrtd.jpg',
     desc: '大理大学生古装女孩 果然化妆改变气质 日常非常也好看 但是化了妆完全变了感觉',
     tip: '大理女孩',
