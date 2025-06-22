@@ -49,8 +49,8 @@ export default function ParticleCanvas() {
           this.reset();
         }
       }
-
-      draw() {
+      draw(ctx: CanvasRenderingContext2D | null) {
+        if (!ctx) return;
         ctx.beginPath();
         ctx.fillStyle = `rgba(165, 180, 252, ${this.opacity})`;
         ctx.shadowColor = '#a5b4fc';
@@ -74,7 +74,7 @@ export default function ParticleCanvas() {
       ctx.clearRect(0, 0, width, height);
       particles.forEach((p) => {
         p.update();
-        p.draw();
+        p.draw(ctx); // 这里要传 ctx
       });
       requestAnimationFrame(animate);
     }

@@ -12,7 +12,14 @@ export default function MilestoneTimeline() {
       <div className="text-center text-gray-400 py-20">暂无里程碑数据</div>
     );
   }
-
+  function formatDateEn(dateStr: string) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  }
   return (
     <FuturisticHistoryBg>
       <div className="min-h-screen py-12 px-2 sm:px-4 pt-24 max-w-4xl mx-auto text-gray-300">
@@ -36,7 +43,7 @@ export default function MilestoneTimeline() {
                   <ClientDateWrapper dateStr={post.date} />
                 </span>
                 <span className="ml-auto text-xs text-cyan-200 bg-cyan-900/30 px-3 py-1 rounded-full hidden sm:inline-block">
-                  {post.dateEn}
+                  {formatDateEn(post.date)}
                 </span>
               </div>
               {/* 描述 */}
