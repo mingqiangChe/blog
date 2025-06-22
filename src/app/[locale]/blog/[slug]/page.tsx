@@ -24,7 +24,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // 提取标题用于目录
   const headings = extractHeadings(post.content);
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2">
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2 overflowclip">
       <div className="relative max-w-5xl w-full mt-32 mx-auto p-8 rounded-2xl backdrop-blur-md bg-white/10 shadow-2xl border border-cyan-400/30">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* 主要内容 */}

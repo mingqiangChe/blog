@@ -24,7 +24,7 @@ interface ProjectItem {
 
 const profileData = {
   name: '车明强',
-  title: 'Front-End Developer',
+  title: '前端开发工程师',
   location: '广州',
   email: 'thomaschefowshu@gmail.com',
   socialLinks: [
@@ -209,16 +209,18 @@ const skills: SkillCategory[] = [
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-blue-800 pt-20">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* 个人信息头部 */}
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-blue-800 pt-20 overflow-x-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+        {/* 个人信息 */}
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             {profileData.name}
           </h1>
-          <p className="text-xl text-blue-100 mb-6">{profileData.title}</p>
+          <p className="text-lg sm:text-xl text-blue-100 mb-6">
+            {profileData.title}
+          </p>
 
-          <div className="flex items-center justify-center gap-6 text-blue-100 mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-blue-100 mb-6">
             <div className="flex items-center gap-2">
               <span>📍</span>
               <span>{profileData.location}</span>
@@ -229,18 +231,17 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* 社交链接 */}
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {profileData.socialLinks.map((link) => (
               <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white hover:bg-white/30 transition-all duration-300 flex items-center gap-2"
+                className="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full text-white hover:bg-white/30 text-sm transition-all flex items-center gap-2"
               >
                 <span>{link.icon}</span>
-                <span className="text-sm">{link.platform}</span>
+                <span>{link.platform}</span>
               </a>
             ))}
           </div>
@@ -249,9 +250,9 @@ export default function ResumePage() {
         {/* 教育背景 */}
         <section className="mb-12">
           <h2 className={styles.sectionTitle}>Education</h2>
-          {education.map((edu, index) => (
-            <div key={edu.school + index} className={styles.card}>
-              <div className="flex justify-between items-start mb-2">
+          {education.map((edu, i) => (
+            <div key={i} className={styles.card}>
+              <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold text-white">
                     {edu.school}
@@ -268,11 +269,11 @@ export default function ResumePage() {
         <section className="mb-12">
           <h2 className={styles.sectionTitle}>Experience</h2>
           <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <div key={exp.company + index} className={styles.card}>
-                <div className="flex justify-between items-start mb-4">
+            {experiences.map((exp, i) => (
+              <div key={i} className={styles.card}>
+                <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">
+                    <h3 className="text-xl font-semibold text-white">
                       {exp.company}
                     </h3>
                     <p className="text-blue-200">{exp.position}</p>
@@ -280,22 +281,17 @@ export default function ResumePage() {
                   <span className={styles.period}>{exp.period}</span>
                 </div>
 
-                {/* 技术标签 */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {exp.technologies.map((tech, techIndex) => (
-                    <span key={tech + techIndex} className={styles.techTag}>
+                  {exp.technologies.map((tech, idx) => (
+                    <span key={idx} className={styles.techTag}>
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* 工作描述 */}
                 <ul className="space-y-2">
-                  {exp.description.map((desc, descIndex) => (
-                    <li
-                      key={desc + descIndex}
-                      className="text-blue-100 flex items-start gap-2"
-                    >
+                  {exp.description.map((desc, idx) => (
+                    <li key={idx} className="text-blue-100 flex gap-2">
                       <span className="text-blue-300 mt-1">•</span>
                       <span>{desc}</span>
                     </li>
@@ -306,34 +302,31 @@ export default function ResumePage() {
           </div>
         </section>
 
-        {/* 特色项目 */}
+        {/* 项目 */}
         <section className="mb-12">
           <h2 className={styles.sectionTitle}>Featured Projects</h2>
           <div className="space-y-8">
-            {featuredProjects.map((project, idx) => (
-              <div key={project.name + idx} className={styles.card}>
+            {featuredProjects.map((proj, i) => (
+              <div key={i} className={styles.card}>
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  {project.name}
+                  {proj.name}
                 </h3>
-
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span key={tech + index} className={styles.techTag}>
+                  {proj.technologies.map((tech, idx) => (
+                    <span key={idx} className={styles.techTag}>
                       {tech}
                     </span>
                   ))}
                 </div>
-
                 <p className="text-blue-100 leading-relaxed mb-4">
-                  {project.description}
+                  {proj.description}
                 </p>
-
-                {project.link && (
+                {proj.link && (
                   <a
-                    href={project.link}
+                    href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-300 hover:text-blue-200 transition-colors"
+                    className="text-blue-300 hover:text-blue-200 transition"
                   >
                     🔗 查看项目详情
                   </a>
@@ -347,166 +340,33 @@ export default function ResumePage() {
         <section className="mb-12">
           <h2 className={styles.sectionTitle}>Skills & Tools</h2>
           <div className={styles.card}>
-            <div className="flex gap-6 text-sm mb-6">
-              <span className="text-blue-300">下划线指示器</span>
+            <div className="flex flex-wrap gap-4 text-sm mb-6 text-blue-300">
+              <span>下划线指示器</span>
               <span className={styles.skillLevel}>经常使用</span>
               <span className="text-blue-400">偶尔使用</span>
             </div>
 
-            {/* Languages */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Languages
-              </h3>
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">FE-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find((s) => s.category === 'Languages')
-                      ?.skills.map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level === 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">BE-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find(
-                        (s) => s.level === 'BE-related' && s.category === ''
-                      )
-                      ?.skills.slice(0, 2)
-                      .map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level === 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Technologies */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Technologies
-              </h3>
-              <div className="grid grid-cols-3 gap-8">
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">UI-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find((s) => s.level === 'UI-related')
-                      ?.skills.map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level === 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">FE-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find(
-                        (s) => s.level === 'FE-related' && s.category === ''
-                      )
-                      ?.skills.map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level === 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">BE-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .filter(
-                        (s) => s.level === 'BE-related' && s.category === ''
-                      )
-                      .slice(1)
-                      .map((group) =>
-                        group.skills.map((skill, index) => (
-                          <span
-                            key={skill.name + index}
-                            className={styles.skillTag}
-                          >
-                            {skill.name}
-                          </span>
-                        ))
-                      )}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Tools & Softwares */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Tools & Softwares
-              </h3>
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-blue-300 text-sm mb-3">Code-related</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find((s) => s.level === 'Code-related')
-                      ?.skills.map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level === 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
-                  </div>
-                </div>
-                <div>
+            {/* 分类展示 */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {skills.map((category, idx) => (
+                <div key={idx}>
                   <h4 className="text-blue-300 text-sm mb-3">
-                    Designer-related
+                    {category.category || category.level}
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {skills
-                      .find((s) => s.level === 'Designer-related')
-                      ?.skills.map((skill, index) => (
-                        <span
-                          key={skill.name + index}
-                          className={`${styles.skillTag} ${
-                            skill.level == 'often' ? styles.skillLevel : ''
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      ))}
+                    {category.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className={`${styles.skillTag} ${
+                          skill.level === 'often' ? styles.skillLevel : ''
+                        }`}
+                      >
+                        {skill.name}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

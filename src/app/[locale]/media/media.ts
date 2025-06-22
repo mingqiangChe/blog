@@ -48,4 +48,16 @@ export const items: media[] = [
     rating: 7.8,
     tags: ['电影', '浪客剑心'],
   },
+  {
+    id: '4',
+    title: '我与地坛',
+    href: 'woyuditan',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%88%91%E4%B8%8E%E5%9C%B0%E5%9D%9B.jpeg',
+    year: 2011,
+    desc: '《我与地坛》由中国当代著名作家史铁生著。是史铁生文学作品中，充满哲思又极为人性化的代表作之一。其前第一段和第二段被纳入人民教育出版社的高一教材中。前两部分注重讲地坛和他与母亲的后悔，对于中学生来说，这是一篇令人反思的优秀文章。',
+    rating: 9.3,
+    tags: ['散文'],
+  },
 ];
