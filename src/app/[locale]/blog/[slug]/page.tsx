@@ -93,8 +93,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </header>
 
               {post.cover && (
-                <div className="mb-8 flex justify-center mb-36">
-                  <div className="relative w-full" style={{ height: '400px' }}>
+                <div className="mb-8 flex justify-center">
+                  <div
+                    className="relative w-full max-w-2xl rounded-lg overflow-hidden"
+                    style={{
+                      height: '50vw', // 移动端高度自适应屏幕宽度的一半
+                      maxHeight: '400px', // 最大高度不超过400px
+                      minHeight: '180px', // 最小高度，避免过矮
+                    }}
+                  >
                     <Image
                       src={post.cover}
                       alt={post.title}

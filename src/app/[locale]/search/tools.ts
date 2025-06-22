@@ -251,7 +251,7 @@ export const navData: NavGroup[] = [
         desc: '聊天室',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/disco%E5%A6%82%E6%9E%9C%E5%A4%A7%E5%A4%A7%E6%92%92%E5%8F%91%E5%88%B0%E4%BB%98.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/hkhkhkhkhk.jpeg',
         title: 'reddit',
         url: 'https://www.reddit.com/',
         desc: '美国红迪社区',
