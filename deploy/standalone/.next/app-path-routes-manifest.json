@@ -4,9 +4,9 @@
   "/[locale]/blog/tags/[tag]/page": "/[locale]/blog/tags/[tag]",
   "/[locale]/page": "/[locale]",
   "/[locale]/search/page": "/[locale]/search",
-  "/[locale]/blog/page": "/[locale]/blog",
   "/[locale]/blog/[slug]/page": "/[locale]/blog/[slug]",
+  "/[locale]/milestone/page": "/[locale]/milestone",
+  "/[locale]/blog/page": "/[locale]/blog",
   "/[locale]/album/page": "/[locale]/album",
-  "/[locale]/about/page": "/[locale]/about",
-  "/[locale]/milestone/page": "/[locale]/milestone"
+  "/[locale]/about/page": "/[locale]/about"
 }

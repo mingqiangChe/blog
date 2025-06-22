@@ -12,7 +12,7 @@
       "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
       "static/chunks/650-770b11f1956a51b1.js",
       "static/chunks/main-app-536816957ef8ee4b.js",
-      "static/css/415b3f1ffff55562.css",
+      "static/css/b14bfa4440fb6ecf.css",
       "static/chunks/app/layout-3ff46aee16e21c35.js"
     ],
     "/[locale]/layout": [
@@ -61,15 +61,6 @@
       "static/chunks/215-79debb3b3752e730.js",
       "static/chunks/app/[locale]/search/page-f8728dbd08c57951.js"
     ],
-    "/[locale]/blog/page": [
-      "static/chunks/webpack-e9bd37a609274e28.js",
-      "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
-      "static/chunks/650-770b11f1956a51b1.js",
-      "static/chunks/main-app-536816957ef8ee4b.js",
-      "static/chunks/554-49af85f4747d6631.js",
-      "static/chunks/215-79debb3b3752e730.js",
-      "static/chunks/app/[locale]/blog/page-29897ffc0c94d4a0.js"
-    ],
     "/[locale]/blog/[slug]/page": [
       "static/chunks/webpack-e9bd37a609274e28.js",
       "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
@@ -79,6 +70,24 @@
       "static/chunks/215-79debb3b3752e730.js",
       "static/chunks/813-bee3345ce87a9f02.js",
       "static/chunks/app/[locale]/blog/[slug]/page-9000bf74cac3014a.js"
+    ],
+    "/[locale]/milestone/page": [
+      "static/chunks/webpack-e9bd37a609274e28.js",
+      "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
+      "static/chunks/650-770b11f1956a51b1.js",
+      "static/chunks/main-app-536816957ef8ee4b.js",
+      "static/chunks/554-49af85f4747d6631.js",
+      "static/chunks/215-79debb3b3752e730.js",
+      "static/chunks/app/[locale]/milestone/page-124b66ef5f3a120c.js"
+    ],
+    "/[locale]/blog/page": [
+      "static/chunks/webpack-e9bd37a609274e28.js",
+      "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
+      "static/chunks/650-770b11f1956a51b1.js",
+      "static/chunks/main-app-536816957ef8ee4b.js",
+      "static/chunks/554-49af85f4747d6631.js",
+      "static/chunks/215-79debb3b3752e730.js",
+      "static/chunks/app/[locale]/blog/page-29897ffc0c94d4a0.js"
     ],
     "/[locale]/album/page": [
       "static/chunks/webpack-e9bd37a609274e28.js",
@@ -95,15 +104,6 @@
       "static/chunks/main-app-536816957ef8ee4b.js",
       "static/css/4f4f3ecaa2adb0ba.css",
       "static/chunks/app/[locale]/about/page-c7dad65a48d3b644.js"
-    ],
-    "/[locale]/milestone/page": [
-      "static/chunks/webpack-e9bd37a609274e28.js",
-      "static/chunks/5dcf229a-454bc4f3f43f8c65.js",
-      "static/chunks/650-770b11f1956a51b1.js",
-      "static/chunks/main-app-536816957ef8ee4b.js",
-      "static/chunks/554-49af85f4747d6631.js",
-      "static/chunks/215-79debb3b3752e730.js",
-      "static/chunks/app/[locale]/milestone/page-124b66ef5f3a120c.js"
     ]
   }
 }
