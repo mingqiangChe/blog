@@ -48,6 +48,7 @@ const nextConfig: NextConfig = {
       },
       // 你还可以继续添加你用到的其他图片域名
     ],
+    domains: ['chemingqiang.oss-cn-shenzhen.aliyuncs.com'],
   },
   eslint: {
     ignoreDuringBuilds: true, // 控制打包时 ESLint 检查

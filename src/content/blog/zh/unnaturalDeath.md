@@ -18,7 +18,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/T062M0000040fQYR2k
 
 ## 第一集 无名之毒 人心之毒堪比无名之毒
 
-> 7k 职业 脏 kitanai 累 kitsui 危险 kikenn
+> 7k 职业 脏 kitanai 累 kitsui 危险 kikenn 相当 kekkou 颇为 kanari 恐怖 kowai
 
 > 无敌 敌是什么 不合理的死亡 -中堂 三澄
 
@@ -76,7 +76,42 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/T062M0000040fQYR2k
 
 > 这个月没有红色金鱼 中堂一直在寻找
 
-## 第二集 一家四口 烧炭自杀
+## 第二集 欲死之人的书信
+
+> 南宫美琴-三澄美琴 三澄也有这种经历 因为此做了研究论文 对烧炭很有研究
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-14-01.png)
+重磅 4 个人都是陌生人之间的关系 自愿自杀网相约
+
+身体鲑鱼粉一样 心脏左右颜色不一样 冻死
+
+女孩嘴中取出写有救救我的纸条 松仓花
+
+> 把孩子当作私有物 不忍心只留下孩子孤零零 一起杀死 没理解自己和孩子两个个体 -三澄
+
+凶手在其他人死亡时候 把小花遗体带到那里
+
+**假装不知道 都想快点了解 三方收手 当作没看见小花的死亡**
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-23-46.png)
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-13-47.png)
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_15-57-56.png)
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_15-57-42.png)
+两人找到了冷冻库 被凶手关进了冷冻库
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-40-05.png)
+
+> 从这出去 去看白夜
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-52-25.png)
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-48-41.png)
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-49-53.png)
+
+> 要是有绝望的空闲 就去吃好吃的然后睡觉了
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-53-52.png)
+
+![非自然死亡](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-22_16-53-40.png)
 
 ## 第三集
 
