@@ -106,6 +106,8 @@ cd deploy
 
 # 如果使用 standalone 模式，直接运行
 
+**一定要把 deploy 文件夹下的全部放过去**
+
 cd .next/standalone
 
 pm2 start server.js
