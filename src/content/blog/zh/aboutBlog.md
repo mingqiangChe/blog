@@ -11,96 +11,168 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
     为了炫 为了推动自己作为动力 也作为了解自己频道
 
-# 架构
- next+react去使用
- 
+# 项目依赖说明（基于 package.json）
 
-本项目共使用了 **35 个依赖**，其中生产依赖（dependencies）24 个，开发依赖（devDependencies）11 个，涵盖了 UI、国际化、Markdown 解析、图片处理、类型定义、代码规范、CSS 框架和构建工具等功能。
+## 项目基本信息
 
-## 生产依赖（24 个）
+- 项目名称：cheche-blog
+- 版本号：0.1.0
+- 私有项目（private: true）
 
-| 依赖名 | 主要作用 |
-| :-- | :-- |
-| @emotion/react | CSS-in-JS 方案，支持动态样式 |
+## 脚本命令
 
-| @emotion/styled | 基于 Emotion 的 styled 组件写法 |
+- **dev**：启动开发环境（Next.js）
+- **build**：构建生产环境代码
+- **build:deploy**：构建并执行部署脚本
+- **build:deploy:zip**：构建部署并打包为 zip 文件
+- **deploy:clean**：清理部署文件夹及压缩包
+- **start**：启动生产环境服务器
+- **lint**：代码规范检查（ESLint）
 
-| @mui/lab | MUI 实验性组件库 |
+---
 
-| @mui/material | MUI 主体组件库，UI 设计 |
+## 生产依赖（dependencies）
 
-| @types/react-syntax-highlighter | 语法高亮 TypeScript 类型定义 |
+- **@emotion/react** (v^11.14.0)  
+  CSS-in-JS 动态样式方案
 
-| gray-matter | 解析 Markdown 文件头部元数据 |
+- **@emotion/styled** (v^11.14.0)  
+  Emotion styled 组件写法
 
-| i18next | 国际化（i18n）核心库 |
+- **@mui/lab** (v7.0.0-beta.13)  
+  MUI 实验性组件库
 
-| i18next-resources-to-backend | i18next 资源后端加载器 |
+- **@mui/material** (v^7.1.1)  
+  MUI 主体组件库，UI 设计
 
-| next | Next.js 框架，React SSR/SSG 支持 |
+- **@next/env** (v^15.3.4)  
+  Next.js 环境变量管理
 
-| next-i18n-router | Next.js 路由国际化 |
+- **@swc/helpers** (v^0.5.17)  
+  编译辅助库
 
-| next-intl | Next.js 国际化解决方案 |
+- **@types/react-syntax-highlighter** (v^15.5.13)  
+  代码高亮 TS 类型定义
 
-| parse-numeric-range | 解析数字范围字符串 |
+- **gray-matter** (v^4.0.3)  
+  解析 Markdown 文件头部元数据
 
-| react | React 主库 |
+- **i18next** (v^25.2.1)  
+  国际化核心库
 
-| react-dom | React DOM 渲染库 |
+- **i18next-resources-to-backend** (v^1.2.1)  
+  i18next 资源加载器
 
-| react-i18next | i18next 的 React 绑定 |
-| react-icons | 常用图标库 |
+- **klouds** (v^3.0.0)  
+  文件系统相关工具
 
-| react-image-lightbox | 图片灯箱组件 |
+- **next** (v15.3.3)  
+  Next.js 框架
 
-| react-intersection-observer | 视口监听，懒加载等场景 |
+- **next-i18n-router** (v^5.5.2)  
+  Next.js 国际化路由
 
-| react-markdown | Markdown 渲染为 React 组件 |
+- **next-intl** (v^4.1.0)  
+  Next.js 国际化解决方案
 
-| react-masonry-css | 瀑布流布局组件 |
+- **parse-numeric-range** (v^1.3.0)  
+  解析数字范围字符串
 
-| react-syntax-highlighter | 代码高亮组件 |
+- **react** (v^18.3.1)  
+  React 主库
 
-| remark | Markdown 解析器 |
+- **react-dom** (v^18.3.1)  
+  React DOM 渲染库
 
-| remark-html | Markdown 转 HTML 插件 |
+- **react-i18next** (v^15.5.2)  
+  i18next React 绑定
 
-| styled-jsx | Next.js 内置 CSS-in-JS 方案 |
+- **react-icons** (v^5.5.0)  
+  常用图标库
 
-## 开发依赖（11 个）
+- **react-intersection-observer** (v^9.16.0)  
+  视口监听，懒加载
 
-| 依赖名 | 主要作用 |
+- **react-markdown** (v^10.1.0)  
+  Markdown 渲染为 React 组件
 
-| @eslint/eslintrc | ESLint 配置支持 |
+- **react-masonry-css** (v^1.0.16)  
+  瀑布流布局组件
 
-| @tailwindcss/postcss | Tailwind CSS 与 PostCSS 集成 |
+- **react-syntax-highlighter** (v^15.6.1)  
+  代码高亮组件
 
-| @tailwindcss/typography | Tailwind CSS 排版插件 |
+- **rehype-raw** (v^7.0.0)  
+  Markdown 转 HTML 插件
 
-| @types/node | Node.js 类型定义 |
+- **remark** (v^15.0.1)  
+  Markdown 解析器
 
-| @types/react | React 类型定义 |
+- **remark-html** (v^16.0.1)  
+  Markdown 转 HTML 插件
 
-| @types/react-dom | React DOM 类型定义 |
+- **styled-jsx** (v^5.1.7)  
+  Next.js 内置 CSS-in-JS 方案
 
-| eslint | 代码规范检查工具 |
+- **yet-another-react-lightbox** (v^3.23.2)  
+  图片灯箱组件
 
-| eslint-config-next | Next.js 推荐 ESLint 配置 |
+---
 
-| fs-extra | 文件系统扩展工具 |
+## 开发依赖（devDependencies）
 
-| tailwindcss | 原子化 CSS 框架 |
+- **@eslint/eslintrc** (v^3)  
+  ESLint 配置支持
 
-| typescript | TypeScript 支持 |
+- **@tailwindcss/postcss** (v4.1.10)  
+  Tailwind CSS 与 PostCSS 集成
+
+- **@tailwindcss/typography** (v0.5.16)  
+  Tailwind CSS 排版插件
+
+- **@types/node** (v^20)  
+  Node.js 类型定义
+
+- **@types/react** (v^19)  
+  React 类型定义
+
+- **@types/react-dom** (v^19)  
+  React DOM 类型定义
+
+- **@types/webpack** (v^5.28.5)  
+  Webpack 类型定义
+
+- **autoprefixer** (v10.4.21)  
+  CSS 自动添加前缀
+
+- **eslint** (v^9)  
+  代码规范检查工具
+
+- **eslint-config-next** (v15.3.3)  
+  Next.js 推荐 ESLint 配置
+
+- **fs-extra** (v^11.3.0)  
+  文件系统扩展工具
+
+- **lightningcss** (v^1.30.1)  
+  CSS 优化构建工具
+
+- **postcss** (v8.5.6)  
+  CSS 处理器
+
+- **tailwind-scrollbar** (v^4.0.2)  
+  Tailwind CSS 滚动条插件
+
+- **tailwindcss** (v4.1.10)  
+  原子化 CSS 框架
+
+- **typescript** (v^5)  
+  TypeScript 支持
 
 ## 总结
 
-- **生产依赖**：24 个，涵盖 UI、国际化、Markdown 解析、图片处理等功能。
-- **开发依赖**：11 个，主要用于类型定义、代码规范、CSS 框架和构建工具。
-- **总计**：35 个依赖，满足博客系统的开发与运行需求。
+- 本项目依赖丰富，涵盖了 UI 设计、国际化、多语言支持、Markdown 解析、图片处理、代码规范等多个方面。
+- 生产依赖共 24 个，开发依赖 11 个，满足博客系统开发和运行需求。
+- 依赖版本保持较新，保证功能和性能的稳定性。
 
-
-# 功能实现
-
-
+---

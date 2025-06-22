@@ -316,6 +316,115 @@ export const photos: Photo[] = [
     desc: '我',
     tip: '种种',
   },
-
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220200_588.jpg',
+    desc: '调酒crush',
+    tip: '种种',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220327_100.jpg',
+    desc: '通州河',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220103_274.jpg',
+    desc: '苏州河',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220053_321.jpg',
+    desc: '苏州河',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220044_254.jpg',
+    desc: '苏州河',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220035_587.jpg',
+    desc: '苏州河',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220014_546.jpg',
+    desc: '湖',
+    tip: '苏州',
+  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221336_552.jpg',
+  //   desc: '通州河',
+  //   tip: '啥',
+  // },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221336_552.jpg',
+    desc: '美术学院',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221402_312.jpg',
+    desc: '国家大剧院',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221406_904.jpg',
+    desc: '国家大剧院',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221448_544.jpg',
+    desc: '美术工业院',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221601_558.jpg',
+    desc: '角楼',
+    tip: '北京',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221834_855.jpg',
+    desc: '',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221838_947.jpg',
+    desc: '索菲亚大教堂',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221843_206.jpg',
+    desc: '索菲亚大教堂',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221912_489.jpg',
+    desc: '青海湖骑行遇到',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221902_489.jpg',
+    desc: '318纳木错',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221921_357.jpg',
+    desc: '318纳木错',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220256_566.jpg',
+    desc: '318遇见',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220235_655.jpg',
+    desc: '318遇见',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220219_171.jpg',
+    desc: '318然乌湖',
+    tip: '318',
+  },
   // ...更多图片
 ];
