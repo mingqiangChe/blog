@@ -96,7 +96,7 @@
   color: white;
   white-space: nowrap;
   user-select: none;
-  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 .badge-often {
   background-color: #22c55e; /* 绿色，代表经常使用 */
