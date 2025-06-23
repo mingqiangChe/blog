@@ -38,12 +38,12 @@ export default async function Home({ params }: LocaleLayoutProps) {
         {/* 这里可以添加最近文章列表 */}
         <RecentPosts posts={recentPosts} />
       </div>
-      <div className="flex items-center justify-center pt-32 pb-32">
+      {/* <div className="flex items-center justify-center pt-32 pb-32">
         <VideoCard
           src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/mov_1750092393646.mov"
           title="video"
         />
-      </div>
+      </div> */}
     </main>
   );
 }

@@ -205,8 +205,8 @@ export const navData: NavGroup[] = [
       },
       {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%86%8A%E7%8C%AB%E5%8E%8B%E7%BC%A9.jpg',
-        title: '熊猫压缩',
-        url: 'https://tinypng.com/',
+        title: 'iloveimg压缩',
+        url: 'https://www.iloveimg.com/zh-cn/compress-image/compress-jpg',
         desc: '图片压缩',
       },
       {
