@@ -21,7 +21,7 @@
 /release/
 
 /deploy/    # 忽略 deploy 文件夹
-
+/deploy
 # 发布包
 *.zip
 *.tar.gz
