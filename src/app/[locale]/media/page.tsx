@@ -10,6 +10,28 @@ export default function BookMovieGallery() {
   const [filter, setFilter] = useState('全部');
   const filtered =
     filter === '全部' ? items : items.filter((item) => item.type === filter);
+  function LazyImage({
+    src,
+    alt,
+    className,
+    style,
+  }: {
+    src: string;
+    alt: string;
+    className?: string;
+    style?: React.CSSProperties;
+  }) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        style={style}
+        loading="lazy"
+        draggable={false}
+      />
+    );
+  }
 
   return (
     <section className="relative z-10 bg-white min-h-screen flex flex-col items-center py-20 px-6">
@@ -70,12 +92,11 @@ export default function BookMovieGallery() {
             style={{ width: 220, height: 320 }}
           >
             {/* 封面 */}
-            <img
+            <LazyImage
               src={item.cover}
               alt={item.title}
               className="w-full object-cover rounded-t-3xl transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm"
               style={{ width: 220, height: 320 }}
-              draggable={false}
             />
             {/* 信息浮现层 */}
             <div
