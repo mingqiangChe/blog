@@ -1,7 +1,6 @@
 @import 'tailwindcss';
-@plugin "@tailwindcss/typography";
+@tailwind utilities;
 /* Tailwind 基础导入 */
-
 /* 引入 Tailwind Typography 插件的样式（如果需要） */
 /* 如果你在 tailwind.config.js 中配置了 typography 插件，这里不需要额外引入 */
 
@@ -25,15 +24,12 @@
 
 /* 全局样式 */
 body {
-  @apply bg-white text-gray-900 font-sans;
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100vh;
   margin: 0;
-  font-family: 'Inter', 'JetBrains Mono', 'Helvetica Neue', Arial, sans-serif;
 }
-
 html {
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -48,18 +44,15 @@ html {
 /* 标题滚动偏移，防止锚点被固定头部遮挡 */
 h1[id],
 h2[id],
+h1[id],
+h2[id],
 h3[id],
 h4[id],
 h5[id],
 h6[id] {
-  scroll-margin-top: 5rem;
-  /* 根据你的固定头部高度调整 */
-  /* 使用 Tailwind apply 也可以：
   @apply scroll-mt-20;
-  */
+  /* 根据你的固定头部高度调整 */
 }
-
-/* 目录滚动条样式 - WebKit */
 .toc-scroll::-webkit-scrollbar {
   width: 4px;
 }
@@ -106,43 +99,40 @@ h6[id] {
 
 /* 滚动条 */
 @tailwind utilities;
+/* 滚动条宽度 */
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 12px;
+}
 
-@layer base {
-  /* 滚动条宽度 */
-  ::-webkit-scrollbar {
-    width: 10px;
-    background: rgba(255 255 255 / 0.1);
-    border-radius: 12px;
-  }
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.2);
+}
 
-  /* 滚动条轨道 */
-  ::-webkit-scrollbar-track {
-    background: rgba(255 255 255 / 0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    box-shadow: inset 0 0 6px rgba(255 255 255 / 0.2);
-  }
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: rgba(56 189 248 / 0.7); /* Tailwind sky-400 70%不透明 */
+  border-radius: 12px;
+  border: 2px solid rgba(255 255 255 / 0.3);
+  box-shadow: 0 0 8px rgba(56 189 248 / 0.8);
+  transition: background-color 0.3s ease;
+}
 
-  /* 滚动条滑块 */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(56 189 248 / 0.7); /* Tailwind sky-400 70%不透明 */
-    border-radius: 12px;
-    border: 2px solid rgba(255 255 255 / 0.3);
-    box-shadow: 0 0 8px rgba(56 189 248 / 0.8);
-    transition: background-color 0.3s ease;
-  }
+/* 滚动条滑块悬停 */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56 189 248 / 0.9);
+  box-shadow: 0 0 12px rgba(56 189 248 / 1);
+}
 
-  /* 滚动条滑块悬停 */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(56 189 248 / 0.9);
-    box-shadow: 0 0 12px rgba(56 189 248 / 1);
-  }
-
-  /* Firefox */
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(56 189 248 / 0.7) rgba(255 255 255 / 0.15);
-  }
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56 189 248 / 0.7) rgba(255 255 255 / 0.15);
 }
 
 /* 字体闪烁动画 */
@@ -178,4 +168,7 @@ h6[id] {
 }
 .overflowclip {
   overflow-x: clip;
+  .overflow-clip {
+    overflow-x: clip;
+  }
 }

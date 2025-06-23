@@ -20,13 +20,15 @@ export default function BookMovieGallery() {
       />
 
       {/* 顶部标题和描述 */}
-      <div className="max-w-4xl text-center mb-12 z-10 relative">
-        <h1 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-wide">
-          书影音精选
-        </h1>
-        <p className="text-gray-700 text-lg font-light max-w-3xl mx-auto leading-relaxed">
-          读一本书，观一部电影，追一部剧，体验别人的人生故事。这里是我的精选书影音合集，带你感受墨水与光影交织的未来感。
-        </p>
+      <div className="max-w-4xl text-center mb-12 z-10 relative mx-auto">
+        <div className="inline-block px-8 py-8 rounded-3xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-2xl">
+          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-wide drop-shadow-lg">
+            书影音精选
+          </h1>
+          <p className="text-gray-700 dark:text-gray-200 text-lg font-light max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            读一本书，观一部电影，追一部剧，体验别人的人生故事。这里是我的精选书影音合集，带你感受墨水与光影交织的未来感。
+          </p>
+        </div>
       </div>
 
       {/* 分类切换按钮 */}
