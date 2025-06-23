@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import VideoBackground from './components/Videobg';
+import VideoBackground from './components/VideoBackground';
 import { items } from './media';
 
 const categories = ['全部', '电影', '电视剧', '书籍'];
@@ -15,7 +15,8 @@ export default function BookMovieGallery() {
     <section className="relative z-10 bg-white min-h-screen flex flex-col items-center py-20 px-6">
       {/* 背景视频 */}
       <VideoBackground
-        videoSrc="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/mov_1750092393646.mov"
+        videoSrc="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6876868767656757.mp4"
+        posterSrc="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/Snipaste_2025-06-24_00-27-19.png"
         opacity={0.25}
       />
 
