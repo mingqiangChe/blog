@@ -86,7 +86,7 @@ react-markdown：Markdown 渲染
 # 运行环境
 
 pnpm
-node 20
+node 20+
 
 # 打包
 
