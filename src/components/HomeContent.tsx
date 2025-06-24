@@ -1,10 +1,14 @@
 // src/app/[locale]/components/HomeContent.tsx
 import React from 'react';
 import BlogContributionCalendar from '@/components/BlogContributionCalendar';
-import RecentPosts from '@/components/RecentPosts';
 import Image from 'next/image';
-import Page_h from '@/app/[locale]/components/Page_h';
-
+import dynamic from 'next/dynamic';
+const RecentPosts = dynamic(() => import('@/components/RecentPosts'), {
+  loading: () => <p>加载中...</p>,
+});
+const Page_h = dynamic(() => import('@/app/[locale]/components/Page_h'), {
+  loading: () => <p>加载中...</p>,
+});
 interface HomeContentProps {
   posts: any[];
   locale: string;
