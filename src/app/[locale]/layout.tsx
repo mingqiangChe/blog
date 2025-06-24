@@ -1,6 +1,6 @@
 import i18nConfig from '../../../i18nConfig';
 import { notFound } from 'next/navigation';
-import Header from '@/components/Header';
+// import Header from '@/components/Header';
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper';
 import Footer from '@/components/Footer';
 import ProgressBar from '@/components/ProgressBar';
@@ -8,7 +8,11 @@ import { getAllPosts } from '@/lib/markdown';
 import { NextIntlClientProvider } from 'next-intl';
 import enMessages from '../../../messages/en.json';
 import zhMessages from '../../../messages/zh.json';
-
+import dynamic from 'next/dynamic';
+// 懒加载 只适合客户端渲染组件
+const Header = dynamic(() => import('@/components/Header'), {
+  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+});
 const messagesMap = {
   en: enMessages,
   zh: zhMessages,
