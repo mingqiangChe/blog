@@ -1,37 +1,23 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import styles from '../page.module.css';
-const ScrollToTopButton: React.FC = () => {
-  const [visible, setVisible] = useState(false);
 
+export default function ScrollToTopButton() {
+  const [vis, setVis] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.pageYOffset > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handler = () => setVis(window.pageYOffset > 300);
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
   }, []);
-
-  // 匀速滚动回顶部
+  if (!vis) return null;
   const scrollToTop = () => {
-    const scrollDuration = 6; // 缩短总时长，加快速度
-    const scrollStep = window.pageYOffset / (scrollDuration / 15);
-    const scrollInterval = setInterval(() => {
-      if (window.pageYOffset > 0) {
-        window.scrollBy(0, -scrollStep);
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  if (!visible) return null;
-
   return (
     <div
       className={styles.scrolltotop}
       onClick={scrollToTop}
-      aria-label="回到顶部"
       role="button"
       tabIndex={0}
     >
@@ -40,6 +26,4 @@ const ScrollToTopButton: React.FC = () => {
       </svg>
     </div>
   );
-};
-
-export default ScrollToTopButton;
+}

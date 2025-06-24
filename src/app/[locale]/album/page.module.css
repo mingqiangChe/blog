@@ -2,7 +2,6 @@
   min-height: 100vh;
   padding: 120px 60px 60px;
   background: linear-gradient(135deg, #23272f 0%, #181c22 100%);
-  min-height: 100vh;
 }
 
 .masonry-grid {
@@ -54,18 +53,58 @@
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-  .page-bg {
-    padding: 88px 0 0;
+/* ✅ 标签小徽章 */
+.card-tip {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* ✅ 加载骨架 */
+.loading-placeholder {
+  height: 180px;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 12px;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
   }
-  .masonry-grid {
-    margin-left: -8px;
-  }
-  .masonry-grid_column {
-    padding-left: 8px;
+  100% {
+    background-position: 400px 0;
   }
 }
 
+/* ✅ 标签按钮样式 */
+.tag-button {
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background-color: #e2e8f0;
+  color: #333;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+.tag-button:hover {
+  background-color: #cbd5e1;
+}
+.tag-button.active {
+  background-color: #1d4ed8;
+  color: white;
+  border-color: #1e40af;
+}
+
+/* ✅ 返回顶部按钮 */
 .scrolltotop {
   position: fixed;
   right: 24px;
@@ -90,4 +129,24 @@
   fill: #fff;
   width: 24px;
   height: 24px;
+}
+
+/* ✅ 响应式优化 */
+@media (max-width: 768px) {
+  .page-bg {
+    padding: 88px 20px 20px;
+  }
+  .masonry-grid {
+    margin-left: -12px;
+  }
+  .masonry-grid_column {
+    padding-left: 12px;
+  }
+  .card {
+    border-radius: 12px;
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    padding: 14px 12px;
+  }
 }

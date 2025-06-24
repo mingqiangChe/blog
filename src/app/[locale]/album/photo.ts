@@ -428,3 +428,4 @@ export const photos: Photo[] = [
   },
   // ...更多图片
 ];
+export const PHOTOS_PER_PAGE = 20;

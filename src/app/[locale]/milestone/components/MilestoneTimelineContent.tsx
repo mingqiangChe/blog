@@ -15,18 +15,18 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
               <div className="flex-1 w-1 bg-gradient-to-b from-blue-400 to-transparent"></div>
             </div>
             {/* 标题和描述 */}
-            <h2 className="ml-12 text-2xl font-bold text-gray-700 mb-2">
+            <h2 className="ml-12 text-2xl font-bold text-white-700 mb-2">
               {post.title}
             </h2>
             <div className="ml-12 text-gray-500 text-base mb-4 flex items-center">
-              <ClientDateWrapper dateStr={post.date} />，{post.description}
-              <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+              <ClientDateWrapper dateStr={post.date} />
+              {/* <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'short',
                   day: 'numeric',
                 })}
-              </span>
+              </span> */}
             </div>
             {/* 卡片（Link包裹） */}
             <Link
@@ -50,11 +50,11 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
                       draggable={false}
                       priority
                     />
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <span className="text-white text-lg font-semibold bg-blue-600/80 px-4 py-1 rounded-full">
                         《{post.title}》
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* 信息浮现层 */}
@@ -71,12 +71,12 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
                   </div>
                   <div className="text-xs text-gray-400 mb-1">
                     {post.author} ·{' '}
-                    {new Date(post.date).toLocaleDateString('en-US', {
+                    {/* {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'short',
                       day: 'numeric',
-                    })}{' '}
-                    ·
+                    })}{' '} */}
+                    {post.description}·
                     {typeof post.readingTime === 'number'
                       ? `${post.readingTime}分钟 · `
                       : ''}
