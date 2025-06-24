@@ -18,8 +18,16 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(0,255,255,0.12) 0, transparent 70%),
-              radial-gradient(circle at 30% 70%, rgba(255,0,255,0.10) 0, transparent 70%);
+  background: radial-gradient(
+      circle at 70% 30%,
+      rgba(0, 255, 255, 0.12) 0,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(255, 0, 255, 0.1) 0,
+      transparent 70%
+    );
   pointer-events: none;
   z-index: 0;
   filter: blur(40px);
@@ -27,7 +35,9 @@
 .bg::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
   height: 4px;
   background: linear-gradient(90deg, #00fff7 0%, #2b6fff 100%);
   box-shadow: 0 0 24px #00fff7aa;
@@ -61,8 +71,9 @@
 .sidebarGlass {
   background: rgba(30, 40, 60, 0.7);
   border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(0,255,255,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.12);
-  border: 1.5px solid rgba(0,255,255,0.18);
+  box-shadow: 0 4px 24px 0 rgba(0, 255, 255, 0.08),
+    0 1.5px 6px 0 rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(0, 255, 255, 0.18);
   backdrop-filter: blur(14px);
   padding: 32px 24px;
   width: 100%;
@@ -85,11 +96,12 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  padding: 36px 96px 128px;
+  padding: 36px 136px 128px;
 }
 
 /* 搜索框和下拉框 */
-.searchInput, .select {
+.searchInput,
+.select {
   background: rgba(30, 40, 60, 0.7);
   border: 1.5px solid #00fff7;
   border-radius: 10px;
@@ -103,7 +115,8 @@
   width: 100%;
   backdrop-filter: blur(8px);
 }
-.searchInput:focus, .select:focus {
+.searchInput:focus,
+.select:focus {
   border-color: #2b6fff;
   box-shadow: 0 4px 24px #2b6fff99;
 }
@@ -123,13 +136,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; /* 靠左对齐 */
-  gap: 24px 24px;              /* 行间距24px，列间距24px */
+  gap: 24px 24px; /* 行间距24px，列间距24px */
   width: 100%;
   box-sizing: border-box;
 }
 
 .card {
-  flex: 0 1 220px;  /* 最小宽度220px，自动收缩/换行 */
+  flex: 0 1 220px; /* 最小宽度220px，自动收缩/换行 */
   max-width: 240px; /* 最大宽度240px */
   width: 100%;
   margin-bottom: 24px;
@@ -139,22 +152,21 @@
   background: rgba(30, 40, 60, 0.7);
   border-radius: 18px;
   padding: 18px 24px;
-  box-shadow: 0 4px 24px 0 rgba(0,255,255,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 4px 24px 0 rgba(0, 255, 255, 0.08),
+    0 1.5px 6px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
   text-decoration: none;
-  transition: 
-    transform 0.3s cubic-bezier(.4,2,.3,1),
-    box-shadow 0.3s,
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1), box-shadow 0.3s,
     border 0.3s;
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(0,255,255,0.18);
+  border: 1.5px solid rgba(0, 255, 255, 0.18);
   position: relative;
   overflow: hidden;
 }
 .card:hover {
   background: rgba(30, 40, 60, 0.85);
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 40px 0 #00fff7, 0 4px 32px 0 rgba(0,255,255,0.18);
+  box-shadow: 0 8px 40px 0 #00fff7, 0 4px 32px 0 rgba(0, 255, 255, 0.18);
   border-color: #00fff7;
 }
 .icon {
