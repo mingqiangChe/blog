@@ -62,10 +62,10 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
 
   return (
     <nav className="">
-      <div className="border-l-2 border-gray-200 pl-4">
-        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+      <section className="border-l-2 border-gray-200 pl-4">
+        <h1 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
           目录
-        </h3>
+        </h1>
         <ul className="space-y-2">
           {headings.map(({ id, title, level }) => (
             <li key={id}>
@@ -94,7 +94,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </nav>
   );
 }

@@ -32,7 +32,7 @@ export default function CodeBlock({
       language={match[1]}
       style={oneDark}
       showLineNumbers
-      PreTag="div"
+      PreTag="section"
       {...props}
     >
       {String(children || '').replace(/\n$/, '')}

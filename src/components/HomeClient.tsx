@@ -30,7 +30,11 @@ export default function HomeClient({ initialPosts, locale }: HomeClientProps) {
   }
 
   if (!posts.length) {
-    return <div className="text-center text-gray-400 py-20">暂无文章数据</div>;
+    return (
+      <section className="text-center text-gray-400 py-20">
+        暂无文章数据
+      </section>
+    );
   }
 
   return <HomeContent posts={posts} locale={locale} />;

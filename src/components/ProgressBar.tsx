@@ -21,7 +21,7 @@ export default function ProgressBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <div
+    <section
       style={{
         position: 'fixed',
         top: 0,

@@ -19,26 +19,26 @@ export default function ExperienceSection({
   return (
     <section className="mb-12">
       <h2 className={styles.sectionTitle}>Experience</h2>
-      <div className="space-y-6">
+      <section className="space-y-6">
         {experiences.map((exp, i) => (
-          <div key={i} className={styles.card}>
-            <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
-              <div>
+          <section key={i} className={styles.card}>
+            <section className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
+              <section>
                 <h3 className="text-xl font-semibold text-white">
                   {exp.company}
                 </h3>
                 <p className="text-blue-200">{exp.position}</p>
-              </div>
+              </section>
               <span className={styles.period}>{exp.period}</span>
-            </div>
+            </section>
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <section className="flex flex-wrap gap-2 mb-4">
               {exp.technologies.map((tech, idx) => (
                 <span key={idx} className={styles.techTag}>
                   {tech}
                 </span>
               ))}
-            </div>
+            </section>
 
             <ul className="space-y-2">
               {exp.description.map((desc, idx) => (
@@ -48,9 +48,9 @@ export default function ExperienceSection({
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
         ))}
-      </div>
+      </section>
     </section>
   );
 }

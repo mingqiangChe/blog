@@ -3,11 +3,5 @@ export default function ClientLayoutWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div
-    className={`flex-grow`}
-  >
-    {children}
-  </div>
-  );
+  return <section className={`flex-grow`}>{children}</section>;
 }

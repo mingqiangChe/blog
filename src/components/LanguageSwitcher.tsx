@@ -6,7 +6,9 @@ interface LanguageSwitcherProps {
   currentLocale: string;
 }
 
-export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({
+  currentLocale,
+}: LanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +45,7 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
   };
 
   return (
-    <div className="relative inline-block text-left">
+    <section className="relative inline-block text-left">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="inline-flex items-center space-x-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500
@@ -57,27 +59,34 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
           {localeNames[validLocale as keyof typeof localeNames] || validLocale}
         </span>
         <svg
-          className={`w-5 h-5 text-white transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`w-5 h-5 text-white transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
       {isOpen && (
         <>
           {/* 遮罩层，点击关闭 */}
-          <div
+          <section
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
 
           {/* 下拉菜单 */}
-          <div
+          <section
             className="absolute right-0 mt-2 w-36 rounded-lg bg-black/60 backdrop-blur-md border border-purple-700 shadow-lg z-20
               ring-1 ring-purple-500 ring-opacity-30 focus:outline-none"
             role="menu"
@@ -100,9 +109,9 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
                 {localeNames[locale as keyof typeof localeNames]}
               </button>
             ))}
-          </div>
+          </section>
         </>
       )}
-    </div>
+    </section>
   );
 }

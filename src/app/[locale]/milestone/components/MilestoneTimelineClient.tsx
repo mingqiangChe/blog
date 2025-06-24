@@ -20,7 +20,9 @@ export default function MilestoneTimelineClient({
 
   if (!posts.length) {
     return (
-      <div className="text-center text-gray-400 py-20">暂无里程碑数据</div>
+      <section className="text-center text-gray-400 py-20">
+        暂无里程碑数据
+      </section>
     );
   }
 

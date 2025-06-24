@@ -98,45 +98,51 @@ export default function BlogContributionCalendar({
   const monthLabels = getMonthLabels(year);
 
   return (
-    <div className="bg-gray-900 p-3 sm:p-6 rounded-lg overflow-x-auto">
+    <section className="bg-gray-900 p-3 sm:p-6 rounded-lg overflow-x-auto">
       {/* 标题和统计 */}
-      <div className="text-white mb-4 text-sm">
+      <section className="text-white mb-4 text-sm">
         {totalContributions} contributions in {year}
-      </div>
+      </section>
 
       {/* 日历主体 */}
-      <div className="relative min-w-[500px] sm:min-w-0">
+      <section className="relative min-w-[500px] sm:min-w-0">
         {/* 月份标签 */}
-        <div className="flex text-xs sm:text-sm text-gray-400 mb-2 ml-10">
+        <section className="flex text-xs sm:text-sm text-gray-400 mb-2 ml-10">
           {monthLabels.map((month, index) => (
-            <div
+            <section
               key={month}
               className="flex-1 text-left"
               style={{ minWidth: '43px' }}
             >
               {index % 2 === 0 ? month : ''}
-            </div>
+            </section>
           ))}
-        </div>
+        </section>
 
-        <div className="flex">
+        <section className="flex">
           {/* 星期标签 */}
-          <div className="flex flex-col text-xs sm:text-sm text-gray-400 mr-2">
-            <div style={{ height: '12px' }}></div>
-            <div style={{ height: '12px', lineHeight: '12px' }}>Mon</div>
-            <div style={{ height: '12px' }}></div>
-            <div style={{ height: '12px', lineHeight: '12px' }}>Wed</div>
-            <div style={{ height: '12px' }}></div>
-            <div style={{ height: '12px', lineHeight: '12px' }}>Fri</div>
-            <div style={{ height: '12px' }}></div>
-          </div>
+          <section className="flex flex-col text-xs sm:text-sm text-gray-400 mr-2">
+            <section style={{ height: '12px' }}></section>
+            <section style={{ height: '12px', lineHeight: '12px' }}>
+              Mon
+            </section>
+            <section style={{ height: '12px' }}></section>
+            <section style={{ height: '12px', lineHeight: '12px' }}>
+              Wed
+            </section>
+            <section style={{ height: '12px' }}></section>
+            <section style={{ height: '12px', lineHeight: '12px' }}>
+              Fri
+            </section>
+            <section style={{ height: '12px' }}></section>
+          </section>
 
           {/* 日历格子 */}
-          <div className="flex">
+          <section className="flex">
             {weeks.map((week, weekIndex) => (
-              <div key={weekIndex} className="flex flex-col">
+              <section key={weekIndex} className="flex flex-col">
                 {week.map((day, dayIndex) => (
-                  <div
+                  <section
                     key={`${weekIndex}-${dayIndex}`}
                     title={`${day.count} contributions on ${day.date}`}
                     className="
@@ -150,31 +156,31 @@ export default function BlogContributionCalendar({
                     }}
                   />
                 ))}
-              </div>
+              </section>
             ))}
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
 
       {/* 图例 */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4 gap-2">
-        <div className="text-xs text-gray-400">
+      <section className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4 gap-2">
+        <section className="text-xs text-gray-400">
           Learn how we count contributions
-        </div>
-        <div className="flex items-center text-xs text-gray-400">
+        </section>
+        <section className="flex items-center text-xs text-gray-400">
           <span className="mr-2">Less</span>
-          <div className="flex space-x-1">
+          <section className="flex space-x-1">
             {[0, 1, 2, 3, 4].map((level) => (
-              <div
+              <section
                 key={level}
                 className="w-3 h-3 rounded-sm"
                 style={{ backgroundColor: getColor(level) }}
               />
             ))}
-          </div>
+          </section>
           <span className="ml-2">More</span>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
   );
 }

@@ -127,7 +127,7 @@ export default function Header({ locale, posts }: HeaderProps) {
           </Link>
 
           {/* PC端导航 */}
-          <div className="hidden md:flex space-x-10">
+          <section className="hidden md:flex space-x-10">
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
@@ -146,10 +146,10 @@ export default function Header({ locale, posts }: HeaderProps) {
                 )}
               </Link>
             ))}
-          </div>
+          </section>
 
           {/* 右侧操作区 */}
-          <div className="flex items-center space-x-4">
+          <section className="flex items-center space-x-4">
             <LanguageSwitcher currentLocale={locale} />
 
             <button
@@ -196,12 +196,12 @@ export default function Header({ locale, posts }: HeaderProps) {
                 </svg>
               )}
             </button>
-          </div>
+          </section>
         </nav>
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <div className="md:hidden fixed top-16 left-0 right-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900/95 backdrop-blur-xl border-t border-blue-700/50 shadow-lg rounded-b-3xl p-4 space-y-3 z-40">
+          <section className="md:hidden fixed top-16 left-0 right-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900/95 backdrop-blur-xl border-t border-blue-700/50 shadow-lg rounded-b-3xl p-4 space-y-3 z-40">
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
@@ -218,7 +218,7 @@ export default function Header({ locale, posts }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
-          </div>
+          </section>
         )}
       </header>
 

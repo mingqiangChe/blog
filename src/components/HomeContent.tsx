@@ -20,7 +20,7 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
 
   return (
     <main className="home-bg min-h-screen bg-no-repeat bg-top overflow-x-hidden pt-24">
-      <div className="flex items-center justify-center">
+      <section className="flex items-center justify-center">
         <Image
           src="https://avatars.githubusercontent.com/u/85379334?v=4"
           alt="头像"
@@ -29,16 +29,16 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
           className="rounded-full object-cover"
           priority
         />
-      </div>
+      </section>
       <Page_h />
       {/* 文章贡献日历 */}
-      <div className="flex items-center justify-center pt-32">
+      <section className="flex items-center justify-center pt-32">
         <BlogContributionCalendar posts={posts} year={year} />
-      </div>
+      </section>
       {/* 最近的文章 */}
-      <div className="flex items-center justify-center pt-32 pb-32">
+      <section className="flex items-center justify-center pt-32 pb-32">
         <RecentPosts posts={recentPosts} />
-      </div>
+      </section>
     </main>
   );
 }

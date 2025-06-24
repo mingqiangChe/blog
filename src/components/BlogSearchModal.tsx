@@ -22,7 +22,7 @@ export default function BlogSearchModal({
     inputRef.current?.focus();
   }, []);
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLsectionElement>(null);
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -49,8 +49,8 @@ export default function BlogSearchModal({
   }, [query, posts]);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/40 backdrop-blur-sm">
-      <div
+    <section className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/40 backdrop-blur-sm">
+      <section
         ref={modalRef}
         className="
           w-full max-w-2xl mt-8 sm:mt-24 mx-auto rounded-2xl 
@@ -67,7 +67,7 @@ export default function BlogSearchModal({
           <FiX />
         </button>
 
-        <div className="flex items-center mb-6 px-2">
+        <section className="flex items-center mb-6 px-2">
           <FiSearch className="text-slate-400 w-6 h-6 mr-2" />
           <input
             ref={inputRef}
@@ -77,9 +77,9 @@ export default function BlogSearchModal({
             className="flex-1 bg-transparent outline-none text-white placeholder-slate-400 text-lg"
             style={{ minWidth: 0 }}
           />
-        </div>
+        </section>
 
-        <div
+        <section
           className="
             flex-1 overflow-y-auto overflow-x-hidden space-y-3 pb-2
             scrollbar-thin
@@ -91,9 +91,9 @@ export default function BlogSearchModal({
           "
         >
           {results.length === 0 && (
-            <div className="text-slate-400 text-center py-10">
+            <section className="text-slate-400 text-center py-10">
               没有找到相关内容
-            </div>
+            </section>
           )}
           {results.map((post) => (
             <Link
@@ -105,7 +105,7 @@ export default function BlogSearchModal({
                 transition hover:scale-105 hover:shadow-2xl flex flex-col p-4
               "
             >
-              <div className="relative h-36 w-full overflow-hidden rounded-lg mb-3">
+              <section className="relative h-36 w-full overflow-hidden rounded-lg mb-3">
                 <Image
                   src={post.cover || '/default-cover.jpg'}
                   alt={post.title}
@@ -113,22 +113,22 @@ export default function BlogSearchModal({
                   className="object-cover w-full h-full max-w-full"
                   loading="lazy"
                 />
-              </div>
-              <div className="font-bold text-white text-lg mb-1 line-clamp-2">
+              </section>
+              <section className="font-bold text-white text-lg mb-1 line-clamp-2">
                 {post.title}
-              </div>
-              <div className="text-xs text-slate-400 mb-1 flex flex-wrap gap-2">
+              </section>
+              <section className="text-xs text-slate-400 mb-1 flex flex-wrap gap-2">
                 {post.tags && <span>Tags: {post.tags.join(', ')}</span>}
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 {post.readingTime && <span>· {post.readingTime} 分钟</span>}
-              </div>
-              <div className="text-slate-300 text-sm line-clamp-3">
+              </section>
+              <section className="text-slate-300 text-sm line-clamp-3">
                 {post.description}
-              </div>
+              </section>
             </Link>
           ))}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
   );
 }

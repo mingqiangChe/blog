@@ -17,21 +17,21 @@ export default function ProjectsSection({
 }: ProjectsSectionProps) {
   return (
     <section className="mb-12">
-      <h2 className={styles.sectionTitle}>Featured Projects</h2>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <h1 className={styles.sectionTitle}>Featured Projects</h1>
+      <section className="grid gap-6 sm:grid-cols-2">
         {featuredProjects.map((project, idx) => (
-          <div key={idx} className={styles.card}>
-            <h3 className="text-xl font-semibold text-white mb-2">
+          <section key={idx} className={styles.card}>
+            <h2 className="text-xl font-semibold text-white mb-2">
               {project.title}
-            </h3>
+            </h2>
             <p className="text-blue-200 mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <section className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, i) => (
                 <span key={i} className={styles.techTag}>
                   {tech}
                 </span>
               ))}
-            </div>
+            </section>
             <a
               href={project.link}
               target="_blank"
@@ -40,9 +40,9 @@ export default function ProjectsSection({
             >
               View Project
             </a>
-          </div>
+          </section>
         ))}
-      </div>
+      </section>
     </section>
   );
 }

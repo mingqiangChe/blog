@@ -15,7 +15,7 @@ export default function ScrollToTopButton() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
-    <div
+    <section
       className={styles.scrolltotop}
       onClick={scrollToTop}
       role="button"
@@ -24,6 +24,6 @@ export default function ScrollToTopButton() {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 4l-8 8h6v8h4v-8h6z" />
       </svg>
-    </div>
+    </section>
   );
 }
