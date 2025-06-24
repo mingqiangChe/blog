@@ -41,7 +41,6 @@ export default async function LocaleLayout(props: {
 
   const safeLocale = isSupportedLocale(locale) ? locale : 'en';
   const posts = await Promise.resolve(getAllPosts(safeLocale));
-
   return (
     <NextIntlClientProvider
       locale={safeLocale}

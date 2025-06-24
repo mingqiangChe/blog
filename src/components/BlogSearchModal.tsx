@@ -22,7 +22,7 @@ export default function BlogSearchModal({
     inputRef.current?.focus();
   }, []);
 
-  const modalRef = useRef<HTMLsectionElement>(null);
+  const modalRef = useRef<HTMLElementTagNameMap['section']>(null);
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
