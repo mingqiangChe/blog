@@ -6,7 +6,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { FiSearch } from 'react-icons/fi';
 import BlogSearchModal from './BlogSearchModal';
 import type { BlogPost } from '@/lib/markdown';
-
+import { useRouter } from 'next/navigation';
 interface HeaderProps {
   locale: string;
   posts: BlogPost[];
@@ -90,6 +90,27 @@ export default function Header({ locale, posts }: HeaderProps) {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [showSearch]);
+  const router = useRouter();
+  // 资源空闲加载
+  useEffect(() => {
+    const getPath = (key: 'media' | 'album') => {
+      if (locale === 'en') {
+        return `/en/${key}`;
+      }
+      return `/${key}`;
+    };
+
+    const prefetchPages = () => {
+      router.prefetch(getPath('media'));
+      router.prefetch(getPath('album'));
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(prefetchPages);
+    } else {
+      setTimeout(prefetchPages, 2000);
+    }
+  }, [router, locale]);
 
   return (
     <>
