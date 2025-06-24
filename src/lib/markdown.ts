@@ -129,7 +129,9 @@ export function getAllPosts(locale: string): BlogPost[] {
             author: matterResult.data.author || '',
             readingTime,
             cover: matterResult.data.cover || '',
-            isMilestone: matterResult.data.isMilestone === true || matterResult.data.isMilestone === 'true', // 支持字符串/布尔
+            isMilestone:
+              matterResult.data.isMilestone === true ||
+              matterResult.data.isMilestone === 'true', // 支持字符串/布尔
           } as BlogPost;
 
           console.log(`✅ 成功处理文章:`, {
