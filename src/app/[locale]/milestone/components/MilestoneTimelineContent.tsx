@@ -18,7 +18,7 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
             <h2 className="ml-12 text-2xl font-bold text-white-700 mb-2">
               {post.title}
             </h2>
-            <div className="ml-12 text-gray-500 text-base mb-4 flex items-center">
+            <div className="ml-12 text-white-500 text-base mb-4 flex items-center">
               <ClientDateWrapper dateStr={post.date} />
               {/* <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                 {new Date(post.date).toLocaleDateString('en-US', {
