@@ -47,12 +47,12 @@ export default async function LocaleLayout(props: {
       locale={safeLocale}
       messages={messagesMap[safeLocale]}
     >
-      <section className="flex flex-col min-h-screen bg-cover bg-center">
+      <main className="flex flex-col min-h-screen bg-cover bg-center">
         <ProgressBar />
         <Header posts={posts} locale={safeLocale} />
         <ClientLayoutWrapper>{props.children}</ClientLayoutWrapper>
         <Footer locale={safeLocale} />
-      </section>
+      </main>
     </NextIntlClientProvider>
   );
 }
