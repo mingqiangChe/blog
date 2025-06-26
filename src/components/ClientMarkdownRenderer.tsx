@@ -1,11 +1,13 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw'; // 新增
+import rehypeRaw from 'rehype-raw'; // 支持渲染 Markdown 中的 HTML
+import rehypeSanitize from 'rehype-sanitize'; // 安全净化，防XSS
 import Image from 'next/image';
-import CodeBlock from './CodeBlock';
+import CodeBlock from './CodeBlock'; // 你自定义的代码高亮组件
 
+// 生成 id 用于标题锚点
 const generateId = (text: string) =>
   text
     .toLowerCase()
@@ -21,11 +23,13 @@ const Heading = (Tag: keyof HTMLElementTagNameMap) => (props: any) => {
   return React.createElement(Tag, { id, ...rest }, children);
 };
 
+interface ClientMarkdownRendererProps {
+  content: string;
+}
+
 export default function ClientMarkdownRenderer({
   content,
-}: {
-  content: string;
-}) {
+}: ClientMarkdownRendererProps) {
   const components = {
     code: CodeBlock,
     h1: Heading('h1'),
@@ -43,20 +47,25 @@ export default function ClientMarkdownRenderer({
       const safeWidth = Number(width) || 800;
       const safeHeight = Number(height) || 600;
 
-      return React.createElement(Image, {
-        src: imageSrc,
-        alt: alt || '图片',
-        width: safeWidth,
-        height: safeHeight,
-        className: 'rounded-lg shadow-md mx-auto max-w-full h-auto',
-        loading: 'lazy',
-        ...restProps,
-      });
+      return (
+        <Image
+          src={imageSrc}
+          alt={alt || '图片'}
+          width={safeWidth}
+          height={safeHeight}
+          className="rounded-lg shadow-md mx-auto max-w-full h-auto"
+          loading="lazy"
+          {...restProps}
+        />
+      );
     },
   };
 
   return (
-    <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]}>
+    <ReactMarkdown
+      components={components}
+      rehypePlugins={[rehypeRaw, rehypeSanitize]} // 先渲染HTML，再净化
+    >
       {content}
     </ReactMarkdown>
   );

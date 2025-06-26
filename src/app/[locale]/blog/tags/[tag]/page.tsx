@@ -19,8 +19,8 @@ export default async function TagPage({ params }: TagPageProps) {
   );
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="mb-8">
+    <section className="max-w-4xl mx-auto px-4 py-8">
+      <section className="mb-8">
         <Link
           href={`/${locale}/blog`}
           className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
@@ -37,9 +37,9 @@ export default async function TagPage({ params }: TagPageProps) {
             ? `找到 ${taggedPosts.length} 篇相关文章`
             : `Found ${taggedPosts.length} posts`}
         </p>
-      </div>
+      </section>
 
-      <div className="space-y-6">
+      <section className="space-y-6">
         {taggedPosts.map((post) => (
           <Link
             key={post.slug}
@@ -57,7 +57,7 @@ export default async function TagPage({ params }: TagPageProps) {
             )}
           </Link>
         ))}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

@@ -24,14 +24,14 @@ export default function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="bg-gray-900 text-white py-8 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="flex flex-col md:flex-row justify-between items-center">
+          <section className="mb-4 md:mb-0">
             <p className="text-sm">{content.copyright}</p>
             <p className="text-xs text-gray-400 mt-1">{content.builtWith}</p>
-          </div>
+          </section>
 
-          <div className="flex space-x-6">
+          <section className="flex space-x-6">
             <a
               href={`/${locale}/about`}
               className="text-sm text-gray-300 hover:text-white transition-colors"
@@ -46,9 +46,9 @@ export default function Footer({ locale }: FooterProps) {
             >
               GitHub
             </a>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </footer>
   );
 }

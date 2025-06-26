@@ -7,9 +7,9 @@ export default function FuturisticHistoryBg({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#0a1a2b] via-[#112240] to-[#0f1e3a]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#0a1a2b] via-[#112240] to-[#0f1e3a]">
       {/* 复古纸张质感渐变 */}
-      <div
+      <section
         className="absolute inset-0 z-0"
         style={{
           background:
@@ -93,7 +93,7 @@ export default function FuturisticHistoryBg({
       </svg>
 
       {/* 柔光颗粒 */}
-      <div
+      <section
         className="absolute inset-0 z-20 pointer-events-none"
         style={{
           background:
@@ -104,16 +104,16 @@ export default function FuturisticHistoryBg({
       />
 
       {/* 未来感发光角标，带浮动动画 */}
-      <div className="absolute left-0 top-0 w-40 h-40 rounded-full bg-cyan-400/50 blur-3xl opacity-90 z-30 animate-float" />
-      <div className="absolute right-0 bottom-0 w-60 h-60 rounded-full bg-purple-400/40 blur-3xl opacity-80 z-30 animate-float delay-1000" />
+      <section className="absolute left-0 top-0 w-40 h-40 rounded-full bg-cyan-400/50 blur-3xl opacity-90 z-30 animate-float" />
+      <section className="absolute right-0 bottom-0 w-60 h-60 rounded-full bg-purple-400/40 blur-3xl opacity-80 z-30 animate-float delay-1000" />
 
       {/* 细微动态粒子 */}
-      <div className="absolute inset-0 z-25 pointer-events-none">
+      <section className="absolute inset-0 z-25 pointer-events-none">
         <ParticleCanvas />
-      </div>
+      </section>
 
       {/* 内容区 */}
-      <div className="relative z-40">{children}</div>
+      <section className="relative z-40">{children}</section>
 
       <style jsx>{`
         @keyframes lineGlow {
@@ -172,6 +172,6 @@ export default function FuturisticHistoryBg({
           animation-delay: 1s;
         }
       `}</style>
-    </div>
+    </section>
   );
 }

@@ -333,8 +333,8 @@ docker images my-nextjs-app
 分析镜像层
 docker history my-nextjs-app
 
-使用 dive 工具分析
-dive my-nextjs-app
+使用 sectione 工具分析
+sectione my-nextjs-app
 ```
 
 ## 🚀 生产环境部署

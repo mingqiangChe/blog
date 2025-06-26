@@ -16,7 +16,7 @@ export default function MobileTableOfContents({
   if (headings.length === 0) return null;
 
   return (
-    <div className="lg:hidden mb-6">
+    <section className="lg:hidden mb-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full p-3 bg-gray-100 dark:bg-gray-800 rounded-lg"
@@ -42,10 +42,10 @@ export default function MobileTableOfContents({
       </button>
 
       {isOpen && (
-        <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+        <section className="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
           <TableOfContents headings={headings} />
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   );
 }

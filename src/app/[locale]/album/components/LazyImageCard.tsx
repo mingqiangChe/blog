@@ -13,14 +13,14 @@ interface Props {
 export default function LazyImageCard({ photo, onClick }: Props) {
   const { ref, inView } = useInView({ triggerOnce: true, rootMargin: '200px' });
   return (
-    <div
+    <section
       ref={ref}
       className={styles.card}
       onClick={onClick}
       role="button"
       tabIndex={0}
     >
-      <div className={styles['card-tip']}>{photo.tip}</div>
+      <section className={styles['card-tip']}>{photo.tip}</section>
       {inView ? (
         <img
           src={photo.url}
@@ -29,9 +29,9 @@ export default function LazyImageCard({ photo, onClick }: Props) {
           loading="lazy"
         />
       ) : (
-        <div style={{ height: 180, background: '#eee' }} />
+        <section style={{ height: 180, background: '#eee' }} />
       )}
-      <div className={styles['card-desc']}>{photo.desc}</div>
-    </div>
+      <section className={styles['card-desc']}>{photo.desc}</section>
+    </section>
   );
 }

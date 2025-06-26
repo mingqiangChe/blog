@@ -53,8 +53,8 @@ export default function PhotoGalleryClient() {
   }, [selectedTip]);
 
   return (
-    <div className={styles['page-bg']}>
-      <div className="px-6 pb-6 flex gap-3 flex-wrap">
+    <section className={styles['page-bg']}>
+      <section className="px-6 pb-6 flex gap-3 flex-wrap">
         {uniqueTips.map((tip) => (
           <button
             key={tip}
@@ -68,7 +68,7 @@ export default function PhotoGalleryClient() {
             {tip}
           </button>
         ))}
-      </div>
+      </section>
 
       <Masonry
         breakpointCols={breakpointColumnsObj}
@@ -85,9 +85,9 @@ export default function PhotoGalleryClient() {
       </Masonry>
 
       {visible.length < filtered.length && (
-        <div ref={loadMoreRef} className="py-12 flex justify-center">
-          <div className="w-40 h-6 bg-gray-200 animate-pulse rounded" />
-        </div>
+        <section ref={loadMoreRef} className="py-12 flex justify-center">
+          <section className="w-40 h-6 bg-gray-200 animate-pulse rounded" />
+        </section>
       )}
 
       {lightboxIdx !== null && (
@@ -100,6 +100,6 @@ export default function PhotoGalleryClient() {
       )}
 
       <ScrollToTopButton />
-    </div>
+    </section>
   );
 }

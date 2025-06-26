@@ -43,19 +43,19 @@ export default function BookMovieGallery() {
       />
 
       {/* 顶部标题和描述 */}
-      <div className="max-w-4xl text-center mb-12 z-10 relative mx-auto">
-        <div className="inline-block px-8 py-8 rounded-3xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-2xl">
+      <section className="max-w-4xl text-center mb-12 z-10 relative mx-auto">
+        <section className="inline-block px-8 py-8 rounded-3xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-2xl">
           <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-wide drop-shadow-lg">
             书影音精选
           </h1>
           <p className="text-gray-700 dark:text-gray-200 text-lg font-light max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             读一本书，观一部电影，追一部剧，体验别人的人生故事。这里是我的精选书影音合集，带你感受墨水与光影交织的未来感。
           </p>
-        </div>
-      </div>
+        </section>
+      </section>
 
       {/* 分类切换按钮 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-16 z-10 relative">
+      <section className="flex flex-wrap justify-center gap-4 mb-16 z-10 relative">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -80,10 +80,10 @@ export default function BookMovieGallery() {
             {cat}
           </button>
         ))}
-      </div>
+      </section>
 
       {/* 卡片网格，遍历filtered */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-7xl w-full z-10 relative">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-7xl w-full z-10 relative">
         {filtered.map((item) => (
           <Link
             key={item.id}
@@ -99,7 +99,7 @@ export default function BookMovieGallery() {
               style={{ width: 220, height: 320 }}
             />
             {/* 信息浮现层 */}
-            <div
+            <section
               className="
                                 absolute inset-0 flex flex-col justify-end
                                 bg-gradient-to-t from-black/80 via-black/30 to-transparent
@@ -109,14 +109,14 @@ export default function BookMovieGallery() {
                                 text-cyan-100 font-sans select-none
                             "
             >
-              <h3 className="text-xl font-bold mb-1 tracking-wide drop-shadow-lg">
+              <h1 className="text-xl font-bold mb-1 tracking-wide drop-shadow-lg">
                 {item.title}
-              </h3>
-              <div className="text-sm mb-2 opacity-80">
+              </h1>
+              <section className="text-sm mb-2 opacity-80">
                 {item.type} · {item.year}
-              </div>
+              </section>
               <p className="text-sm line-clamp-3">{item.desc}</p>
-              <div className="flex flex-wrap gap-2 mt-3 items-center">
+              <section className="flex flex-wrap gap-2 mt-3 items-center">
                 {item.rating && (
                   <span className="text-yellow-400 font-semibold text-sm drop-shadow-lg">
                     ★ {item.rating.valueOf()}
@@ -130,13 +130,13 @@ export default function BookMovieGallery() {
                     {tag}
                   </span>
                 ))}
-              </div>
-            </div>
+              </section>
+            </section>
             {/* 发光边框 */}
             <span className="pointer-events-none absolute inset-0 rounded-3xl ring-2 ring-cyan-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </Link>
         ))}
-      </div>
+      </section>
     </section>
   );
 }

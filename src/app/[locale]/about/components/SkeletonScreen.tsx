@@ -27,18 +27,18 @@ export default function Header({ profileData }: HeaderProps) {
         {profileData.title}
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-4 text-blue-100 mb-6">
-        <div className="flex items-center gap-2">
+      <section className="flex flex-wrap items-center justify-center gap-4 text-blue-100 mb-6">
+        <section className="flex items-center gap-2">
           <span>📍</span>
           <span>{profileData.location}</span>
-        </div>
-        <div className="flex items-center gap-2">
+        </section>
+        <section className="flex items-center gap-2">
           <span>✉️</span>
           <span>{profileData.email}</span>
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div className="flex flex-wrap justify-center gap-3">
+      <section className="flex flex-wrap justify-center gap-3">
         {profileData.socialLinks.map((link) => (
           <a
             key={link.platform}
@@ -50,7 +50,7 @@ export default function Header({ profileData }: HeaderProps) {
             {link.platform}
           </a>
         ))}
-      </div>
+      </section>
     </header>
   );
 }
