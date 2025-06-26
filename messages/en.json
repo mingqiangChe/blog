@@ -3,5 +3,9 @@
     "pageheader": "Thomas Che",
     "motto": "Treat today as the last day of your life",
     "sect1": "recent articles"
+  },
+  "milestone": {
+    "tile1": "Create Blog",
+    "tile2": "Computer"
   }
 }

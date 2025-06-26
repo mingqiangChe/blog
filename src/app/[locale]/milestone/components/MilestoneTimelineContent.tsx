@@ -2,12 +2,18 @@ import FuturisticHistoryBg from './FuturisticHistoryBg';
 import Link from 'next/link';
 import Image from 'next/image';
 import ClientDateWrapper from './ClientDateWrapper';
-
+import { dict } from '../../../../../messages/dict';
+import { useTranslations, useLocale } from 'next-intl';
 export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
+  const locale = useLocale();
+  const lang = locale == 'en' ? 'en' : 'zh';
+
+  const milestones = dict.milestone[lang];
+  // 从字典文件里取当前语言对应的内容
   return (
     <FuturisticHistoryBg>
       <section className="min-h-screen py-12 px-4 pt-24 max-w-3xl mx-auto text-gray-300">
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <section key={post.slug} className="relative mb-16">
             {/* 时间线 */}
             <section className="absolute left-0 top-0 bottom-0 w-8 flex flex-col items-center">
@@ -15,18 +21,11 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
               <section className="flex-1 w-1 bg-gradient-to-b from-blue-400 to-transparent"></section>
             </section>
             {/* 标题和描述 */}
-            <h2 className="ml-12 text-2xl font-bold text-white-700 mb-2">
-              {post.title}
-            </h2>
+            <h1 className="ml-12 text-2xl font-bold text-white-700 mb-2">
+              {milestones[index]}
+            </h1>
             <section className="ml-12 text-white-500 text-base mb-4 flex items-center">
               <ClientDateWrapper dateStr={post.date} />
-              {/* <span className="ml-auto text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                })}
-              </span> */}
             </section>
             {/* 卡片（Link包裹） */}
             <Link
