@@ -172,3 +172,11 @@ html {
     overflow-x: clip;
   }
 }
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+img {
+  pointer-events: none;
+}
