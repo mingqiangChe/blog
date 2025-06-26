@@ -46,7 +46,7 @@ export default function MilestoneTimelineContent({ posts }: { posts: any[] }) {
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="rounded-xl object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75 group-hover:blur-sm"
+                      className="rounded-xl object-cover transition-transform duration-300"
                       draggable={false}
                       priority
                     />
