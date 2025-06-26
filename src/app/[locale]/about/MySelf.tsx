@@ -28,10 +28,7 @@ const ExperienceSection = dynamic(
     loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
   }
 );
-interface MySelfProps {
-  locale: string;
-}
-export default function MySelf({ locale }: MySelfProps) {
+export default function MySelf() {
   // console.log('当前语言:', locale);
 
   return (

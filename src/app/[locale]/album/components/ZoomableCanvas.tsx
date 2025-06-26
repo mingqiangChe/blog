@@ -8,7 +8,7 @@ interface Props {
 
 export default function ZoomableCanvas({ url }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLsectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });

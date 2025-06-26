@@ -1,5 +1,8 @@
 'use client';
-import React from 'react';
+
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+
 interface SocialLink {
   platform: string;
   url: string;
@@ -13,13 +16,13 @@ interface ProfileData {
   socialLinks: SocialLink[];
 }
 
-interface HeaderProps {
+interface SkeletonScreenProps {
   profileData: ProfileData;
 }
-import { useTranslations, useLocale } from 'next-intl';
 
-export default function SkeletonScreen({ profileData }: HeaderProps) {
+export default function SkeletonScreen({ profileData }: SkeletonScreenProps) {
   const t = useTranslations('about');
+
   return (
     <header className="text-center mb-16">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
