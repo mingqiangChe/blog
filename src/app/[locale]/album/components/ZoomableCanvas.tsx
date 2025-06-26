@@ -8,7 +8,7 @@ interface Props {
 
 export default function ZoomableCanvas({ url }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLsectionElement>(null);
 
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -141,7 +141,7 @@ export default function ZoomableCanvas({ url }: Props) {
   };
 
   return (
-    <div
+    <section
       ref={containerRef}
       style={{
         width: '100%',
@@ -166,6 +166,6 @@ export default function ZoomableCanvas({ url }: Props) {
           maxHeight: '100%',
         }}
       />
-    </div>
+    </section>
   );
 }
