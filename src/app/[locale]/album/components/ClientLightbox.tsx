@@ -1,11 +1,11 @@
 'use client';
 
 import Lightbox from 'yet-another-react-lightbox';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import type { Photo } from '../photo';
+import ZoomableCanvas from './ZoomableCanvas';
 
 interface Props {
   photos: Photo[];
@@ -31,7 +31,12 @@ export default function ClientLightbox({
       index={currentIdx}
       close={onClose}
       onSlideChange={onChangeIndex}
-      plugins={[Zoom, Captions]}
+      plugins={[Captions]}
+      render={{
+        slide: ({ slide }: { slide: { src: string } }) => (
+          <ZoomableCanvas url={slide.src} />
+        ),
+      }}
     />
   );
 }

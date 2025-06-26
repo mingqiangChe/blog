@@ -4,16 +4,21 @@
   background: linear-gradient(135deg, #23272f 0%, #181c22 100%);
 }
 
+/* 瀑布流整体容器，PC端用 flex 三列 */
 .masonry-grid {
   display: flex;
-  margin-left: -24px;
-  width: auto;
+  margin-left: -24px; /* 抵消列的 padding-left */
+  width: 100%;
 }
+
+/* 瀑布流每列，padding控制间距，三等分宽度 */
 .masonry-grid_column {
   padding-left: 24px;
   background-clip: padding-box;
+  flex: 1; /* 等分宽度 */
 }
 
+/* 卡片容器 */
 .card {
   position: relative;
   margin-bottom: 24px;
@@ -23,17 +28,26 @@
   background: #fff;
   transition: transform 0.18s;
   cursor: pointer;
+
+  width: 100%; /* 宽度撑满列 */
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
+
 .card:hover {
   transform: translateY(-6px) scale(1.025);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
+
 .card-img {
   width: 100%;
+  height: auto;
   display: block;
-  border-radius: 8px;
-  transition: filter 0.2s;
+  flex-shrink: 0; /* 防止被压缩 */
 }
+
+/* 描述文字覆盖底部 */
 .card-desc {
   position: absolute;
   left: 0;
@@ -53,7 +67,7 @@
   transform: translateY(0);
 }
 
-/* ✅ 标签小徽章 */
+/* 标签小徽章 */
 .card-tip {
   position: absolute;
   top: 8px;
@@ -67,7 +81,7 @@
   pointer-events: none;
 }
 
-/* ✅ 加载骨架 */
+/* 加载骨架 */
 .loading-placeholder {
   height: 180px;
   background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
@@ -84,67 +98,28 @@
   }
 }
 
-/* ✅ 标签按钮样式 */
-.tag-button {
-  padding: 4px 16px;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  background-color: #e2e8f0;
-  color: #333;
-  transition: all 0.2s ease;
-  border: 2px solid transparent;
-}
-.tag-button:hover {
-  background-color: #cbd5e1;
-}
-.tag-button.active {
-  background-color: #1d4ed8;
-  color: white;
-  border-color: #1e40af;
-}
-
-/* ✅ 返回顶部按钮 */
-.scrolltotop {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 48px;
-  height: 48px;
-  background: rgba(50, 70, 120, 0.85);
-  border-radius: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-}
-.scrolltotop:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-.scrolltotop svg {
-  fill: #fff;
-  width: 24px;
-  height: 24px;
-}
-
-/* ✅ 响应式优化 */
+/* 响应式优化 - 移动端一列 */
 @media (max-width: 768px) {
   .page-bg {
     padding: 88px 20px 20px;
   }
+
   .masonry-grid {
-    margin-left: -12px;
+    margin-left: 0;
+    flex-direction: column;
   }
+
   .masonry-grid_column {
-    padding-left: 12px;
+    padding-left: 0;
+    width: 100%;
   }
+
   .card {
     border-radius: 12px;
+    width: 100% !important;
+    margin-bottom: 20px;
   }
+
   .card-desc {
     font-size: 0.875rem;
     padding: 14px 12px;
