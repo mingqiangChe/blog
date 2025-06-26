@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './../page.module.css';
 
@@ -15,11 +16,12 @@ interface SkillCategory {
 interface SkillsSectionProps {
   skills: SkillCategory[];
 }
-
+import { useTranslations, useLocale } from 'next-intl';
 export default function SkillsSection({ skills }: SkillsSectionProps) {
+  const t = useTranslations('about');
   return (
     <section className="mb-12">
-      <h2 className={styles.sectionTitle}>Skills & Tools</h2>
+      <h1 className={styles.sectionTitle}> {t('toolsandskills')}</h1>
       <section className={styles.card}>
         <section className="flex flex-wrap gap-4 text-sm mb-6 text-blue-300">
           <span>下划线指示器</span>

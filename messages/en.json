@@ -4,8 +4,15 @@
     "motto": "Treat today as the last day of your life",
     "sect1": "recent articles"
   },
-  "milestone": {
-    "tile1": "Create Blog",
-    "tile2": "Computer"
+  "about": {
+    "name": "Thomas Che",
+    "title": "Full Stack Developer",
+    "location": "Shenzhen, China",
+    "github": "GitHub",
+    "blog": "Blog",
+    "toolsandskills": "Tools and Skills",
+    "workexpress": "Work Experience",
+    "education": "Education",
+    "featuredProjects":"Featured Projects"
   }
 }

@@ -5,15 +5,35 @@ import {
   featuredProjects,
   skills,
 } from './about';
-
 import React from 'react';
-import SkeletonScreen from './components/SkeletonScreen';
-import SkillsSection from './components/SkillsSection';
-import ProjectsSection from './components/ProjectsSection';
-import EducationSection from './components/EducationSection';
-import ExperienceSection from './components/ExperienceSection';
+import dynamic from 'next/dynamic';
+const SkeletonScreen = dynamic(() => import('./components/SkeletonScreen'), {
+  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+});
+const SkillsSection = dynamic(() => import('./components/SkillsSection'), {
+  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+});
+const ProjectsSection = dynamic(() => import('./components/ProjectsSection'), {
+  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+});
+const EducationSection = dynamic(
+  () => import('./components/EducationSection'),
+  {
+    loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  }
+);
+const ExperienceSection = dynamic(
+  () => import('./components/ExperienceSection'),
+  {
+    loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  }
+);
+interface MySelfProps {
+  locale: string;
+}
+export default function MySelf({ locale }: MySelfProps) {
+  // console.log('当前语言:', locale);
 
-export default function MySelf() {
   return (
     <section className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-blue-800 pt-20 overflow-x-hidden">
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12">

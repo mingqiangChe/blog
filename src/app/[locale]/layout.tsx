@@ -34,7 +34,7 @@ export default async function LocaleLayout(props: {
 }) {
   // ✅ 避免同步访问 params
   const { locale } = await Promise.resolve(props.params);
-
+  console.log('当前语言(useLocale):', locale);
   if (!i18nConfig.locales.includes(locale)) {
     notFound();
   }

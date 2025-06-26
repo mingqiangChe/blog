@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './../page.module.css';
 
@@ -11,13 +12,14 @@ interface Project {
 interface ProjectsSectionProps {
   featuredProjects: Project[];
 }
-
+import { useTranslations, useLocale } from 'next-intl';
 export default function ProjectsSection({
   featuredProjects,
 }: ProjectsSectionProps) {
+  const t = useTranslations('about');
   return (
     <section className="mb-12">
-      <h1 className={styles.sectionTitle}>Featured Projects</h1>
+      <h1 className={styles.sectionTitle}>{t('featuredProjects')}</h1>
       <section className="grid gap-6 sm:grid-cols-2">
         {featuredProjects.map((project, idx) => (
           <section key={idx} className={styles.card}>

@@ -1,11 +1,18 @@
 {
   "PageIndex": {
-    "pageheader": "托马斯·车",
+    "pageheader": "车车",
     "motto": "把今天当作生命中的最后一天来对待",
     "sect1": "最近的文章"
   },
-  "milestone": {
-    "tile1": "创建博客",
-    "tile2": "计算机"
+  "about": {
+    "name": "车明强",
+    "title": "全栈开发者",
+    "location": "中国 深圳",
+    "github": "GitHub",
+    "blog": "博客",
+    "toolsandskills": "工具和技能",
+    "workexpress": "工作经历",
+    "education": "教育经历",
+    "featuredProjects": "精选项目"
   }
 }

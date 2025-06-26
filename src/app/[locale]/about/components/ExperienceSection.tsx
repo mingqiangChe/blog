@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './../page.module.css';
 
@@ -12,21 +13,22 @@ interface Experience {
 interface ExperienceSectionProps {
   experiences: Experience[];
 }
-
+import { useTranslations, useLocale } from 'next-intl';
 export default function ExperienceSection({
   experiences,
 }: ExperienceSectionProps) {
+  const t = useTranslations('about');
   return (
     <section className="mb-12">
-      <h2 className={styles.sectionTitle}>Experience</h2>
+      <h1 className={styles.sectionTitle}>{t('workexpress')}</h1>
       <section className="space-y-6">
         {experiences.map((exp, i) => (
           <section key={i} className={styles.card}>
             <section className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
               <section>
-                <h3 className="text-xl font-semibold text-white">
+                <h2 className="text-xl font-semibold text-white">
                   {exp.company}
-                </h3>
+                </h2>
                 <p className="text-blue-200">{exp.position}</p>
               </section>
               <span className={styles.period}>{exp.period}</span>

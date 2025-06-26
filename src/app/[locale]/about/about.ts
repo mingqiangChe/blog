@@ -31,7 +31,7 @@ export interface SkillCategory {
 
 export const profileData = {
   name: '车明强',
-  title: 'Front-End Developer',
+  title: '全栈开发工程师',
   location: '广州',
   email: 'thomaschefowshu@gmail.com',
   socialLinks: [
@@ -136,7 +136,7 @@ export const featuredProjects: ProjectItem[] = [
 
 export const skills: SkillCategory[] = [
   {
-    category: 'Languages',
+    category: '语言',
     level: 'FE-related',
     skills: [
       { name: 'HTML', level: 'often' },
@@ -146,12 +146,12 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: '',
+    category: '存储',
     level: 'BE-related',
     skills: [{ name: 'SQL', level: 'sometimes' }],
   },
   {
-    category: 'Technologies',
+    category: 'ui 样式',
     level: 'UI-related',
     skills: [
       { name: 'Tailwind CSS', level: 'often' },
@@ -160,7 +160,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: '',
+    category: '技术栈',
     level: 'FE-related',
     skills: [
       { name: 'React', level: 'sometimes' },
@@ -171,7 +171,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: '',
+    category: '服务',
     level: 'BE-related',
     skills: [
       { name: 'Express', level: 'sometimes' },
@@ -179,7 +179,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'Tools & Softwares',
+    category: '开发工具',
     level: 'Code-related',
     skills: [
       { name: 'VS Code', level: 'often' },
@@ -190,7 +190,7 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: '',
+    category: '设计图',
     level: 'Designer-related',
     skills: [
       { name: 'Figma', level: 'often' },

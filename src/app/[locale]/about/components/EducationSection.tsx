@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './../page.module.css';
 
@@ -10,11 +11,12 @@ interface Education {
 interface EducationSectionProps {
   education: Education[];
 }
-
+import { useTranslations, useLocale } from 'next-intl';
 export default function EducationSection({ education }: EducationSectionProps) {
+  const t = useTranslations('about');
   return (
     <section className="mb-12">
-      <h1 className={styles.sectionTitle}>Education</h1>
+      <h1 className={styles.sectionTitle}>{t('education')}</h1>
       <section className="space-y-6">
         {education.map((edu, i) => (
           <section key={i} className={styles.card}>
