@@ -14,5 +14,9 @@
     "workexpress": "工作经历",
     "education": "教育经历",
     "featuredProjects": "精选项目"
+  },
+  "media": {
+    "title": "书影音",
+    "dec": "读一本书，观一部电影，追一部剧，体验别人的人生故事。"
   }
 }

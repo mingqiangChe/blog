@@ -13,6 +13,10 @@
     "toolsandskills": "Tools and Skills",
     "workexpress": "Work Experience",
     "education": "Education",
-    "featuredProjects":"Featured Projects"
+    "featuredProjects": "Featured Projects"
+  },
+  "media": {
+    "title": "Books, Movies and Audio",
+    "dec": "Read a book, watch a movie, follow a TV series, and experience other people's life stories."
   }
 }
