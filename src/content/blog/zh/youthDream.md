@@ -1,6 +1,6 @@
 ---
 title: '愿你的青春 不负梦想'
-date: '2025-06-22'
+date: '2025-06-28'
 description: '有人爱 有事做 有所期待'
 tags: ['青春', '梦想', '俞敏洪']
 author: 'Thomas che'

@@ -1,6 +1,6 @@
 ---
 title: '浪客剑心'
-date: '2025-08-25'
+date: '2025-6-21'
 description: '佐藤健主演 '
 tags: ['电影', '拔刀斋']
 author: 'Thomas che'
