@@ -72,4 +72,16 @@ export const items: media[] = [
     rating: 8.3,
     tags: ['青春', '梦想'],
   },
+  {
+    id: '6',
+    title: '古巴比伦最富有的人',
+    href: 'theRichestManInAncientBabylon',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%8F%A4%E5%B7%B4%E6%AF%94%E4%BC%A6%E6%9C%80%E5%AF%8C%E6%9C%89.jpeg',
+    year: 2025,
+    desc: '古巴比伦最富有的人',
+    rating: 8.3,
+    tags: ['经济'],
+  },
 ];
