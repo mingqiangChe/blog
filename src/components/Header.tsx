@@ -123,7 +123,7 @@ export default function Header({ locale, posts }: HeaderProps) {
             href={`/${locale}`}
             className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent select-none"
           >
-            {locale === 'zh' ? '车车' : 'Thomas Che Blog'}
+            {locale === 'zh' ? '车车' : 'Che'}
           </Link>
 
           {/* PC端导航 */}
