@@ -75,19 +75,17 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                   e.preventDefault();
                   scrollToHeading(id);
                 }}
+                title={title} // hover 显示完整 title
                 className={`
-                  block w-full text-left text-sm transition-colors duration-200
-                  ${level === 1 ? 'font-semibold' : ''}
-                  ${level === 2 ? 'pl-4' : ''}
-                  ${level === 3 ? 'pl-8' : ''}
-                  ${level >= 4 ? 'pl-12' : ''}
-                  text-white
-                  ${
-                    activeId === id
-                      ? 'text-blue-400 font-medium'
-                      : 'hover:text-blue-400'
-                  }
-                `}
+    block w-full text-left text-sm transition-colors duration-200
+    overflow-hidden whitespace-nowrap text-ellipsis
+    ${level === 1 ? 'font-semibold' : ''}
+    ${level === 2 ? 'pl-4' : ''}
+    ${level === 3 ? 'pl-8' : ''}
+    ${level >= 4 ? 'pl-12' : ''}
+    text-white
+    ${activeId === id ? 'text-blue-400 font-medium' : 'hover:text-blue-400'}
+  `}
               >
                 {title}
               </a>
