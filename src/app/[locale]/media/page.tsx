@@ -37,10 +37,11 @@ export default function BookMovieGallery() {
   return (
     <section className="relative z-10 bg-white min-h-screen flex flex-col items-center py-20 px-6">
       {/* 背景视频 */}
+      {/* https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/abe849fde860a5062e81f948c538ba74.mp4 日本富士山 */}
       <VideoBackground
         videoSrc="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6876868767656757.mp4"
         posterSrc="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/Snipaste_2025-06-24_00-27-19.png"
-        opacity={0.25}
+        opacity={1}
       />
 
       {/* 顶部标题和描述 */}

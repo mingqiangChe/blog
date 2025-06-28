@@ -60,4 +60,16 @@ export const items: media[] = [
     rating: 9.3,
     tags: ['散文'],
   },
+  {
+    id: '5',
+    title: '愿你的青春 不负梦想',
+    href: 'youthDream',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/51fymVoXUWL._SY342_.jpg',
+    year: 2017,
+    desc: '有人爱 有事做 有所期待',
+    rating: 8.3,
+    tags: ['青春', '梦想'],
+  },
 ];
