@@ -3,7 +3,7 @@ title: '浪客剑心'
 date: '2025-6-21'
 description: '佐藤健主演 '
 tags: ['电影', '拔刀斋']
-author: 'Thomas che'
+author: '和月伸宏'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/Snipaste_2025-06-21_22-35-17.png'
 ---
 

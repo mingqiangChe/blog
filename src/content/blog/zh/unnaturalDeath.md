@@ -3,7 +3,7 @@ title: '非自然死亡'
 date: '2025-06-15'
 description: '一部日剧 '
 tags: ['电视剧', '悬疑']
-author: 'Thomas che'
+author: '野木亚纪子'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/T062M0000040fQYR2kBmGk.webp'
 ---
 

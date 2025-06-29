@@ -3,7 +3,7 @@ title: '我与地坛'
 date: '2025-06-22'
 description: '他们从不把我当人'
 tags: ['散文', '史铁生']
-author: 'Thomas che'
+author: '史铁生'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/efb41e0eabbe2b1d022374cea043902e.jpg'
 ---
 

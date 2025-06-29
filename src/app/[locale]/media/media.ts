@@ -84,4 +84,16 @@ export const items: media[] = [
     rating: 8.3,
     tags: ['经济'],
   },
+  {
+    id: '7',
+    title: '短线交易秘诀',
+    href: 'shortTermTradingTips',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/51-0hwwWqzL.jpg',
+    year: 2025,
+    desc: '短线交易秘诀',
+    rating: 8.3,
+    tags: ['经济'],
+  },
 ];
