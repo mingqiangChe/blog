@@ -121,4 +121,40 @@ export const items: media[] = [
     rating: 7.4,
     tags: ['经济'],
   },
+  {
+    id: '10',
+    title: '我如何从股市赚了200万',
+    href: 'howIMade2millionFromTheStockMarket',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s4572415200%E5%AE%8C.jpg',
+    year: 2011,
+    desc: '在第18个月，他赚到了200万美元。',
+    rating: 7.7,
+    tags: ['经济'],
+  },
+  {
+    id: '11',
+    title: '股市长线法宝',
+    href: 'longTermStockMarketStrategy',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s28101848%E8%82%A1%E5%B8%82%E5%9C%BA%E5%85%88%E5%8F%91%E5%8C%85.jpg',
+    year: 2015,
+    desc: '金融危机将对金融市场及未来的股票收益率',
+    rating: 7.7,
+    tags: ['经济'],
+  },
+  {
+    id: '12',
+    title: '交易心理分析',
+    href: 'tradingPsychologyAnalysis',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s6298109jiaoyixinli.jpg',
+    year: 2011,
+    desc: ' 用自信、自律和赢家心态掌控市场',
+    rating: 7.8,
+    tags: ['经济'],
+  },
 ];
