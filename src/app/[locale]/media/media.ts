@@ -153,7 +153,7 @@ export const items: media[] = [
     cover:
       'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s6298109jiaoyixinli.jpg',
     year: 2011,
-    desc: ' 用自信、自律和赢家心态掌控市场',
+    desc: ' 掌控交易不是靠预测市场，而是建立“赢家心态”：自信、纪律和一致性思维。',
     rating: 7.8,
     tags: ['经济'],
   },
