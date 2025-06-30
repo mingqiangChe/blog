@@ -2,7 +2,7 @@
 title: '七界传说'
 date: '2025-06-21'
 description: '一部仙侠小说'
-tags: ['仙侠', '小说']
+tags: ['小说']
 author: '心梦无痕'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/shuimohua.jpeg'
 ---

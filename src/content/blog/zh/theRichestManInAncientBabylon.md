@@ -2,7 +2,7 @@
 title: '古巴比伦最富有的人'
 date: '2025-06-28'
 description: '古巴比伦最富有的人'
-tags: ['经济']
+tags: ['经济', '投资']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-28_21-55-19.png'
 ---

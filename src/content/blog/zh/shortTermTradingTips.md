@@ -2,7 +2,7 @@
 title: '短线交易秘诀'
 date: '2025-06-29'
 description: '短线交易秘诀'
-tags: ['经济', '股票']
+tags: ['经济', '投资', '股票']
 author: '拉里 威廉斯'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93banner.jpg'
 ---

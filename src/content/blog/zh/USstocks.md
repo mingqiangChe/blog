@@ -2,7 +2,7 @@
 title: '美股'
 date: '2025-7-1'
 description: '美股价值投资'
-tags: ['价值投资', '美股']
+tags: ['投资', '美股']
 author: 'Thomas Che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07-01_00-23-04.png'
 ---

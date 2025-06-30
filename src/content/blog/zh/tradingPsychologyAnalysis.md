@@ -2,7 +2,7 @@
 title: '交易心理分析'
 date: '2025-07-01'
 description: '掌控交易不是靠预测市场，而是建立“赢家心态”：自信、纪律和一致性思维。'
-tags: ['经济']
+tags: ['经济', '投资', '股票']
 author: ' 马克·道格拉斯'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/imagesmakedaonantusi.jpg'
 ---
