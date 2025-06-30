@@ -1,5 +1,5 @@
 ---
-title: '半导体ETF定投'
+title: 'ETF定投'
 date: '2025-7-1'
 description: '大a定投计划'
 tags: ['定投', '大a']
@@ -7,7 +7,7 @@ author: 'Thomas Che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-30_21-47-09.png'
 ---
 
-## 🧾 半导体 ETF 定投计划（2025 年 7 月起）
+## 🧾 ETF 定投计划（2025 年 7 月起）
 
 </br>
 
@@ -19,7 +19,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-## 🧾 精选 ETF 定投计划（2025 年 7 月起）
+## 精选 ETF 定投计划（2025 年 7 月起）
 
 </br>
 
@@ -31,7 +31,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 🎯 一、定投标的
+### 一、定投标的
 
 </br>
 
@@ -67,7 +67,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 📅 二、定投节奏
+### 二、定投节奏
 
 </br>
 
@@ -115,7 +115,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 💵 三、定投计划分配表
+### 三、定投计划分配表
 
 </br>
 
@@ -211,7 +211,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 📉 四、加码规则（建议设置提醒）
+### 四、加码规则（建议设置提醒）
 
 </br>
 
@@ -235,7 +235,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 🔍 五、辅助指标建议（富途牛牛/K 线图）
+### 五、辅助指标建议（富途牛牛/K 线图）
 
 </br>
 
