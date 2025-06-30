@@ -603,11 +603,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/57c3d45c8ef74f63
 </br>
 
 投资启示：合理利用税收优惠工具，优化投资回报。
+
 </br>
 
 ## 第 10 章 股东价值之源：盈利与股息
-
-
 
 </br>
 
