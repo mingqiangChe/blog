@@ -927,6 +927,12 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/57c3d45c8ef74f63
 
 </br>
 
+---
+
+</br>
+
+</br>
+
 # 长期投资策略的核心观点
 
 </br>
@@ -991,4 +997,8 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/57c3d45c8ef74f63
 
 “无论经济环境如何变化，股票都是追求长期稳定收益投资者的最佳选择。坚持长期、分散、低成本、价值导向的投资策略，远离短期投机和情绪干扰，才能真正实现财富的持续增长。”
 
-</br></br></br></br></br></br></br></br></br></br></br>
+</br>
+
+---
+
+</br></br></br></br></br></br></br></br></br></br>
