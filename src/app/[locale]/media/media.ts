@@ -96,4 +96,29 @@ export const items: media[] = [
     rating: 8.3,
     tags: ['经济'],
   },
+  {
+    id: '8',
+    title: '稳赚',
+    href: 'steadyProfit',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s33870313.jpg',
+    year: 2021,
+    desc: '如何轻松、科学、持续地获得被动收入',
+    rating: 6.1,
+    tags: ['经济'],
+  },
+
+  {
+    id: '9',
+    title: '股市长赢之道',
+    href: 'howToWinInTheStockMarket',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/s35044492.jpg',
+    year: 2024,
+    desc: '巴菲特70年超额回报的智慧',
+    rating: 7.4,
+    tags: ['经济'],
+  },
 ];
