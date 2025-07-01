@@ -7,378 +7,190 @@ author: 'Thomas che'
 cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
 ---
 
-# Docker 部署 Next.js 应用完整指南
+# 一、环境准备与服务器搭建
 
-## 📋 准备工作
+</br>
 
-### 1. 安装 Docker
+## 1. 服务器基础环境
 
-```
-Windows/Mac: 下载 Docker Desktop
-https://www.docker.com/products/docker-desktop
+</br>
 
- Ubuntu/Debian
-sudo apt update
-sudo apt install docker.io docker-compose
+```harsp
+操作系统：Linux (CentOS、Alpine、Ubuntu 等均可，示例用的是 Alpine 基础镜像)
 
- CentOS/RHEL
-sudo yum install docker docker-compose
+Node.js：使用官方 Node 20 Alpine 版本镜像
 
- 验证安装
-docker --version
-docker-compose --version
-```
+包管理工具：pnpm
 
-### 2. 项目结构检查
+进程管理：PM2
 
-确保你的项目结构如下：
+容器管理：Docker 和 Docker Compose
+
+反向代理：Nginx
 
 ```
-your-nextjs-project/
+
+</br>
+
+# 二、项目结构与代码准备
+
+</br>
+
+```harsp
+/root/cheche-deploy/
+├── Dockerfile
+├── docker-compose.yml
+├── nginx/
+│   └── cheche-blog.conf
+├── nginx-out/               # 本地存放 Nginx 配置供脚本使用
+├── package.json
+├── pm2.config.js
+├── scripts/
+│   └── deploy.sh
 ├── src/
 ├── public/
-├── package.json
-├── pnpm-lock.yaml
-├── next.config.js
-├── .env.production
-└── Dockerfile (即将创建)
+└── ...
 ```
 
-## 🐳 创建 Dockerfile
+</br>
 
-在项目根目录创建 `Dockerfile`：
+nginx/cheche-blog.conf 是 Nginx 配置文件的原始存放目录
 
-```
-多阶段构建，优化镜像大小
-FROM node:18-alpine AS base
+</br>
 
-启用 pnpm
-RUN corepack enable pnpm
+nginx-out/ 是本地用于同步和部署时复制的目录
 
- 设置工作目录
+</br>
+
+scripts/deploy.sh 是自动构建、启动和同步 Nginx 配置的脚本
+
+</br>
+
+# 三、Dockerfile 编写
+
+</br>
+
+```dockerfile
+FROM node:20-alpine
+
+RUN npm install -g pnpm pm2
+
 WORKDIR /app
 
-复制 package 文件
-COPY package.json pnpm-lock.yaml ./
+COPY . /app
 
- ========== 依赖安装阶段 ==========
-FROM base AS deps
- 安装生产依赖
-RUN pnpm install --frozen-lockfile --prod
+# 将 nginx 配置复制到容器指定目录（构建时）
+COPY nginx/cheche-blog.conf /nginx-out/
 
-========== 构建阶段 ==========
-FROM base AS builder
-复制所有文件
-COPY . .
-安装所有依赖（包括 devDependencies）
 RUN pnpm install --frozen-lockfile
- 构建应用
-RUN pnpm build
 
-========== 运行阶段 ==========
-FROM node:18-alpine AS runner
-WORKDIR /app
+RUN pnpm run build && pnpm run build:deploy
 
- 设置环境变量
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+COPY pm2.config.js /app/pm2.config.js
 
- 创建非 root 用户
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+WORKDIR /app/deploy/standalone
 
-复制构建产物
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-
-切换到非 root 用户
-USER nextjs
-
-暴露端口
 EXPOSE 3000
 
- 启动应用
-CMD ["node", "server.js"]
-```
-
-## ⚙️ 配置 Next.js
-
-### 1. 更新 next.config.js
+CMD ["pm2-runtime", "/app/pm2.config.js"]
 
 ```
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'standalone', // 启用 standalone 模式
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**', // 允许所有域名的图片
-      },
-    ],
-  },
-  // 其他配置...
-};
 
-module.exports = nextConfig;
-```
+</br>
 
-### 2. 创建 .dockerignore
+# 四、docker-compose.yml 示例
 
-```
- 忽略不需要的文件，减小构建上下文
-node_modules
-.next
-.git
-.gitignore
-README.md
-Dockerfile
-.dockerignore
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.env*.local
-```
-
-## 🔧 Docker Compose 配置（可选）
-
-创建 `docker-compose.yml`：
+</br>
 
 ```yaml
-version: '3.8'
+version: '3.9'
 
 services:
-  nextjs-app:
+  cheche-blog:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: cheche-blog
     ports:
       - '3000:3000'
-    environment:
-      - NODE_ENV=production
-      - NEXT_PUBLIC_SITE_URL=https://your-domain.com
-      - NEXT_PUBLIC_SITE_NAME=Cheche Blog
-    restart: unless-stopped
-     可选：挂载数据卷
-     volumes:
-       - ./data:/app/data
-
-  可选：添加 Nginx 反向代理
-  nginx:
-    image: nginx:alpine
-    ports:
-      - '80:80'
-      - '443:443'
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - nextjs-app
-    restart: unless-stopped
+      - ./nginx-out:/nginx-out # 本地 nginx-out 目录映射到容器
+    restart: always
 ```
 
-## 🚀 构建和运行
+</br>
 
-### 方法一：使用 Docker 命令
+# 五、scripts/deploy.sh 自动化部署脚本
 
-```yaml
-1. 构建镜像
-docker build -t my-nextjs-app .
-
-2. 运行容器
-docker run -p 3000:3000 \
--e NODE_ENV=production \
--e NEXT_PUBLIC_SITE_URL=https://your-domain.com \
--e NEXT_PUBLIC_SITE_NAME="Cheche Blog" \
---name nextjs-container \
-my-nextjs-app
-
-3. 后台运行
-docker run -d -p 3000:3000 \
--e NODE_ENV=production \
---name nextjs-container \
---restart unless-stopped \
-my-nextjs-app
-```
-
-### 方法二：使用 Docker Compose
+</br>
 
 ```bash
- 1. 构建并启动
-docker-compose up --build
+#!/bin/bash
 
- 2. 后台运行
-docker-compose up -d
+set -e
 
- 3. 查看日志
-docker-compose logs -f
+echo "🚀 正在构建并启动 Docker 容器..."
 
- 4. 停止服务
-docker-compose down
+# 构建并启动
+docker compose up -d --build
+
+# 确保 nginx-out 目录存在，并同步配置文件
+mkdir -p ./nginx-out
+cp ./nginx/cheche-blog.conf ./nginx-out/
+
+NGINX_SOURCE="./nginx-out/cheche-blog.conf"
+NGINX_TARGET="/etc/nginx/conf.d/cheche-blog.conf"
+
+if [ -f "$NGINX_SOURCE" ]; then
+  echo "📂 同步 nginx 配置到系统目录..."
+  cp "$NGINX_SOURCE" "$NGINX_TARGET"
+  echo "🔄 测试并重载 Nginx 配置..."
+  nginx -t && nginx -s reload
+  echo "✅ Nginx 配置已重载"
+else
+  echo "⚠️ 未找到 nginx 配置文件: $NGINX_SOURCE"
+  exit 1
+fi
+
+echo -e "\n🎉 部署完成！请访问: https://thomasche.top"
 ```
 
-## 📝 常用 Docker 命令
+</br>
 
-### 容器管理
+# 六、常见问题汇总与解决方案
 
-```bash
- 查看运行中的容器
-docker ps
+</br>
 
-查看所有容器
-docker ps -a
+![买入卖出形态](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07-01_20-28-55.png)
 
-停止容器
-docker stop nextjs-container
+</br>
 
- 启动容器
-docker start nextjs-container
+# 七、构建产物说明
 
-重启容器
-docker restart nextjs-container
+</br>
 
-删除容器
-docker rm nextjs-container
-```
+/app/deploy/standalone：Next.js 15 版本的独立运行包，包含服务端启动文件 server.js 和静态资源
 
-### 镜像管理
+</br>
 
-```bash
- 查看镜像
-docker images
+相关静态资源复制到对应目录确保独立运行
 
-删除镜像
-docker rmi my-nextjs-app
+</br>
 
-清理未使用的镜像
-docker image prune
+PM2 负责管理 Node 服务，使用 pm2.config.js 配置启动参数
 
-查看镜像构建历史
-docker history my-nextjs-app
-```
+</br>
 
-### 调试命令
+# 八、后续优化
 
-```bash
-进入容器内部
-docker exec -it nextjs-container sh
+</br>
 
- 查看容器日志
-docker logs nextjs-container
+构建加速： 本地提前构建，构建结果通过 CI/CD 上传制品，服务器只做部署，减少容器构建时间
 
-实时查看日志
-docker logs -f nextjs-container
+缓存管理： 利用 Docker 缓存机制，减少重复安装依赖
 
- 查看容器资源使用情况
-docker stats nextjs-container
-```
+日志监控： 整合日志收集工具，便于线上排查
 
-## 🔍 故障排除
+环境配置管理：使用 .env 文件或 Secrets 管理生产环境变量
 
-### 常见问题及解决方案
-
-#### 1. 构建失败
-
-```bash
- 清理 Docker 缓存
-docker system prune -a
-
- 重新构建（不使用缓存）
-docker build --no-cache -t my-nextjs-app .
-```
-
-#### 2. 端口被占用
-
-```bash
- 查看端口占用
-lsof -i :3000
-
-使用不同端口
-docker run -p 3001:3000 my-nextjs-app
-```
-
-#### 3. 环境变量问题
-
-```bash
- 检查容器内环境变量
-docker exec nextjs-container env
-
- 使用 .env 文件
-docker run --env-file .env.production -p 3000:3000 my-nextjs-app
-```
-
-## 📊 性能优化
-
-### 1. 多阶段构建优化
-
-```dockerfile
-使用更小的基础镜像
-FROM node:18-alpine AS base
-
-只复制必要文件
-COPY package.json pnpm-lock.yaml ./
-
-清理缓存
-RUN pnpm store prune
-```
-
-### 2. 镜像大小优化
-
-```bash
-查看镜像大小
-docker images my-nextjs-app
-
-分析镜像层
-docker history my-nextjs-app
-
-使用 sectione 工具分析
-sectione my-nextjs-app
-```
-
-## 🚀 生产环境部署
-
-### 1. 推送到 Docker Hub
-
-```bash
- 登录 Docker Hub
-docker login
-
-标记镜像
-docker tag my-nextjs-app username/my-nextjs-app:latest
-
-推送镜像
-docker push username/my-nextjs-app:latest
-```
-
-### 2. 在服务器上部署
-
-```bash
- 拉取镜像
-docker pull username/my-nextjs-app:latest
-
-运行容器
-docker run -d -p 80:3000 \
-  --name production-app \
-  --restart unless-stopped \
-  username/my-nextjs-app:latest
-```
-
-## 📚 学习资源
-
-### Docker 官方文档
-
-- [Docker 官方教程](https://docs.docker.com/get-started/)
-- [Dockerfile 最佳实践](https://docs.docker.com/develop/dev-best-practices/)
-
-### Next.js Docker 部署
-
-- [Next.js Docker 官方指南](https://nextjs.org/docs/deployment#docker-image)
-- [Next.js 生产环境部署](https://nextjs.org/docs/deployment)
-
-### 实用工具
-
-- **Portainer**: Docker 可视化管理界面
-- **Watchtower**: 自动更新 Docker 容器
-- **Traefik**: 反向代理和负载均衡
+多环境支持：编写不同环境的 Nginx 配置及部署脚本

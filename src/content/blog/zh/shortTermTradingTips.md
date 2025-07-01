@@ -612,7 +612,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-# 识别买房和卖方
+# 识别买方和卖方
 
 </br>
 
