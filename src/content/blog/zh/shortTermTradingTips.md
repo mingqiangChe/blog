@@ -514,7 +514,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-![攻击日买入形态](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07-01_01-05-15.png)
+![攻击日买入形态](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07-01_01-05-15.png)akli
 
 </br>
 

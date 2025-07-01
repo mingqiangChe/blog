@@ -110,6 +110,12 @@ export const navData: NavGroup[] = [
         url: 'https://home.console.aliyun.com/home/dashboard/ProductAndService',
         desc: '服务器',
       },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/tengxunyunlogo.png',
+        title: '腾讯云',
+        url: 'https://console.cloud.tencent.com/lighthouse/instance/index?rid=1',
+        desc: '服务器',
+      },
     ],
   },
   {
