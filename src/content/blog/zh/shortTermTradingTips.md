@@ -464,7 +464,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-计划好自己的交易，不要偏离计划，不要让情绪在错误的时间把自己推上悬崖。
+**计划好自己的交易，不要偏离计划，不要让情绪在错误的时间把自己推上悬崖。**
 
 </br>
 
