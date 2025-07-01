@@ -1,10 +1,32 @@
 # 架构
 
 首页：展示个人
+
+</br>
+
 博客：md 文档方式编写文章 集成代码高亮和技术示例 响应式设计适配移动端
+
+</br>
+
 工具：个人常用网页集成展示
-待续：
-中英文切换
+
+</br>
+
+影剧书：md 记录自己喜欢的电影 电视剧 书
+
+</br>
+
+摄影作品:拍摄作品
+
+</br>
+
+历史记:记录重要节点
+
+</br>
+
+关于我:自我介绍
+
+</br>
 
 # 项目结构
 
@@ -88,7 +110,7 @@ react-markdown：Markdown 渲染
 pnpm
 node 20+
 
-# 打包
+# 传统手动打包部署
 
 scripts/build-deploy.js 打包 node 脚本
 
@@ -121,3 +143,5 @@ pnpm run start
 
 sudo nginx -t
 sudo systemctl reload nginx
+
+# docker 部署

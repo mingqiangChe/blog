@@ -11,6 +11,6 @@ services:
     container_name: cheche-blog
     ports:
       - '3000:3000'
-    volumes:
-      - ./nginx-out:/nginx-out # 复制 nginx 配置出容器
+    # volumes:
+    #   - ./nginx-out:/nginx-out # 复制 nginx 配置出容器
     restart: always
