@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  cheche-blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REPO: https://github.com/user/cheche-blog.git
+        BRANCH: main
+    container_name: cheche-blog
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./nginx-out:/nginx-out # 复制 nginx 配置出容器
+    restart: always
