@@ -223,10 +223,6 @@ echo -e "\n✅ 部署完成！访问地址：https://$DOMAIN"
 node_modules
 .git
 .gitignore
-Dockerfile
-docker-compose.yml
-deploy/
-
 ```
 
 </br>
