@@ -4,7 +4,7 @@ date: '2025-06-21'
 description: '本博客使用md写博客的一些语法'
 tags: ['md语法']
 author: 'Thomas che'
-cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
 ---
 
 # 语法
@@ -29,7 +29,7 @@ cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
 ![替代文字](图片链接)
 ```
 
-![Perplexity Logo](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
+![Perplexity Logo](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg)
 
 ## 代码块
 

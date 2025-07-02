@@ -4,7 +4,7 @@ date: '2025-06-15'
 description: 'Next.js + Docker + PM2 + Nginx'
 tags: ['Docker', '部署']
 author: 'Thomas che'
-cover: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
 ---
 
 # 一、环境准备与服务器搭建
