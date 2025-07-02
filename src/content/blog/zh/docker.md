@@ -94,28 +94,42 @@ scripts/deploy.sh 是自动构建、启动和同步 Nginx 配置的脚本
 </br>
 
 ```dockerfile
+# 使用官方 Node 运行环境（已在服务器通过 node-20-alpine.tar 导入）
 FROM node:20-alpine
 
+# 安装全局工具
 RUN npm install -g pnpm pm2
 
+# 设置工作目录
 WORKDIR /app
 
+# 将本地代码复制到容器中（包含 cheche-blog 项目）
 COPY . /app
 
-# 将 nginx 配置复制到容器指定目录（构建时）
+
+# 拷贝 nginx 配置到输出目录（可选）
 COPY nginx/cheche-blog.conf /nginx-out/
 
+# 安装依赖
 RUN pnpm install --frozen-lockfile
 
+# 构建并导出 deploy 包
 RUN pnpm run build && pnpm run build:deploy
 
+
+
+# 拷贝 PM2 启动配置
 COPY pm2.config.js /app/pm2.config.js
 
+# 设置最终运行目录
 WORKDIR /app/deploy/standalone
 
+# 容器开放端口
 EXPOSE 3000
 
+# 使用 PM2 启动服务
 CMD ["pm2-runtime", "/app/pm2.config.js"]
+
 
 ```
 
@@ -133,11 +147,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        REPO: https://github.com/user/cheche-blog.git
+        BRANCH: main
     container_name: cheche-blog
     ports:
       - '3000:3000'
-    volumes:
-      - ./nginx-out:/nginx-out # 本地 nginx-out 目录映射到容器
+    # volumes:
+    #   - ./nginx-out:/nginx-out # 复制 nginx 配置出容器
     restart: always
 ```
 
@@ -147,40 +164,128 @@ services:
 
 </br>
 
+**自动申请证书 续期证书**
+
+</br>
+
 ```bash
 #!/bin/bash
+set -euo pipefail
 
-set -e
+DOMAIN="thomasche.top"
+EMAIL="thomaschefowshu@gmail.com"
+NGINX_CONF_SRC="./nginx/cheche-blog.conf"
+NGINX_CONF_DST="/etc/nginx/conf.d/cheche-blog.conf"
+CERTBOT_RENEW_HOOK="/usr/local/bin/certbot-renew-hook.sh"
 
-echo "🚀 正在构建并启动 Docker 容器..."
-
-# 构建并启动
+echo -e "🚀 构建并启动 Docker 容器..."
 docker compose up -d --build
 
-# 确保 nginx-out 目录存在，并同步配置文件
-mkdir -p ./nginx-out
-cp ./nginx/cheche-blog.conf ./nginx-out/
-
-NGINX_SOURCE="./nginx-out/cheche-blog.conf"
-NGINX_TARGET="/etc/nginx/conf.d/cheche-blog.conf"
-
-if [ -f "$NGINX_SOURCE" ]; then
-  echo "📂 同步 nginx 配置到系统目录..."
-  cp "$NGINX_SOURCE" "$NGINX_TARGET"
-  echo "🔄 测试并重载 Nginx 配置..."
-  nginx -t && nginx -s reload
-  echo "✅ Nginx 配置已重载"
+if [ -f "$NGINX_CONF_SRC" ]; then
+  echo -e "📄 复制 nginx 配置文件到系统路径..."
+  sudo cp "$NGINX_CONF_SRC" "$NGINX_CONF_DST"
 else
-  echo "⚠️ 未找到 nginx 配置文件: $NGINX_SOURCE"
+  echo "❌ 未找到 nginx 配置文件: $NGINX_CONF_SRC"
   exit 1
 fi
 
-echo -e "\n🎉 部署完成！请访问: https://thomasche.top"
+echo -e "🔧 创建 certbot 自动续期钩子..."
+sudo tee "$CERTBOT_RENEW_HOOK" > /dev/null <<EOF
+#!/bin/bash
+set -e
+echo "[\$(date)] 证书续期成功，正在重载 nginx..."
+sudo nginx -s reload
+EOF
+sudo chmod +x "$CERTBOT_RENEW_HOOK"
+
+echo -e "📜 申请或续期证书（自动配置 nginx）..."
+sudo certbot --nginx -d "$DOMAIN" \
+  --agree-tos --non-interactive -m "$EMAIL" \
+  --deploy-hook "$CERTBOT_RENEW_HOOK"
+
+echo -e "🔍 测试 nginx 配置..."
+sudo nginx -t
+
+echo -e "🔁 重载 nginx..."
+sudo nginx -s reload
+
+echo -e "\n✅ 部署完成！访问地址：https://$DOMAIN"
+
 ```
 
 </br>
 
-# 六、常见问题汇总与解决方案
+# 六、.dockerignore 优化（减小构建上下文体积）
+
+</br>
+
+```bash
+node_modules
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+deploy/
+
+```
+
+</br>
+
+# 七、nginx 配置
+
+</br>
+
+**单文件，Certbot 管理证书**
+
+</br>
+
+```harsp
+server {
+    listen 443 ssl;
+    server_name thomasche.top;
+
+    ssl_certificate /etc/letsencrypt/live/thomasche.top/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/thomasche.top/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    client_max_body_size 50m;
+
+    location /_next/static/ {
+        alias /etc/nginx/www/blog/.next/static/;
+        expires 1y;
+        access_log off;
+    }
+
+    location /public/ {
+        alias /etc/nginx/www/blog/public/;
+        expires 1d;
+        access_log off;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+
+server {
+    listen 80;
+    server_name thomasche.top;
+    return 301 https://\$host\$request_uri;
+}
+
+
+```
+
+</br>
+
+# 八、常见问题汇总与解决方案
 
 </br>
 
@@ -188,7 +293,36 @@ echo -e "\n🎉 部署完成！请访问: https://thomasche.top"
 
 </br>
 
-# 七、构建产物说明
+# 九、构建与部署流程总结
+
+</br>
+
+本地或服务器拉取最新代码
+
+执行 ./deploy.sh，自动构建 Docker 镜像并启动容器
+
+</br>
+
+```harsp
+
+[root@VM-12-6-opencloudos cheche-deploy]# chmod +x ./scripts/deploy.sh
+[root@VM-12-6-opencloudos cheche-deploy]# ./scripts/deploy.sh
+
+```
+
+</br>
+
+自动复制 nginx 配置到 /etc/nginx/conf.d/
+
+自动申请或续期 HTTPS 证书，并自动创建续期后重载 nginx 的钩子
+
+检查 nginx 配置并重载，使证书生效
+
+访问 https://thomasche.top，支持 HTTPS，静态资源带缓存，API 代理转发到 Node 容器
+
+</br>
+
+# 十、构建产物说明
 
 </br>
 
@@ -204,16 +338,18 @@ PM2 负责管理 Node 服务，使用 pm2.config.js 配置启动参数
 
 </br>
 
-# 八、后续优化
+# 十一、后续优化
 
 </br>
 
-构建加速： 本地提前构建，构建结果通过 CI/CD 上传制品，服务器只做部署，减少容器构建时间
+构建缓存提升：可使用 Docker BuildKit 的缓存机制或本地缓存服务加速依赖安装
 
-缓存管理： 利用 Docker 缓存机制，减少重复安装依赖
+日志管理：nginx 和 pm2 日志分离，定期收集和清理
 
-日志监控： 整合日志收集工具，便于线上排查
+安全防护：nginx 增加安全 headers（如 HSTS、X-Frame-Options 等）
 
-环境配置管理：使用 .env 文件或 Secrets 管理生产环境变量
+性能监控：集成 pm2 监控面板或使用 Prometheus 监控服务健康
 
-多环境支持：编写不同环境的 Nginx 配置及部署脚本
+备份机制：定期备份 nginx 配置、证书文件及重要数据
+
+多环境支持：增加 staging 环境配置，部署测试更安全
