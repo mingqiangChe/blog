@@ -7,29 +7,31 @@ RUN npm install -g pnpm pm2
 # 设置工作目录
 WORKDIR /app
 
-# 将本地代码复制到容器中（包含 cheche-blog 项目）
+# 拷贝源码
 COPY . /app
 
-
-# 拷贝 nginx 配置到输出目录（可选）
+# 拷贝 nginx 配置
 COPY nginx/cheche-blog.conf /nginx-out/
 
 # 安装依赖
 RUN pnpm install --frozen-lockfile
 
-# 构建并导出 deploy 包
+# 构建 deploy 产物
 RUN pnpm run build && pnpm run build:deploy
 
+# ✅ 拷贝静态资源供 Nginx 使用（关键部分）
+RUN mkdir -p /etc/nginx/www/blog/.next/static /etc/nginx/www/blog/public \
+  && cp -r deploy/standalone/.next/static/* /etc/nginx/www/blog/.next/static/ \
+  && cp -r deploy/standalone/public/* /etc/nginx/www/blog/public/
 
-
-# 拷贝 PM2 启动配置
+# 拷贝 PM2 配置
 COPY pm2.config.js /app/pm2.config.js
 
-# 设置最终运行目录
+# 设置最终运行路径
 WORKDIR /app/deploy/standalone
 
-# 容器开放端口
+# 暴露端口
 EXPOSE 3000
 
-# 使用 PM2 启动服务
+# 使用 PM2 启动应用
 CMD ["pm2-runtime", "/app/pm2.config.js"]
