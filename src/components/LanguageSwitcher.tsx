@@ -1,117 +1,111 @@
 'use client';
 import { useRouter, usePathname } from 'next/navigation';
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
-interface LanguageSwitcherProps {
-  currentLocale: string;
-}
+const locales = ['en', 'zh'];
+const localeNames = { en: 'English', zh: '中文' };
 
 export default function LanguageSwitcher({
   currentLocale,
-}: LanguageSwitcherProps) {
+}: {
+  currentLocale: string;
+}) {
   const router = useRouter();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const [locale, setLocale] = useState<'en' | 'zh'>(
+    locales.includes(currentLocale) ? (currentLocale as 'en' | 'zh') : 'en'
+  );
 
-  const locales = ['en', 'zh'];
+  useEffect(() => {
+    setLocale(
+      locales.includes(currentLocale) ? (currentLocale as 'en' | 'zh') : 'en'
+    );
+  }, [currentLocale]);
 
-  const validLocale: string = useMemo(() => {
-    if (!currentLocale || typeof currentLocale !== 'string') {
-      return 'en';
-    }
-    if (locales.includes(currentLocale)) {
-      return currentLocale;
-    }
-    return 'en';
-  }, [currentLocale, locales]);
-
-  const localeNames = {
-    en: 'English',
-    zh: '中文',
-  };
-
-  const switchLanguage = (newLocale: string) => {
+  const switchLanguage = () => {
+    const newLocale = locale === 'en' ? 'zh' : 'en';
     const days = 30;
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    const expires = date.toUTCString();
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
 
     const segments = pathname.split('/');
     segments[1] = newLocale;
-    const newPath = segments.join('/');
-    router.push(newPath);
-    setIsOpen(false);
+    router.push(segments.join('/'));
+    setLocale(newLocale);
   };
 
   return (
-    <section className="relative inline-block text-left">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center space-x-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500
-          px-4 py-2 font-semibold text-white shadow-[0_0_15px_rgba(139,92,246,0.7)] hover:shadow-[0_0_25px_rgba(139,92,246,0.9)]
-          transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
-        aria-haspopup="true"
-        aria-expanded={isOpen}
-      >
-        <span className="text-xl select-none">🌐</span>
-        <span className="select-none">
-          {localeNames[validLocale as keyof typeof localeNames] || validLocale}
-        </span>
-        <svg
-          className={`w-5 h-5 text-white transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : 'rotate-0'
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </button>
+    <>
+      <style>
+        {`
+        .lang-switch {
+          position: relative;
+          width: 5em;
+          height: 3em;
+          display: inline-block;
+        }
+        .lang-switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .lang-slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0; left: 0;
+          right: 0; bottom: 0;
+          background: linear-gradient(45deg, hsl(260, 100%, 50%), hsl(300, 100%, 50%));
+          transition: 0.4s;
+          border-radius: 34px;
+          box-shadow: 0 0 10px hsla(260, 100%, 60%, 0.6);
+        }
+        .lang-slider::before {
+          position: absolute;
+          content: "";
+          height: 2.2em;
+          width: 2.2em;
+          left: 0.4em;
+          bottom: 0.4em;
+          background-color: white;
+          border-radius: 50%;
+          transition: 0.4s;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+        input:checked + .lang-slider::before {
+          transform: translateX(2em);
+        }
+        .lang-label {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 0.75rem;
+          font-weight: bold;
+          color: white;
+          padding: 0 0.5em;
+          pointer-events: none;
+          user-select: none;
+        }
+        .lang-label.zh {
+          left: 0.4em;
+        }
+        .lang-label.en {
+          right: 0.4em;
+        }
+      `}
+      </style>
 
-      {isOpen && (
-        <>
-          {/* 遮罩层，点击关闭 */}
-          <section
-            className="fixed inset-0 z-10"
-            onClick={() => setIsOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* 下拉菜单 */}
-          <section
-            className="absolute right-0 mt-2 w-36 rounded-lg bg-black/60 backdrop-blur-md border border-purple-700 shadow-lg z-20
-              ring-1 ring-purple-500 ring-opacity-30 focus:outline-none"
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="language-switcher"
-          >
-            {locales.map((locale) => (
-              <button
-                key={locale}
-                onClick={() => switchLanguage(locale)}
-                disabled={locale === validLocale}
-                className={`w-full px-4 py-2 text-left text-sm font-medium rounded-md transition-colors
-                  ${
-                    locale === validLocale
-                      ? 'bg-purple-700 text-white cursor-default shadow-[0_0_10px_rgba(139,92,246,0.8)]'
-                      : 'text-purple-300 hover:bg-purple-600 hover:text-white'
-                  }`}
-                role="menuitem"
-              >
-                {localeNames[locale as keyof typeof localeNames]}
-              </button>
-            ))}
-          </section>
-        </>
-      )}
-    </section>
+      <label className="lang-switch">
+        <input
+          type="checkbox"
+          checked={locale === 'zh'}
+          onChange={switchLanguage}
+          aria-label="切换语言"
+        />
+        <span className="lang-slider" />
+        <span className="lang-label zh">中</span>
+        <span className="lang-label en">EN</span>
+      </label>
+    </>
   );
 }
