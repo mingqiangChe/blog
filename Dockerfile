@@ -17,11 +17,12 @@ COPY nginx/cheche-blog.conf /nginx-out/
 RUN pnpm install --frozen-lockfile
 
 # 构建产物（包括 .next/standalone）
-RUN pnpm run build 
-# 🔥 确保静态资源和 public 被放入运行目录
-RUN mkdir -p /app/deploy/standalone/.next/static \
+RUN pnpm run build
+
+# 确保复制完整的 .next 文件夹，而非只复制 .next/static
+RUN mkdir -p /app/deploy/standalone/.next \
  && cp -r .next/standalone/* /app/deploy/standalone/ \
- && cp -r .next/static /app/deploy/standalone/.next/static \
+ && cp -r .next/* /app/deploy/standalone/.next/ \
  && cp -r public /app/deploy/standalone/public \
  && cp pm2.config.js /app/deploy/standalone/pm2.config.js
 
