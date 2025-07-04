@@ -23,14 +23,12 @@ sudo tee "$CERTBOT_RENEW_HOOK" > /dev/null <<EOF
 #!/bin/bash
 set -e
 echo "[\$(date)] 证书续期成功，正在重载 nginx..."
-sudo nginx -s reload
+nginx -s reload
 EOF
 sudo chmod +x "$CERTBOT_RENEW_HOOK"
 
 echo -e "📜 申请或续期证书（自动配置 nginx）..."
-sudo certbot --nginx -d "$DOMAIN" \
-  --agree-tos --non-interactive -m "$EMAIL" \
-  --deploy-hook "$CERTBOT_RENEW_HOOK"
+sudo certbot certonly --nginx -d "$DOMAIN" --deploy-hook "$CERTBOT_RENEW_HOOK" --agree-tos --non-interactive -m "$EMAIL"
 
 echo -e "🔍 测试 nginx 配置..."
 sudo nginx -t
