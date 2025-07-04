@@ -7,7 +7,7 @@ RUN npm install -g pnpm pm2
 # 设置工作目录
 WORKDIR /app
 
-# 拷贝源码
+# 拷贝源码（包括构建脚本和 .next 等）
 COPY . /app
 
 # 拷贝 nginx 配置
@@ -16,11 +16,15 @@ COPY nginx/cheche-blog.conf /nginx-out/
 # 安装依赖
 RUN pnpm install --frozen-lockfile
 
-# 构建 deploy 产物
+# 构建产物（包括 .next/standalone）
 RUN pnpm run build && pnpm run build:deploy
 
-# 拷贝 PM2 配置
-COPY pm2.config.js /app/pm2.config.js
+# 🔥 确保静态资源和 public 被放入运行目录
+RUN mkdir -p /app/deploy/standalone/.next/static \
+ && cp -r .next/standalone/* /app/deploy/standalone/ \
+ && cp -r .next/static /app/deploy/standalone/.next/static \
+ && cp -r public /app/deploy/standalone/public \
+ && cp pm2.config.js /app/deploy/standalone/pm2.config.js
 
 # 设置最终运行路径
 WORKDIR /app/deploy/standalone
@@ -29,4 +33,4 @@ WORKDIR /app/deploy/standalone
 EXPOSE 3000
 
 # 使用 PM2 启动应用
-CMD ["pm2-runtime", "/app/pm2.config.js"]
+CMD ["pm2-runtime", "pm2.config.js"]

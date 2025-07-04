@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "build:deploy": "pnpm build && node scripts/build-deploy.js",
     "build:deploy:zip": "pnpm build:deploy && cd deploy && zip -r ../deploy.zip .",
     "deploy:clean": "rm -rf deploy deploy.zip",
     "start": "node .next/standalone/server.js",
