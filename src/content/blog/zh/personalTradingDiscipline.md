@@ -94,6 +94,8 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
+生命的第一条规则就是生存；第二条规则就是只要让第一条成立，其他规则都可以不理。
+
 </br>
 
 **阻力越大 突破越强 量越大 攻势越猛**
