@@ -17,6 +17,18 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
+价格创新高时买入 创新低卖出
+
+</br>
+
+世界上所有赚钱的事都不值得你把自己搞得神经衰弱。
+
+</br>
+
+交易者里面，没人能分毫不差地预测到市场运动（由于价格的随机运动），因此止损点也就必须放在过去的、随机的价格波动区域以外。
+
+</br>
+
 </br>
 
 </br>
@@ -30,6 +42,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 </br>
 
 我们都知道，使用非市场的或者非经济驱动的信息绘制的图表与使用股票和商品期货交易数据绘制的图表很像，也可以看到同样的反映买卖双方对抗的形态。这里，我必须告诫你要运用自己的智慧，别被这些图表形态干扰。
+
+</br>
+
+图表不能左右市场，市场让图表变化。
 
 </br>
 
@@ -105,7 +121,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-### 理想做空做多状态
+## 理想做空做多状态
 
 </br>
 
@@ -127,7 +143,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-### 目标价 与 追踪止损
+## 目标价 与 追踪止损
 
 </br>
 
@@ -155,7 +171,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-## 价格与时间
+# 价格与时间
 
 </br>
 
@@ -223,7 +239,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-### 顺势而为：价格形态的第二条重要规则
+## 顺势而为：价格形态的第二条重要规则
 
 </br>
 
@@ -924,10 +940,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-图表不能左右市场，市场让图表变化。
-
-</br>
-
 但幸运的是，我们还是能靠交易挣钱的，毕竟一些指标、形态和技术还是可靠的，虽然靠这些并不是总能赚到钱，但会经常赚钱。 高成功的股票 龙头股
 
 </br>
@@ -961,7 +973,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-使用固定金额止损远比用旋转舞一样的技术分析要有效得多。
+**使用固定金额止损远比用旋转舞一样的技术分析要有效得多。**
 
 </br>
 
