@@ -126,6 +126,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
+资金管理公式：（账户资金 × 风险比例）/最大亏损 = 交易的合约或股票数。
+
+</br>
+
 止损点动态调整 止损点也就必须放在过去的、随机的价格波动区域以外 w 底型下
 
 </br>

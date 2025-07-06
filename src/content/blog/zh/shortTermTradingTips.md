@@ -795,10 +795,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 </br>
 
-他说他用恐惧作为他的优势，因为恐惧使得他尊重对手，不采取不计后果的行动或偏离他个人的战斗风格。
-
-</br>
-
 ## 资金管理
 
 </br>
@@ -989,11 +985,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%
 
 不要将你希望的真理和实际的真理混为一谈。
 
-</br>
-
-永远使用止损点。
-
-</br>
 </br>
 
 # 技术指标与辅助判断
