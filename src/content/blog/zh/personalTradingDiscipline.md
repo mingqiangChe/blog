@@ -13,6 +13,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
+**永远使用止损点。**
+
+</br>
+
 ## 知易行难
 
 </br>
