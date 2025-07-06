@@ -40,7 +40,7 @@ export const navData: NavGroup[] = [
         desc: '韩国ai pro一年',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/5644654654.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/inslogo.jpeg',
         title: 'ins',
         url: 'https://www.instagram.com/eallion',
         desc: 'ins',
