@@ -245,6 +245,39 @@ server {
 
     client_max_body_size 50m;
 
+  # 启用动态 gzip 压缩（保留）
+        gzip on;
+        gzip_vary on;
+        gzip_proxied any;
+        gzip_comp_level 6;
+        gzip_types
+            text/plain
+            text/css
+            application/json
+            application/javascript
+            application/x-javascript
+            text/xml
+            application/xml
+            application/xml+rss
+            image/svg+xml
+            font/woff2
+            font/woff;
+
+    # 安全头部
+
+    # # 防止点击劫持（只能被本域 iframe 加载）
+    add_header X-Frame-Options "SAMEORIGIN";
+    # # 防止 XSS 攻击
+    add_header X-XSS-Protection "1; mode=block";
+    # # 防止 MIME 类型混淆
+    add_header X-Content-Type-Options "nosniff";
+
+
+
+    # 禁止设置静态资源强缓存（包含 chunks, js, css, fonts 等）
+
+
+    # React/Next.js 页面代理
     location / {
         proxy_pass http://127.0.0.1:3000;
         proxy_http_version 1.1;
@@ -253,6 +286,9 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
+
+        # 可选：用于支持 SPA 的前端路由 fallback（仅当你使用 history 模式等时开启）
+        # try_files $uri $uri/ /index.html;
     }
 }
 
@@ -261,6 +297,7 @@ server {
     server_name thomasche.top;
     return 301 https://$host$request_uri;
 }
+
 
 ```
 
