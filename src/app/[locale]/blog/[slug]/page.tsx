@@ -24,9 +24,13 @@ export async function generateMetadata(props: any): Promise<Metadata> {
   const title = post.title;
   const description =
     post.description || '车明强的个人博客 - 记录技术与生活成长';
-  const cover =
-    post.cover ||
+
+  // 默认图地址，且确保封面是有效链接
+  const defaultCover =
     'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg';
+  const cover =
+    post.cover && post.cover.startsWith('http') ? post.cover : defaultCover;
+
   const url = `https://thomasche.top/${locale}/blog/${slug}`;
 
   return {
@@ -71,6 +75,12 @@ export default async function BlogPostPage(props: any) {
   const headings = extractHeadings(post.content);
   // 保障 tags 是数组，避免 undefined 导致错误
   const tags = Array.isArray(post.tags) ? post.tags : [];
+
+  // 默认图地址，保证展示图片不空
+  const defaultCover =
+    'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg';
+  const cover =
+    post.cover && post.cover.startsWith('http') ? post.cover : defaultCover;
 
   return (
     <section className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2 overflowclip">
@@ -145,26 +155,26 @@ export default async function BlogPostPage(props: any) {
                 <MobileTableOfContents headings={headings} />
               </header>
 
-              {post.cover && (
-                <section className="mb-8 flex justify-center">
-                  <section
-                    className="relative w-full max-w-2xl rounded-lg overflow-hidden"
-                    style={{
-                      height: '50vw',
-                      maxHeight: '400px',
-                      minHeight: '180px',
-                    }}
-                  >
-                    <Image
-                      src={post.cover}
-                      alt={post.title}
-                      fill
-                      className="rounded-lg shadow-lg object-cover"
-                      sizes="(max-width: 768px) 100vw, 768px"
-                    />
-                  </section>
+              {/* 使用默认图替代缺失封面 */}
+              <section className="mb-8 flex justify-center">
+                <section
+                  className="relative w-full max-w-2xl rounded-lg overflow-hidden"
+                  style={{
+                    height: '50vw',
+                    maxHeight: '400px',
+                    minHeight: '180px',
+                  }}
+                >
+                  <Image
+                    src={cover}
+                    alt={post.title}
+                    fill
+                    priority
+                    className="rounded-lg shadow-lg object-cover"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                  />
                 </section>
-              )}
+              </section>
 
               <section style={{ color: '#e3f6ff' }}>
                 <ClientMarkdownRenderer content={post.content} />
