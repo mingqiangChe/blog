@@ -9,15 +9,16 @@ import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({
-  params,
-}: {
+interface PageParams {
   params: { locale: string; slug: string };
-}): Promise<Metadata> {
-  const { locale, slug } = await params;
+}
+
+// ✅ 修复解构方式：不要在参数中解构 params
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const params = await props.params; // ✅ await 解包
+  const { locale, slug } = params;
 
   const post = await getPostBySlug(slug, locale);
-
   if (!post) return {};
 
   const title = post.title;
@@ -56,21 +57,18 @@ export async function generateMetadata({
     metadataBase: new URL('https://thomasche.top'),
   };
 }
-interface BlogPostPageProps {
-  params: { locale: string; slug: string };
-}
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { locale, slug } = await params;
-
-  // 获取文章数据
+// ✅ 修复组件函数参数的解构方式
+export default async function BlogPostPage(props: any) {
+  const params = await props.params; // ✅ await 解包
+  const { locale, slug } = params;
   const post = await getPostBySlug(slug, locale);
   if (!post) {
     notFound();
   }
 
-  // 提取标题用于目录
   const headings = extractHeadings(post.content);
+
   return (
     <section className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2 overflowclip">
       <section className="relative max-w-5xl w-full mt-32 mx-auto p-8 rounded-2xl backdrop-blur-md bg-white/10 shadow-2xl border border-cyan-400/30">
@@ -91,6 +89,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 >
                   {post.title}
                 </h1>
+
                 <section
                   className="flex flex-wrap items-center gap-4 text-sm mb-6"
                   style={{ color: '#7de2fc' }}
@@ -116,7 +115,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     </span>
                   )}
                 </section>
-                {post.tags && post.tags.length > 0 && (
+
+                {post.tags?.length > 0 && (
                   <section className="flex flex-wrap gap-2 mb-6">
                     {post.tags.map((tag) => (
                       <Link
@@ -129,6 +129,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     ))}
                   </section>
                 )}
+
                 {post.description && (
                   <p
                     className="text-lg italic border-l-4 border-cyan-400 pl-4 mb-6"
@@ -137,6 +138,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {post.description}
                   </p>
                 )}
+
                 <MobileTableOfContents headings={headings} />
               </header>
 
@@ -145,9 +147,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <section
                     className="relative w-full max-w-2xl rounded-lg overflow-hidden"
                     style={{
-                      height: '50vw', // 移动端高度自适应屏幕宽度的一半
-                      maxHeight: '400px', // 最大高度不超过400px
-                      minHeight: '180px', // 最小高度，避免过矮
+                      height: '50vw',
+                      maxHeight: '400px',
+                      minHeight: '180px',
                     }}
                   >
                     <Image
@@ -161,7 +163,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </section>
               )}
 
-              {/* Markdown 内容渲染 */}
               <section style={{ color: '#e3f6ff' }}>
                 <ClientMarkdownRenderer content={post.content} />
               </section>
@@ -184,14 +185,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <section className="sticky top-24 z-50">
               <section
                 className="rounded-xl bg-white/10 backdrop-blur border border-cyan-400/20 p-4 shadow-lg h-[800px] overflow-y-auto scrollbar scrollbar-thumb-cyan-400 scrollbar-track-white/10"
-                style={{ scrollbarWidth: 'thin' }} // Firefox 支持
+                style={{ scrollbarWidth: 'thin' }}
               >
                 <TableOfContents headings={headings} />
               </section>
             </section>
           </section>
         </section>
-        {/* 可选：页面角落加个发光霓虹球/粒子动效等 */}
+
         <section className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-2xl pointer-events-none"></section>
       </section>
     </section>
