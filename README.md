@@ -26,61 +26,6 @@
 
 关于我:自我介绍
 
-</br>
-
-# 项目结构
-
-blog/
-
-- app/
-  - [locale]/
-    - layout.tsx # 国际化布局
-    - page.tsx # 多语言首页
-    - blog/
-      - page.tsx # 博客列表
-      - [slug]/
-        - page.tsx # 博客详情
-    - search/
-      - page.tsx # 工具页面
-      - page.module.css # 工具样式 import styles from './page.module.css'; styles.bg
-    - about/
-      - page.tsx # 个人介绍
-  - globals.css
-  - layout.tsx
-- components/
-  - Header.tsx
-  - LanguageSwitcher.tsx
-  - BlogPost.tsx
-  - CodeBlock.tsx
-- content/
-  - blog/
-    - en/
-    - zh/
-- lib/
-  - markdown.ts
-- i18nConfig.js
-- middleware.ts
-- next-intl.config.mjs
-- i18n/
-  - request.ts
-  - routing.ts
-- messages/
-  - en.json
-  - zh.json
-- next.config.js
-- tsconfig.json
-- package.json
-
-layout.tsx：布局文件，多个页面共享 UI
-
-page.tsx：页面文件，定义路由的实际内容
-
-loading.tsx：加载状态文件
-
-error.tsx：错误处理文件
-
-not-found.tsx：404 页面文件
-
 # 核心技术栈
 
 Next.js 14 + App Router：现代化的 React 框架
@@ -96,6 +41,11 @@ Tailwind CSS：样式框架
 gray-matter：Markdown 元数据解析
 
 react-markdown：Markdown 渲染
+
+# 依赖
+
+node v22.9.0
+pnpm 10.12.1
 
 # 开发思路
 
