@@ -7,9 +7,57 @@ import Link from 'next/link';
 import MobileTableOfContents from '@/components/MobileTableOfContents';
 import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string; slug: string };
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  const post = await getPostBySlug(slug, locale);
+
+  if (!post) return {};
+
+  const title = post.title;
+  const description =
+    post.description || '车明强的个人博客 - 记录技术与生活成长';
+  const cover =
+    post.cover ||
+    'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg';
+  const url = `https://thomasche.top/${locale}/blog/${slug}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'Thomasche Blog',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'article',
+      images: [
+        {
+          url: cover,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [cover],
+    },
+    metadataBase: new URL('https://thomasche.top'),
+  };
+}
 interface BlogPostPageProps {
-  params: Promise<{ locale: string; slug: string }>;
+  params: { locale: string; slug: string };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
