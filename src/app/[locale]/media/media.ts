@@ -13,6 +13,18 @@ export interface media {
 
 export const items: media[] = [
   {
+    id: '4',
+    title: '认知觉醒',
+    href: 'cognitiveAwakening',
+    type: '书籍',
+    cover:
+      'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%A5%E8%A7%89%E9%86%92logo.jpg',
+    year: 2020,
+    desc: '开启自我改变的原动力',
+    rating: 8.0,
+    tags: ['认知'],
+  },
+  {
     id: '1',
     title: '非自然死亡',
     href: 'unnaturalDeath',
@@ -49,7 +61,7 @@ export const items: media[] = [
     tags: ['电影'],
   },
   {
-    id: '4',
+    id: '5',
     title: '我与地坛',
     href: 'woyuditan',
     type: '书籍',
@@ -61,7 +73,7 @@ export const items: media[] = [
     tags: ['散文'],
   },
   {
-    id: '5',
+    id: '6',
     title: '愿你的青春 不负梦想',
     href: 'youthDream',
     type: '书籍',
@@ -73,7 +85,7 @@ export const items: media[] = [
     tags: ['青春', '梦想'],
   },
   {
-    id: '6',
+    id: '13',
     title: '古巴比伦最富有的人',
     href: 'theRichestManInAncientBabylon',
     type: '书籍',
