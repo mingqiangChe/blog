@@ -13,9 +13,9 @@ interface PageParams {
   params: { locale: string; slug: string };
 }
 
-// ✅ 修复解构方式：不要在参数中解构 params
+// 生成 Metadata，await params 解包
 export async function generateMetadata(props: any): Promise<Metadata> {
-  const params = await props.params; // ✅ await 解包
+  const params = await props.params;
   const { locale, slug } = params;
 
   const post = await getPostBySlug(slug, locale);
@@ -58,16 +58,19 @@ export async function generateMetadata(props: any): Promise<Metadata> {
   };
 }
 
-// ✅ 修复组件函数参数的解构方式
+// 组件主函数，await params 解包
 export default async function BlogPostPage(props: any) {
-  const params = await props.params; // ✅ await 解包
+  const params = await props.params;
   const { locale, slug } = params;
+
   const post = await getPostBySlug(slug, locale);
   if (!post) {
     notFound();
   }
 
   const headings = extractHeadings(post.content);
+  // 保障 tags 是数组，避免 undefined 导致错误
+  const tags = Array.isArray(post.tags) ? post.tags : [];
 
   return (
     <section className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2 overflowclip">
@@ -116,9 +119,9 @@ export default async function BlogPostPage(props: any) {
                   )}
                 </section>
 
-                {post.tags?.length > 0 && (
+                {tags.length > 0 && (
                   <section className="flex flex-wrap gap-2 mb-6">
-                    {post.tags.map((tag) => (
+                    {tags.map((tag) => (
                       <Link
                         key={tag}
                         href={`/${locale}/blog/tags/${encodeURIComponent(tag)}`}
