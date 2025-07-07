@@ -46,11 +46,3 @@ react-markdown：Markdown 渲染
 
 node v22.9.0
 pnpm 10.12.1
-
-# 开发思路
-
-父组件（或页面、布局）默认是服务端组件（Server Component），它负责数据获取、SEO、渲染静态内容，性能更好。
-
-子组件只在需要交互、状态管理、浏览器 API 等客户端功能时，单独加 "use client"，让它成为客户端组件（Client Component）。
-
-这样父组件在服务器渲染，子组件在客户端渲染，二者共存，互不冲突。
