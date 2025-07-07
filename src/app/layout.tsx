@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg', 
+        url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg',
         width: 1200,
         height: 630,
         alt: '车明强的博客',
@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     ],
   },
   metadataBase: new URL('https://thomasche.top'),
+  other: {
+    'google-site-verification': '34U60AoX7QlJc9CsMqy8raJwYlFGtAoA7Nq5ToqGaMA',
+  },
 };
 
 export default function RootLayout({
