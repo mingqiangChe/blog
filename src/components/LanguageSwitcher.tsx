@@ -22,16 +22,42 @@ export default function LanguageSwitcher({
     );
   }, [currentLocale]);
 
-  const switchLanguage = () => {
+  const switchLanguage = async () => {
     const newLocale = locale === 'en' ? 'zh' : 'en';
-    const days = 30;
-    const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
 
+    // 设置 Cookie
+    const days = 30;
+    const expires = new Date(
+      Date.now() + days * 24 * 60 * 60 * 1000
+    ).toUTCString();
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    // 构造新路径（替换语言段）
     const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/'));
+    if (segments.length > 1 && locales.includes(segments[1])) {
+      segments[1] = newLocale;
+    } else {
+      segments.splice(1, 0, newLocale); // 没有 locale 段时自动插入
+    }
+
+    const newPath = segments.join('/');
+
+    // 判断目标页面是否存在（HEAD 请求，轻量）
+    try {
+      const res = await fetch(newPath, { method: 'HEAD' });
+      if (res.ok) {
+        router.push(newPath);
+      } else {
+        // 若 404，可跳转至该语言首页或 toast 提示
+        router.push(`/${newLocale}`);
+        // 或者使用 UI 提示
+        // toast.warning('目标语言版本不存在，跳转到主页');
+      }
+    } catch (err) {
+      console.error('语言切换时检测页面失败:', err);
+      router.push(`/${newLocale}`);
+    }
+
     setLocale(newLocale);
   };
 
