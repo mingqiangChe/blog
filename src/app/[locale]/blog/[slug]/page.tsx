@@ -1,4 +1,4 @@
-// 博客详情页（高科技酷炫风格）
+// 博客详情页
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/markdown';
 import { extractHeadings } from '@/lib/extractHeadings';
