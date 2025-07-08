@@ -49,23 +49,23 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
-◆ 无论何时，都要把对方的情绪和意见分开对待，这样，即使在最糟糕的事情中也能学到有用的东西。
+无论何时，都要把对方的情绪和意见分开对待，这样，即使在最糟糕的事情中也能学到有用的东西。
 
 </br>
 
-◆ 感知越精细，自我完善也会越精细。越是好的反思，着眼点往往越细微，毕竟大而泛的事情大家都能感知到，而细微的变化却不是每个人都能感受到的，这体现了反思者的水平。
+感知越精细，自我完善也会越精细。越是好的反思，着眼点往往越细微，毕竟大而泛的事情大家都能感知到，而细微的变化却不是每个人都能感受到的，这体现了反思者的水平。
 
 </br>
 
-◆ 反思的最终目的是改变，而不是形式的完美
+反思的最终目的是改变，而不是形式的完美
 
 </br>
 
-◆ 二是尽量提炼认知点或行动点。不要沉溺于情绪释放或碎碎念。因为反思的最终目的是改变，所以要尽可能提炼出具体可操作的认知点和行动点，以指导未来的生活，否则很容易让反思变成日记，效果大打折扣。
+二是尽量提炼认知点或行动点。不要沉溺于情绪释放或碎碎念。因为反思的最终目的是改变，所以要尽可能提炼出具体可操作的认知点和行动点，以指导未来的生活，否则很容易让反思变成日记，效果大打折扣。
 
 </br>
 
-◆ 一定要对自己极度坦诚，把心底最真实的想法挖出来
+一定要对自己极度坦诚，把心底最真实的想法挖出来
 
 </br>
 
@@ -81,6 +81,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![三种情绪](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%B8%89%E7%A7%8D%E6%83%85%E7%BB%AA.png)
+
+</br>
+
 我们做不成事，并不是因为愿望不够强烈，也不是因为意志力不足，而是因为默认天性太过强大。
 
 </br>
@@ -89,7 +93,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
-顺人性做人 逆人性做事
+**顺人性做人 逆人性做事**
 
 </br>
 
@@ -349,6 +353,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![元认知与感觉区别](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%85%83%E8%AE%A4%E7%9F%A5%E5%8C%BA%E5%88%AB.png)
+
+</br>
+
 或许因为人类生来就拥有这种能力，所以人们对此不以为然，但回望历史长河便可知道，这可是其他物种求之不得的本领，我们没有理由不好好珍惜。
 
 </br>
@@ -365,6 +373,9 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%85%83%E8%AE%A4%E7%9F%A5%E5%BE%97%E8%AE%A4%E7%9F%A5.png)
+
+</br>
 这才是高级的元认知——时刻帮你从高处、深处、远处看待现在的自己，让自己保持清醒、不迷失，保持动力、不懈怠，保持平和、不冲动。有这样的能力加持，你会差吗？
 
 </br>
@@ -402,6 +413,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 很多人为了获得美好的人生，常常给自己立下早起、跑步、阅读、写作等目标，但是没过几天就放弃了，因为那些目标大多是受大环境影响而跟风设定的——别人说好，自己也想要，但实际上，自己并不需要。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%A4%A7%E8%84%91%E4%B8%BB%E5%8A%A8%E6%9D%83.png)
 
 </br>
 
@@ -477,6 +492,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E7%81%B5%E6%80%A7%E5%8D%81%E8%B6%B3.png)
+
+</br>
+
 “做 A 想 B”的行为模式却实实在在地影响着我们，使我们在不知不觉中徒生烦恼、渐生愚钝。从某种意义上说，它正是我们烦恼和无能的来源。
 
 </br>
@@ -515,6 +534,8 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 此时就需要潜意识的发散模式来帮助我们，它能够让大脑跳出原来的工作区域，让神经元随机地和不相关的区域进行连接，从而得到也许能解决问题的答案。
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%BD%9C%E6%84%8F%E8%AF%86.png)
+
 </br>
 
 李大钊也说过：“要学就学个踏实，要玩就玩个痛快！”说明界线分明的习惯对人性情和能力的培养都很有好处。
@@ -529,7 +550,15 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F1.png)
+
+</br>
+
 但若想在某方面有所成就，就不能依赖这种不稳定的自发状态，必须建立稳固可靠的行为模式
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F2.png)
 
 </br>
 
@@ -582,6 +611,26 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 **如果我们真的希望在时代潮流中占据一席之地，那就应该尽早抛弃轻松学习的幻想，锤炼深度学习能力，逆流而上，成为稀缺人才，否则人生之路势必会越走越窄。**
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%AD%A6%E4%B9%A0%E7%95%99%E5%AD%98.png)
+
+</br>
+
+主动学习：如通过讨论、实践、教授给他人，将被动学习的内容留存率提升到 50%、75%和 90%。这个模型很好地展示了不同学习深度和层次之间的对比。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%AD%A6%E4%B9%A0%E7%95%99%E5%AD%982.png)
+
+</br>
+
+以阅读为例，从浅到深依次为：听书、自己读书、自己读书+摘抄金句、自己读书+思维导图/读书笔记、自己读书+践行操练、自己读书+践行操练+输出教授。
+
+</br>
+
+更糟的是，这种努力会让人盲目追求阅读的速度和数量，让人产生勤奋的感觉，实际上，这是低水平的勤奋，投入越多损失越大。
 
 </br>
 
