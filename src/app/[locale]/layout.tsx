@@ -9,9 +9,10 @@ import { NextIntlClientProvider } from 'next-intl';
 import enMessages from '../../../messages/en.json';
 import zhMessages from '../../../messages/zh.json';
 import dynamic from 'next/dynamic';
+import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 // 懒加载 只适合客户端渲染组件
 const Header = dynamic(() => import('@/components/Header'), {
-  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  loading: () => <SkeletonPlaceholder />,
 });
 const messagesMap = {
   en: enMessages,

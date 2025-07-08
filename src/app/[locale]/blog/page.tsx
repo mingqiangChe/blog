@@ -1,7 +1,8 @@
 import { getAllPosts, debugDirectoryStructure } from '@/lib/markdown';
 import dynamic from 'next/dynamic';
+import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 const BlogListClient = dynamic(() => import('./components/BlogListClient'), {
-  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  loading: () => <SkeletonPlaceholder />,
 });
 
 export const metadata = {

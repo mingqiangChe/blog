@@ -7,25 +7,26 @@ import {
 } from './about';
 import React from 'react';
 import dynamic from 'next/dynamic';
+import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 const SkeletonScreen = dynamic(() => import('./components/SkeletonScreen'), {
-  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  loading: () => <SkeletonPlaceholder />,
 });
 const SkillsSection = dynamic(() => import('./components/SkillsSection'), {
-  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  loading: () => <SkeletonPlaceholder />,
 });
 const ProjectsSection = dynamic(() => import('./components/ProjectsSection'), {
-  loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+  loading: () => <SkeletonPlaceholder />,
 });
 const EducationSection = dynamic(
   () => import('./components/EducationSection'),
   {
-    loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+    loading: () => <SkeletonPlaceholder />,
   }
 );
 const ExperienceSection = dynamic(
   () => import('./components/ExperienceSection'),
   {
-    loading: () => <p>正在加载...</p>, // 可选：加载时的占位内容
+    loading: () => <SkeletonPlaceholder />,
   }
 );
 export default function MySelf() {
