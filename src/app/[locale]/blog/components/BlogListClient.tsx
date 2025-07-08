@@ -137,7 +137,7 @@ export default function BlogListClient({ posts, locale }: BlogListClientProps) {
                 </section>
 
                 {post.description && (
-                  <p className="text-slate-300 text-sm leading-relaxed line-clamp-2 h-[3.5rem]">
+                  <p className="text-slate-300 text-sm leading-relaxed line-clamp-2 h-[3rem]">
                     {post.description}
                   </p>
                 )}
