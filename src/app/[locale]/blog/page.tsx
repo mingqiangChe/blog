@@ -11,11 +11,11 @@ export const metadata = {
 };
 
 interface BlogPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
-  const { locale } = params;
+  const { locale } = await params;
 
   debugDirectoryStructure();
 
