@@ -3,11 +3,12 @@ import React from 'react';
 import BlogContributionCalendar from '@/components/BlogContributionCalendar';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 const RecentPosts = dynamic(() => import('@/components/RecentPosts'), {
-  loading: () => <p>加载中...</p>,
+  loading: () => <SkeletonPlaceholder />,
 });
 const Page_h = dynamic(() => import('@/app/[locale]/components/Page_h'), {
-  loading: () => <p>加载中...</p>,
+  loading: () => <SkeletonPlaceholder />,
 });
 interface HomeContentProps {
   posts: any[];

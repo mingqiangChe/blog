@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 const PhotoGalleryClient = dynamic(
   () => import('./components/PhotoGalleryClient'),
   {
-    loading: () => <p>加载中...</p>,
+    loading: () => <SkeletonPlaceholder />,
   }
 );
 export const metadata: Metadata = {
