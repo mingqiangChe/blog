@@ -2,7 +2,7 @@
 title: '程序人生'
 date: '2025-07-07'
 description: 'code life'
-tags: ['code']
+tags: ['计算机']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
 ---

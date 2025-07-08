@@ -2,7 +2,7 @@
 title: '稳赚'
 date: '2025-07-07'
 description: '去爱人、去学习、去关心别人、去玩耍、去贡献的时间才是你在赚钱中应该着重关注的点'
-tags: ['经济', '投资', '股票']
+tags: ['投资', '认知']
 author: '格兰特•萨巴蒂尔'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/U12204P31DT20151111170052.jpg'
 ---

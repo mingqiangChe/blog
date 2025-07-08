@@ -2,7 +2,7 @@
 title: '短线交易秘诀'
 date: '2025-07-06'
 description: '我的获利交易不是因为运气好，而是因为概率对我有利'
-tags: ['经济', '投资', '股票']
+tags: ['投资']
 author: '拉里 威廉斯'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93banner.jpg'
 ---

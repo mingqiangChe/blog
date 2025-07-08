@@ -2,7 +2,7 @@
 title: 'react相关'
 date: '2025-07-07'
 description: '常用HOOK'
-tags: ['next', 'react']
+tags: ['react']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg'
 ---

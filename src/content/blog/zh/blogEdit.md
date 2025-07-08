@@ -2,7 +2,7 @@
 title: '博客md语法格式'
 date: '2025-06-21'
 description: '本博客使用md写博客的一些语法'
-tags: ['md语法']
+tags: ['计算机']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
 ---

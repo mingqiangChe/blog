@@ -2,7 +2,7 @@
 title: 'ETF定投'
 date: '2025-7-1'
 description: '大a定投计划'
-tags: ['定投', '大a']
+tags: ['投资']
 author: 'Thomas Che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-30_21-47-09.png'
 ---

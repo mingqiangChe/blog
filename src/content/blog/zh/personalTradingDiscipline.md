@@ -2,7 +2,7 @@
 title: '个人交易纪律'
 date: '2025-07-06'
 description: '交易纪律'
-tags: ['经济', '投资', '股票']
+tags: ['投资', '认知']
 author: 'Thomas Che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04443.jpg'
 ---
@@ -118,7 +118,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
-在市场高收时买入，在市场低收时卖出（台积电 亚马逊这类 小股不适用）**** 尾盘 10 分钟有拉升也可以建一点仓位
+在市场高收时买入，在市场低收时卖出（台积电 亚马逊这类 小股不适用）\*\*\*\* 尾盘 10 分钟有拉升也可以建一点仓位
 
 </br>
 
