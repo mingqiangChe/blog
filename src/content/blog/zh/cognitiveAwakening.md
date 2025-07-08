@@ -630,15 +630,19 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
-更糟的是，这种努力会让人盲目追求阅读的速度和数量，让人产生勤奋的感觉，实际上，这是低水平的勤奋，投入越多损失越大。
+当前有很多听书产品，读书达人用十几分钟解读一本书，假设我们一天听一本，一年就能听 300 多本，这种便捷新颖、浓缩干货的学习方式看似轻松高效，实则处于被动学习的最浅层。更糟的是，这种努力会让人盲目追求阅读的速度和数量，让人产生勤奋的感觉，实际上，这是低水平的勤奋，投入越多损失越大。
 
 </br>
 
-可见“缝接”是深度学习的关键，而大多数人只完成了“获取知识”，却忽略了“缝接知识”这一步，因此，他们的学习过程是不完整的。
+因为真正的学习就像是缝扣子，把新知识缝接到原有的知识结构中。可见“缝接”是深度学习的关键，而大多数人只完成了“获取知识”，却忽略了“缝接知识”这一步，因此，他们的学习过程是不完整的。
 
 </br>
 
-所以，逼迫自己获取高质量的知识以及深度缝接新知识，再用自己的语言或文字教授他人，是为深度学习之道。
+浅层学习满足输入，深度学习注重输出。从想法到语言再到文字，即将网状的思维变成树状的结构再变成线性的文字，相当于把思想从气态变成液态再变成固态——那些固态的东西才真正属于自己。所以，**逼迫自己获取高质量的知识以及深度缝接新知识，再用自己的语言或文字教授他人，是为深度学习之道。**
+
+</br>
+
+深度学习 3 步骤： 1、获取高质量的知识 2、深度缝接新知识 3、输出成果去教授
 
 </br>
 
@@ -658,7 +662,15 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
-无关联，不学习
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%A5%E4%BD%93%E7%B3%BB.png)
+
+</br>
+
+绝大多数人习惯以孤立的思维看待事物，喜欢花大量时间收集和占有信息；而另一批先行者则更喜欢拨弄信息之间的关联，从而在不知不觉间变得聪明了起来。
+
+</br>
+
+无关联，不学习 事不关己 不关联
 
 </br>
 
@@ -678,7 +690,23 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
-但凡收获一个感悟、了解一个观点或是学到一个知识，只要触动了自己，就要想办法让它效率最大化，而效率最大化的办法就是主动关联到别处，并让自己的行动发生改变。
+### 如何获取关联能力
+
+</br>
+
+首先，手中有锤子。如果你对某件事情没有足够的热爱和投入，没有极致的专注和思考，恐怕任何事物对你都没有意义。
+
+</br>
+
+其次 输入足够多 。很难想象空白的头脑和苍白的人生如何建立精彩的关联。
+
+</br>
+
+再次 保持好奇心。不过对于成人来说，做到这一点可不容易，若不时常净化自己，像孩子一样保持纯净，怕也只是遇到了任何事都见怪不怪、视而不见，所以，成长这件事不仅仅是提高认知，更是一种自我修炼。
+
+</br>
+
+最后 常说一句话。但凡收获一个感悟、了解一个观点或是学到一个知识，只要触动了自己，就要想办法让它效率最大化，而效率最大化的办法就是主动关联到别处，并让自己的行动发生改变。
 
 </br>
 
@@ -686,7 +714,15 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%87%AA%E5%B7%B1%E8%AE%A4%E7%9F%A5%E5%9C%88.png)
+
+</br>
+
 除非对方的认知体系刚好和自己的认知圈比较匹配，否则痴迷于全盘接受，学习效果有限，还很浪费时间
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%A5%E7%A2%8E%E7%89%87.png)
 
 </br>
 
@@ -711,6 +747,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 面对生活中信息的滚滚洪流，触动真是最好的筛选器，它能让我们免受洪流的冲击，从容而体面地行走在人间。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%A5%E5%9C%88%E5%8F%8D%E5%BA%94.png)
 
 </br>
 
@@ -754,6 +794,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%BB%BB%E5%8A%A1%E6%89%93%E5%8D%A1.png)
+
+</br>
+
 ```harsp
 
 虽然看上去和打卡是一样的，但这样做没有打卡的任务压力，可以将注意力集中到活动本身，而不是完成任务上。
@@ -778,6 +822,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 但它们超强的欲望和情绪力量却是非常宝贵的行动力资源，如果能让它们感受到学习的乐趣，它们同样会展现强大的行动力，让自己像沉迷娱乐一样沉迷于学习。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%8A%AA%E5%8A%9B%E4%B8%8E%E5%8F%8D%E9%A6%88.png)
 
 </br>
 
@@ -809,6 +857,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E7%BB%8F%E5%8E%86%E4%B8%8E%E6%97%B6%E9%97%B4.png)
+
+</br>
+
 反观那些轻松的学霸，他们学习时从不过度消耗自己，只要感到精力不足，就停下来主动休息，这反而使他们精力桶的水位得到快速回升。
 
 </br>
@@ -817,11 +869,23 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%BD%BB%E6%9D%BE%E8%80%85%E7%BB%8F%E7%90%86.png)
+
+</br>
+
 在生活中，最要不得的就是那种明明已经分心走神了，却还要强撑内耗，倒不如遵循“极度专注+主动休息”的模式，让自己先尽力保持短时间的极度专注，到有些累的时候就主动停下来，这是更加明智的生活和学习策略。
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%B8%8D%E6%96%AD%E6%8B%89%E4%BC%B8.png)
+
+</br>
+
 控制学习和工作内容的难度也是保证专注的重要方式，因为太容易的内容会让人因无聊而走神，太困难的内容会让人因畏惧而逃避，所以选择做那些“跳一跳就能够得着”的学习或工作，是最容易进入专注状态的
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%B0%83%E6%95%B4%E7%A9%BA%E9%97%B4.png)
 
 </br>
 
@@ -857,6 +921,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%B3%A8%E6%84%8F%E5%8A%9B%E5%A2%9E%E5%BC%BA%E8%B4%BF%E8%B5%82.png)
+
+</br>
+
 一天才刚开始，注意力和情绪就受到了影响，面对困难、枯燥的工作时，就不容易进入状态了
 
 </br>
@@ -866,6 +934,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 在增强回路的起点，做出有利选择所消耗的自制力是最小的，如果等负的增强回路形成，再想改变就难喽！
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%B3%A8%E6%84%8F%E5%8A%9B%E5%A2%9E%E5%BC%BA%E8%B4%BF%E8%B5%822.png)
 
 </br>
 
@@ -882,6 +954,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 清晰力的建立并不复杂，做到这三个字就可以实现：写下来。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%A7%84%E5%88%92%E6%97%B6%E9%97%B4.png)
 
 </br>
 
@@ -946,6 +1022,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E7%BA%BF%E8%A1%8C%E5%8A%A8.png)
+
+</br>
+
 在能主动做成一件事之前，我们眼里的世界是二维的、扁平的。然而在能主动做成一件事情之后，我们就能够从侧视的角度，看到三维的、立体的世界，注意到人与人在认识水平上的差别。
 
 </br>
@@ -966,6 +1046,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%AC%B2%E6%9C%9B%E5%BE%AA%E7%8E%AF.png)
+
+</br>
+
 当自己从来没有主动做成过一件事情的时候，总会以为做成一件事很容易，于是生出很多不切实际的欲望和想法，而欲望越多，就越做不成事
 
 </br>
@@ -982,6 +1066,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E9%98%88%E5%80%BC%E8%AE%A4%E7%9F%A5.png)
+
+</br>
+
 我们在行动时也应如此，我们要专注、要持续行动，直到突破阈值，这样才能看到更高层次的风景
 
 </br>
@@ -991,6 +1079,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 </br>
 
 如果你觉得别人讲的道理有理有据，而自己暂时无法反驳，碰巧自己又非常想做这件事，那就相信他们说的是对的，然后笃定地行动
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%9C%89%E7%90%86%E6%9C%89%E6%8D%AE.png)
 
 </br>
 
@@ -1014,7 +1106,19 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%
 
 </br>
 
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.png)
+
+</br>
+
 希望和耐心都藏在你的刻意练习里，藏在不断强化的神经元关联里，无论你是否喜欢这件事，只要持续练习，你肯定会一天比一天做得好，总有一天，你会真正体验到那种“做到”的快感。
+
+</br>
+
+道理再好，如果不去刻意练习，不去刺激相关神经元的强关联，这些美好的认知将永远不会真正对自己产生影响。
+
+</br>
+
+![高级元认知](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%AD%A3%E5%90%91%E5%8F%8D%E5%90%91%E5%8F%8D%E9%A6%88%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0.png)
 
 </br>
 
