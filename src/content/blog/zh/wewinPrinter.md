@@ -2,7 +2,7 @@
 title: 'WeWin标签打印机'
 date: '2025-06-19'
 description: '关于wewin品牌打印机调用 支持批量打印'
-tags: ['WEWIN', '打印机']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/432368739_1369650111097904_677170420998236901_n.jpg'
 ---
