@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface BlogPost {
+interface BlogPostMeta {
   slug: string;
   title: string;
   description?: string;
@@ -17,7 +17,7 @@ interface BlogPost {
 }
 
 interface BlogListClientProps {
-  posts: BlogPost[];
+  posts: BlogPostMeta[];
   locale: string;
 }
 

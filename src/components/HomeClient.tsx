@@ -1,4 +1,3 @@
-// src/app/[locale]/components/HomeClient.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
 import HomeContent from '@/components/HomeContent';

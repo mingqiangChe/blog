@@ -4,6 +4,54 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+// src/lib/markdown.ts（新增或替换）
+export interface BlogPostMeta {
+  slug: string;
+  title: string;
+  date: string;
+  description?: string;
+  locale: string;
+  tags?: string[];
+  author?: string;
+  readingTime?: number;
+  cover?: string;
+  isMilestone?: boolean;
+}
+
+export function getPostMetaList(locale: string): BlogPostMeta[] {
+  const postsDirectory = path.join(process.cwd(), 'src/content/blog');
+  const localeDir = path.join(postsDirectory, locale);
+
+  if (!fs.existsSync(localeDir)) return [];
+
+  const fileNames = fs
+    .readdirSync(localeDir)
+    .filter((name) => name.endsWith('.md'));
+
+  const allMeta = fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, '');
+    const fullPath = path.join(localeDir, fileName);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+
+    return {
+      slug,
+      locale,
+      title: matterResult.data.title || `未命名文章 (${slug})`,
+      date: matterResult.data.date || '2025-01-01',
+      description: matterResult.data.description || '',
+      tags: processTags(matterResult.data.tags),
+      author: matterResult.data.author || '',
+      readingTime: calculateReadingTime(matterResult.content),
+      cover: matterResult.data.cover || '',
+      isMilestone:
+        matterResult.data.isMilestone === true ||
+        matterResult.data.isMilestone === 'true',
+    } as BlogPostMeta;
+  });
+
+  return allMeta.sort((a, b) => (a.date < b.date ? 1 : -1));
+}
 
 export interface BlogPost {
   slug: string;

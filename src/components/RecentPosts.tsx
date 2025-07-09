@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import type { BlogPost } from '@/lib/markdown';
+import type { BlogPostMeta } from '@/lib/markdown';
 import Image from 'next/image';
 interface RecentPostsProps {
-  posts: BlogPost[];
+  posts: BlogPostMeta[];
 }
 import { useTranslations } from 'next-intl';
 export default function RecentPosts({ posts }: RecentPostsProps) {
