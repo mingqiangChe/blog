@@ -61,12 +61,12 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     year: 'numeric',
                   })}
                 </span>
-                {post.content && (
+                {/* {post.content && (
                   <>
                     <span>·</span>
                     <span>{post.content.length} 字</span>
                   </>
-                )}
+                )} */}
                 {post.readingTime && (
                   <>
                     <span>·</span>
