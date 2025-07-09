@@ -25,21 +25,16 @@ export default function ZoomableCanvas({ url }: Props) {
     const iw = imgRef.current.width;
     const ih = imgRef.current.height;
 
-    // 容器宽高比和图片宽高比
     const containerRatio = cw / ch;
     const imageRatio = iw / ih;
 
-    // 计算适应比例（宽高都能显示完整）
     let newScale = 1;
     if (imageRatio > containerRatio) {
-      // 图片更宽，按宽度缩放
       newScale = cw / iw;
     } else {
-      // 图片更高，按高度缩放
       newScale = ch / ih;
     }
 
-    // 计算偏移居中
     const offsetX = (cw - iw * newScale) / 2;
     const offsetY = (ch - ih * newScale) / 2;
 
@@ -47,6 +42,7 @@ export default function ZoomableCanvas({ url }: Props) {
     setOffset({ x: offsetX, y: offsetY });
   };
 
+  // 画布绘制函数
   const draw = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -77,6 +73,7 @@ export default function ZoomableCanvas({ url }: Props) {
     ctx.drawImage(img, 0, 0, imgSize.width, imgSize.height);
   };
 
+  // 图片加载
   useEffect(() => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -87,19 +84,30 @@ export default function ZoomableCanvas({ url }: Props) {
     };
   }, [url]);
 
-  // 图片尺寸变化后，计算初始缩放和偏移
+  // 图片尺寸变化后计算初始缩放
   useEffect(() => {
     if (imgSize.width && imgSize.height) {
       calcInitialScaleAndOffset();
     }
   }, [imgSize]);
 
-  // 画布每次状态变化重绘
+  // 状态变化重绘
   useEffect(() => {
     draw();
   }, [scale, offset, imgSize]);
 
-  // 滚轮缩放，保持缩放中心为鼠标点
+  // 窗口大小变化时，重新计算初始缩放及偏移
+  useEffect(() => {
+    const onResize = () => {
+      if (imgSize.width && imgSize.height) {
+        calcInitialScaleAndOffset();
+      }
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [imgSize]);
+
+  // 滚轮缩放（保持鼠标为缩放中心）
   const onWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     if (!containerRef.current) return;
@@ -133,10 +141,7 @@ export default function ZoomableCanvas({ url }: Props) {
       y: e.clientY - dragStart.current.y,
     });
   };
-  const onMouseUp = () => {
-    dragging.current = false;
-  };
-  const onMouseLeave = () => {
+  const endDragging = () => {
     dragging.current = false;
   };
 
@@ -150,12 +155,16 @@ export default function ZoomableCanvas({ url }: Props) {
         cursor: dragging.current ? 'grabbing' : 'grab',
         userSelect: 'none',
         backgroundColor: '#000',
+        overflow: 'hidden',
+        position: 'relative',
       }}
       onWheel={onWheel}
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseLeave}
+      onMouseUp={endDragging}
+      onMouseLeave={endDragging}
+      // 移动设备支持触摸缩放和平移的基础，可扩展
+      // onTouchStart, onTouchMove, onTouchEnd 可以后续添加
     >
       <canvas
         ref={canvasRef}
@@ -164,6 +173,9 @@ export default function ZoomableCanvas({ url }: Props) {
           margin: 'auto',
           maxWidth: '100%',
           maxHeight: '100%',
+          userSelect: 'none',
+          touchAction: 'none',
+          backgroundColor: '#000',
         }}
       />
     </section>
