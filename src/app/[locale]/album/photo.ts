@@ -159,7 +159,7 @@ export const photos: Photo[] = [
     tip: '大理女孩',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0193dtdrtd.jpg.jpg',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0193dtdrtd.jpg',
     desc: '四川女孩',
     tip: '大理女孩',
   },

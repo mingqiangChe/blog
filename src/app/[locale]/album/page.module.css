@@ -45,6 +45,8 @@
   height: auto;
   display: block;
   flex-shrink: 0; /* 防止被压缩 */
+  aspect-ratio: 3 / 2; /* 默认宽高比，可替换为实际比值 */
+  min-height: 120px; /* 防止撑不起 */
 }
 
 /* 描述文字覆盖底部 */
