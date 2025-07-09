@@ -3,7 +3,7 @@ import { i18nRouter } from 'next-i18n-router';
 import i18nConfig from '../i18nConfig';
 import { RateLimiterMemory } from 'rate-limiter-flexible';
 
-const BOT_PATTERNS = [/bot/i, /crawler/i, /spider/i, /curl/i, /wget/i];
+const BAD_BOT_PATTERNS = [/curl/i, /wget/i]; // 只拦截这类恶意工具
 const rateLimiter = new RateLimiterMemory({
   points: 20,
   duration: 60,
@@ -13,12 +13,14 @@ export async function middleware(request: any) {
   const userAgent = request.headers.get('user-agent') || '';
   const pathname = request.nextUrl.pathname;
 
-  if (BOT_PATTERNS.some((pattern) => pattern.test(userAgent))) {
+  // ❗只拦截恶意 bot，不拦截正常搜索引擎
+  if (BAD_BOT_PATTERNS.some((pattern) => pattern.test(userAgent))) {
     if (!pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|woff2?)$/)) {
-      return new NextResponse('Bot detected', { status: 403 });
+      return new NextResponse('Blocked bad bot', { status: 403 });
     }
   }
 
+  // 📦 API 速率限制
   if (pathname.startsWith('/api')) {
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ip = forwardedFor
