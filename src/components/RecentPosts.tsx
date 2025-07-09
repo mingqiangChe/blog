@@ -19,9 +19,10 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 transition hover:scale-105 hover:shadow-2xl flex flex-col"
+            className="group rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 transition hover:scale-105 hover:shadow-2xl flex flex-col  w-full max-w-[360px]"
+            // 这里加了 min-w 宽度限制
           >
-            {/* 封面 */}
+            {/* 封面部分保持不变 */}
             <section className="relative h-44 md:h-40 w-full overflow-hidden">
               <section className="relative w-full h-full overflow-hidden">
                 <Image
@@ -34,25 +35,33 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                 />
               </section>
 
-              {/* 标题和作者遮罩 */}
+              {/* 标题和作者遮罩保持不变 */}
               <section className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
               <section className="absolute bottom-5 left-0 w-full px-5">
                 <section className="text-lg md:text-xl font-bold text-white drop-shadow mb-1">
                   《{post.title}》
                 </section>
                 <section className="text-xs text-slate-200/80 flex items-center gap-2">
-                  {/* <span>Lucky</span> */}
                   {post.author && (
                     <span className="ml-2 text-purple-300">@{post.author}</span>
                   )}
                 </section>
               </section>
             </section>
-            {/* 文章信息 */}
+
+            {/* 文章信息区 */}
             <section className="flex-1 flex flex-col p-5 bg-transparent">
               <section className="font-bold text-lg text-white mb-1 leading-tight">
                 {post.title}
               </section>
+
+              {/* 加入描述文本区域 */}
+              {post.description && (
+                <p className="text-slate-300 text-sm mb-3 line-clamp-3">
+                  {post.description}
+                </p>
+              )}
+
               <section className="text-slate-400 text-xs mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
                 <span>
                   {new Date(post.date).toLocaleDateString('zh-CN', {
@@ -61,12 +70,6 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     year: 'numeric',
                   })}
                 </span>
-                {/* {post.content && (
-                  <>
-                    <span>·</span>
-                    <span>{post.content.length} 字</span>
-                  </>
-                )} */}
                 {post.readingTime && (
                   <>
                     <span>·</span>
@@ -74,7 +77,8 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                   </>
                 )}
               </section>
-              {/* 标签 */}
+
+              {/* 标签保持不变 */}
               <section className="flex flex-wrap gap-2 mt-2 mb-1">
                 {post.tags?.map((tag) => (
                   <span
