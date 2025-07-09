@@ -46,22 +46,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true, // 控制打包时 ESLint 检查
   },
   output: 'standalone', //打包后文件逻辑
-
-  webpack: (config) => {
-    config.externals = config.externals || [];
-    config.externals.push(
-      (
-        context: { request?: string },
-        callback: (err?: Error | null, result?: string | false) => void
-      ) => {
-        if (context.request === '@next/env') {
-          return callback(null, false);
-        }
-        callback();
-      }
-    );
-    return config;
-  },
   // basePath: '/blog',//通过 /blog 路径访问 Next.js 应用，建议在 next.config.js 中配置：生成的静态资源路径和路由都会带上 /blog 前缀
 };
 
