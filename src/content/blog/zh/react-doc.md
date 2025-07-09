@@ -164,23 +164,50 @@ import styles from '../page.module.css';
 
 </br>
 
-```bash
-import React, { useMemo, useState, useEffect } from 'react';
+### 原理：
 
-export default function PhotoGalleryClient() {
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+</br>
+
+React 在组件首次渲染时，初始化状态值。
+
+</br>
+
+setState 更新状态后，组件重新渲染，useState 返回最新状态。
+
+</br>
+
+状态通过 React 内部 Fiber 链表结构按调用顺序管理，保证每次渲染状态对应正确。
+
+</br>
+
+### 特点：
+
+</br>
+
+支持基本类型、对象、数组等任意类型状态。
+
+</br>
+
+多个状态变量可多次调用 useState。
+
+</br>
+
+状态更新是异步的，且批量处理。
+
+</br>
+
+```bash
+import React, { useState } from 'react';
+
+export default function Counter() {
+  // 初始化状态count为0，setCount是更新count的函数
+  const [count, setCount] = useState(0);
 
   return (
-    <section className={styles['page-bg']}>
-      {lightboxIdx !== null && (
-        <ClientLightbox
-          photos={filtered}
-          currentIdx={lightboxIdx}
-          onClose={() => setLightboxIdx(null)}
-          onChangeIndex={setLightboxIdx}
-        />
-      )}
-    </section>
+    <div>
+      <p>当前计数：{count}</p>
+      <button onClick={() => setCount(count + 1)}>点击增加</button>
+    </div>
   );
 }
 
@@ -208,10 +235,21 @@ export default function PhotoGalleryClient() {
 
 ```bash
 import dynamic from 'next/dynamic';
+
+// 动态加载组件，设置loading骨架屏，ssr默认是开启的
 const ClientLightbox = dynamic(() => import('./ClientLightbox'), {
- // ssr: false,
-   loading: () => <SkeletonPlaceholder />, //骨架屏组件
+  // ssr: false, // 如果组件只能在客户端渲染，取消注释此行
+  loading: () => <SkeletonPlaceholder />, // 加载时显示骨架屏
 });
+
+export default function Page() {
+  return (
+    <div>
+      <h1>页面标题</h1>
+      <ClientLightbox />
+    </div>
+  );
+}
 
 ```
 
