@@ -23,12 +23,11 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
     <main className="home-bg min-h-screen bg-no-repeat bg-top overflow-x-hidden pt-24">
       <section className="flex items-center justify-center">
         <Image
-          src="https://avatars.githubusercontent.com/u/85379334?v=4"
+          src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/homelogo%E5%A4%B4%E5%83%8F.jpg"
           alt="头像"
           width={96}
           height={96}
           className="rounded-full object-cover"
-          priority
         />
       </section>
       <Page_h />

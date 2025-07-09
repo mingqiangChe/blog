@@ -1,7 +1,6 @@
 // src/app/[locale]/components/HomeClient.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
-import HomeSkeleton from '@/components/HomeSkeleton';
 import HomeContent from '@/components/HomeContent';
 
 interface HomeClientProps {
@@ -24,10 +23,6 @@ export default function HomeClient({ initialPosts, locale }: HomeClientProps) {
     }, 1500);
   }, [initialPosts]);
   */
-
-  if (isLoading) {
-    return <HomeSkeleton />;
-  }
 
   if (!posts.length) {
     return (

@@ -209,7 +209,8 @@ export default function PhotoGalleryClient() {
 ```bash
 import dynamic from 'next/dynamic';
 const ClientLightbox = dynamic(() => import('./ClientLightbox'), {
-  ssr: false,
+ // ssr: false,
+   loading: () => <SkeletonPlaceholder />, //骨架屏组件
 });
 
 ```
