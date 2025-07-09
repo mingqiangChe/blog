@@ -39,7 +39,7 @@ export default function VideoBackground({
       loop
       autoPlay
       playsInline
-      preload="metadata"
+      preload="auto"
       poster={posterSrc}
     >
       <source src={videoSrc} type="video/mp4" />
