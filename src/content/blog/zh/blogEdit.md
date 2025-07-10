@@ -15,17 +15,17 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
-```
+```bash
 <video controls width="720" style="max-width: 100%;">
-  <source src="https://v0.stream.tencentmusic.com/0b536uaxyaab24ak4lvz2bt2b5odpt2qc7aa.f160030.mp4?dis_k=a1498656aead1de61b6fb3347289576c&dis_t=1750513461&local=1&fromtag=1231014" type="video/mp4" />
+  <source src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6876868767656757.mp4" type="video/mp4" />
   您的浏览器不支持视频播放。
 </video>
 ```
 
 </br>
 
-<video controls width="720" style="max-width: 100%;">
-  <source src="https://v0.stream.tencentmusic.com/0b536uaxyaab24ak4lvz2bt2b5odpt2qc7aa.f160030.mp4?dis_k=a1498656aead1de61b6fb3347289576c&dis_t=1750513461&local=1&fromtag=1231014" type="video/mp4" />
+<video controls width="720" muted>
+  <source src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6876868767656757.mp4" type="video/mp4" />
   您的浏览器不支持视频播放。
 </video>
 
@@ -38,6 +38,8 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 ```
 ![替代文字](图片链接)
 ```
+
+</br>
 
 ![Perplexity Logo](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg)
 

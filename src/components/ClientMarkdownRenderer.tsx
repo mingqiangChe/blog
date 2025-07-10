@@ -6,9 +6,31 @@ import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 import mediumZoom from 'medium-zoom';
-import CodeBlock from './CodeBlock';
+import CodeBlock from './CodeBlock'; // 你已有的代码高亮组件
+import { defaultSchema } from 'hast-util-sanitize';
 
-// 生成 id 用于标题锚点
+// 自定义 sanitize 规则，增加 video 和 source 支持
+const mySchema = {
+  ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames || []), 'video', 'source'],
+  attributes: {
+    ...defaultSchema.attributes,
+    video: [
+      'src',
+      'controls',
+      'width',
+      'height',
+      'muted',
+      'autoPlay',
+      'playsInline',
+      'preload',
+      'className',
+      'style',
+    ],
+    source: ['src', 'type'],
+  },
+};
+
 const generateId = (text: string) =>
   text
     .toLowerCase()
@@ -48,7 +70,6 @@ export default function ClientMarkdownRenderer({
         typeof src === 'string'
           ? src
           : 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/default.jpg';
-
       return (
         <img
           src={imageSrc}
@@ -59,29 +80,43 @@ export default function ClientMarkdownRenderer({
         />
       );
     },
+    video: ({ children, ...props }: any) => {
+      return (
+        <video
+          controls
+          muted
+          playsInline
+          style={{ maxWidth: '100%' }}
+          {...props}
+        >
+          {children}
+          您的浏览器不支持视频播放。
+        </video>
+      );
+    },
     table: (props: any) => (
       <div
         className="
-      overflow-x-auto my-4 rounded-lg shadow-sm border
-      border-gray-200 dark:border-gray-700
-      "
+          overflow-x-auto my-4 rounded-lg shadow-sm border
+          border-gray-200 dark:border-gray-700
+        "
       >
         <table
           {...props}
           className="
-        w-full table-auto border-collapse text-left
-        dark:bg-gray-900
-      "
+            w-full table-auto border-collapse text-left
+            dark:bg-gray-900
+          "
         />
       </div>
     ),
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 prose prose-cyan dark:prose-invert">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw, [rehypeSanitize, mySchema]]}
         components={components}
       >
         {content}
