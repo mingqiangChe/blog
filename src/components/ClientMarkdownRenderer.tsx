@@ -53,20 +53,20 @@ export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
   useEffect(() => {
-    // 先销毁已有 zoom 实例，防止重复绑定
+    // 先清理所有旧绑定
     mediumZoom('.medium-zoom-image')?.detach();
 
-    const zoom = mediumZoom('img', {
+    const zoom = mediumZoom('.medium-zoom-image', {
       background: 'rgba(0,0,0,0.8)',
       margin: 24,
       scrollOffset: 40,
-      container: null,
-      template: null,
     });
 
-    // 组件卸载时清理 zoom
-    return () => zoom.detach();
-  }, [content]); // 监听 content 内容变化，重新绑定
+    // 正确的清理函数
+    return () => {
+      zoom.detach();
+    };
+  }, [content]);
 
   const components = {
     code: CodeBlock,

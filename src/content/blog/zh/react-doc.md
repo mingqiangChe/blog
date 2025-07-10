@@ -151,7 +151,8 @@ import styles from '../page.module.css';
 @tailwind utilities;
 /* Tailwind 基础导入 */
 
-   <section className="min-h-screen bg-gradient-to-br from-purple-600  pt-20 overflow-x-hidden"></section>
+   <section className="min-h-screen bg-gradient-to-br from-purple-600  pt-20 overflow-x-hidden">
+   </section>
 ```
 
 </br>
@@ -196,6 +197,10 @@ setState 更新状态后，组件重新渲染，useState 返回最新状态。
 
 </br>
 
+### 用法
+
+</br>
+
 ```bash
 import React, { useState } from 'react';
 
@@ -212,6 +217,252 @@ export default function Counter() {
 }
 
 ```
+
+</br>
+
+## useEffect 执行副作用操作（数据请求、订阅、DOM 操作、定时器等）
+
+</br>
+
+### 原理
+
+</br>
+
+组件渲染后执行传入的副作用函数，依赖数组控制副作用的执行时机，返回函数用于清理副作用。
+
+</br>
+
+### 特点
+
+</br>
+
+没有依赖数组时，每次渲染后都会执行。
+
+</br>
+
+有依赖数组时，只有依赖变化时才执行。
+
+</br>
+
+可以返回清理函数，类似 class 组件的 componentWillUnmount。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+
+```
+
+</br>
+
+## .useContext 跨组件共享数据，避免逐层传递 props
+
+</br>
+
+### 原理
+
+</br>
+
+通过 React 的 Context 机制，直接读取祖先组件提供的上下文值，实现组件间状态共享
+
+</br>
+
+### 特点
+
+</br>
+
+适合全局主题、用户信息等共享状态。
+
+</br>
+
+依赖 Context 的变化自动触发组件更新。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+```
+
+</br>
+
+## useRef 创建可变的引用，保存不参与渲染的变量或 DOM 节点
+
+</br>
+
+### 原理
+
+</br>
+
+返回一个可变的 current 对象，组件重新渲染时该对象不变，常用于存储 DOM 引用或计时器
+
+</br>
+
+### 特点
+
+</br>
+
+修改 ref.current 不会触发组件重新渲染。
+
+</br>
+
+常用于访问 DOM 元素或保持跨渲染周期的变量。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+```
+
+</br>
+
+## useReducer 管理复杂状态逻辑，类似 Redux 的局部状态管理
+
+</br>
+
+### 原理
+
+</br>
+
+通过 dispatch 触发 reducer 纯函数，根据 action 返回新状态，适合多子值或复杂更新逻
+
+</br>
+
+### 特点
+
+</br>
+
+适合复杂状态管理，比 useState 更灵活。
+
+</br>
+
+适合局部组件状态，不是全局状态管理方案。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+```
+
+</br>
+
+## useMemo 缓存计算结果，避免重复计算
+
+</br>
+
+### 原理
+
+</br>
+
+依赖数组控制缓存更新，只有依赖变化时才重新计算或创建函数
+
+</br>
+
+### 特点
+
+</br>
+
+用于性能优化。
+
+</br>
+
+避免子组件不必要的重新渲染。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+```
+
+</br>
+
+## useCallback 缓存函数实例，避免不必要的函数重新创建。
+
+</br>
+
+### 原理
+
+</br>
+
+依赖数组控制缓存更新，只有依赖变化时才重新计算或创建函数
+
+</br>
+
+### 特点
+
+</br>
+
+用于性能优化。
+
+</br>
+
+避免子组件不必要的重新渲染。
+
+</br>
+
+### 用法
+
+</br>
+
+```bash
+
+```
+
+</br>
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
 
 </br>
 
