@@ -45,9 +45,6 @@ build.log
 # 环境变量文件
 .env*
 
-# Vercel 配置目录
-.vercel
-
 # TypeScript 构建信息
 *.tsbuildinfo
 next-env.d.ts

@@ -9,17 +9,29 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 # 初衷
 
+</br>
+
     为了炫 为了推动自己作为动力 也作为了解自己频道
+
+</br>
 
 # 项目依赖说明（基于 package.json）
 
+</br>
+
 ## 项目基本信息
+
+</br>
 
 - 项目名称：cheche-blog
 - 版本号：0.1.0
 - 私有项目（private: true）
 
+</br>
+
 ## 脚本命令
+
+</br>
 
 - **dev**：启动开发环境（Next.js）
 - **build**：构建生产环境代码
@@ -29,9 +41,15 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 - **start**：启动生产环境服务器
 - **lint**：代码规范检查（ESLint）
 
+</br>
+
 ---
 
+</br>
+
 ## 生产依赖（dependencies）
+
+</br>
 
 - **@emotion/react** (v^11.14.0)  
   CSS-in-JS 动态样式方案
@@ -115,11 +133,17 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
   Next.js 内置 CSS-in-JS 方案
 
 - **yet-another-react-lightbox** (v^3.23.2)  
-  图片灯箱组件
+   图片灯箱组件
+
+</br>
 
 ---
 
+</br>
+
 ## 开发依赖（devDependencies）
+
+</br>
 
 - **@eslint/eslintrc** (v^3)  
   ESLint 配置支持
@@ -167,12 +191,26 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
   原子化 CSS 框架
 
 - **typescript** (v^5)  
-  TypeScript 支持
+   TypeScript 支持
+
+</br>
 
 ## 总结
+
+</br>
 
 - 本项目依赖丰富，涵盖了 UI 设计、国际化、多语言支持、Markdown 解析、图片处理、代码规范等多个方面。
 - 生产依赖共 24 个，开发依赖 11 个，满足博客系统开发和运行需求。
 - 依赖版本保持较新，保证功能和性能的稳定性。
 
+</br>
+
 ---
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
