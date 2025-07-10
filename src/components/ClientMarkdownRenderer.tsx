@@ -6,10 +6,9 @@ import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 import mediumZoom from 'medium-zoom';
-import CodeBlock from './CodeBlock'; // 你已有的代码高亮组件
+import CodeBlock from './CodeBlock';
 import { defaultSchema } from 'hast-util-sanitize';
 
-// 自定义 sanitize 规则，增加 video 和 source 支持
 const mySchema = {
   ...defaultSchema,
   tagNames: [...(defaultSchema.tagNames || []), 'video', 'source'],
@@ -54,8 +53,20 @@ export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
   useEffect(() => {
-    mediumZoom('img', { background: 'rgba(0,0,0,0.8)' });
-  }, []);
+    // 先销毁已有 zoom 实例，防止重复绑定
+    mediumZoom('.medium-zoom-image')?.detach();
+
+    const zoom = mediumZoom('img', {
+      background: 'rgba(0,0,0,0.8)',
+      margin: 24,
+      scrollOffset: 40,
+      container: null,
+      template: null,
+    });
+
+    // 组件卸载时清理 zoom
+    return () => zoom.detach();
+  }, [content]); // 监听 content 内容变化，重新绑定
 
   const components = {
     code: CodeBlock,
@@ -75,7 +86,7 @@ export default function ClientMarkdownRenderer({
           src={imageSrc}
           alt={alt || '图片'}
           loading="lazy"
-          className="rounded-lg shadow-md mx-auto max-w-full h-auto cursor-zoom-in"
+          className="rounded-lg shadow-md mx-auto max-w-full h-auto cursor-zoom-in medium-zoom-image"
           {...props}
         />
       );
