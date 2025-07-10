@@ -9,14 +9,16 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/432368739_13696501
 
 # WeWin 打印机使用
 
+```bash
 1. 先按插件 [官网文档](https://soft-makeid.yuque.com/wwprint/api) 上面有
 2. 跑官网上 demo 测试打印机联通
 3. 根据打印内容设计打印模板建议以下步骤：1、code 文件设置模板预览代码 可写死数据 2、在浏览器调用看是否调起 2、再设计代码打印模板 也就是浏览器调起后选择打印会出现的预览界面 也就是打印界面（如果未出现建议调整参数 我也是这么过来的~）
 4. 设置标签高宽度 变大可以向上调整完整 如果参数设置小的话就会偏下
+```
 
 ## code 文件配置设置
 
-```
+```bash
 /**
  * 导出版本：v1.0
  * 导出时间：6/29/2021, 8:57:28 AM
@@ -242,7 +244,7 @@ function print_tag1001(Texts) {
 
 ## 封装 XML 打印体
 
-```
+```bash
 // 里面标明使用1001模板
 function safeText(value) {
     return value === '' ? '无' : value;
@@ -290,11 +292,17 @@ function distributeLabel(label, maxLen = 5) {
 
 ```
 
+</br>
+
 ## 页面调用 支持批量
+
+</br>
 
 根据对象长度决定打印个数
 
-```
+</br>
+
+```bash
             var dataList = [
                 {
                     name: "设备A",
@@ -330,3 +338,17 @@ function checkAndPrint(dataList) {
 
 }
 ```
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
+
+</br>
