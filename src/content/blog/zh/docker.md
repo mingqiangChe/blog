@@ -233,7 +233,10 @@ node_modules
 
 </br>
 
+一些通用的放在通用的nginx上做处理
+
 ```harsp
+
 server {
     listen 443 ssl;
     server_name thomasche.top;
@@ -245,39 +248,26 @@ server {
 
     client_max_body_size 50m;
 
-  # 启用动态 gzip 压缩（保留）
-        gzip on;
-        gzip_vary on;
-        gzip_proxied any;
-        gzip_comp_level 6;
-        gzip_types
-            text/plain
-            text/css
-            application/json
-            application/javascript
-            application/x-javascript
-            text/xml
-            application/xml
-            application/xml+rss
-            image/svg+xml
-            font/woff2
-            font/woff;
-
     # 安全头部
-
-    # # 防止点击劫持（只能被本域 iframe 加载）
     add_header X-Frame-Options "SAMEORIGIN";
-    # # 防止 XSS 攻击
     add_header X-XSS-Protection "1; mode=block";
-    # # 防止 MIME 类型混淆
     add_header X-Content-Type-Options "nosniff";
 
+    # # 🔐 静态资源缓存策略（如 js/css/img 等）
+    # location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|ttf|svg|eot|otf|mp4|webm)$ {
+    #     expires 7d;
+    #     access_log off;
+    #     add_header Cache-Control "public, max-age=604800, immutable";
+    # }
 
+    # # 🔐 Next.js 静态资源路径（如 /_next/static）
+    # location ~* ^/_next/static/ {
+    #     expires 7d;
+    #     access_log off;
+    #     add_header Cache-Control "public, max-age=604800, immutable";
+    # }
 
-    # 禁止设置静态资源强缓存（包含 chunks, js, css, fonts 等）
-
-
-    # React/Next.js 页面代理
+    # ⬅️ 应用入口（默认反向代理）
     location / {
         proxy_pass http://127.0.0.1:3000;
         proxy_http_version 1.1;
@@ -287,8 +277,12 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
 
-        # 可选：用于支持 SPA 的前端路由 fallback（仅当你使用 history 模式等时开启）
-        # try_files $uri $uri/ /index.html;
+        # 缓存
+        proxy_cache html_cache;
+        proxy_cache_valid 200 302 1m;
+        proxy_cache_valid 404 1m;
+        proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
+        add_header X-Cache-Status $upstream_cache_status;
     }
 }
 
