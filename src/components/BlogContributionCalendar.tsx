@@ -60,7 +60,8 @@ function getCalendarData(year: number, dailyCounts: { [key: string]: number }) {
 }
 
 function getColor(count: number): string {
-  if (count === 0) return '#161b22';
+  // 只加颜色，空格子用浅灰背景，方便看清
+  if (count === 0) return '#444'; // 浅灰，非纯黑，更容易区分空格子
   if (count === 1) return '#0e4429';
   if (count === 2) return '#006d32';
   if (count === 3) return '#26a641';
