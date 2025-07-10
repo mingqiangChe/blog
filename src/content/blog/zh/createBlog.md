@@ -2,7 +2,7 @@
 title: '创建博客'
 date: '2025-06-15'
 description: '创建博客网站'
-tags: ['react']
+tags: ['计算机']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/fb688e15a9a56e06ee5e9c1e1821e6.jpg'
 isMilestone: true
