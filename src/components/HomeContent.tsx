@@ -1,13 +1,12 @@
-// src/app/[locale]/components/HomeContent.tsx
 import React from 'react';
-import BlogContributionCalendar from '@/components/BlogContributionCalendar';
-import Image from 'next/image';
+import BlogContributionCalendar from '@/components/home/BlogContributionCalendar';
 import dynamic from 'next/dynamic';
 import SkeletonPlaceholder from '@/components/SkeletonBlogList';
-const RecentPosts = dynamic(() => import('@/components/RecentPosts'), {
+import { LogoVator } from '@/components/home/LogoVator';
+const RecentPosts = dynamic(() => import('@/components/home/RecentPosts'), {
   loading: () => <SkeletonPlaceholder />,
 });
-const Page_h = dynamic(() => import('@/app/[locale]/components/Page_h'), {
+const Page_h = dynamic(() => import('@/components/home/Page_h'), {
   loading: () => <SkeletonPlaceholder />,
 });
 interface HomeContentProps {
@@ -21,20 +20,13 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
 
   return (
     <main className="home-bg min-h-screen bg-no-repeat bg-top overflow-x-hidden pt-24">
-      <section className="flex items-center justify-center">
-        <Image
-          src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%93%88%E5%A3%AB%E5%A5%87.png"
-          alt="头像"
-          width={106}
-          height={106}
-          className=" object-cover"
-        />
-      </section>
+      <LogoVator />
       <Page_h />
       {/* 文章贡献日历 */}
-      <section className="flex items-center justify-center pt-32">
+      <section className="hidden sm:flex items-center justify-center pt-32">
         <BlogContributionCalendar posts={posts} year={year} />
       </section>
+
       {/* 最近的文章 */}
       <section className="flex items-center justify-center pt-32 pb-32">
         <RecentPosts posts={recentPosts} />
