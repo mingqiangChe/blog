@@ -23,11 +23,11 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
     <main className="home-bg min-h-screen bg-no-repeat bg-top overflow-x-hidden pt-24">
       <section className="flex items-center justify-center">
         <Image
-          src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/homelogo%E5%A4%B4%E5%83%8F.jpg"
+          src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%93%88%E5%A3%AB%E5%A5%87.png"
           alt="头像"
-          width={96}
-          height={96}
-          className="rounded-full object-cover"
+          width={106}
+          height={106}
+          className=" object-cover"
         />
       </section>
       <Page_h />
