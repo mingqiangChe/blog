@@ -32,7 +32,6 @@ export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
   useEffect(() => {
-    // 启用图片放大，仅针对原生 <img>
     mediumZoom('img', { background: 'rgba(0,0,0,0.8)' });
   }, []);
 
@@ -60,15 +59,33 @@ export default function ClientMarkdownRenderer({
         />
       );
     },
+    table: (props: any) => (
+      <div
+        className="
+      overflow-x-auto my-4 rounded-lg shadow-sm border
+      border-gray-200 dark:border-gray-700
+      "
+      >
+        <table
+          {...props}
+          className="
+        w-full table-auto border-collapse text-left
+        dark:bg-gray-900
+      "
+        />
+      </div>
+    ),
   };
 
   return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeRaw, rehypeSanitize]}
-      components={components}
-    >
-      {content}
-    </ReactMarkdown>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        components={components}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 }
