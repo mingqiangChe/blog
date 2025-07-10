@@ -178,5 +178,5 @@ body {
   -webkit-user-drag: none;
 }
 img {
-  pointer-events: none;
+  pointer-events: auto;
 }

@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw'; // 支持渲染 Markdown 中的 HTML
-import rehypeSanitize from 'rehype-sanitize'; // 安全净化，防XSS
-import Image from 'next/image';
-import CodeBlock from './CodeBlock'; // 你自定义的代码高亮组件
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import remarkGfm from 'remark-gfm';
+import mediumZoom from 'medium-zoom';
+import CodeBlock from './CodeBlock';
 
 // 生成 id 用于标题锚点
 const generateId = (text: string) =>
@@ -30,6 +31,11 @@ interface ClientMarkdownRendererProps {
 export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
+  useEffect(() => {
+    // 启用图片放大，仅针对原生 <img>
+    mediumZoom('img', { background: 'rgba(0,0,0,0.8)' });
+  }, []);
+
   const components = {
     code: CodeBlock,
     h1: Heading('h1'),
@@ -39,23 +45,18 @@ export default function ClientMarkdownRenderer({
     h5: Heading('h5'),
     h6: Heading('h6'),
     img: ({ src, alt, ...props }: any) => {
-      const { width, height, ...restProps } = props;
       const imageSrc =
         typeof src === 'string'
           ? src
-          : 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg';
-      const safeWidth = Number(width) || 800;
-      const safeHeight = Number(height) || 600;
+          : 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/default.jpg';
 
       return (
-        <Image
+        <img
           src={imageSrc}
           alt={alt || '图片'}
-          width={safeWidth}
-          height={safeHeight}
-          className="rounded-lg shadow-md mx-auto max-w-full h-auto"
           loading="lazy"
-          {...restProps}
+          className="rounded-lg shadow-md mx-auto max-w-full h-auto cursor-zoom-in"
+          {...props}
         />
       );
     },
@@ -63,8 +64,9 @@ export default function ClientMarkdownRenderer({
 
   return (
     <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw, rehypeSanitize]}
       components={components}
-      rehypePlugins={[rehypeRaw, rehypeSanitize]} // 先渲染HTML，再净化
     >
       {content}
     </ReactMarkdown>
