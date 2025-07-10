@@ -77,7 +77,7 @@ export default function MySelf() {
 
       {/* 简介区 */}
       <section className="max-w-xl text-center text-gray-600 text-base md:text-lg leading-relaxed tracking-wide z-10">
-        我是一位热爱编程与摄影的创造者，擅长用代码构建逻辑世界，也热衷用镜头记录生活的光影瞬间。
+        我是一位热爱编程与摄影的创造者，用代码构建逻辑世界，也热衷用镜头记录生活的光影瞬间。
       </section>
     </section>
   );
