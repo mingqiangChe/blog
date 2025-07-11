@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 import mediumZoom from 'medium-zoom';
 import CodeBlock from './CodeBlock';
 import { defaultSchema } from 'hast-util-sanitize';
+import { useMediumZoom } from '@/hooks/ZoomImg';
 
 const mySchema = {
   ...defaultSchema,
@@ -52,21 +53,7 @@ interface ClientMarkdownRendererProps {
 export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
-  useEffect(() => {
-    // 先清理所有旧绑定
-    mediumZoom('.medium-zoom-image')?.detach();
-
-    const zoom = mediumZoom('.medium-zoom-image', {
-      background: 'rgba(0,0,0,0.8)',
-      margin: 24,
-      scrollOffset: 40,
-    });
-
-    // 正确的清理函数
-    return () => {
-      zoom.detach();
-    };
-  }, [content]);
+  useMediumZoom('.medium-zoom-image', [content]);
 
   const components = {
     code: CodeBlock,
