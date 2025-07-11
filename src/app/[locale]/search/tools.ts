@@ -340,6 +340,12 @@ export const navData: NavGroup[] = [
         url: 'https://markdown.lovejade.cn/',
         desc: '在线查看md样式',
       },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/logottsminni.png',
+        title: 'ttsomni',
+        url: 'https://www.ttsomni.com/',
+        desc: '免费文本转语音',
+      },
     ],
   },
 ];

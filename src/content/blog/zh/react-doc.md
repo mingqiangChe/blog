@@ -161,7 +161,7 @@ import styles from '../page.module.css';
 
 </br>
 
-## useState 状态管理
+## useState-- 状态管理
 
 </br>
 
@@ -224,7 +224,7 @@ export default function Counter() {
 
 </br>
 
-## useEffect 副作用处理
+## useEffect --副作用处理
 
 </br>
 
@@ -274,7 +274,7 @@ export default function Timer() {
 
 </br>
 
-## useContext 跨组件共享数据
+## useContext--跨组件共享数据
 
 </br>
 
@@ -290,11 +290,15 @@ export default function Timer() {
 
 </br>
 
-适合全局主题、用户信息等共享状态。
+避免繁琐的 props 传递
 
 </br>
 
-依赖 Context 的变化自动触发组件更新。
+常用于全局主题、用户信息等
+
+</br>
+
+所依赖的值变化会触发子组件更新
 
 </br>
 
@@ -303,12 +307,28 @@ export default function Timer() {
 </br>
 
 ```bash
+import { createContext, useContext } from 'react';
+
+const ThemeContext = createContext('light');
+
+function Child() {
+  const theme = useContext(ThemeContext);
+  return <div>当前主题：{theme}</div>;
+}
+
+export default function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Child />
+    </ThemeContext.Provider>
+  );
+}
 
 ```
 
 </br>
 
-## useRef 创建可变的引用，保存不参与渲染的变量或 DOM 节点
+## useRef--持久引用 / DOM 操作
 
 </br>
 
@@ -316,7 +336,7 @@ export default function Timer() {
 
 </br>
 
-返回一个可变的 current 对象，组件重新渲染时该对象不变，常用于存储 DOM 引用或计时器
+返回一个带有 .current 属性的对象，该对象在组件重渲染时保持不变。
 
 </br>
 
@@ -324,11 +344,11 @@ export default function Timer() {
 
 </br>
 
-修改 ref.current 不会触发组件重新渲染。
+修改 .current 不会触发组件更新
 
 </br>
 
-常用于访问 DOM 元素或保持跨渲染周期的变量。
+常用于：保存定时器 ID、访问 DOM 节点、跨渲染缓存值
 
 </br>
 
@@ -337,12 +357,22 @@ export default function Timer() {
 </br>
 
 ```bash
+import { useRef, useEffect } from 'react';
 
+export default function FocusInput() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus(); // 自动聚焦
+  }, []);
+
+  return <input ref={inputRef} />;
+}
 ```
 
 </br>
 
-## useReducer 管理复杂状态逻辑，类似 Redux 的局部状态管理
+## useReducer-- 管理复杂状态
 
 </br>
 
@@ -350,7 +380,7 @@ export default function Timer() {
 
 </br>
 
-通过 dispatch 触发 reducer 纯函数，根据 action 返回新状态，适合多子值或复杂更新逻
+通过 dispatch(action) 调用 reducer 函数，返回新的 state。
 
 </br>
 
@@ -358,11 +388,11 @@ export default function Timer() {
 
 </br>
 
-适合复杂状态管理，比 useState 更灵活。
+状态逻辑复杂时更适合 than useState
 
 </br>
 
-适合局部组件状态，不是全局状态管理方案。
+和 Redux 概念类似，但是局部管理
 
 </br>
 
@@ -371,12 +401,32 @@ export default function Timer() {
 </br>
 
 ```bash
+import { useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment': return { count: state.count + 1 };
+    case 'decrement': return { count: state.count - 1 };
+    default: return state;
+  }
+}
+
+export default function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <>
+      <p>计数：{state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+
+  );
+}
 
 ```
 
 </br>
 
-## useMemo 缓存计算结果，避免重复计算
+## useMemo --缓存计算结果
 
 </br>
 
@@ -384,7 +434,7 @@ export default function Timer() {
 
 </br>
 
-依赖数组控制缓存更新，只有依赖变化时才重新计算或创建函数
+只在依赖变化时重新计算，避免重复复杂计算。
 
 </br>
 
@@ -396,7 +446,7 @@ export default function Timer() {
 
 </br>
 
-避免子组件不必要的重新渲染。
+避免重复计算、子组件不必要的渲染
 
 </br>
 
@@ -405,12 +455,28 @@ export default function Timer() {
 </br>
 
 ```bash
+import { useMemo, useState } from 'react';
 
+export default function ExpensiveCalc() {
+  const [count, setCount] = useState(0);
+
+  const result = useMemo(() => {
+    console.log('重新计算');
+    return count * 100;
+  }, [count]);
+
+  return (
+    <>
+      <p>结果：{result}</p>
+      <button onClick={() => setCount(c => c + 1)}>+</button>
+    </>
+  );
+}
 ```
 
 </br>
 
-## useCallback 缓存函数实例，避免不必要的函数重新创建。
+## useCallback -- 缓存函数引用
 
 </br>
 
@@ -418,7 +484,7 @@ export default function Timer() {
 
 </br>
 
-依赖数组控制缓存更新，只有依赖变化时才重新计算或创建函数
+只有依赖项变化时才重新生成函数引用。
 
 </br>
 
@@ -426,11 +492,11 @@ export default function Timer() {
 
 </br>
 
-用于性能优化。
+优化传递给子组件的函数 props，避免组件重复渲染
 
 </br>
 
-避免子组件不必要的重新渲染。
+通常与 memo 搭配使用
 
 </br>
 
@@ -439,10 +505,34 @@ export default function Timer() {
 </br>
 
 ```bash
+import { useCallback, useState } from 'react';
 
+export default function CallbackDemo() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log('当前 count:', count);
+  }, [count]);
+
+  return <button onClick={handleClick}>点击</button>;
+}
 ```
 
 </br>
+
+## 其他扩展
+
+</br>
+
+| Hook                   | 说明                                                              |
+| ---------------------- | ----------------------------------------------------------------- |
+| `useLayoutEffect`      | 与 `useEffect` 类似，但同步执行于 DOM 更新后（适合测量 DOM 尺寸） |
+| `useImperativeHandle`  | 与 `forwardRef` 一起使用，自定义对外暴露的 ref 方法               |
+| `useId`                | 生成唯一 ID，适用于服务端渲染场景                                 |
+| `useTransition`        | React 18 用于异步 UI 更新，避免阻塞主渲染                         |
+| `useDeferredValue`     | React 18 用于延迟某些值更新，避免频繁重渲染                       |
+| `useSyncExternalStore` | 订阅外部 store，用于状态库如 Redux 的订阅优化                     |
+| `useDebugValue`        | 自定义 Hook 中用于调试显示的值（如开发者工具展示）                |
 
 </br>
 
