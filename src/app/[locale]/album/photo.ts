@@ -466,9 +466,99 @@ export const photos: Photo[] = [
     tip: '哈尔滨',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221912_489.jpg',
-    desc: '青海湖骑行遇到',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/dde2qwefrwdcsdssc.JPG',
+    desc: '浪漫的城市 浪漫的雪',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/doobdwabvn.JPG',
+    desc: '松花江上的她玩着烟花',
+    tip: '哈尔滨',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/cdssasaapswdsa.JPG',
+    desc: '另一面的哈尔滨',
+    tip: '哈尔滨',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/cdssdazsc.JPG',
+    desc: '松花江大桥',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/ytytghhfthgfs.JPG',
+    desc: '松花江上的她们',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/doobdwabv.JPG',
+    desc: '松花江上的她们',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/cdssasaa.JPG',
+    desc: '松花江大桥',
+    tip: '哈尔滨',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%93%88%E5%B0%94%E6%BB%A8/djooaswpavawas.JPG',
+    desc: '著名拍照点建筑',
+    tip: '哈尔滨',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/mmexport1679819841343.jpg',
+    desc: '装备全靠老板借',
     tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_092805.jpg',
+    desc: '出发',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_075941.jpg',
+    desc: '出发',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221912_489.jpg',
+    desc: '青海湖骑行遇到 此刻 他在想什么呢',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/mmexport1679906413617.jpg',
+    desc: '骑行伙伴',
+    tip: '青海湖',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230326_100210.jpg',
+    desc: '西宁站公交去青海湖',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/IMG_20230327_164724_TIMEBURST13.jpg',
+    desc: '路边休息',
+    tip: '青海湖',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_152431.jpg',
+    desc: '早到晚上 一路食粮',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/mmexport1680153521750.jpg',
+    desc: '鸟 路上还有好多动物',
+    tip: '青海湖',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0266.JPG',
+    desc: '此生必驾318',
+    tip: '318',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221902_489.jpg',
@@ -482,12 +572,201 @@ export const photos: Photo[] = [
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220256_566.jpg',
-    desc: '318遇见',
+    desc: '318 借摩托车拍个照',
     tip: '318',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220235_655.jpg',
-    desc: '318遇见',
+    desc: '318 完美打卡点',
+    tip: '318',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/MVIMG_20230321_214309.jpg',
+    desc: '夜晚拉萨',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/qdsefggrrtww.JPG',
+    desc: '阿刁奶茶',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/sxsaqaa.JPG',
+    desc: '拉萨 八廓街 他们',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/mmexport1679499518260.jpg',
+    desc: '药王山 50元打卡地',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/dsffwdwuasdq.JPG',
+    desc: '老光明岗著名奶茶店',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-13%20212907.jpg',
+    desc: '此刻我谁都不想',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223709.jpg',
+    desc: '然乌湖',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/mmexport1679304593859.jpg',
+    desc: '青春没有售价 火车广州直接到拉萨',
+    tip: '318',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/43dfgfgklklewwo.JPG',
+    desc: '羊湖路上',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223520.jpg',
+    desc: '然乌湖',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/8dfwqqqlefwwqfgdsqsskaq.JPG',
+    desc: '著名小吃 土豆',
+    tip: '318',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfwwexca.JPG',
+    desc: '此刻的我是快乐的',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfwwexcaas.JPG',
+    desc: '大昭寺 转经筒 祈福',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0139.JPG',
+    desc: '南迦巴瓦峰',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/8dfwq998a.JPG',
+    desc: '我站在布达拉宫眺望城域 我也想成为王',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223926.jpg',
+    desc: '借个车车开开',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/dsffqlkmkh.JPG',
+    desc: '拉萨市里',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-09%20012502.jpg',
+    desc: '自驾路上',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/43dfgfgklkl.JPG',
+    desc: '此刻 鸟是快乐的 我也是',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/43dfg.JPG',
+    desc: '我望着湖里的那对鸳鸯 你应该知道我想表达什么',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0042.JPG',
+    desc: '山崖上的村户',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfw.JPG',
+    desc: '大昭寺',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/mmexport1679312023935.jpg',
+    desc: '去拉萨的火车上 此时的我在听着电脑放的蓝莲花 摆着pose',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/sxsaqa.JPG',
+    desc: '等待拍照打卡的姑娘们',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/fdsag.JPG',
+    desc: '路上认识的卖虫草的大哥 后面送了我一罐枸杞 等我觉得有钱了一定买虫草',
+    tip: '318',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0092.JPG',
+    desc: '金沙江大桥 百闻不如一见',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0253.JPG',
+    desc: '千年盐井',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0177_1.JPG',
+    desc: '出片的他们',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0133.JPG',
+    desc: '快乐打卡的他们 ',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/qdefweudseewo.JPG',
+    desc: '被迫营业的藏獒',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/qdsefgreewqs.JPG',
+    desc: '大昭寺',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0141.JPG',
+    desc: '同样高度的南迦巴瓦峰对面山上举行活动的他们',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223614.jpg',
+    desc: '我拍着玛尼堆',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/8dfwq99wxkaaakos.JPG',
+    desc: '大昭寺',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/MVIMG_20230322_112514.jpg',
+    desc: '本地居民吃早餐',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/mmexport1679476221831.jpg',
+    desc: '我准备去拉起来',
+    tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223607.jpg',
+    desc: '专业pose',
     tip: '318',
   },
   {
@@ -626,6 +905,148 @@ export const photos: Photo[] = [
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231006_112044.jpg',
     desc: '福气护佑',
     tip: '石家庄',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddfdrythhgf.JPG',
+    desc: '沙坡尾',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhrjkgdsfd.JPG',
+    desc: '沙坡尾',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyuty4uthffhfd6rftdsgrd4jddhdy4iftgdsdhkdjf.JPG',
+    desc: '椰风寨 等待日出',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/13445hhtgtretftdr.JPG',
+    desc: '怪兽大楼 压迫感扑面',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyuty4uthf6rt4y4itg.JPG',
+    desc: '厦门',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyuty4uthffhfd6rftdsgrdet4jddhdy4iftgdsdhkdjf.JPG',
+    desc: '椰风寨 日出 海边 小熊',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutuyutr.JPG',
+    desc: '鼓浪屿 从前从前 我爱你很久',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/13445hrgcfdffg.JPG',
+    desc: '厦门 中华城',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhdy4ifrtgdsdhkdjfrr.JPG',
+    desc: '椰风寨日出前',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyuty4uthffhfd6rftdsgrde4jddhdy4iftgdsdhkdjf.JPG',
+    desc: '椰风寨 等待日出',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhjjgssddgdhdd.JPG',
+    desc: '机车',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/13445hrgf.JPG',
+    desc: '厦门 中华城',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyuty4uthf6rtdsd4ddy4itgdsdhkjf.JPG',
+    desc: '建筑厦门',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhjjgssddgfsafdfdghdds.JPG',
+    desc: '人生得意须尽欢',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjyutyutyutrty.JPG',
+    desc: '鼓浪屿轮渡',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhjjgssdgdh.JPG',
+    desc: '你 值得所有',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhrjhfdkfgtpoy.JPG',
+    desc: '十里长堤',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhjjgssgdh.JPG',
+    desc: '喜欢波妞 波妞喜欢宗介',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/13445hddfuhffg.JPG',
+    desc: '老虎城',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/134hfehffh.JPG',
+    desc: '植物园湿地',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/sgfg.JPG',
+    desc: '南普陀无我',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddhdy4ifrrtgdfdfrrrjhk.JPG',
+    desc: '十里长堤',
+    tip: '厦门',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddfdryth.JPG',
+    desc: '小鱼岛书店',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddfdryt.JPG',
+    desc: '韩国大牌档 很有特色',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/134hhrgrfdefeheyrrh.JPG',
+    desc: '植物园',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/sgfggdsgfdgfdsgf.JPG',
+    desc: '南普陀寺',
+    tip: '厦门',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/sgfggdsgfdgfdsgf.JPG',
+    desc: '南普陀寺',
+    tip: '广州',
   },
   // ...更多图片
 ];
