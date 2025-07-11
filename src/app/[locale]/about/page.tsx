@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import MySelf from './MySelf';
 
 export const metadata: Metadata = {
-  title: '关于我',
+  title: '我',
   description: '车明强个人信息',
 };
 

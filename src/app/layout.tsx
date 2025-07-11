@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: '车明强的博客 | Thomasche Blog',
-    template: '%s | 车明强的博客',
+    template: '%s',
   },
-  description: '记录前端开发、技术成长与生活思考的博客。由车明强撰写。',
+  description: '记录前端开发、技术成长与生活思考的博客。',
   keywords: ['车明强', '博客', '前端', 'React', 'Next.js', '技术成长'],
   authors: [{ name: '车明强', url: 'https://thomasche.top' }],
   creator: '车明强',
