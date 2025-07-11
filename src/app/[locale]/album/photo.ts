@@ -302,6 +302,91 @@ export const photos: Photo[] = [
     tip: '深圳',
   },
   {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200721_180913.jpg',
+    desc: '深圳音乐馆',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201002_171728.jpg',
+    desc: '海上世界',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/DSC_0205.JPG',
+    desc: '阳台山',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200723_212538.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_173808.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_174143.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_173211.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/13454rvcgff.JPG',
+    desc: '小南山',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_173446.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_165420.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_173647.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s122e.JPG',
+    desc: '桂湾',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200721_180854.jpg',
+    desc: '莲花山',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201003_133423.jpg',
+    desc: '凤凰山祈福 都实现了 不能去第二次',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s.JPG',
+    desc: '桂湾',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_171240.jpg',
+    desc: '大芬油画村',
+    tip: '深圳',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201002_191012.jpg',
+    desc: '海上世界',
+    tip: '深圳',
+  },
+  {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/_DSC4078dtdrtd.jpg',
     desc: '我',
     tip: '种种',
@@ -1048,6 +1133,67 @@ export const photos: Photo[] = [
     desc: '南普陀寺',
     tip: '广州',
   },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20100101.jpg',
+    desc: '青岛',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20190300.jpg',
+    desc: '青岛',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20103813.jpg',
+    desc: '青岛',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-04-04%20181208.jpg',
+    desc: '潍坊青州',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-23%20025512.jpg',
+    desc: '泰山顶的我们',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-23%20005443.jpg',
+    desc: '泰山顶的我们',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-04-04%20180338.jpg',
+    desc: '潍坊青州',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-04-05%20112349.jpg',
+    desc: '潍坊青州',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-09-13%20142949.jpg',
+    desc: '青岛崂山',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-22%20213533.jpg',
+    desc: '泰山南天门',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-04-04%20181028.jpg',
+    desc: '潍坊青州',
+    tip: '山东',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-10-13%20130300.jpg',
+    desc: '潍坊坊茨小镇',
+    tip: '山东',
+  },
+
   // ...更多图片
 ];
 export const PHOTOS_PER_PAGE = 20;
