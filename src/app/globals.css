@@ -222,3 +222,39 @@ img {
     transition: background-color 0.2s ease;
   }
 }
+/* 博客文章列表星星背景 */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 6s infinite alternate;
+}
+
+@keyframes shooting {
+  0% {
+    transform: translate(0, 0) scaleX(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(400px, 200px) scaleX(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(800px, 400px) scaleX(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-shooting {
+  animation: shooting 1.2s ease-out forwards;
+}

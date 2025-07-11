@@ -107,6 +107,15 @@ const config: Config = {
           },
         },
       },
+      keyframes: {
+        flicker: {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        flicker: 'flicker 3s infinite ease-in-out',
+      },
     },
   },
   plugins: [typography, require('tailwind-scrollbar')],

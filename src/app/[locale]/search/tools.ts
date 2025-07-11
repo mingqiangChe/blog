@@ -146,7 +146,7 @@ export const navData: NavGroup[] = [
         desc: '在线观看视频库',
       },
       {
-        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A3%9E%E6%B4%92%E8%8C%83%E5%BE%B7%E8%90%A8%E5%85%AC%E5%8F%B8%E6%B3%95.png',
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/acfunimg.jpg',
         title: 'acfun',
         url: 'https://www.acfun.cn/',
         desc: '以前的b',
