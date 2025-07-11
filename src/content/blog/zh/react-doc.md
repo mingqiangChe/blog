@@ -1,5 +1,5 @@
 ---
-title: 'react相关'
+title: 'react 概念'
 date: '2025-07-07'
 description: '常用HOOK'
 tags: ['react']
@@ -22,6 +22,142 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/reactimg.jpg'
 </br>
 
 **这样父组件在服务器渲染，子组件在客户端渲染，二者共存，互不冲突。**
+
+</br>
+
+## 核心概念
+
+| 模块     | 内容                                                                                              |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| JSX      | JSX 是语法糖，必须包裹单一元素，支持表达式，不支持语句；可以使用 fragment (`<> </>`) 避免多余标签 |
+| 组件     | 函数组件 vs 类组件（目前推荐函数组件 + Hook）                                                     |
+| Props    | 父组件向子组件传值，具备只读特性（不可修改 props）                                                |
+| State    | 状态驱动视图，`useState` 管理局部状态                                                             |
+| 事件绑定 | 推荐箭头函数避免 `this` 问题；事件对象不等同于原生 event（是合成事件）                            |
+
+</br>
+
+## 渲染流程
+
+</br>
+
+| 模块     | 内容                                                              |
+| -------- | ----------------------------------------------------------------- |
+| 渲染流程 | 初次渲染（mount）、更新渲染（update）、卸载渲染（unmount）        |
+| 生命周期 | 函数组件用 `useEffect` 模拟 `componentDidMount/WillUnmount`       |
+| 批量更新 | React 会合并 `setState` 操作，且异步处理（除事件处理外）          |
+| 依赖收集 | `useEffect/useMemo/useCallback` 中依赖数组漏写会导致 BUG 或死循环 |
+
+</br>
+
+## Hooks 使用规范
+
+</br>
+
+| 要点                          | 说明                                                   |
+| ----------------------------- | ------------------------------------------------------ |
+| 顺序一致                      | Hook 不能在条件语句或循环中调用，必须固定顺序          |
+| 自定义 Hook                   | 可复用状态逻辑，命名规范：`useXxx`                     |
+| useEffect 清理函数            | 返回的函数会在组件卸载或下次执行前调用，用于解绑操作等 |
+| useCallback 与 useMemo 的区别 | 一个是缓存函数，一个是缓存结果（避免不必要渲染）       |
+
+</br>
+
+## 组件设计与通信
+
+</br>
+
+| 模块                   | 内容                                                       |
+| ---------------------- | ---------------------------------------------------------- |
+| 父传子                 | `props`                                                    |
+| 子传父                 | 回调函数传入子组件，子组件中触发                           |
+| 跨层通信               | `Context`                                                  |
+| 状态提升               | 多个子组件共享状态，提升至最近公共祖先                     |
+| 控制组件 vs 非控制组件 | 表单字段值由 React 控制（受控），还是由 DOM 控制（非受控） |
+
+</br>
+
+## 性能优化（中大型项目必须掌握）
+
+</br>
+
+| 优化点       | 工具                                             |
+| ------------ | ------------------------------------------------ |
+| 避免重复渲染 | `React.memo`、`useCallback`、`useMemo`           |
+| 避免虚渲染   | 条件渲染提前返回（如 `if (!data) return null`）  |
+| 拆分组件     | 避免一个组件 render 过多逻辑                     |
+| 异步渲染控制 | `useTransition`（React 18）、懒加载 `React.lazy` |
+| 事件节流防抖 | 自定义 `useThrottle` / `useDebounce`             |
+
+</br>
+
+## 服务端渲染（SSR）与同构应用（Next.js）
+
+</br>
+
+| 要点      | 内容                                               |
+| --------- | -------------------------------------------------- |
+| SSR 原理  | 首屏由服务端渲染 HTML，客户端接管（hydration）     |
+| 数据获取  | `getServerSideProps` / `getStaticProps`（Next.js） |
+| 动态路由  | `useRouter` / `[slug].tsx`                         |
+| Head 管理 | `next/head` / `Metadata` API                       |
+| SEO 优化  | 添加 meta、og、title、img 等信息                   |
+| 图片优化  | `next/image` 自动懒加载、压缩                      |
+
+ </br>
+
+## 动画与交互（提升体验）
+
+</br>
+
+| 模块         | 工具                                  |
+| ------------ | ------------------------------------- |
+| 页面切换动画 | Framer Motion、Transition Group       |
+| 滚动监听     | `useScroll`、`IntersectionObserver`   |
+| 星星移动背景 | 自定义 `canvas` or DOM 随鼠标偏移实现 |
+| Loading 状态 | Skeleton、Spinner、Suspense fallback  |
+
+</br>
+
+## 常见陷阱和误区（避免踩坑）
+
+</br>
+
+| 陷阱                | 说明                                                         |
+| ------------------- | ------------------------------------------------------------ |
+| setState 不立即更新 | 是异步的，依赖上一次值时要用函数式 `setState(prev => ...)`   |
+| useEffect 忘记依赖  | 会造成 stale 问题或死循环                                    |
+| 多次请求未清理      | 请求未取消就卸载页面，导致内存泄漏（需加 `AbortController`） |
+| 子组件重新渲染频繁  | 函数 props 每次重建（用 `useCallback` 优化）                 |
+| 依赖外部变量未 memo | 如 `useEffect` 中使用的外部对象或函数未作为依赖传入          |
+
+</br>
+
+## 调试技巧（调试工具 + 开发习惯）
+
+</br>
+
+| 工具            | 作用                                                |
+| --------------- | --------------------------------------------------- |
+| React DevTools  | 查看组件树、props、hooks、性能分析等                |
+| Profiler        | 性能分析，找出渲染瓶颈                              |
+| console.trace() | 查看状态变化调用路径                                |
+| 状态打印        | 利用 `useEffect(() => console.log(state), [state])` |
+
+</br>
+
+## 推荐常用库
+
+</br>
+
+| 类别       | 工具                             |
+| ---------- | -------------------------------- |
+| 表单管理   | `react-hook-form`、`formik`      |
+| 状态管理   | `zustand`、`redux`、`jotai`      |
+| 数据请求   | `swr`、`react-query`             |
+| 动画       | `framer-motion`                  |
+| 响应式布局 | `tailwindcss`                    |
+| 组件库     | `shadcn/ui`、`chakra-ui`、`antd` |
 
 </br>
 
@@ -201,7 +337,7 @@ setState 更新状态后，组件重新渲染，useState 返回最新状态。
 
 </br>
 
-### 用法
+### 用法：
 
 </br>
 
@@ -220,6 +356,17 @@ export default function Counter() {
   );
 }
 
+```
+
+</br>
+
+### 常见面试题：
+
+</br>
+
+```js
+setState 是同步还是异步？
+👉 React 内部会批量处理 setState，合并触发一次渲染，因此是“批量异步执行”，但在原生事件中是同步更新。
 ```
 
 </br>
@@ -270,6 +417,17 @@ export default function Timer() {
   return <div>秒数：{time}</div>;
 }
 
+```
+
+</br>
+
+### 常见面试题：
+
+</br>
+
+```js
+依赖数组为何不能随意漏？
+👉 忽略依赖会导致闭包内使用旧值或内存泄漏。
 ```
 
 </br>
@@ -328,6 +486,16 @@ export default function App() {
 
 </br>
 
+### 常见面试题：
+
+</br>
+
+```js
+
+```
+
+</br>
+
 ## useRef--持久引用 / DOM 操作
 
 </br>
@@ -368,6 +536,16 @@ export default function FocusInput() {
 
   return <input ref={inputRef} />;
 }
+```
+
+</br>
+
+### 常见面试题：
+
+</br>
+
+```js
+
 ```
 
 </br>
@@ -426,6 +604,16 @@ export default function Counter() {
 
 </br>
 
+### 常见面试题：
+
+</br>
+
+```js
+
+```
+
+</br>
+
 ## useMemo --缓存计算结果
 
 </br>
@@ -476,6 +664,17 @@ export default function ExpensiveCalc() {
 
 </br>
 
+### 常见面试题：
+
+</br>
+
+```js
+useMemo 和普通函数调用的区别？
+👉 useMemo 会缓存，避免每次都重新执行。
+```
+
+</br>
+
 ## useCallback -- 缓存函数引用
 
 </br>
@@ -516,6 +715,16 @@ export default function CallbackDemo() {
 
   return <button onClick={handleClick}>点击</button>;
 }
+```
+
+</br>
+
+### 常见面试题：
+
+</br>
+
+```js
+
 ```
 
 </br>
