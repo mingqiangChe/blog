@@ -24,12 +24,15 @@ ENV NODE_OPTIONS="--max-old-space-size=1024"
 RUN pnpm run build
 
 # 拷贝构建产物，确保 .next 全部拷贝，静态资源和 public 目录完整
+# ✅ 拷贝构建产物，确保 .next 所有关键文件完整
 RUN mkdir -p /app/deploy/standalone/.next \
   && cp -r .next/standalone/* /app/deploy/standalone/ \
   && cp -r .next/static /app/deploy/standalone/.next/static \
   && cp -r .next/BUILD_ID /app/deploy/standalone/.next/BUILD_ID \
+  && cp .next/*.json /app/deploy/standalone/.next/ \ 
   && cp -r public /app/deploy/standalone/public \
   && cp pm2.config.js /app/deploy/standalone/pm2.config.js
+
 
 # 设置运行时工作目录为部署产物目录
 WORKDIR /app/deploy/standalone

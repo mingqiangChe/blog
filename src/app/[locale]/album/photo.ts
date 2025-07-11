@@ -129,6 +129,47 @@ export const photos: Photo[] = [
     tip: '大梅沙',
   },
   {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0218.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0177.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0163.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0109.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0088.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0084.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0080.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0078.jpg',
+    desc: '长沙女孩',
+    tip: '大理女孩',
+  },
+  {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0280dtdrtd.jpg',
     desc: '大理大学生古装女孩 果然化妆改变气质 日常非常也好看 但是化了妆完全变了感觉',
     tip: '大理女孩',
@@ -242,47 +283,6 @@ export const photos: Photo[] = [
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0093dtdrtd.jpg',
     desc: '四川女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0218.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0177.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0163.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0109.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0088.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0084.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0080.jpg',
-    desc: '长沙女孩',
-    tip: '大理女孩',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC_0078.jpg',
-    desc: '长沙女孩',
     tip: '大理女孩',
   },
 
@@ -425,6 +425,31 @@ export const photos: Photo[] = [
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220219_171.jpg',
     desc: '318然乌湖',
     tip: '318',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%A5%BF%E8%90%A5%E7%9B%98%E8%A5%BF%E8%BE%B9%E8%A1%97.webp',
+    desc: '西营盘西边街',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%A5%BF%E8%90%A5%E7%9B%98.webp',
+    desc: '西营盘',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%9F%B3%E5%A1%98%E5%92%80%E8%90%BD%E6%97%A5%E9%A3%9E%E8%BD%A6.webp',
+    desc: '石塘咀落日飞车',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%B1%B1%E9%A1%B6%E5%8D%A2%E5%90%89%E9%81%93%E2%80%9C%E6%AD%BB%E4%BA%A1%E8%A7%82%E6%99%AF%E5%8F%B0%E2%80%9D%E5%B0%8F%E7%9F%B3%E2%80%9C%E7%8E%A9%E5%91%BD%E6%89%93%E5%8D%A1%E2%80%9D2.webp',
+    desc: '山顶卢吉道“死亡观景台”小石“玩命打卡',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%B1%B1%E9%A1%B6%E5%8D%A2%E5%90%89%E9%81%93%E2%80%9C%E6%AD%BB%E4%BA%A1%E8%A7%82%E6%99%AF%E5%8F%B0%E2%80%9D%E5%B0%8F%E7%9F%B3%E2%80%9C%E7%8E%A9%E5%91%BD%E6%89%93%E5%8D%A1%E2%80%9D1.jpg',
+    desc: '山顶卢吉道“死亡观景台”小石“玩命打卡',
+    tip: '香港',
   },
   // ...更多图片
 ];
