@@ -316,6 +316,28 @@ export const photos: Photo[] = [
     desc: '我',
     tip: '种种',
   },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/2020-04-28%20203054.jpg',
+    desc: '我',
+    tip: '种种',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/2019-02-25%20213001.jpg',
+    desc: '我',
+    tip: '种种',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/2019-02-20%20011346.jpg',
+    desc: '我',
+    tip: '种种',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6C8A0477.JPG',
+    desc: '我',
+    tip: '种种',
+  },
+
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220200_588.jpg',
     desc: '调酒crush',
@@ -328,29 +350,76 @@ export const photos: Photo[] = [
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220103_274.jpg',
-    desc: '苏州河',
+    desc: '慵懒的窗外有一个忙碌的人',
     tip: '苏州',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220053_321.jpg',
-    desc: '苏州河',
+    desc: '苏州河荡着苏州船',
     tip: '苏州',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220044_254.jpg',
-    desc: '苏州河',
+    desc: '慵懒的人啊 不知道窗外有个羡慕的人',
     tip: '苏州',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220035_587.jpg',
-    desc: '苏州河',
+    desc: '苏州高高挂起鱼灯',
     tip: '苏州',
   },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220014_546.jpg',
-    desc: '湖',
+    desc: '金鸡湖大裤衩下打卡的我',
     tip: '苏州',
   },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0088dtdrtd.JPG',
+    desc: '苏州甜食',
+    tip: '苏州',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0029dtdrtd.JPG',
+    desc: '枫桥夜泊',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0097dtdrtd.JPG',
+    desc: '苏州甜食',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0100dtdrtd.JPG',
+    desc: '超喜欢这件衣服 遇到真正喜欢的人一定给她穿上',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0076dtdrtd.JPG',
+    desc: '苏州诗 苏州词',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0093dtdrtd.JPG',
+    desc: '稣州',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0064dtdrtd.JPG',
+    desc: '这是我梦想中的样子 稣州巷',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0080dtdrtd.JPG',
+    desc: '十里山塘',
+    tip: '苏州',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%8B%8F%E5%B7%9E/DSC_0098dtdrtd.JPG',
+    desc: '甜食',
+    tip: '苏州',
+  },
+
   // {
   //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_221336_552.jpg',
   //   desc: '通州河',
@@ -450,6 +519,113 @@ export const photos: Photo[] = [
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%B1%B1%E9%A1%B6%E5%8D%A2%E5%90%89%E9%81%93%E2%80%9C%E6%AD%BB%E4%BA%A1%E8%A7%82%E6%99%AF%E5%8F%B0%E2%80%9D%E5%B0%8F%E7%9F%B3%E2%80%9C%E7%8E%A9%E5%91%BD%E6%89%93%E5%8D%A1%E2%80%9D1.jpg',
     desc: '山顶卢吉道“死亡观景台”小石“玩命打卡',
     tip: '香港',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/DSC01547.jpg',
+    desc: '感觉至上',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2ssd9sssf2ds1.JPG',
+    desc: '街上小广告',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2dddd1ddddd42dddd4x.JPG',
+    desc: '天星小轮的士',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF887756k1221wss2sdwssewe.JPG',
+    desc: '香港中文大学',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2ddd1dd2dd4.JPG',
+    desc: '%咖啡 记忆',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2ssd9sssf2dsd1.JPG',
+    desc: '歌舞厅 年代',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/car.JPG',
+    desc: '车车',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF887eweemd1sdd8dww21dwd.JPG',
+    desc: '天星小轮轮渡',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF887756k12211weweem1s1.JPG',
+    desc: '车车',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2ssd9sssdf2ddsd1d.JPG',
+    desc: '香港建造',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/%E9%A3%8E%E6%99%AF88ssww2ddd1dd.JPG',
+    desc: '庙街 不让拍我就想拍',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%A6%99%E6%B8%AF/people5855.JPG',
+    desc: '香港大哥以及抖音相约的哥们',
+    tip: '香港',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/cxfsixgscdu8od2.JPG',
+    desc: '是我喜欢的店呀',
+    tip: '长沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/%E6%9D%9C%E7%94%AB%E6%B1%9F%E9%98%81.JPG',
+    desc: '杜甫江阁',
+    tip: '长沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/cs123.JPG',
+    desc: 'IFS',
+    tip: '长沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/mao.JPG',
+    desc: '标志性建筑',
+    tip: '长沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/cxfs2.JPG',
+    desc: '见一面吧 何时 现在 好不好',
+    tip: '长沙',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/shijiazhuangshibi.jpg',
+    desc: '石壁',
+    tip: '石家庄',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231007_133402.jpg',
+    desc: '亦是红楼梦中人',
+    tip: '石家庄',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231006_132808dtdrtd.JPG',
+    desc: '石壁',
+    tip: '石家庄',
+  },
+
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231006_112044.jpg',
+    desc: '福气护佑',
+    tip: '石家庄',
   },
   // ...更多图片
 ];
