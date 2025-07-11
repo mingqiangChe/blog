@@ -65,7 +65,7 @@ export default function MySelf() {
   return (
     <section className="bg-white min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden">
       {/* 中间图像：固定尺寸，始终居中 */}
-      <section className="relative w-64 h-64 mb-12">
+      <section className="relative w-99 h-99 mb-12">
         <Image
           src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%91%84%E5%BD%B1%E7%94%B7%E7%94%9F.png"
           alt="photographer & coder"

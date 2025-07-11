@@ -50,7 +50,9 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 </br>
 
 ````bash
-``` 一般就是这样  ```
+```bash
+一般就是这样
+```
 ````
 
 </br>
@@ -60,10 +62,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 </br>
 
 ```bash
-<mark>高亮文本</mark>
+**高亮文本**
 ```
 
-<mark>高亮文本</mark>
+**高亮文本**
 
 </br>
 
@@ -114,20 +116,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 </br>
 
 [这是链接](https://markdown.lovejade.cn/)
-
-</br>
-
-## 高亮代码片段
-
-</br>
-
-```bash
-`代码片段`
-```
-
-</br>
-
-`代码片段`
 
 </br>
 
