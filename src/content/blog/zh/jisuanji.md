@@ -4,7 +4,7 @@ date: '2020-06-21'
 description: '关于个人与计算机行业的学习与成长'
 tags: ['计算机']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04443.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E8%AE%A1%E7%AE%97%E6%9C%BA.jpg'
 isMilestone: true
 ---
 

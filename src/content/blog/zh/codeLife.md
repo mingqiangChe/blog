@@ -4,7 +4,7 @@ date: '2025-07-07'
 description: 'code life'
 tags: ['计算机']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9Fimg.png'
 ---
 
 </br>

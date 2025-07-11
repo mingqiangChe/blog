@@ -4,7 +4,7 @@ date: '2025-06-15'
 description: 'Next.js + Docker + PM2 + Nginx'
 tags: ['部署']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/docker.png'
 ---
 
 # 一、环境准备与服务器搭建
@@ -233,7 +233,7 @@ node_modules
 
 </br>
 
-一些通用的放在通用的nginx上做处理
+一些通用的放在通用的 nginx 上做处理
 
 ```harsp
 

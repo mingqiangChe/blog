@@ -4,7 +4,7 @@ date: '2025-06-21'
 description: '本博客使用md写博客的一些语法'
 tags: ['计算机']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04445.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/markdownimg.png'
 ---
 
 # 语法

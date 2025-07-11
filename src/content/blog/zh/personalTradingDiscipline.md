@@ -4,7 +4,7 @@ date: '2025-07-06'
 description: '交易纪律'
 tags: ['投资', '认知']
 author: 'Thomas Che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04443.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E4%BA%A4%E6%98%93%E7%BA%AA%E5%BE%8B.jpg'
 ---
 
 </br>

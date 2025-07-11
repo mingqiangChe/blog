@@ -4,7 +4,7 @@ date: '2025-06-14'
 description: '内容关于这个博客的架构 搭建'
 tags: ['react']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87.jpg'
 ---
 
 # 初衷

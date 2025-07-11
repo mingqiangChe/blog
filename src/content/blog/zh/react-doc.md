@@ -4,7 +4,7 @@ date: '2025-07-07'
 description: '常用HOOK'
 tags: ['react']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6_PixCake/DSC04465.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/reactimg.jpg'
 ---
 
 </br>
@@ -189,11 +189,15 @@ setState 更新状态后，组件重新渲染，useState 返回最新状态。
 
 </br>
 
-多个状态变量可多次调用 useState。
+每次更新只会影响当前组件
 
 </br>
 
-状态更新是异步的，且批量处理。
+多次调用可创建多个独立状态
+
+</br>
+
+异步批量更新（可使用回调函数安全读取旧值）
 
 </br>
 
@@ -220,7 +224,7 @@ export default function Counter() {
 
 </br>
 
-## useEffect 执行副作用操作（数据请求、订阅、DOM 操作、定时器等）
+## useEffect 副作用处理
 
 </br>
 
@@ -228,7 +232,7 @@ export default function Counter() {
 
 </br>
 
-组件渲染后执行传入的副作用函数，依赖数组控制副作用的执行时机，返回函数用于清理副作用。
+用于执行副作用逻辑（如请求数据、订阅事件、定时器），依赖数组控制副作用执行时机。
 
 </br>
 
@@ -253,13 +257,24 @@ export default function Counter() {
 </br>
 
 ```bash
+import { useEffect, useState } from 'react';
 
+export default function Timer() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(t => t + 1), 1000);
+    return () => clearInterval(id); // 清理定时器
+  }, []);
+
+  return <div>秒数：{time}</div>;
+}
 
 ```
 
 </br>
 
-## .useContext 跨组件共享数据，避免逐层传递 props
+## useContext 跨组件共享数据
 
 </br>
 
@@ -267,7 +282,7 @@ export default function Counter() {
 
 </br>
 
-通过 React 的 Context 机制，直接读取祖先组件提供的上下文值，实现组件间状态共享
+借助 React.createContext 创建上下文，子组件可直接访问祖先提供的数据。
 
 </br>
 
