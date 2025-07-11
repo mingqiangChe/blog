@@ -37,7 +37,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%9C%BA%E8%BD%A6
 
 </br>
 
-```harsp
+```bash
 <!-- 定义约束父组件传过来的事件 参数类型 -->
 interface Props {
   photos: Photo[];
@@ -81,7 +81,7 @@ export default function ClientLightbox({
 
 </br>
 
-```harsp
+```bash
 
 <!-- 该写法不常用 -->
 import React from 'react';
@@ -129,7 +129,7 @@ import styles from '../page.module.css';
 
 </br>
 
-```harsp
+```bash
    <section
       ref={ref}
       className={styles.card}
