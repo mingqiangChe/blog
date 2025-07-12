@@ -7,6 +7,7 @@ import { FiSearch } from 'react-icons/fi';
 import BlogSearchModal from './BlogSearchModal';
 import type { BlogPost } from '@/lib/markdown';
 import { useRouter } from 'next/navigation';
+import useMounted from '@/hooks/useMounted';
 interface HeaderProps {
   locale: string;
   posts: BlogPost[];
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export default function Header({ locale, posts }: HeaderProps) {
   const pathname = usePathname();
+  const mounted = useMounted();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [bgAlpha, setBgAlpha] = useState(0);
@@ -64,6 +66,7 @@ export default function Header({ locale, posts }: HeaderProps) {
 
   const normalizedPathname = stripLocale(pathname);
   const isActiveRoute = (href: string) => {
+    if (!mounted) return false;
     const normalizedHref = stripLocale(href);
     return (
       normalizedPathname === normalizedHref ||

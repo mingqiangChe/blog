@@ -28,8 +28,10 @@ export default function HomeContent({ posts, locale }: HomeContentProps) {
       </section>
 
       {/* 最近的文章 */}
-      <section className="flex items-center justify-center pt-32 pb-32">
-        <RecentPosts posts={recentPosts} />
+      <section className="flex justify-center pt-32 pb-32">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <RecentPosts posts={recentPosts} />
+        </div>
       </section>
     </main>
   );
