@@ -63,17 +63,18 @@ export default function ClientMarkdownRenderer({
     h4: Heading('h4'),
     h5: Heading('h5'),
     h6: Heading('h6'),
-    img: ({ src, alt, ...props }: any) => {
+    img: ({ src, alt, className = '', ...props }: any) => {
       const imageSrc =
         typeof src === 'string'
           ? src
           : 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/default.jpg';
+
       return (
         <img
           src={imageSrc}
           alt={alt || '图片'}
           loading="lazy"
-          className="rounded-lg shadow-md mx-auto max-w-full h-auto cursor-zoom-in medium-zoom-image"
+          className={`medium-zoom-image rounded-lg shadow-md mx-auto max-w-full h-auto cursor-zoom-in ${className}`}
           {...props}
         />
       );
