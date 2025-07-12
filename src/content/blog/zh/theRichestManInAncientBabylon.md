@@ -13,7 +13,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-<span style="background-color: blue;font-size: 36px;">一个人的财富不在于他钱包里有多少钱。没有源源不断的收入，再鼓的钱包也会很快见底。</span>
+<span style="background-color: blue;font-size: 16px;">一个人的财富不在于他钱包里有多少钱。没有源源不断的收入，再鼓的钱包也会很快见底。</span>
 
 </br>
 
@@ -21,7 +21,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-<span style="font-size: 36px;">为什么我们未能触及财富，因为我们从未主动寻求过它。</span>
+<span style="font-size: 24px;">为什么我们未能触及财富，因为我们从未主动寻求过它。</span>
 
 </br>
 
@@ -45,7 +45,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-说到时间，人人都有充足的时间，但你们每个人都曾让它白白溜走，没有充分利用时间来让自己变得富有。你们现在也承认，除了值得骄傲的好家庭外，你们并未有所成就。
+<span style="background-color: green;font-size: 24px;">说到时间，人人都有充足的时间，但你们每个人都曾让它白白溜走，没有充分利用时间来让自己变得富有。你们现在也承认，除了值得骄傲的好家庭外，你们并未有所成就。</span>
 
 </br>
 
@@ -73,7 +73,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-用投资所得用于生活 本金继续生钱
+<span style="font-size: 24px;">用投资所得用于生活 本金继续生钱</span>
 
 </br>
 
@@ -101,10 +101,10 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-我很快就发现了他们成功的原因：
+**我很快就发现了他们成功的原因：
 对工作的热爱，
 对任务的专注，
-以及不懈的努力。
+以及不懈的努力。**
 
 </br>
 
@@ -296,20 +296,39 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-### 1、黄金会眷顾那些愿意将收入十分之一储存起来，为自己和家人创造未来财富的人，黄金在他们手中会持续增长。
+<span style="font-size: 24px;">1、黄金会眷顾那些愿意将收入十分之一储存起来，为自己和家人创造未来财富的人，黄金在他们手中会持续增长。 本金继续生钱</span>
 
-### 2、黄金忠诚为主人效力，当主人以其智慧为它寻得丰厚的投资之地，它便如夏日牧场的羊群 繁衍倍增 带来滚滚财富
+</br>
 
-### 3、黄金偏爱谨慎的主人，他们在理财专家的智慧指引下审慎投资 安全而稳健
+<span style="font-size: 24px;">2、黄金忠诚为主人效力，当主人以其智慧为它寻得丰厚的投资之地，它便如夏日牧场的羊群 本金继续生钱</span>
+
+</br>
+
+<span style="font-size: 24px;">3、黄金偏爱谨慎的主人，他们在理财专家的智慧指引下审慎投资 本金继续生钱</span>
 
 </br>
 
 他们都是精通理财的智者，他们在开始实施每个计划前都会仔细商讨。他们从不轻率冒险损失本金，也不会将资金投入回报无望或风险过高的项目。
+
 </br>
 
-### 4、黄金会从那些盲目涉足未知领域或不顾专业人士建议的人手中流失
+繁衍倍增 带来滚滚财富
 
-### 5、黄金会远离三种人 ：追求不切实际回报的贪婪者 听信骗子甜言蜜语的轻率者 仅凭想象行事的无知者
+</br>
+
+安全而稳健
+
+</br>
+
+<span style="font-size: 24px;">4、黄金会从那些盲目涉足未知领域或不顾专业人士建议的人手中流失 本金继续生钱</span>
+
+</br><span style="font-size: 24px;">5、黄金会远离三种人 本金继续生钱</span>
+
+</br>
+
+###
+
+### 追求不切实际回报的贪婪者 听信骗子甜言蜜语的轻率者 仅凭想象行事的无知者
 
 </br>
 
@@ -318,6 +337,8 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 </br>
 
 “切记：急功近利得来的财富，往往转瞬即逝。
+
+</br>
 
 “唯有那些源于智慧与持之以恒的追求积累而来的财富，才能给予主人持久的喜悦与满足。
 
@@ -372,7 +393,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-借出容易，但若借得不明智，收回就很困难。明智的放贷人不求冒险，只求稳妥。
+**借出容易，但若借得不明智，收回就很困难。明智的放贷人不求冒险，只求稳妥。**
 
 </br>
 
