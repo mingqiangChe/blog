@@ -12,7 +12,7 @@ import { useMediumZoom } from '@/hooks/ZoomImg';
 
 const mySchema = {
   ...defaultSchema,
-  tagNames: [...(defaultSchema.tagNames || []), 'video', 'source'],
+  tagNames: [...(defaultSchema.tagNames || []), 'video', 'source', 'span'],
   attributes: {
     ...defaultSchema.attributes,
     video: [
@@ -28,6 +28,7 @@ const mySchema = {
       'style',
     ],
     source: ['src', 'type'],
+    span: ['style'], // ✅ 允许 span 使用 style 属性
   },
 };
 
@@ -37,14 +38,18 @@ const generateId = (text: string) =>
     .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-const Heading = (Tag: keyof HTMLElementTagNameMap) => (props: any) => {
-  const { children, ...rest } = props;
-  const text = Array.isArray(children)
-    ? children.join('')
-    : String(children ?? '');
-  const id = generateId(text);
-  return React.createElement(Tag, { id, ...rest }, children);
-};
+const Heading =
+  (Tag: keyof HTMLElementTagNameMap, className = '') =>
+  (props: any) => {
+    const { children, ...rest } = props;
+    const text = Array.isArray(children)
+      ? children.join('')
+      : String(children ?? '');
+    const id = generateId(text);
+
+    // 给标题添加对应的className，支持传入自定义样式
+    return React.createElement(Tag, { id, className, ...rest }, children);
+  };
 
 interface ClientMarkdownRendererProps {
   content: string;
@@ -57,12 +62,13 @@ export default function ClientMarkdownRenderer({
 
   const components = {
     code: CodeBlock,
-    h1: Heading('h1'),
-    h2: Heading('h2'),
-    h3: Heading('h3'),
-    h4: Heading('h4'),
-    h5: Heading('h5'),
-    h6: Heading('h6'),
+    h1: Heading('h1', 'text-5xl font-extrabold text-white mt-6 mb-4'),
+    h2: Heading('h2', 'text-4xl font-extrabold text-white mt-6 mb-3'),
+    h3: Heading('h3', 'text-3xl font-bold text-white mt-5 mb-2'),
+    h4: Heading('h4', 'text-2xl font-semibold text-white mt-4 mb-2'),
+    h5: Heading('h5', 'text-xl font-semibold text-white mt-3 mb-1'),
+    h6: Heading('h6', 'text-lg font-semibold text-white mt-2 mb-1'),
+
     img: ({ src, alt, className = '', ...props }: any) => {
       const imageSrc =
         typeof src === 'string'

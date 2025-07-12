@@ -13,7 +13,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-**一个人的财富不在于他钱包里有多少钱。没有源源不断的收入，再鼓的钱包也会很快见底。**
+<span style="background-color: blue;font-size: 36px;">一个人的财富不在于他钱包里有多少钱。没有源源不断的收入，再鼓的钱包也会很快见底。</span>
 
 </br>
 
@@ -21,7 +21,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
-我明白了为什么我们未能触及财富，因为我们从未主动寻求过它。
+<span style="font-size: 36px;">为什么我们未能触及财富，因为我们从未主动寻求过它。</span>
 
 </br>
 
@@ -35,11 +35,9 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 ![思考者](https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06-28_22-12-18.png)
 
-你可以让金币继续生铜币，
-为你带来持续的收益。
-要积累财富，
-你必须让钱生钱，
-这样才能带来你渴望的富足。
+</br>
+
+你可以让金币继续生铜币，为你带来持续的收益。要积累财富，你必须让钱生钱，这样才能带来你渴望的富足。
 
 </br>
 

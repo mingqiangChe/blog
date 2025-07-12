@@ -57,6 +57,54 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/markdownimg.png'
 
 </br>
 
+## 标签样式
+
+</br>
+
+```bash
+<span style="color: red;">红色字体</span>
+```
+
+</br>
+
+<span style="color: red;">红色字体</span>
+
+</br>
+
+```bash
+<span style="font-size: 20px;">大字体</span>
+```
+
+</br>
+
+<span style="font-size: 20px;">大字体</span>
+
+</br>
+
+```bash
+<span style="background-color: yellow;">有背景色</span>
+```
+
+</br>
+
+<span style="background-color: yellow;">有背景色</span>
+
+</br>
+
+```bash
+<span style="color: #fff; background-color: #f43f5e; padding: 2px 6px; border-radius: 4px;">
+  白字红底标签
+</span>
+```
+
+</br>
+
+<span style="color: #fff; background-color: #f43f5e; padding: 2px 6px; border-radius: 4px;">
+  白字红底标签
+</span>
+
+</br>
+
 ## 高亮文本
 
 </br>
