@@ -39,8 +39,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/reactimg.jpg'
 
 ## 渲染流程
 
-</br>
-
 | 模块     | 内容                                                              |
 | -------- | ----------------------------------------------------------------- |
 | 渲染流程 | 初次渲染（mount）、更新渲染（update）、卸载渲染（unmount）        |
@@ -51,8 +49,6 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/reactimg.jpg'
 </br>
 
 ## Hooks 使用规范
-
-</br>
 
 | 要点                          | 说明                                                   |
 | ----------------------------- | ------------------------------------------------------ |
