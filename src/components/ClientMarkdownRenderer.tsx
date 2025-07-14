@@ -58,7 +58,7 @@ interface ClientMarkdownRendererProps {
 export default function ClientMarkdownRenderer({
   content,
 }: ClientMarkdownRendererProps) {
-  useMediumZoom('.medium-zoom-image', [content]);
+  useMediumZoom('.medium-zoom-image');
 
   const components = {
     code: CodeBlock,
