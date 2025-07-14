@@ -1,47 +1,52 @@
 import { useEffect } from 'react';
 import mediumZoom, { Zoom } from 'medium-zoom';
 
-export function useMediumZoom(selector: string, deps: any[] = []) {
+export function useMediumZoom(selector: string) {
   useEffect(() => {
-    let zoomInstance: Zoom | null = null;
-    let canceled = false;
+    let zoom: Zoom | null = null;
+    let observer: MutationObserver | null = null;
 
-    const applyZoom = async () => {
-      const images = Array.from(
-        document.querySelectorAll<HTMLImageElement>(selector)
-      );
-      if (!images.length) return;
+    const bindZoomToImage = (img: HTMLImageElement) => {
+      if (!img || img.getAttribute('data-zoom-bound')) return;
 
-      // 等待所有图片加载完成
-      await Promise.all(
-        images.map(
-          (img) =>
-            new Promise((resolve) => {
-              if (img.complete) return resolve(true);
-              img.onload = img.onerror = () => resolve(true);
-            })
-        )
-      );
+      img.setAttribute('data-zoom-bound', 'true'); // 避免重复绑定
 
-      if (canceled) return;
-
-      // 清理旧的 zoom 实例（防止多次绑定）
-      if (zoomInstance) {
-        zoomInstance.detach();
-      }
-
-      zoomInstance = mediumZoom(images, {
-        background: 'rgba(0,0,0,0.8)',
+      mediumZoom(img, {
+        background: 'rgba(0,0,0,0.85)',
         margin: 24,
         scrollOffset: 40,
       });
     };
 
-    applyZoom();
+    const tryBindImages = () => {
+      const images = document.querySelectorAll<HTMLImageElement>(selector);
+      images.forEach((img) => {
+        if (img.complete) {
+          bindZoomToImage(img);
+        } else {
+          img.onload = () => bindZoomToImage(img);
+          img.onerror = () => {}; // 防止失败卡住
+        }
+      });
+    };
+
+    tryBindImages();
+
+    const root = document.getElementById('markdown-root');
+    if (root) {
+      observer = new MutationObserver(() => {
+        tryBindImages();
+      });
+
+      observer.observe(root, {
+        childList: true,
+        subtree: true,
+      });
+    }
 
     return () => {
-      canceled = true;
-      zoomInstance?.detach();
+      observer?.disconnect();
+      // mediumZoom 没有全局 detach，绑定的是具体 DOM 节点，无法统一解绑
     };
-  }, deps);
+  }, [selector]);
 }

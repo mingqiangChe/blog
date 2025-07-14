@@ -118,7 +118,10 @@ export default function ClientMarkdownRenderer({
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 prose prose-cyan dark:prose-invert">
+    <div
+      id="markdown-root"
+      className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 prose prose-cyan dark:prose-invert"
+    >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, [rehypeSanitize, mySchema]]}
