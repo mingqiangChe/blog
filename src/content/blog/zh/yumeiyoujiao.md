@@ -4,7 +4,7 @@ date: '2025-07-13'
 description: '太阳也无法阻止它，“彩虹和爱”这样美丽的词显然也不行；它们都没用，最好全被扔进垃圾桶——一切始于死亡。'
 tags: ['散文']
 author: '约恩 卡尔曼 斯特凡松'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E9%B1%BC%E6%B2%A1%E6%9C%89%E8%84%9A.jpeg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E9%B1%BC%E6%B2%A1%E6%9C%89%E8%84%9A.jpg'
 ---
 
 # 鱼没有脚

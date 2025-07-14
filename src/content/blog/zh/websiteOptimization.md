@@ -4,7 +4,7 @@ date: '2025-07-09'
 description: '针对网站各方面优化'
 tags: ['计算机']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/seo.jpg'
 ---
 
 </br>

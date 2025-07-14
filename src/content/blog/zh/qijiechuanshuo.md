@@ -4,7 +4,7 @@ date: '2025-06-21'
 description: '一部仙侠小说'
 tags: ['小说']
 author: '心梦无痕'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/shuimohua.jpeg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%98%9F%E7%A9%BA.jpg'
 ---
 
 </br>

@@ -4,7 +4,7 @@ date: '2025-07-07'
 description: '常用HOOK'
 tags: ['react']
 author: 'Thomas che'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/reactimg.jpg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/reactbanner.webp'
 ---
 
 </br>

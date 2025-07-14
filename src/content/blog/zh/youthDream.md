@@ -4,7 +4,7 @@ date: '2025-06-28'
 description: '有人爱 有事做 有所期待'
 tags: ['散文']
 author: '俞敏洪'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E4%B8%8D%E8%B4%9F%E6%A2%A6%E6%83%B3.jpeg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/pexels-pixabay-326055.jpg'
 ---
 
 # 愿你的青春 不负梦想

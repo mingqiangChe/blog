@@ -4,7 +4,7 @@ date: '2025-07-07'
 description: '开启自我改变原动力'
 tags: ['认知']
 author: '周岭'
-cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%AE%A4%E7%9F%A5%E8%A7%89%E9%86%92banner.jpeg'
+cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/bookss.jpg'
 ---
 
 </br>
