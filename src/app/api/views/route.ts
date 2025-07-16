@@ -1,35 +1,41 @@
 import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
+export const runtime = 'nodejs';
 export async function POST(req: Request) {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY! // ✅ 必须保证该变量存在
+  );
+
   try {
-    const { slugs } = await req.json();
-    if (!slugs || !Array.isArray(slugs)) {
+    const body = await req.json();
+    const slug: string = body.slug;
+
+    if (!slug || typeof slug !== 'string') {
       return Response.json(
-        { error: 'Missing or invalid slugs' },
+        { error: 'Missing or invalid slug' },
         { status: 400 }
       );
     }
 
-    const { data, error } = await supabase
+    // upsert 插入或更新
+    const { error: upsertError } = await supabase
       .from('views')
-      .select('slug, count')
-      .in('slug', slugs);
+      .upsert({ slug, count: 1 }, { onConflict: 'slug' });
 
-    if (error) throw error;
+    if (upsertError) throw upsertError;
 
-    const counts: Record<string, number> = {};
-    for (const item of data ?? []) {
-      counts[item.slug] = item.count ?? 0;
-    }
+    // count + 1
+    const { data: updated, error: updateError } = await supabase.rpc(
+      'increment_view_count',
+      { input_slug: slug }
+    );
 
-    return Response.json({ counts });
+    if (updateError) throw updateError;
+
+    return Response.json({ count: updated });
   } catch (err) {
-    console.error('View API error:', err);
-    return Response.json({ error: 'Internal Server Error' }, { status: 500 });
+    const message = err instanceof Error ? err.message : JSON.stringify(err);
+    console.error('View count error:', message);
+    return Response.json({ error: message }, { status: 500 });
   }
 }
