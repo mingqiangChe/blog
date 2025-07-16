@@ -1,4 +1,9 @@
+// src/app/api/views/route.ts
+
 import { createClient } from '@supabase/supabase-js';
+
+// ✅ 强制使用 Node.js runtime，防止 Edge 报错
+export const runtime = 'nodejs';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
