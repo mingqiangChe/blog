@@ -1,9 +1,4 @@
-// src/app/api/views/route.ts
-
 import { createClient } from '@supabase/supabase-js';
-
-// ✅ 强制使用 Node.js runtime，防止 Edge 报错
-export const runtime = 'nodejs';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -11,28 +6,30 @@ const supabase = createClient(
 );
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const slugs = body.slugs;
+  try {
+    const { slugs } = await req.json();
+    if (!slugs || !Array.isArray(slugs)) {
+      return Response.json(
+        { error: 'Missing or invalid slugs' },
+        { status: 400 }
+      );
+    }
 
-  if (!Array.isArray(slugs)) {
-    return new Response(JSON.stringify({ error: 'Invalid slugs input' }), {
-      status: 400,
-    });
+    const { data, error } = await supabase
+      .from('views')
+      .select('slug, count')
+      .in('slug', slugs);
+
+    if (error) throw error;
+
+    const counts: Record<string, number> = {};
+    for (const item of data ?? []) {
+      counts[item.slug] = item.count ?? 0;
+    }
+
+    return Response.json({ counts });
+  } catch (err) {
+    console.error('View API error:', err);
+    return Response.json({ error: 'Internal Server Error' }, { status: 500 });
   }
-
-  const { data, error } = await supabase
-    .from('views')
-    .select('slug, count')
-    .in('slug', slugs);
-
-  if (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-    });
-  }
-
-  const result = Object.fromEntries(data.map((v) => [v.slug, v.count]));
-  return new Response(JSON.stringify({ counts: result }), {
-    headers: { 'Content-Type': 'application/json' },
-  });
 }
