@@ -15,7 +15,7 @@ ENV NEXT_PUBLIC_SITE_NAME=$NEXT_PUBLIC_SITE_NAME
 ENV NODE_OPTIONS="--max-old-space-size=1024"
 
 # 安装工具
-# RUN npm install -g pnpm pm2
+RUN npm install -g pnpm pm2
 
 # 设置工作目录
 WORKDIR /app
