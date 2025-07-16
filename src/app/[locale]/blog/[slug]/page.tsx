@@ -8,7 +8,7 @@ import MobileTableOfContents from '@/components/MobileTableOfContents';
 import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-
+import ViewCounter from '@/components/ViewCounter';
 interface PageParams {
   params: { locale: string; slug: string };
 }
@@ -127,6 +127,8 @@ export default async function BlogPostPage(props: any) {
                         : `${post.readingTime} min read`}
                     </span>
                   )}
+                  {/* 添加阅读量组件 */}
+                  <ViewCounter slug={slug} />
                 </section>
 
                 {tags.length > 0 && (
