@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "NODE_ENV=production next build",
+    "build": "next build",
     "build:deploy:zip": "pnpm build:deploy && cd deploy && zip -r ../deploy.zip .",
     "deploy:clean": "rm -rf deploy deploy.zip",
     "start": "node .next/standalone/server.js",
