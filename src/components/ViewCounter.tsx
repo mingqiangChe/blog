@@ -7,30 +7,31 @@ interface ViewCounterProps {
   slug: string;
 }
 
-// 初始化 Supabase 客户端，替换成你自己的项目地址和匿名key
+// 初始化 Supabase 客户端
 const supabase = createClient(
   'https://fusrmsbzfmnicfsbyjzd.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1c3Jtc2J6Zm1uaWNmc2J5anpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI2NTgwNDgsImV4cCI6MjA2ODIzNDA0OH0.xtmEdoPwsT_O8WqNnpvg-eHNst33O-ncc3B4rJ8MqUA'
+  '你的匿名Key替换这里'
 );
 
 export default function ViewCounter({ slug }: ViewCounterProps) {
   const [count, setCount] = useState<number | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!slug) return;
 
-    // 统计阅读量逻辑
     const recordView = async () => {
+      setLoading(true);
       try {
-        // 1. 插入记录或忽略（不报错）
+        // upsert 插入或忽略
         await supabase
           .from('views')
           .upsert({ slug, count: 1 }, { onConflict: 'slug' });
 
-        // 2. 通过 RPC 自定义函数增加 count
+        // 调用数据库RPC自增
         await supabase.rpc('increment_view_count', { slug_param: slug });
 
-        // 3. 读取最新的阅读量
+        // 查询最新计数
         const { data, error } = await supabase
           .from('views')
           .select('count')
@@ -41,6 +42,8 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
         if (data) setCount(data.count);
       } catch (error) {
         console.error('ViewCounter error:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -49,7 +52,7 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
 
   return (
     <p className="text-sm text-gray-400">
-      👁️ 阅读量：{count !== null ? count : '加载中...'} 次
+      👁️ 阅读量：{loading ? '加载中...' : count ?? '暂无数据'} 次
     </p>
   );
 }
