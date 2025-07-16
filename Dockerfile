@@ -31,6 +31,8 @@ RUN mkdir -p /app/deploy/standalone/.next \
  && cp -r public /app/deploy/standalone/public \
  && cp pm2.config.js /app/deploy/standalone/pm2.config.js
 
+ RUN cp .env.production /app/deploy/standalone/.env
+
 
 # 设置运行时工作目录为部署产物目录
 WORKDIR /app/deploy/standalone

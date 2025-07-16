@@ -1,5 +1,5 @@
 'use client';
-
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import type { BlogPostMeta } from '@/lib/markdown';
 import Image from 'next/image';
@@ -13,7 +13,20 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
-
+  // 阅读量
+  const [views, setViews] = useState<Record<string, number>>({});
+  useEffect(() => {
+    const slugs = posts.map((p) => p.slug);
+    fetch('/api/views', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slugs }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setViews(data.counts || {});
+      });
+  }, [posts]);
   return (
     <section>
       <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
@@ -69,6 +82,12 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     day: 'numeric',
                     year: 'numeric',
                   })}
+                </span>
+                <span>
+                  👁️{' '}
+                  {views[post.slug] !== undefined
+                    ? `${views[post.slug]} 次`
+                    : '加载中...'}
                 </span>
                 {post.readingTime && (
                   <>

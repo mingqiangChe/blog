@@ -28,6 +28,21 @@ interface BlogListClientProps {
 const PAGE_SIZE = 10;
 
 export default function BlogListClient({ posts, locale }: BlogListClientProps) {
+  // 阅读量
+  const [views, setViews] = useState<Record<string, number>>({});
+  useEffect(() => {
+    const slugs = posts.map((p) => p.slug);
+    fetch('/api/views', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slugs }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setViews(data.counts || {});
+      });
+  }, [posts]);
+
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [selectedTag, setSelectedTag] = useState('全部');
 
@@ -135,6 +150,14 @@ export default function BlogListClient({ posts, locale }: BlogListClientProps) {
                         day: 'numeric',
                       })}
                     </time>
+
+                    <span>
+                      👁️{' '}
+                      {views[post.slug] !== undefined
+                        ? `${views[post.slug]} 次`
+                        : '加载中...'}
+                    </span>
+
                     {post.readingTime && (
                       <span>
                         ⏱️{' '}
