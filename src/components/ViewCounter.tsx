@@ -11,24 +11,32 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug) {
+      console.warn('ViewCounter: slug is missing or empty');
+      return;
+    }
 
     const recordAndFetchView = async () => {
+      setLoading(true);
       try {
         const res = await fetch('/api/views', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ slug }),
+          body: JSON.stringify({ slugs: [slug] }),
         });
 
         const data = await res.json();
-        if (res.ok) {
-          setCount(data.count);
+        console.log('ViewCounter API response:', data);
+
+        if (res.ok && data.counts && typeof data.counts[slug] === 'number') {
+          setCount(data.counts[slug]);
         } else {
-          console.error('API error', data.error);
+          console.error('API error or missing count for slug:', slug);
+          setCount(null);
         }
       } catch (error) {
         console.error('Fetch error:', error);
+        setCount(null);
       } finally {
         setLoading(false);
       }
@@ -39,7 +47,7 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
 
   return (
     <p className="text-sm text-gray-400">
-      👁️ 阅读量：{loading ? '加载中...' : count ?? '暂无数据'} 次
+      👁️ 阅读量：{loading ? '加载中...' : count !== null ? count : 0} 次
     </p>
   );
 }
