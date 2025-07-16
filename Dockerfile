@@ -21,10 +21,10 @@ RUN npm install -g pnpm pm2
 WORKDIR /app
 
 # 复制依赖文件用于缓存依赖
-# COPY pnpm-lock.yaml package.json ./
+COPY pnpm-lock.yaml package.json ./
 
 # 安装依赖
-# RUN pnpm install --frozen-lockfile --network-concurrency=1
+RUN pnpm install --frozen-lockfile --network-concurrency=1
 
 # 复制项目源码
 COPY . .
