@@ -3,7 +3,7 @@ import BlogContributionCalendar from '@/components/home/BlogContributionCalendar
 import dynamic from 'next/dynamic';
 import SkeletonPlaceholder from '@/components/SkeletonBlogList';
 import { LogoVator } from '@/components/home/LogoVator';
-import AE86DriftCanvas from '@/components/ae86/AE86DriftCanvas';
+// import AE86DriftCanvas from '@/components/ae86/AE86DriftCanvas';
 import EngineSoundButton from '@/components/ae86/EngineSoundButton';
 const RecentPosts = dynamic(() => import('@/components/home/RecentPosts'), {
   loading: () => <SkeletonPlaceholder />,
