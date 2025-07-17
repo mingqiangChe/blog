@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thomasche.top
+
+# Sitemaps
+Sitemap: https://thomasche.top/sitemap.xml
