@@ -41,6 +41,7 @@ Tailwind CSS：样式框架
 gray-matter：Markdown 元数据解析
 
 react-markdown：Markdown 渲染
+supabase：数据库工具 阅读量订阅
 
 # 依赖
 
