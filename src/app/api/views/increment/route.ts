@@ -8,27 +8,21 @@ const supabase = createClient(
 
 export async function POST(req: Request) {
   try {
-    const { slugs } = await req.json();
-
-    if (!Array.isArray(slugs)) {
-      return NextResponse.json({ error: '参数必须是数组' }, { status: 400 });
+    const { slug } = await req.json();
+    if (!slug) {
+      return NextResponse.json({ error: '缺少 slug 参数' }, { status: 400 });
     }
 
-    const { data, error } = await supabase
-      .from('views')
-      .select('slug, count')
-      .in('slug', slugs);
+    // 这里传入参数名改为 slug_param，和数据库函数参数名保持一致
+    const { error } = await supabase.rpc('increment_view_count', {
+      slug_param: slug,
+    });
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    const counts: Record<string, number> = {};
-    data?.forEach(({ slug, count }) => {
-      counts[slug] = count;
-    });
-
-    return NextResponse.json({ counts });
+    return NextResponse.json({ message: '浏览量更新成功' });
   } catch (e) {
     return NextResponse.json(
       { error: '服务器错误', detail: String(e) },
