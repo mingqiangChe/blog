@@ -93,42 +93,48 @@ scripts/deploy.sh 是自动构建、启动和同步 Nginx 配置的脚本
 
 </br>
 
-```dockerfile
-# 使用官方 Node 运行环境（已在服务器通过 node-20-alpine.tar 导入）
+```text
+ 使用官方 Node 运行环境（本地已导入 node:20-alpine）
 FROM node:20-alpine
 
-# 安装全局工具
+ 安装全局工具 pnpm 和 pm2
 RUN npm install -g pnpm pm2
 
-# 设置工作目录
+ 设置工作目录
 WORKDIR /app
 
-# 拷贝源码
-COPY . /app
+ 只先拷贝锁文件和 package.json，用于依赖安装缓存
+COPY pnpm-lock.yaml package.json ./
 
-# 拷贝 nginx 配置
-COPY nginx/cheche-blog.conf /nginx-out/
+ 安装依赖，锁定版本，防止自动更新依赖
+ network-concurrency 降低网络压力，避免卡死
+RUN pnpm install --frozen-lockfile --network-concurrency=1
 
-# 安装依赖
-RUN pnpm install --frozen-lockfile
+ 后续复制完整源码，包括构建脚本和 .next 文件夹
+COPY . .
 
-# 构建 deploy 产物
-RUN pnpm run build && pnpm run build:deploy
+ 限制 Node 最大内存，防止构建时内存溢出卡死
+ENV NODE_OPTIONS="--max-old-space-size=1024"
 
-# 拷贝 PM2 配置
-COPY pm2.config.js /app/pm2.config.js
+ 运行构建命令，生成生产环境产物（含 .next/standalone）
+RUN pnpm run build
 
-# 设置最终运行路径
+ 拷贝构建产物，确保 .next 全部拷贝，静态资源和 public 目录完整
+ ✅ 拷贝构建产物，确保 .next 所有关键文件完整
+RUN mkdir -p /app/deploy/standalone/.next \
+ && cp -r .next/standalone/* /app/deploy/standalone/ \
+ && cp -r .next/* /app/deploy/standalone/.next/ \
+ && cp -r public /app/deploy/standalone/public \
+ && cp pm2.config.js /app/deploy/standalone/pm2.config.js
+
+
+ 设置运行时工作目录为部署产物目录
 WORKDIR /app/deploy/standalone
 
-# 暴露端口
+ 容器监听端口
 EXPOSE 3000
 
-# 使用 PM2 启动应用
-CMD ["pm2-runtime", "/app/pm2.config.js"]
-
-
-
+CMD ["pm2-runtime", "pm2.config.js"]
 ```
 
 </br>
@@ -235,7 +241,7 @@ node_modules
 
 一些通用的放在通用的 nginx 上做处理
 
-```harsp
+```yaml
 
 server {
     listen 443 ssl;
@@ -291,13 +297,41 @@ server {
     server_name thomasche.top;
     return 301 https://$host$request_uri;
 }
+```
 
+</br>
+
+# 八、pm2.config.js
+
+</br>
+
+```yaml
+module.exports = {
+  apps: [
+    {
+      name: 'cheche-blog',
+      script: 'server.js',
+      cwd: '/app/deploy/standalone', // 运行时目录，和 Dockerfile WORKDIR 保持一致
+      instances: 1,
+      exec_mode: 'fork', // 单进程模式，Next.js 通常用这个
+      watch: false, // 生产环境关闭文件监听
+      env: {
+        NODE_ENV: 'production',
+        NEXT_PUBLIC_SUPABASE_URL: 'https://fusrmsbzfmnicfsbyjzd.supabase.co',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1c3Jtc2J6Zm1uaWNmc2J5anpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI2NTgwNDgsImV4cCI6MjA2ODIzNDA0OH0.xtmEdoPwsT_O8WqNnpvg-eHNst33O-ncc3B4rJ8MqUA',
+        SUPABASE_SERVICE_ROLE_KEY:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1c3Jtc2J6Zm1uaWNmc2J5anpkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjY1ODA0OCwiZXhwIjoyMDY4MjM0MDQ4fQ.GivYH9R0W7sElFgt-9TL1_KQ7TAhaDbRMr9Xj-2nuFg',
+      },
+    },
+  ],
+};
 
 ```
 
 </br>
 
-# 八、常见问题汇总与解决方案
+# 九、常见问题汇总与解决方案
 
 </br>
 
@@ -305,7 +339,7 @@ server {
 
 </br>
 
-# 九、构建与部署流程总结
+# 十、构建与部署流程总结
 
 </br>
 
@@ -334,7 +368,7 @@ server {
 
 </br>
 
-# 十、构建产物说明
+# 十一、构建产物说明
 
 </br>
 
@@ -350,7 +384,7 @@ PM2 负责管理 Node 服务，使用 pm2.config.js 配置启动参数
 
 </br>
 
-# 十一、后续优化
+# 十二、后续优化
 
 </br>
 
@@ -365,3 +399,7 @@ PM2 负责管理 Node 服务，使用 pm2.config.js 配置启动参数
 备份机制：定期备份 nginx 配置、证书文件及重要数据
 
 多环境支持：增加 staging 环境配置，部署测试更安全
+
+```
+
+```
