@@ -56,7 +56,7 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
   }, [slug]);
 
   if (error) {
-    return <div>浏览量加载失败: {error}</div>;
+    return <div>浏览量: 0-0</div>;
   }
 
   return <div>浏览量：{views === null ? '加载中...' : views}</div>;
