@@ -17,7 +17,7 @@ COPY nginx/cheche-blog.conf /nginx-out/
 RUN pnpm install --frozen-lockfile
 
 # 构建 deploy 产物
-RUN pnpm run build && pnpm run build:deploy
+RUN pnpm run build 
 
 # ✅ 拷贝静态资源供 Nginx 使用（关键部分）
 RUN mkdir -p /etc/nginx/www/blog/.next/static /etc/nginx/www/blog/public \
