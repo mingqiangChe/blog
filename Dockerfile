@@ -1,4 +1,4 @@
-```dockerfile
+
 # 使用官方 Node 运行环境（已在服务器通过 node-20-alpine.tar 导入）
 FROM node:20-alpine
 
