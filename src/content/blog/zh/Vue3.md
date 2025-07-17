@@ -80,11 +80,33 @@ watch(count, (newVal, oldVal) => {
 ### 2. watchEffect()
 
 自动追踪依赖的响应式变量，立即执行一次
+依赖项 必须是响应式的（比如 ref, reactive，否则不会追踪）。
+
+watchEffect 会在组件加载时立即执行一次。
+
+如果里面使用了 async 函数，建议用 watch 而不是 watchEffect，避免陷入副作用同步问题
 
 ```ts
+<template>
+  <div>
+    <input v-model.number="count" type="number" />
+    <p>总价是：{{ total }}</p>
+  </div>
+</template>
+
+<script setup>
+import { ref, watchEffect } from 'vue'
+
+const count = ref(1)
+const price = ref(100)
+const total = ref(0)
+
+// 自动追踪 count 和 price
 watchEffect(() => {
-  console.log(`count 是：${count.value}`);
-});
+  total.value = count.value * price.value
+})
+</script>
+
 ```
 
 ## 四、模板引用与 DOM 操作
