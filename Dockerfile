@@ -1,37 +1,42 @@
-# 使用官方 Node 运行环境（已在服务器通过 node-20-alpine.tar 导入）
+# 使用官方 Node 运行环境（本地已导入 node:20-alpine）
 FROM node:20-alpine
 
-# 安装全局工具
+# 安装全局工具 pnpm 和 pm2
 RUN npm install -g pnpm pm2
 
 # 设置工作目录
 WORKDIR /app
 
-# 拷贝源码
-COPY . /app
+# 只先拷贝锁文件和 package.json，用于依赖安装缓存
+COPY pnpm-lock.yaml package.json ./
 
-# 拷贝 nginx 配置
-COPY nginx/cheche-blog.conf /nginx-out/
+# 安装依赖，锁定版本，防止自动更新依赖
+# network-concurrency 降低网络压力，避免卡死
+RUN pnpm install --frozen-lockfile --network-concurrency=1
 
-# 安装依赖
-RUN pnpm install --frozen-lockfile
+# 后续复制完整源码，包括构建脚本和 .next 文件夹
+COPY . .
 
-# 构建 deploy 产物
-RUN pnpm run build 
+# 限制 Node 最大内存，防止构建时内存溢出卡死
+ENV NODE_OPTIONS="--max-old-space-size=1024"
 
-# ✅ 拷贝静态资源供 Nginx 使用（关键部分）
-RUN mkdir -p /etc/nginx/www/blog/.next/static /etc/nginx/www/blog/public \
-  && cp -r deploy/standalone/.next/static/* /etc/nginx/www/blog/.next/static/ \
-  && cp -r deploy/standalone/public/* /etc/nginx/www/blog/public/
+# 运行构建命令，生成生产环境产物（含 .next/standalone）
+RUN pnpm run build
 
-# 拷贝 PM2 配置
-COPY pm2.config.js /app/pm2.config.js
+# 拷贝构建产物，确保 .next 全部拷贝，静态资源和 public 目录完整
+# ✅ 拷贝构建产物，确保 .next 所有关键文件完整
+RUN mkdir -p /app/deploy/standalone/.next \
+ && cp -r .next/standalone/* /app/deploy/standalone/ \
+ && cp -r .next/* /app/deploy/standalone/.next/ \
+ && cp -r public /app/deploy/standalone/public \
+ && cp pm2.config.js /app/deploy/standalone/pm2.config.js
 
-# 设置最终运行路径
+
+# 设置运行时工作目录为部署产物目录
 WORKDIR /app/deploy/standalone
 
-# 暴露端口
+# 容器监听端口
 EXPOSE 3000
 
-# 使用 PM2 启动应用
-CMD ["pm2-runtime", "/app/pm2.config.js"]
+# 使用 pm2-runtime 启动应用，保持容器存活
+CMD ["pm2-runtime", "pm2.config.js"]
