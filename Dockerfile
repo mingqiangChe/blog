@@ -24,17 +24,23 @@ RUN pnpm run build
 
 RUN mkdir -p /app/deploy/standalone/.next \
  && cp -r .next/standalone/* /app/deploy/standalone/ \
- && cp -r .next/* /app/deploy/standalone/.next/ \
+ && cp -r .next/static /app/deploy/standalone/.next/static \
  && cp -r public /app/deploy/standalone/public \
- && cp pm2.config.js /app/deploy/standalone/pm2.config.js
+ && cp pm2.config.js /app/deploy/standalone/ \
+ && cp .env.production /app/deploy/standalone/
 
-# 生产环境阶段
+# Runner 阶段
 FROM node:20-alpine AS runner
 
 WORKDIR /app/deploy/standalone
 
+# 复制构建产物 + PM2 配置 + 环境变量
 COPY --from=builder /app/deploy/standalone ./
 
+# 安装 pm2
+RUN npm install -g pm2
+
+ENV NODE_ENV=production
 EXPOSE 3000
 
 CMD ["pm2-runtime", "pm2.config.js"]
