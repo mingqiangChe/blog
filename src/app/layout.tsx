@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 // 🔍 SEO 强化 Metadata
 export const metadata: Metadata = {
   title: {
-    default: '车明强的博客 | Thomasche Blog',
+    default: '车明强 | Thomasche Blog',
     template: '%s',
   },
-  description: '记录前端开发、技术成长与生活思考的博客。',
+  description: '车明强的博客 记录前端开发、技术成长与生活思考的博客。',
   keywords: ['车明强', '博客', '前端', 'React', 'Next.js', '技术成长'],
   authors: [{ name: '车明强', url: 'https://thomasche.top' }],
   creator: '车明强',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   applicationName: '车明强博客',
 
   openGraph: {
-    title: '车明强的博客',
-    description: '记录前端开发、技术成长与生活思考的博客。',
+    title: '车明强',
+    description: '车明强的博客 记录前端开发、技术成长与生活思考的博客。',
     url: 'https://thomasche.top',
     siteName: 'Thomasche Blog',
     locale: 'zh_CN',
