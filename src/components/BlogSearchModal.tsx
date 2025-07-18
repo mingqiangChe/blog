@@ -188,13 +188,14 @@ export default function BlogSearchModal({
               key={post.slug}
               href={`/blog/${post.slug}`}
               onClick={onClose}
-              className="
-                block rounded-2xl overflow-hidden bg-[#121829]/90
-                border border-cyan-600/70 shadow-[0_0_15px_rgba(0,255,255,0.3)]
-                transition-transform hover:scale-[1.04] hover:shadow-[0_0_25px_rgba(0,255,255,0.8)]
-                flex flex-col p-4 cursor-pointer select-none
-                active:scale-[0.97]
-              "
+          className="
+  rounded-2xl overflow-hidden bg-[#121829]/90
+  border border-cyan-600/70 shadow-[0_0_15px_rgba(0,255,255,0.3)]
+  transition-transform hover:scale-[1.04] hover:shadow-[0_0_25px_rgba(0,255,255,0.8)]
+  flex flex-col p-4 cursor-pointer select-none
+  active:scale-[0.97]
+"
+
             >
               <section className="relative h-36 w-full overflow-hidden rounded-lg mb-4 flex-shrink-0 shadow-[0_0_10px_rgba(0,255,255,0.5)]">
                 <Image
