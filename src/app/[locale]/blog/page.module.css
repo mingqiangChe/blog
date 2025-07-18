@@ -1,13 +1,3 @@
-:root {
-  --ae86-red: #ff0022;
-  --ae86-black: #000000;
-  --ae86-white: #ffffff;
-  --ae86-gray-bg: #121214;
-  --ae86-glow: #ff0022aa;
-  --ae86-glow-light: #ff002244;
-  --ae86-shadow: rgba(255, 0, 34, 0.3);
-}
-
 .starBackground {
   position: fixed;
   inset: 0;

@@ -13,11 +13,21 @@
   font-display: swap;
 }
 
-/* Tailwind 字体变量 */
+/* Tailwind 字体变量 和 AE86 主题色变量 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121214; /* AE86深灰背景 */
+  --foreground: #ffffff;
 
+  /* AE86 红黑白配色 */
+  --ae86-red: #ff0022;
+  --ae86-black: #000000;
+  --ae86-white: #ffffff;
+  --ae86-gray-bg: #121214;
+  --ae86-glow: #ff0022aa;
+  --ae86-glow-light: #ff002244;
+  --ae86-shadow: rgba(255, 0, 34, 0.3);
+
+  /* 字体 */
   --font-sans: 'RacingSans', 'Inter', 'Noto Sans SC', 'Helvetica Neue', Arial,
     sans-serif;
   --font-mono: 'Fira Code', monospace;
@@ -26,70 +36,138 @@
 /* 深色模式变量 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #121214;
+    --foreground: #ffffff;
   }
 }
 
-/* 应用字体到 body */
+/* 全局body */
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100vh;
   margin: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+/* html基础 */
 html {
   scroll-behavior: smooth;
   min-height: 100vh;
+
+  /* Firefox 滚动条 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255 0 34 / 0.7) rgba(18 18 20 / 0.15);
 }
 
-.prose h1,
-.prose h2,
-.prose h3 {
-  text-shadow: 0 0 8px #00fff7, 0 0 16px #00fff7;
-  font-family: 'RacingSans', 'Inter', sans-serif;
-  letter-spacing: 0.02em;
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ae86-red);
+  border-radius: 12px;
+  border: 2px solid rgba(255 255 255 / 0.3);
+  box-shadow: 0 0 8px var(--ae86-glow);
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3355;
+  box-shadow: 0 0 12px var(--ae86-glow);
 }
 
 /* 标题滚动偏移，防止锚点被固定头部遮挡 */
-h1[id],
-h2[id],
 h1[id],
 h2[id],
 h3[id],
 h4[id],
 h5[id],
 h6[id] {
-  @apply scroll-mt-20;
-  /* 根据你的固定头部高度调整 */
-}
-.toc-scroll::-webkit-scrollbar {
-  width: 4px;
+  scroll-margin-top: 5rem; /* 根据头部高度调整 */
 }
 
-.toc-scroll::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* 霓虹文字闪烁动画 */
+.neontext {
+  color: var(--ae86-red);
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px var(--ae86-red), 0 0 10px var(--ae86-red),
+    0 0 20px var(--ae86-red), 0 0 40px var(--ae86-red), 0 0 80px var(--ae86-red);
+  animation: neonflicker 3s infinite alternate;
 }
 
-.toc-scroll::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 2px;
+@keyframes neonflicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 5px var(--ae86-red), 0 0 10px var(--ae86-red),
+      0 0 20px var(--ae86-red), 0 0 40px var(--ae86-red),
+      0 0 80px var(--ae86-red);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
 
-.toc-scroll::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+/* 图片默认允许交互 */
+img {
+  pointer-events: auto;
 }
 
-/* 目录滚动条样式 - Firefox */
-.toc-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: #c1c1c1 #f1f1f1;
+/* Markdown美化 */
+.prose {
+  overflow-x: auto;
+  color: var(--ae86-white);
 }
 
-/*背景处理 其他在各自module.css*/
-/* 桌面端 */
+.prose table {
+  border: 1px solid var(--ae86-red);
+  border-radius: 0.75rem;
+  width: 100%;
+  font-size: 0.9rem;
+  background-color: rgba(18, 18, 18, 0.85);
+  color: var(--ae86-white);
+  text-align: left;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--ae86-red);
+}
+
+.prose th {
+  background-color: rgba(255, 0, 34, 0.3);
+  font-weight: 700;
+}
+
+.prose tbody tr:hover {
+  background-color: rgba(255, 0, 34, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+/* 背景图片 - 桌面端 */
 .home-bg {
   background-image: url('https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/DSC04463.jpg');
   background-size: cover;
@@ -100,141 +178,44 @@ h6[id] {
   overflow-x: hidden;
 }
 
-/* 移动端 */
+/* 移动端背景颜色 */
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll;
-    background-image: none;
-    background-color: #161e31;
+    background-attachment: scroll !important;
+    background-image: none !important;
+    background-color: var(--ae86-black);
   }
 }
 
-/* 滚动条 */
-@tailwind utilities;
-/* 滚动条宽度 */
-::-webkit-scrollbar {
-  width: 10px;
-  background: rgba(255 255 255 / 0.1);
-  border-radius: 12px;
-}
-
-/* 滚动条轨道 */
-::-webkit-scrollbar-track {
-  background: rgba(255 255 255 / 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.2);
-}
-
-/* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-  background: rgba(56 189 248 / 0.7); /* Tailwind sky-400 70%不透明 */
-  border-radius: 12px;
-  border: 2px solid rgba(255 255 255 / 0.3);
-  box-shadow: 0 0 8px rgba(56 189 248 / 0.8);
-  transition: background-color 0.3s ease;
-}
-
-/* 滚动条滑块悬停 */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(56 189 248 / 0.9);
-  box-shadow: 0 0 12px rgba(56 189 248 / 1);
-}
-
-/* Firefox */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(56 189 248 / 0.7) rgba(255 255 255 / 0.15);
-}
-
-/* 字体闪烁动画 */
-/* 霓虹文字基础发光 */
-.neontext {
-  color: #0ff;
-  font-weight: 900;
-  font-size: 2.5rem;
-  text-align: center;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff,
-    0 0 80px #0ff;
-  animation: neonflicker 3s infinite alternate;
-}
-
-/* 闪烁动画 */
-@keyframes neonflicker {
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff,
-      0 0 80px #0ff;
-  }
-
-  20%,
-  24%,
-  55% {
-    text-shadow: none;
-  }
-}
+/* 文字溢出隐藏 */
 .overflowclip {
   overflow-x: clip;
-  .overflow-clip {
-    overflow-x: clip;
-  }
-}
-body {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-img {
-  pointer-events: auto;
-}
-/* 美化md */
-.prose {
-  overflow-x: auto;
 }
 
-.prose table {
-  @apply border border-cyan-400/30 text-sm w-full rounded-lg;
+/* header导航下划线渐变 */
+.nav-hover-effect::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ae86-red), orange, yellow);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.prose th,
-.prose td {
-  @apply border px-4 py-2;
+.nav-hover-effect:hover::after {
+  opacity: 1;
 }
 
-.prose th {
-  @apply bg-cyan-500/10;
+/* 无限滚动触发器 */
+.infiniteScrollTrigger {
+  height: 48px;
 }
 
-.prose td {
-  @apply bg-white/5;
-}
-
-@layer base {
-  /* 深色模式表头 */
-  .dark table th {
-    background-color: rgba(2, 132, 199, 0.2); /* cyan-700 透明度 */
-    color: #bfdbfe; /* cyan-200 */
-    font-weight: 700;
-  }
-
-  /* 深色模式单元格 */
-  .dark table td {
-    background-color: rgba(17, 24, 39, 0.4); /* gray-900 透明度 */
-    color: #d1d5db; /* gray-300 */
-  }
-
-  /* 深色模式表格行hover */
-  .dark table tbody tr:hover {
-    background-color: rgba(14, 116, 144, 0.3); /* cyan-800 半透明 */
-    transition: background-color 0.2s ease;
-  }
-}
-/* 博客文章列表星星背景 */
+/* 文章列表星星背景动画 */
 @keyframes flicker {
   0%,
   100% {
@@ -270,25 +251,11 @@ img {
 .animate-shooting {
   animation: shooting 1.2s ease-out forwards;
 }
+
+/* 中等缩放的图片样式（比如放大预览） */
 .medium-zoom-image--opened {
   max-width: 90vw !important;
   max-height: 90vh !important;
   border-radius: 12px !important;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.4) !important;
-}
-/* 赛车header */
-.nav-hover-effect::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(90deg, red, orange, yellow);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.nav-hover-effect:hover::after {
-  opacity: 1;
 }
