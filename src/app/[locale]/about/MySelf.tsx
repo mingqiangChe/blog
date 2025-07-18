@@ -101,6 +101,7 @@ export default function MySelf() {
               value: 'Vue3 / React / Next.js / TypeScript',
             },
             { label: '副武器 / Tools', value: 'Vite / Tailwind / 部署' },
+            { label: '联系 / Email', value: 'thomaschefowshu@gmail.com' },
             { label: '风格 / Style', value: '极简 · 机械质感 · 高效动态交互' },
             {
               label: '爱好 / Interests',
