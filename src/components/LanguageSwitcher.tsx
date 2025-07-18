@@ -63,59 +63,76 @@ export default function LanguageSwitcher({
   return (
     <>
       <style>{`
-        .lang-switch {
-          position: relative;
-          width: 3em;
-          height: 1.5em;
-          display: inline-block;
-        }
-        .lang-switch input {
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-        .lang-slider {
-          position: absolute;
-          cursor: pointer;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(45deg, hsl(260, 100%, 60%), hsl(300, 100%, 60%));
-          transition: 0.3s;
-          border-radius: 9999px;
-          box-shadow: 0 0 4px hsla(260, 100%, 60%, 0.4);
-        }
-        .lang-slider::before {
-          position: absolute;
-          content: "";
-          height: 1.1em;
-          width: 1.1em;
-          left: 0.2em;
-          bottom: 0.2em;
-          background-color: white;
-          border-radius: 50%;
-          transition: 0.3s;
-          box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
-        }
-        input:checked + .lang-slider::before {
-          transform: translateX(1.5em);
-        }
-        .lang-label {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 0.65rem;
-          font-weight: bold;
-          color: white;
-          padding: 0 0.3em;
-          pointer-events: none;
-          user-select: none;
-        }
-        .lang-label.zh {
-          left: 0.2em;
-        }
-        .lang-label.en {
-          right: 0.2em;
-        }
-      `}</style>
+  .lang-switch {
+    position: relative;
+    width: 3.5em;
+    height: 1.6em;
+    display: inline-block;
+  }
+
+  .lang-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .lang-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    border-radius: 9999px;
+    box-shadow: inset 0 0 0 1px #222, 0 0 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+  }
+
+  .lang-slider::before {
+    position: absolute;
+    content: "";
+    height: 1.3em;
+    width: 1.3em;
+    left: 0.15em;
+    bottom: 0.15em;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+input:checked + .lang-slider::before {
+  transform: translateX(1.85em);
+}
+
+  .lang-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 0.2em;
+    font-family: monospace;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 0 1px #000;
+    z-index: 1; /* 确保在按钮下方 */
+  }
+
+  .lang-label.zh {
+    left: 0.3em;
+  }
+
+  .lang-label.en {
+    right: 0.3em;
+  }
+
+  .lang-switch:hover .lang-slider {
+    background: linear-gradient(135deg, #111, #222);
+  }
+`}</style>
 
       <label className="lang-switch" aria-label="切换语言">
         <input

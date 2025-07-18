@@ -114,7 +114,8 @@ export default function Header({ locale, posts }: HeaderProps) {
     transition-all duration-300 ease-in-out
   "
           >
-            {locale === 'zh' ? '车' : 'Thomas'}
+            {/* {locale === 'zh' ? '车' : 'Thomas'} */}
+            Thomas Che
           </Link>
 
           {/* PC端导航 */}
@@ -166,7 +167,7 @@ export default function Header({ locale, posts }: HeaderProps) {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="打开主菜单"
-              className="md:hidden p-2 rounded-md text-white hover:bg-blue-700 transition-colors"
+              className="md:hidden p-2 rounded-md text-black hover:bg-gray-200 transition-colors"
             >
               {!isMenuOpen ? (
                 <svg
@@ -203,17 +204,29 @@ export default function Header({ locale, posts }: HeaderProps) {
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <section className="md:hidden fixed top-16 left-0 right-0 bg-black/90 border-t-2 border-dashed border-yellow-400 backdrop-blur-xl shadow-xl rounded-b-3xl p-4 space-y-3 z-40">
+          <section
+            className="
+    md:hidden fixed top-16 left-0 right-0
+    bg-black/85 backdrop-blur-sm
+    border-t-4 border-double border-yellow-400
+    shadow-[0_0_15px_rgba(255,230,0,0.8)]
+    rounded-b-xl p-5 space-y-4 z-40
+  "
+          >
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-5 py-3 rounded-xl text-base font-racing tracking-wider text-center transition-transform
+                className={`
+        block px-6 py-3 rounded-lg font-racing tracking-wider text-center text-base
+        transition-transform duration-300 ease-in-out
         ${
           isActiveRoute(item.href)
-            ? 'bg-red-600/80 text-white shadow-[0_0_12px_rgba(255,255,255,0.3)] scale-105'
-            : 'text-gray-200 hover:text-white hover:bg-red-500/50 hover:scale-105'
+            ? `bg-red-700 text-white 
+               shadow-[0_0_15px_rgba(255,0,0,0.8)] 
+               scale-105 rotate-[2deg]`
+            : `text-gray-300 hover:text-white hover:bg-red-600/70 hover:scale-105 hover:rotate-[1deg]`
         }
       `}
               >
