@@ -16,7 +16,7 @@ function useDebounce(value: string, delay = 300) {
   return debouncedValue;
 }
 
-// 关键词高亮组件
+// 关键词高亮组件，霓虹蓝高亮
 function HighlightedText({
   text,
   highlight,
@@ -34,7 +34,10 @@ function HighlightedText({
     <>
       {parts.map((part, i) =>
         regex.test(part) ? (
-          <mark key={i} className="bg-yellow-300 text-black">
+          <mark
+            key={i}
+            className="text-cyan-400 font-semibold drop-shadow-[0_0_4px_rgba(0,255,255,0.8)] bg-transparent"
+          >
             {part}
           </mark>
         ) : (
@@ -77,10 +80,8 @@ export default function BlogSearchModal({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [onClose]);
 
-  // 防抖后的查询词
   const debouncedQuery = useDebounce(query, 300);
 
-  // 搜索结果过滤
   const results = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase();
     if (!q) return posts;
@@ -94,83 +95,137 @@ export default function BlogSearchModal({
   }, [debouncedQuery, posts]);
 
   return (
-    <section className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/40 backdrop-blur-sm p-4 sm:p-0 overflow-auto">
+    <section
+      className="
+        fixed inset-0 z-[9999] flex items-start justify-center 
+        bg-gradient-to-b from-black/90 via-[#0a0a0a]/80 to-black/90 
+        backdrop-blur-sm p-4 sm:p-0 overflow-auto
+      "
+    >
       <section
         ref={modalRef}
         className="
-          w-full max-w-2xl mt-8 sm:mt-24 mx-auto rounded-2xl 
-          bg-slate-900/90 backdrop-blur-lg shadow-2xl p-6 relative border border-slate-700 
+          w-full max-w-2xl mt-8 sm:mt-24 mx-auto rounded-3xl
+          bg-[#11131a]/95 backdrop-blur-xl shadow-[0_0_30px_rgba(0,255,255,0.7)] 
+          border border-cyan-500/70
           max-h-[90vh] flex flex-col overflow-x-hidden
+          relative
         "
         style={{ minHeight: '300px' }}
       >
         <button
-          className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
+          className="
+    absolute top-1 right-5 
+    text-cyan-400 hover:text-cyan-200 
+    text-3xl drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]
+    transition
+  "
           onClick={onClose}
           aria-label="关闭"
           type="button"
+          title="关闭"
         >
           <FiX />
         </button>
 
-        <section className="flex items-center mb-6 px-2">
-          <FiSearch className="text-slate-400 w-6 h-6 mr-2 flex-shrink-0" />
+        {/* 搜索框区域 - 修改图标颜色和阴影，适配白色背景 */}
+        <section
+          className="
+            flex items-center mb-6 px-4 py-2
+            bg-[#0f1620] border border-cyan-600 rounded-xl
+            shadow-[inset_0_0_12px_rgba(0,255,255,0.7)]
+          "
+        >
+          <FiSearch
+            className="
+              text-[#003344] w-6 h-6 mr-3 flex-shrink-0
+              drop-shadow-[0_0_8px_rgba(0,51,68,0.9)]
+              transition-colors
+              hover:text-[#005577]
+              cursor-pointer
+            "
+          />
           <input
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="输入关键词搜索文章…"
-            className="flex-1 bg-transparent outline-none text-white placeholder-slate-400 text-lg"
+            className="
+              flex-1 bg-transparent outline-none text-cyan-300 placeholder-cyan-500
+              text-lg font-mono tracking-wide caret-cyan-400
+              transition-colors
+              focus:placeholder-cyan-300
+              selection:bg-cyan-500 selection:text-black
+            "
             style={{ minWidth: 0 }}
             autoComplete="off"
             spellCheck={false}
-            type="search"
+            type="text"
           />
         </section>
 
+        {/* 搜索结果区域 */}
         <section
           className="
-            flex-1 overflow-y-auto overflow-x-hidden space-y-3 pb-2
-            scrollbar-thin
-            scrollbar-thumb-rounded-full
-            scrollbar-thumb-cyan-400/70
-            scrollbar-track-transparent
-            hover:scrollbar-thumb-cyan-300/90
-            transition-all
+            flex-1 overflow-y-auto overflow-x-hidden space-y-4 pb-4 px-4
+            scrollbar-thin scrollbar-thumb-cyan-500 scrollbar-track-transparent
+            hover:scrollbar-thumb-cyan-400 transition-all
           "
         >
           {results.length === 0 && (
-            <section className="text-slate-400 text-center py-10 select-none">
+            <section
+              className="
+                text-cyan-500 text-center py-14 select-none font-mono text-lg
+                drop-shadow-[0_0_4px_rgba(0,255,255,0.6)]
+              "
+            >
               没有找到相关内容
             </section>
           )}
+
           {results.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
               onClick={onClose}
               className="
-                block rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 
-                transition hover:scale-105 hover:shadow-2xl flex flex-col p-4
+                block rounded-2xl overflow-hidden bg-[#121829]/90
+                border border-cyan-600/70 shadow-[0_0_15px_rgba(0,255,255,0.3)]
+                transition-transform hover:scale-[1.04] hover:shadow-[0_0_25px_rgba(0,255,255,0.8)]
+                flex flex-col p-4 cursor-pointer select-none
+                active:scale-[0.97]
               "
             >
-              <section className="relative h-36 w-full overflow-hidden rounded-lg mb-3 flex-shrink-0">
+              <section className="relative h-36 w-full overflow-hidden rounded-lg mb-4 flex-shrink-0 shadow-[0_0_10px_rgba(0,255,255,0.5)]">
                 <Image
                   src={post.cover || '/default-cover.jpg'}
                   alt={post.title}
                   fill
-                  className="object-cover w-full h-full max-w-full"
+                  className="object-cover w-full h-full max-w-full brightness-90 hover:brightness-110 transition"
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </section>
-              <section className="font-bold text-white text-lg mb-1 line-clamp-2">
+
+              <section
+                className="
+                  font-extrabold text-cyan-300 text-xl mb-1 line-clamp-2
+                  drop-shadow-[0_0_5px_rgba(0,255,255,0.8)]
+                  font-mono
+                "
+              >
                 <HighlightedText
                   text={post.title}
                   highlight={debouncedQuery.trim()}
                 />
               </section>
-              <section className="text-xs text-slate-400 mb-1 flex flex-wrap gap-2">
+
+              <section
+                className="
+                  text-xs text-cyan-400 mb-2 flex flex-wrap gap-3
+                  font-mono
+                "
+              >
                 {post.tags && (
                   <span>
                     Tags:{' '}
@@ -187,7 +242,13 @@ export default function BlogSearchModal({
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 {post.readingTime && <span>· {post.readingTime} 分钟</span>}
               </section>
-              <section className="text-slate-300 text-sm line-clamp-3">
+
+              <section
+                className="
+                  text-cyan-200 text-sm line-clamp-3 font-mono
+                  drop-shadow-[0_0_3px_rgba(0,255,255,0.6)]
+                "
+              >
                 <HighlightedText
                   text={post.description || ''}
                   highlight={debouncedQuery.trim()}

@@ -21,36 +21,12 @@ export default function Header({ locale, posts }: HeaderProps) {
   const [bgAlpha, setBgAlpha] = useState(0);
 
   const navigationItems = [
-    {
-      key: 'blog',
-      href: `/${locale}/blog`,
-      label: locale === 'zh' ? '博客' : 'Blog',
-    },
-    {
-      key: 'search',
-      href: `/${locale}/search`,
-      label: locale === 'zh' ? '工具' : 'Search',
-    },
-    {
-      key: 'media',
-      href: `/${locale}/media`,
-      label: locale === 'zh' ? '书影剧' : 'media',
-    },
-    {
-      key: 'album',
-      href: `/${locale}/album`,
-      label: locale === 'zh' ? '摄影' : 'Album',
-    },
-    {
-      key: 'milestone',
-      href: `/${locale}/milestone`,
-      label: locale === 'zh' ? '里程碑' : 'Milestone',
-    },
-    {
-      key: 'about',
-      href: `/${locale}/about`,
-      label: locale === 'zh' ? '关于我' : 'About',
-    },
+    { key: 'blog', href: `/${locale}/blog`, label: '引擎日志' },
+    { key: 'search', href: `/${locale}/search`, label: '赛车工具' },
+    { key: 'media', href: `/${locale}/media`, label: '影像馆' },
+    { key: 'album', href: `/${locale}/album`, label: '车库相册' },
+    { key: 'milestone', href: `/${locale}/milestone`, label: '生涯里程' },
+    { key: 'about', href: `/${locale}/about`, label: '车主档案' },
   ];
 
   const locales = ['zh', 'en'];
@@ -118,28 +94,40 @@ export default function Header({ locale, posts }: HeaderProps) {
   return (
     <>
       <header
-        className="fixed top-0 left-0  w-full h-16 z-50 backdrop-blur-md border-b border-blue-600 transition-colors duration-300 "
-        style={{ backgroundColor: `rgba(10, 14, 30, ${0.6 + 0.4 * bgAlpha})` }}
+        className="fixed top-0 left-0 w-full h-16 z-50 shadow-md transition-colors duration-300"
+        style={{
+          background: `linear-gradient(to bottom, #ffffff 70%, #000000 100%)`,
+          borderBottom: '3px solid #000000',
+        }}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           <Link
             href={`/${locale}`}
-            className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent select-none"
+            className="
+    text-2xl font-extrabold
+    text-black
+    tracking-wide
+    drop-shadow-[0_0_4px_rgba(0,0,0,0.6)]
+    hover:text-[#0ff]
+    hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]
+    select-none
+    transition-all duration-300 ease-in-out
+  "
           >
-            {locale === 'zh' ? '车车' : 'Che'}
+            {locale === 'zh' ? '车' : 'Thomas'}
           </Link>
 
           {/* PC端导航 */}
-          <section className="hidden md:flex space-x-10">
+          <section className="hidden md:flex space-x-8 font-racing text-sm tracking-widest">
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`relative px-3 py-2 font-medium transition-all duration-200 ease-in-out rounded-md cursor-pointer select-none
+                className={`relative px-3 py-2 transition-all duration-300 ease-in-out rounded-md cursor-pointer select-none nav-hover-effect
         ${
           isActiveRoute(item.href)
-            ? 'text-cyan-400 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-2/3 after:h-[2px] after:bg-cyan-400 after:rounded-full'
-            : 'text-white hover:text-cyan-300'
+            ? 'text-red-600 font-bold'
+            : 'text-gray-800 hover:text-yellow-500'
         }
       `}
               >
@@ -151,13 +139,27 @@ export default function Header({ locale, posts }: HeaderProps) {
           {/* 右侧操作区 */}
           <section className="flex items-center space-x-4">
             <LanguageSwitcher currentLocale={locale} />
-
             <button
               onClick={() => setShowSearch(true)}
               aria-label="搜索"
-              className="p-2 rounded-full hover:bg-blue-700 transition-colors"
+              className="
+    p-2 rounded-full 
+    bg-black/80 
+    hover:bg-black/95 
+    transition-colors
+    border border-gray-800
+    shadow-[0_0_8px_rgba(0,0,0,0.8)]
+  "
             >
-              <FiSearch className="w-6 h-6 text-white" />
+              <FiSearch
+                className="
+      w-4 h-4 
+      text-gray-300 
+      drop-shadow-[0_0_6px_rgba(50,50,50,0.9)]
+      hover:text-cyan-400
+      transition-colors
+    "
+              />
             </button>
 
             {/* 移动端菜单按钮 */}
@@ -201,19 +203,19 @@ export default function Header({ locale, posts }: HeaderProps) {
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <section className="md:hidden fixed top-16 left-0 right-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900/95 backdrop-blur-xl border-t border-blue-700/50 shadow-lg rounded-b-3xl p-4 space-y-3 z-40">
+          <section className="md:hidden fixed top-16 left-0 right-0 bg-black/90 border-t-2 border-dashed border-yellow-400 backdrop-blur-xl shadow-xl rounded-b-3xl p-4 space-y-3 z-40">
             {navigationItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-5 py-3 rounded-xl text-lg font-semibold transition-colors cursor-pointer select-none
-                  ${
-                    isActiveRoute(item.href)
-                      ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-[0_0_15px_rgba(14,165,233,0.7)]'
-                      : 'text-gray-300 hover:text-white hover:bg-blue-800/60 hover:shadow-[0_0_12px_rgba(59,130,246,0.6)]'
-                  }
-                `}
+                className={`block px-5 py-3 rounded-xl text-base font-racing tracking-wider text-center transition-transform
+        ${
+          isActiveRoute(item.href)
+            ? 'bg-red-600/80 text-white shadow-[0_0_12px_rgba(255,255,255,0.3)] scale-105'
+            : 'text-gray-200 hover:text-white hover:bg-red-500/50 hover:scale-105'
+        }
+      `}
               >
                 {item.label}
               </Link>
