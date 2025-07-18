@@ -1,16 +1,23 @@
 @import 'tailwindcss';
 @tailwind utilities;
-/* Tailwind 基础导入 */
-/* 引入 Tailwind Typography 插件的样式（如果需要） */
-/* 如果你在 tailwind.config.js 中配置了 typography 插件，这里不需要额外引入 */
 
-/* 主题色变量 */
+/* 字体导入 */
+@font-face {
+  font-family: 'RacingSans';
+  src: url('/fonts/RacingSansOne.woff2') format('woff2'),
+    url('/fonts/RacingSansOne.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind 字体变量 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
-  /* 字体变量示例，需在项目中定义对应字体 */
-  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'RacingSans', 'Inter', 'Noto Sans SC', 'Helvetica Neue', Arial,
+    sans-serif;
   --font-mono: 'Fira Code', monospace;
 }
 
@@ -22,7 +29,7 @@
   }
 }
 
-/* 全局样式 */
+/* 应用字体到 body */
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -30,6 +37,7 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+
 html {
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -39,6 +47,8 @@ html {
 .prose h2,
 .prose h3 {
   text-shadow: 0 0 8px #00fff7, 0 0 16px #00fff7;
+  font-family: 'RacingSans', 'Inter', sans-serif;
+  letter-spacing: 0.02em;
 }
 
 /* 标题滚动偏移，防止锚点被固定头部遮挡 */

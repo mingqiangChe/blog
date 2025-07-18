@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
   content: [
@@ -115,6 +116,11 @@ const config: Config = {
       },
       animation: {
         flicker: 'flicker 3s infinite ease-in-out',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
+        racing: ['RacingSans', ...defaultTheme.fontFamily.sans],
       },
     },
   },
