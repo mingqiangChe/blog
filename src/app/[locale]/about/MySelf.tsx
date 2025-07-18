@@ -60,12 +60,21 @@
 // }
 'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function MySelf() {
   return (
     <section className="bg-white min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden">
-      {/* 中间图像：固定尺寸，始终居中 */}
-      <section className="relative w-99 h-99 mb-12">
+      {/* 漫画纹理背景 */}
+      <div className="absolute inset-0 bg-[url('/comic-pattern.png')] bg-repeat opacity-10 pointer-events-none" />
+
+      {/* 中间图像：固定尺寸，居中 */}
+      <motion.section
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="relative w-[300px] h-[300px] mb-12 border-4 border-white shadow-lg rounded-xl overflow-hidden"
+      >
         <Image
           src="https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E6%91%84%E5%BD%B1%E7%94%B7%E7%94%9F.png"
           alt="photographer & coder"
@@ -73,10 +82,10 @@ export default function MySelf() {
           className="object-cover"
           priority
         />
-      </section>
+      </motion.section>
 
       {/* 简介区 */}
-      <section className="max-w-xl text-center text-gray-600 text-base md:text-lg leading-relaxed tracking-wide z-10">
+      <section className="max-w-xl text-center text-gray-700 text-base md:text-lg leading-relaxed tracking-wide z-10 bg-white bg-opacity-80 rounded-md p-4 shadow-md">
         我是一位热爱编程与摄影的创造者，用代码构建逻辑世界，也热衷用镜头记录生活的光影瞬间。
       </section>
     </section>

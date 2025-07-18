@@ -8,8 +8,9 @@ import BlogSearchModal from './BlogSearchModal';
 import type { BlogPost } from '@/lib/markdown';
 import { useRouter } from 'next/navigation';
 import useMounted from '@/hooks/useMounted';
+import Image from 'next/image';
 interface HeaderProps {
-  locale: string;
+  locale: 'zh' | 'en'; // 限定为这两个值
   posts: BlogPost[];
 }
 
@@ -20,13 +21,36 @@ export default function Header({ locale, posts }: HeaderProps) {
   const [showSearch, setShowSearch] = useState(false);
   const [bgAlpha, setBgAlpha] = useState(0);
 
+  const labels = {
+    zh: {
+      blog: '引擎日志',
+      search: '赛车工具',
+      media: '影像馆',
+      album: '车库相册',
+      milestone: '生涯里程',
+      about: '车主档案',
+    },
+    en: {
+      blog: 'Engine Logs',
+      search: 'Racing Tools',
+      media: 'Media Gallery',
+      album: 'Car Album',
+      milestone: 'Career Milestones',
+      about: 'Driver Profile',
+    },
+  };
+
   const navigationItems = [
-    { key: 'blog', href: `/${locale}/blog`, label: '引擎日志' },
-    { key: 'search', href: `/${locale}/search`, label: '赛车工具' },
-    { key: 'media', href: `/${locale}/media`, label: '影像馆' },
-    { key: 'album', href: `/${locale}/album`, label: '车库相册' },
-    { key: 'milestone', href: `/${locale}/milestone`, label: '生涯里程' },
-    { key: 'about', href: `/${locale}/about`, label: '车主档案' },
+    { key: 'blog', href: `/${locale}/blog`, label: labels[locale].blog },
+    { key: 'search', href: `/${locale}/search`, label: labels[locale].search },
+    { key: 'media', href: `/${locale}/media`, label: labels[locale].media },
+    { key: 'album', href: `/${locale}/album`, label: labels[locale].album },
+    {
+      key: 'milestone',
+      href: `/${locale}/milestone`,
+      label: labels[locale].milestone,
+    },
+    { key: 'about', href: `/${locale}/about`, label: labels[locale].about },
   ];
 
   const locales = ['zh', 'en'];
@@ -116,6 +140,13 @@ export default function Header({ locale, posts }: HeaderProps) {
           >
             {/* {locale === 'zh' ? '车' : 'Thomas'} */}
             Thomas
+            {/* <Image
+              src="/ae86.png" // 替换成你的图片路径
+              alt="Logo"
+              width={100} // 根据需要调整尺寸
+              height={20}
+              priority
+            /> */}
           </Link>
 
           {/* PC端导航 */}

@@ -3,17 +3,18 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import { navData } from './tools';
+import { motion } from 'framer-motion';
 
 interface Group {
   group: string;
 }
 
-// 定义组件 props 类型
 interface CategorySelectorProps {
   groups: Group[];
   selectedGroup: string;
   onSelectGroup: (group: string) => void;
 }
+
 function CategorySelector({
   groups,
   selectedGroup,
@@ -59,7 +60,6 @@ export default function SearchNavPage() {
   return (
     <section className={styles.bg}>
       <section className={styles.layout}>
-        {/* 左侧搜索栏 */}
         <aside className={styles.sidebar}>
           <section className={styles.sidebarGlass}>
             <h2 className={styles.sidebarTitle}>搜索工具</h2>
@@ -77,7 +77,7 @@ export default function SearchNavPage() {
             />
           </section>
         </aside>
-        {/* 右侧工具内容 */}
+
         <main className={styles.main}>
           {filteredData.length === 0 && (
             <p className={styles.noResult}>没有找到匹配的工具。</p>
@@ -86,28 +86,36 @@ export default function SearchNavPage() {
             <section key={group.group} className={styles.section}>
               <h2 className={styles.groupTitle}>{group.group}</h2>
               <section className={styles.grid}>
-                {group.items.map((item) => (
-                  <a
+                {group.items.map((item, index) => (
+                  <motion.div
                     key={item.title}
-                    href={item.url}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
                     className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      width={40}
-                      height={40}
-                      className={styles.icon}
-                    />
-                    <section>
-                      <section className={styles.title}>{item.title}</section>
-                      <section className={styles.desc}>
-                        {item.desc || '暂无描述'}
+                    <a
+                      href={item.url}
+                      className="w-full h-full flex flex-col justify-start"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        width={40}
+                        height={40}
+                        className={styles.icon}
+                      />
+                      <section className="mt-4 flex flex-col gap-2 text-black font-mono">
+                        <section className={styles.title}>{item.title}</section>
+                        <section className={styles.desc}>
+                          {item.desc || '暂无描述'}
+                        </section>
                       </section>
-                    </section>
-                  </a>
+                    </a>
+                  </motion.div>
                 ))}
               </section>
             </section>
