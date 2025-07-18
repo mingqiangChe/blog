@@ -1,64 +1,95 @@
+/* 页面背景：黑色+条纹层次背景 */
 .page-bg {
+  position: relative;
   min-height: 100vh;
   padding: 120px 60px 60px;
-  background: linear-gradient(135deg, #23272f 0%, #181c22 100%);
+  background: linear-gradient(135deg, #111 0%, #000 100%);
 }
 
-/* 瀑布流整体容器，PC端用 flex 三列 */
+.page-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.015) 0,
+    rgba(255, 255, 255, 0.015) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 瀑布流容器 */
 .masonry-grid {
   display: flex;
-  margin-left: -24px; /* 抵消列的 padding-left */
+  margin-left: -24px;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-/* 瀑布流每列，padding控制间距，三等分宽度 */
 .masonry-grid_column {
   padding-left: 24px;
+  flex: 1;
   background-clip: padding-box;
-  flex: 1; /* 等分宽度 */
 }
 
-/* 卡片容器 */
+/* 卡片整体 */
 .card {
   position: relative;
   margin-bottom: 24px;
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  background: #fff;
-  transition: transform 0.18s;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  box-shadow: 0 2px 12px rgba(255, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-
-  width: 100%; /* 宽度撑满列 */
-  height: auto;
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.025);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.2);
 }
 
+/* 图片区域 */
 .card-img {
   width: 100%;
   height: auto;
   display: block;
-  flex-shrink: 0; /* 防止被压缩 */
-  aspect-ratio: 3 / 2; /* 默认宽高比，可替换为实际比值 */
-  min-height: 120px; /* 防止撑不起 */
+  flex-shrink: 0;
+  aspect-ratio: 3 / 2;
+  min-height: 120px;
+  object-fit: cover;
+  filter: contrast(1.2) saturate(1.1);
+  transition: filter 0.3s ease;
 }
 
-/* 描述文字覆盖底部 */
+.card:hover .card-img {
+  filter: brightness(1.05) saturate(1.3);
+}
+
+/* 描述层：底部浮现文字 */
 .card-desc {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 18px 16px 14px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 80%, transparent 100%);
+  padding: 16px 14px 12px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 0.65) 80%,
+    transparent 100%
+  );
   color: #fff;
   font-size: 1rem;
+  font-family: 'Racing Sans One', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.3s, transform 0.3s;
@@ -69,24 +100,28 @@
   transform: translateY(0);
 }
 
-/* 标签小徽章 */
+/* 左上角徽章：车贴风格 */
 .card-tip {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 12px;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(to right, #ff0000, #fff);
+  color: #000;
+  padding: 2px 10px;
+  border-radius: 10px;
   font-size: 12px;
+  font-weight: bold;
+  font-family: 'Racing Sans One', sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+  z-index: 2;
   pointer-events: none;
 }
 
 /* 加载骨架 */
 .loading-placeholder {
   height: 180px;
-  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background: linear-gradient(90deg, #222 25%, #2a2a2a 37%, #222 63%);
   background-size: 400% 100%;
   animation: shimmer 1.4s ease infinite;
   border-radius: 12px;
@@ -100,58 +135,54 @@
   }
 }
 
-/* 响应式优化 - 移动端一列 */
+/* 响应式：一列 */
 @media (max-width: 768px) {
   .page-bg {
     padding: 88px 20px 20px;
   }
-
   .masonry-grid {
     margin-left: 0;
     flex-direction: column;
   }
-
   .masonry-grid_column {
     padding-left: 0;
     width: 100%;
   }
-
   .card {
     border-radius: 12px;
     width: 100% !important;
     margin-bottom: 20px;
   }
-
   .card-desc {
     font-size: 0.875rem;
     padding: 14px 12px;
   }
 }
 
-/* page.module.css */
+/* 返回顶部按钮：红白赛车风格 */
 .scrolltotop {
   position: fixed;
   right: 24px;
   bottom: 32px;
   width: 48px;
   height: 48px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #ff0000;
   color: #fff;
   border-radius: 50%;
+  border: 2px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 999;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s;
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
 }
-
 .scrolltotop:hover {
-  transform: translateY(-4px);
-  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-6px) scale(1.05);
+  background-color: #fff;
+  color: #ff0000;
 }
-
 .scrolltotop svg {
   width: 24px;
   height: 24px;
