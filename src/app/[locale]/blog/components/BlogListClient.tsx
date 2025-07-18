@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-import styles from '../page.module.css';
+import styles from '../page.module.css'; // AE86样式引入
 
 const StarBackground = dynamic(() => import('./StarBackground'), {
   ssr: false,
@@ -79,12 +79,8 @@ export default function BlogListClient({ posts, locale }: BlogListClientProps) {
 
   return (
     <section className={styles.blogSection}>
-      {/* 星空背景 */}
       <StarBackground />
-
-      {/* 主体内容 */}
       <div className={styles.contentWrapper}>
-        {/* 分类标签 */}
         <section className={styles.tagList}>
           {['全部', ...allTags].map((tag) => (
             <button
@@ -99,100 +95,96 @@ export default function BlogListClient({ posts, locale }: BlogListClientProps) {
           ))}
         </section>
 
-        {/* 文章列表 */}
-        <section className={styles.postGrid}>
-          {visiblePosts.length === 0 && (
-            <div className={styles.noResult}>没有找到相关文章</div>
-          )}
-
-          {visiblePosts.map((post, index) => (
-            <Link
-              key={post.slug}
-              href={`/${locale}/blog/${post.slug}`}
-              className={styles.card}
-            >
-              <article>
-                <section className={styles.cardImageWrapper}>
-                  {post.cover ? (
-                    <Image
-                      src={post.cover}
-                      alt={post.title}
-                      fill
-                      className={styles.cardImage}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={index < 6}
-                    />
-                  ) : (
-                    <section className={styles.cardNoCover}>
-                      <span>📝</span>
-                    </section>
-                  )}
-                </section>
-
-                <section className={styles.cardContent}>
-                  <h2 className={styles.cardTitle}>{post.title}</h2>
-
-                  <section className={styles.authorRow}>
-                    <section className={styles.authorAvatar}>
-                      <span>{post.author?.charAt(0) || 'A'}</span>
-                    </section>
-                    <span>
-                      {post.author || (locale === 'zh' ? '匿名' : 'Anonymous')}
-                    </span>
-                  </section>
-
-                  <section className={styles.postMeta}>
-                    <time>
-                      📅{' '}
-                      {new Date(post.date).toLocaleDateString(locale, {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                      })}
-                    </time>
-
-                    <span>
-                      👁️{' '}
-                      {views[post.slug] !== undefined
-                        ? `${views[post.slug]} 次`
-                        : '加载中...'}
-                    </span>
-
-                    {post.readingTime && (
-                      <span>
-                        ⏱️{' '}
-                        {locale === 'zh'
-                          ? `${post.readingTime} 分钟`
-                          : `${post.readingTime} min`}
-                      </span>
+        {visiblePosts.length === 0 ? (
+          <div className={styles.noResult}>没有找到相关文章</div>
+        ) : (
+          <section className={styles.postGrid}>
+            {visiblePosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${locale}/blog/${post.slug}`}
+                className={styles.card}
+              >
+                <article>
+                  <div className={styles.cardImageWrapper}>
+                    {post.cover ? (
+                      <Image
+                        src={post.cover}
+                        alt={post.title}
+                        fill
+                        className={styles.cardImage}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className={styles.cardNoCover}>📝</div>
                     )}
-                  </section>
+                  </div>
 
-                  {post.description && (
-                    <p className={styles.cardDesc}>{post.description}</p>
-                  )}
+                  <div className={styles.cardContent}>
+                    <h2 className={styles.cardTitle}>{post.title}</h2>
 
-                  {post.tags && post.tags.length > 0 && (
-                    <section className={styles.tagContainer}>
-                      {post.tags.slice(0, 4).map((tag) => (
-                        <span key={tag} className={styles.tag}>
-                          #{tag}
-                        </span>
-                      ))}
-                      {post.tags.length > 4 && (
-                        <span className={styles.tagMore}>
-                          +{post.tags.length - 4}
+                    <div className={styles.authorRow}>
+                      <div className={styles.authorAvatar}>
+                        {post.author?.charAt(0) || 'A'}
+                      </div>
+                      <span>
+                        {post.author ||
+                          (locale === 'zh' ? '匿名' : 'Anonymous')}
+                      </span>
+                    </div>
+
+                    <div className={styles.postMeta}>
+                      <time>
+                        📅{' '}
+                        {new Date(post.date).toLocaleDateString(locale, {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+
+                      <span>
+                        👁️{' '}
+                        {views[post.slug] !== undefined
+                          ? `${views[post.slug]} 次`
+                          : '加载中...'}
+                      </span>
+
+                      {post.readingTime && (
+                        <span>
+                          ⏱️{' '}
+                          {locale === 'zh'
+                            ? `${post.readingTime} 分钟`
+                            : `${post.readingTime} min`}
                         </span>
                       )}
-                    </section>
-                  )}
-                </section>
-              </article>
-            </Link>
-          ))}
-        </section>
+                    </div>
 
-        {/* 无限滚动哨兵 */}
+                    {post.description && (
+                      <p className={styles.cardDesc}>{post.description}</p>
+                    )}
+
+                    {post.tags && post.tags.length > 0 && (
+                      <div className={styles.tagContainer}>
+                        {post.tags.slice(0, 4).map((tag) => (
+                          <span key={tag} className={styles.tag}>
+                            #{tag}
+                          </span>
+                        ))}
+                        {post.tags.length > 4 && (
+                          <span className={styles.tagMore}>
+                            +{post.tags.length - 4}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </section>
+        )}
+
         <div
           ref={visibleCount < filteredPosts.length ? ref : null}
           className={styles.infiniteScrollTrigger}

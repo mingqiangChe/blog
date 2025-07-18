@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
-import styles from '../page.module.css';
+import React, { useEffect, useState } from 'react';
+import styles from '../page.module.css'; // 假设样式名为ae86.module.css
 
 const STAR_COUNT = 80;
-const SHOOTING_STAR_INTERVAL = 7000; // 7秒一颗流星
+const SHOOTING_STAR_INTERVAL = 7000;
 
 function getRandom(min: number, max: number) {
   return Math.random() * (max - min) + min;
@@ -22,9 +22,8 @@ interface Star {
 
 export default function StarBackground() {
   const [stars, setStars] = useState<Star[]>([]);
-  const shootingStarRef = useRef<HTMLDivElement | null>(null);
+  const [shootingActive, setShootingActive] = useState(false);
 
-  // 初始化静态星星
   useEffect(() => {
     const initialStars = Array.from({ length: STAR_COUNT }).map((_, i) => ({
       id: i,
@@ -38,7 +37,7 @@ export default function StarBackground() {
     setStars(initialStars);
   }, []);
 
-  // 星星上下缓慢浮动动画
+  // 星星上下缓慢移动动画
   useEffect(() => {
     let animationFrame: number;
 
@@ -57,26 +56,19 @@ export default function StarBackground() {
     return () => cancelAnimationFrame(animationFrame);
   }, []);
 
-  // 流星动画触发
+  // 流星周期动画
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!shootingStarRef.current) return;
-      shootingStarRef.current.classList.remove(styles.animateShooting);
-      void shootingStarRef.current.offsetWidth; // 触发重绘
-      shootingStarRef.current.classList.add(styles.animateShooting);
+      setShootingActive(true);
+      setTimeout(() => setShootingActive(false), 1500);
     }, SHOOTING_STAR_INTERVAL);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div
-      className={`${styles.starBackground} pointer-events-none fixed inset-0 z-[-1] overflow-hidden`}
-    >
-      {/* 银河雾气 */}
+    <div className={styles.starBackground}>
       <div className={styles.galaxyFog} />
-
-      {/* 静态星星 */}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -91,12 +83,10 @@ export default function StarBackground() {
           }}
         />
       ))}
-
-      {/* 流星 */}
       <div
-        ref={shootingStarRef}
-        className={`${styles.shootingStar} ${styles.shootingStarBase}`}
-        style={{ top: '25%', left: '25%' }}
+        className={`${styles.shootingStarBase} ${
+          shootingActive ? styles.animateShooting : ''
+        }`}
       />
     </div>
   );
