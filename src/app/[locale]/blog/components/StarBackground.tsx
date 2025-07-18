@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import styles from '../page.module.css';
 
 const STAR_COUNT = 80;
-const SHOOTING_STAR_INTERVAL = 7000; // 每 7 秒出现一颗流星
+const SHOOTING_STAR_INTERVAL = 7000; // 7秒一颗流星
 
 function getRandom(min: number, max: number) {
   return Math.random() * (max - min) + min;
@@ -37,7 +38,7 @@ export default function StarBackground() {
     setStars(initialStars);
   }, []);
 
-  // 星星随页面缓慢移动（上下浮动）
+  // 星星上下缓慢浮动动画
   useEffect(() => {
     let animationFrame: number;
 
@@ -56,28 +57,30 @@ export default function StarBackground() {
     return () => cancelAnimationFrame(animationFrame);
   }, []);
 
-  // 控制流星出现
+  // 流星动画触发
   useEffect(() => {
     const interval = setInterval(() => {
       if (!shootingStarRef.current) return;
-      shootingStarRef.current.classList.remove('animate-shooting');
+      shootingStarRef.current.classList.remove(styles.animateShooting);
       void shootingStarRef.current.offsetWidth; // 触发重绘
-      shootingStarRef.current.classList.add('animate-shooting');
+      shootingStarRef.current.classList.add(styles.animateShooting);
     }, SHOOTING_STAR_INTERVAL);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
+    <div
+      className={`${styles.starBackground} pointer-events-none fixed inset-0 z-[-1] overflow-hidden`}
+    >
       {/* 银河雾气 */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/20 via-transparent to-indigo-900/20 blur-3xl opacity-40" />
+      <div className={styles.galaxyFog} />
 
-      {/* 星星们 */}
+      {/* 静态星星 */}
       {stars.map((star) => (
         <div
           key={star.id}
-          className="absolute rounded-full bg-white opacity-40 animate-flicker"
+          className={styles.star}
           style={{
             width: `${star.size}px`,
             height: `${star.size}px`,
@@ -92,7 +95,8 @@ export default function StarBackground() {
       {/* 流星 */}
       <div
         ref={shootingStarRef}
-        className="absolute top-1/4 left-1/4 w-[150px] h-[2px] bg-white opacity-60 rotate-[-30deg] pointer-events-none"
+        className={`${styles.shootingStar} ${styles.shootingStarBase}`}
+        style={{ top: '25%', left: '25%' }}
       />
     </div>
   );
