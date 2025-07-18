@@ -63,6 +63,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+            <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gray-50 `}
       >

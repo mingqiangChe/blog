@@ -120,7 +120,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
-        racing: ['RacingSans', ...defaultTheme.fontFamily.sans],
+        racing: ['"Racing Sans One"', ...defaultTheme.fontFamily.sans], // 注意加双引号
       },
     },
   },
