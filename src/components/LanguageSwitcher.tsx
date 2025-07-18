@@ -65,7 +65,7 @@ export default function LanguageSwitcher({
       <style>{`
   .lang-switch {
     position: relative;
-    width: 3.5em;
+    width: 3.2em;
     height: 1.6em;
     display: inline-block;
   }
@@ -93,8 +93,8 @@ export default function LanguageSwitcher({
     position: absolute;
     content: "";
     height: 1.3em;
-    width: 1.3em;
-    left: 0.15em;
+    width: 1.2em;
+    left: 0.1em;
     bottom: 0.15em;
     background-color: #fff;
     border-radius: 50%;
@@ -103,7 +103,7 @@ export default function LanguageSwitcher({
   }
 
 input:checked + .lang-slider::before {
-  transform: translateX(1.85em);
+  transform: translateX(1.9em);
 }
 
   .lang-label {

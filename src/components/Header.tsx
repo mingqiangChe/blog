@@ -204,21 +204,21 @@ export default function Header({ locale, posts }: HeaderProps) {
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <section
-            className="
+<section
+  className="
     md:hidden fixed top-16 left-0 right-0
     bg-black/85 backdrop-blur-sm
     border-t-4 border-double border-yellow-400
     shadow-[0_0_15px_rgba(255,230,0,0.8)]
     rounded-b-xl p-5 space-y-4 z-40
   "
-          >
-            {navigationItems.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`
+>
+  {navigationItems.map((item) => (
+    <Link
+      key={item.key}
+      href={item.href}
+      onClick={() => setIsMenuOpen(false)}
+      className={`
         block px-6 py-3 rounded-lg font-racing tracking-wider text-center text-base
         transition-transform duration-300 ease-in-out
         ${
@@ -229,11 +229,12 @@ export default function Header({ locale, posts }: HeaderProps) {
             : `text-gray-300 hover:text-white hover:bg-red-600/70 hover:scale-105 hover:rotate-[1deg]`
         }
       `}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </section>
+    >
+      {item.label}
+    </Link>
+  ))}
+</section>
+
         )}
       </header>
 
