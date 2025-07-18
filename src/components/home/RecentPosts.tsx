@@ -3,17 +3,19 @@ import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import type { BlogPostMeta } from '@/lib/markdown';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+
 interface RecentPostsProps {
   posts: BlogPostMeta[];
 }
-import { useTranslations } from 'next-intl';
+
 export default function RecentPosts({ posts }: RecentPostsProps) {
   const t = useTranslations('PageIndex');
 
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
-  // 阅读量
+
   const [views, setViews] = useState<Record<string, number>>({});
   useEffect(() => {
     const slugs = posts.map((p) => p.slug);
@@ -27,55 +29,47 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
         setViews(data.counts || {});
       });
   }, [posts]);
+
   return (
-    <section>
-      <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+    <section className="overflow-hidden px-2">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--ae86-white)] mb-8 tracking-wide font-[RacingSans] text-shadow-glow">
         {t('sect1')}
       </h2>
-      <section className="grid md:grid-cols-3 gap-8">
+      <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
         {sortedPosts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group rounded-2xl overflow-hidden bg-slate-800/80 backdrop-blur-xl shadow-xl border border-slate-700/60 transition hover:scale-105 hover:shadow-2xl flex flex-col w-full max-w-[360px]"
+            className="group rounded-2xl overflow-hidden bg-[var(--ae86-gray-bg)] border border-[var(--ae86-red)] shadow-[0_0_15px_var(--ae86-glow-light)] backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_var(--ae86-glow)] flex flex-col font-[RacingSans]"
           >
-            {/* 保持原结构 */}
-            <section className="relative h-44 md:h-40 w-full overflow-hidden">
-              <section className="relative w-full h-full overflow-hidden">
-                <Image
-                  src={post.cover || '/default-cover.jpg'}
-                  alt={post.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </section>
-              <section className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-              <section className="absolute bottom-5 left-0 w-full px-5">
-                <section className="text-lg md:text-xl font-bold text-white drop-shadow mb-1">
+            <section className="relative h-44 md:h-40 w-full">
+              <Image
+                src={post.cover || '/default-cover.jpg'}
+                alt={post.title}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <section className="absolute inset-0 bg-gradient-to-t from-[var(--ae86-black)]/80 via-transparent to-transparent" />
+              <section className="absolute bottom-3 left-0 w-full px-4">
+                <p className="text-lg font-bold text-[var(--ae86-white)] drop-shadow-sm">
                   《{post.title}》
-                </section>
-                <section className="text-xs text-slate-200/80 flex items-center gap-2">
-                  {post.author && (
-                    <span className="ml-2 text-purple-300">@{post.author}</span>
-                  )}
-                </section>
+                </p>
+                {post.author && (
+                  <p className="text-xs text-[var(--ae86-red)] font-medium mt-1">
+                    @{post.author}
+                  </p>
+                )}
               </section>
             </section>
 
-            <section className="flex-1 flex flex-col p-5 bg-transparent">
-              <section className="font-bold text-lg text-white mb-1 leading-tight">
-                {post.title}
-              </section>
-
+            <section className="p-4 flex-1 flex flex-col justify-between">
               {post.description && (
-                <p className="text-slate-300 text-sm mb-3 line-clamp-3">
+                <p className="text-sm text-[var(--ae86-white)]/80 mb-3 line-clamp-3">
                   {post.description}
                 </p>
               )}
 
-              <section className="text-slate-400 text-xs mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+              <section className="text-xs text-[var(--ae86-white)]/60 mb-2 flex flex-wrap items-center gap-2">
                 <span>
                   {new Date(post.date).toLocaleDateString('zh-CN', {
                     month: 'short',
@@ -97,13 +91,13 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                 )}
               </section>
 
-              <section className="flex flex-wrap gap-2 mt-2 mb-1">
+              <section className="flex flex-wrap gap-2">
                 {post.tags?.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-slate-700 text-blue-300 text-xs px-2 py-0.5 rounded shadow-sm"
+                    className="text-xs text-[var(--ae86-white)] bg-[var(--ae86-red)]/80 px-2 py-0.5 rounded-full tracking-wide shadow-sm hover:brightness-125 transition"
                   >
-                    {tag}
+                    #{tag}
                   </span>
                 ))}
               </section>

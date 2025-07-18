@@ -9,6 +9,7 @@ import ClientMarkdownRenderer from '@/components/ClientMarkdownRenderer';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import ViewCounter from '@/components/ViewCounter';
+
 interface PageParams {
   params: { locale: string; slug: string };
 }
@@ -83,8 +84,21 @@ export default async function BlogPostPage(props: any) {
     post.cover && post.cover.startsWith('http') ? post.cover : defaultCover;
 
   return (
-    <section className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] flex justify-center px-2 overflowclip">
-      <section className="relative max-w-[1440px] w-full mt-32 mx-auto p-8 rounded-2xl backdrop-blur-md bg-white/10 shadow-2xl border border-cyan-400/30">
+    <section
+      className="min-h-screen w-full flex justify-center px-2 overflowclip"
+      style={{
+        background:
+          'linear-gradient(to bottom right, #0a0a0a, #151a20, #1c1f24)', // 柔和夜色渐变
+      }}
+    >
+      <section
+        className="relative max-w-[1440px] w-full mt-32 mx-auto p-8 rounded-2xl backdrop-blur-md shadow-2xl border"
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.05)', // 半透明更低
+          borderColor: 'rgba(6, 182, 212, 0.1)', // 轻青色边框
+          boxShadow: '0 8px 32px 0 rgba(6, 182, 212, 0.1)', // 柔和阴影
+        }}
+      >
         <section className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* 主要内容 */}
           <section className="lg:col-span-3">
@@ -94,10 +108,11 @@ export default async function BlogPostPage(props: any) {
             >
               <header className="mb-8">
                 <h1
-                  className="text-4xl font-extrabold mb-4 neontext"
+                  className="text-4xl font-extrabold mb-4"
                   style={{
-                    color: '#fff',
-                    textShadow: '0 0 16px #00fff7, 0 0 32px #00fff7',
+                    color: '#a0f0ff',
+                    textShadow: '0 0 4px #00d4e7',
+                    fontWeight: 800,
                   }}
                 >
                   {post.title}
@@ -147,8 +162,11 @@ export default async function BlogPostPage(props: any) {
 
                 {post.description && (
                   <p
-                    className="text-lg italic border-l-4 border-cyan-400 pl-4 mb-6"
-                    style={{ color: '#b2fefa' }}
+                    className="text-lg italic border-l-4 pl-4 mb-6"
+                    style={{
+                      color: 'rgba(178, 254, 250, 0.6)',
+                      borderColor: 'rgba(6, 182, 212, 0.4)',
+                    }}
                   >
                     {post.description}
                   </p>

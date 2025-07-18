@@ -122,6 +122,9 @@ const config: Config = {
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
         racing: ['"Racing Sans One"', ...defaultTheme.fontFamily.sans], // 注意加双引号
       },
+      textShadow: {
+        glow: '0 0 6px var(--ae86-red), 0 0 12px var(--ae86-glow)',
+      },
     },
   },
   plugins: [typography, require('tailwind-scrollbar')],

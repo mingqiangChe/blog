@@ -290,3 +290,9 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
+.ae86Canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
