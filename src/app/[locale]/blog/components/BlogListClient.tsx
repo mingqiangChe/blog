@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-
+import { motion } from 'framer-motion';
 import styles from '../page.module.css'; // AE86样式引入
 
 const StarBackground = dynamic(() => import('./StarBackground'), {
@@ -99,88 +99,96 @@ export default function BlogListClient({ posts, locale }: BlogListClientProps) {
           <div className={styles.noResult}>没有找到相关文章</div>
         ) : (
           <section className={styles.postGrid}>
-            {visiblePosts.map((post) => (
-              <Link
+            {visiblePosts.map((post, idx) => (
+              <motion.div
                 key={post.slug}
-                href={`/${locale}/blog/${post.slug}`}
-                className={styles.card}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
-                <article>
-                  <div className={styles.cardImageWrapper}>
-                    {post.cover ? (
-                      <Image
-                        src={post.cover}
-                        alt={post.title}
-                        fill
-                        className={styles.cardImage}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className={styles.cardNoCover}>📝</div>
-                    )}
-                  </div>
-
-                  <div className={styles.cardContent}>
-                    <h2 className={styles.cardTitle}>{post.title}</h2>
-
-                    <div className={styles.authorRow}>
-                      <div className={styles.authorAvatar}>
-                        {post.author?.charAt(0) || 'A'}
-                      </div>
-                      <span>
-                        {post.author ||
-                          (locale === 'zh' ? '匿名' : 'Anonymous')}
-                      </span>
-                    </div>
-
-                    <div className={styles.postMeta}>
-                      <time>
-                        📅{' '}
-                        {new Date(post.date).toLocaleDateString(locale, {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric',
-                        })}
-                      </time>
-
-                      <span>
-                        👁️{' '}
-                        {views[post.slug] !== undefined
-                          ? `${views[post.slug]} 次`
-                          : '加载中...'}
-                      </span>
-
-                      {post.readingTime && (
-                        <span>
-                          ⏱️{' '}
-                          {locale === 'zh'
-                            ? `${post.readingTime} 分钟`
-                            : `${post.readingTime} min`}
-                        </span>
+                <Link
+                  key={post.slug}
+                  href={`/${locale}/blog/${post.slug}`}
+                  className={styles.card}
+                >
+                  <article>
+                    <div className={styles.cardImageWrapper}>
+                      {post.cover ? (
+                        <Image
+                          src={post.cover}
+                          alt={post.title}
+                          fill
+                          className={styles.cardImage}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className={styles.cardNoCover}>📝</div>
                       )}
                     </div>
 
-                    {post.description && (
-                      <p className={styles.cardDesc}>{post.description}</p>
-                    )}
+                    <div className={styles.cardContent}>
+                      <h2 className={styles.cardTitle}>{post.title}</h2>
 
-                    {post.tags && post.tags.length > 0 && (
-                      <div className={styles.tagContainer}>
-                        {post.tags.slice(0, 4).map((tag) => (
-                          <span key={tag} className={styles.tag}>
-                            #{tag}
-                          </span>
-                        ))}
-                        {post.tags.length > 4 && (
-                          <span className={styles.tagMore}>
-                            +{post.tags.length - 4}
+                      <div className={styles.authorRow}>
+                        <div className={styles.authorAvatar}>
+                          {post.author?.charAt(0) || 'A'}
+                        </div>
+                        <span>
+                          {post.author ||
+                            (locale === 'zh' ? '匿名' : 'Anonymous')}
+                        </span>
+                      </div>
+
+                      <div className={styles.postMeta}>
+                        <time>
+                          📅{' '}
+                          {new Date(post.date).toLocaleDateString(locale, {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                          })}
+                        </time>
+
+                        <span>
+                          👁️{' '}
+                          {views[post.slug] !== undefined
+                            ? `${views[post.slug]} 次`
+                            : '加载中...'}
+                        </span>
+
+                        {post.readingTime && (
+                          <span>
+                            ⏱️{' '}
+                            {locale === 'zh'
+                              ? `${post.readingTime} 分钟`
+                              : `${post.readingTime} min`}
                           </span>
                         )}
                       </div>
-                    )}
-                  </div>
-                </article>
-              </Link>
+
+                      {post.description && (
+                        <p className={styles.cardDesc}>{post.description}</p>
+                      )}
+
+                      {post.tags && post.tags.length > 0 && (
+                        <div className={styles.tagContainer}>
+                          {post.tags.slice(0, 4).map((tag) => (
+                            <span key={tag} className={styles.tag}>
+                              #{tag}
+                            </span>
+                          ))}
+                          {post.tags.length > 4 && (
+                            <span className={styles.tagMore}>
+                              +{post.tags.length - 4}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                </Link>
+              </motion.div>
             ))}
           </section>
         )}

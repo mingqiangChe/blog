@@ -1,4 +1,3 @@
-// 进度条 监听滚动条滚动距离 渲染长度 100vh=100vw
 'use client';
 import { useState, useEffect } from 'react';
 
@@ -13,13 +12,14 @@ export default function ProgressBar() {
       const scrollable = docHeight - winHeight;
 
       const scrollRatio = scrollable > 0 ? scrollTop / scrollable : 0;
-      const width = Math.min(scrollRatio * 100, 100); // 最大不超过100vw
+      const width = Math.min(scrollRatio * 100, 100);
       setWidthVW(width);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <section
       style={{
@@ -27,8 +27,10 @@ export default function ProgressBar() {
         top: 0,
         left: 0,
         height: '4px',
-        backgroundColor: '#3762e3',
         width: `${widthVW}vw`,
+        background:
+          'linear-gradient(90deg, var(--ae86-red), var(--ae86-white), var(--ae86-black))',
+        boxShadow: '0 0 8px var(--ae86-glow)',
         transition: 'width 0.05s linear',
         zIndex: 9999,
       }}

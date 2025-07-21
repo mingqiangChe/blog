@@ -155,6 +155,9 @@
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
+
+  /* 固定卡片高度 */
+  height: 380px;
 }
 
 .card:hover {
@@ -197,6 +200,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* 防止内容撑开 */
+  overflow: hidden;
 }
 
 .cardTitle {
@@ -244,6 +250,12 @@
   color: #ddd;
   flex-grow: 1;
   user-select: text;
+
+  /* 限制文本最大行数 */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .tagContainer {
@@ -289,4 +301,11 @@
   .postGrid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
+
+.ae86Canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }
