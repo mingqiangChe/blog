@@ -355,11 +355,11 @@ export const photos: Photo[] = [
     desc: '地标建筑',
     tip: '深圳',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200721_180913.jpg',
-    desc: '深圳音乐馆',
-    tip: '深圳',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200721_180913.jpg',
+  //   desc: '深圳音乐馆',
+  //   tip: '深圳',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201002_171728.jpg',
     desc: '海上世界',
@@ -406,26 +406,26 @@ export const photos: Photo[] = [
     desc: '大芬油画村',
     tip: '深圳',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s122e.JPG',
-    desc: '桂湾',
-    tip: '深圳',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s122e.JPG',
+  //   desc: '桂湾',
+  //   tip: '深圳',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200721_180854.jpg',
     desc: '莲花山',
     tip: '深圳',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201003_133423.jpg',
-    desc: '凤凰山祈福 都实现了 不能去第二次',
-    tip: '深圳',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s.JPG',
-    desc: '桂湾',
-    tip: '深圳',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20201003_133423.jpg',
+  //   desc: '凤凰山祈福 都实现了 不能去第二次',
+  //   tip: '深圳',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/%E9%A3%8Eo1dsi9d2s.JPG',
+  //   desc: '桂湾',
+  //   tip: '深圳',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E6%B7%B1%E5%9C%B3/IMG_20200722_171240.jpg',
     desc: '大芬油画村',
@@ -441,11 +441,11 @@ export const photos: Photo[] = [
     desc: '我',
     tip: '种种',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/WechatIMG520dtdrtd.jpg',
-    desc: '我',
-    tip: '种种',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/WechatIMG520dtdrtd.jpg',
+  //   desc: '我',
+  //   tip: '种种',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/11.jpg',
     desc: '我',
@@ -462,22 +462,22 @@ export const photos: Photo[] = [
     desc: '我',
     tip: '种种',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/2019-02-20%20011346.jpg',
-    desc: '我',
-    tip: '种种',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6C8A0477.JPG',
-    desc: '我',
-    tip: '种种',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/2019-02-20%20011346.jpg',
+  //   desc: '我',
+  //   tip: '种种',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/6C8A0477.JPG',
+  //   desc: '我',
+  //   tip: '种种',
+  // },
 
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220200_588.jpg',
-    desc: '调酒crush',
-    tip: '种种',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220200_588.jpg',
+  //   desc: '调酒crush',
+  //   tip: '种种',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-06-22_220327_100.jpg',
     desc: '通州河',
@@ -705,11 +705,11 @@ export const photos: Photo[] = [
     desc: '装备全靠老板借',
     tip: '青海湖',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_092805.jpg',
-    desc: '出发',
-    tip: '青海湖',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_092805.jpg',
+  //   desc: '出发',
+  //   tip: '青海湖',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_075941.jpg',
     desc: '出发',
@@ -726,16 +726,16 @@ export const photos: Photo[] = [
     tip: '青海湖',
   },
 
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230326_100210.jpg',
-    desc: '西宁站公交去青海湖',
-    tip: '青海湖',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/IMG_20230327_164724_TIMEBURST13.jpg',
-    desc: '路边休息',
-    tip: '青海湖',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230326_100210.jpg',
+  //   desc: '西宁站公交去青海湖',
+  //   tip: '青海湖',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/IMG_20230327_164724_TIMEBURST13.jpg',
+  //   desc: '路边休息',
+  //   tip: '青海湖',
+  // },
 
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%9D%92%E6%B5%B7%E6%B9%96/MVIMG_20230327_152431.jpg',
@@ -803,11 +803,11 @@ export const photos: Photo[] = [
     desc: '此刻我谁都不想',
     tip: '318',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223709.jpg',
-    desc: '然乌湖',
-    tip: '318',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223709.jpg',
+  //   desc: '然乌湖',
+  //   tip: '318',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/mmexport1679304593859.jpg',
     desc: '青春没有售价 火车广州直接到拉萨',
@@ -830,11 +830,11 @@ export const photos: Photo[] = [
     tip: '318',
   },
 
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfwwexca.JPG',
-    desc: '此刻的我是快乐的',
-    tip: '318',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfwwexca.JPG',
+  //   desc: '此刻的我是快乐的',
+  //   tip: '318',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/ssesdfwwexcaas.JPG',
     desc: '大昭寺 转经筒 祈福',
@@ -850,21 +850,21 @@ export const photos: Photo[] = [
     desc: '我站在布达拉宫眺望城域 我也想成为王',
     tip: '318',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223926.jpg',
-    desc: '借个车车开开',
-    tip: '318',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-12%20223926.jpg',
+  //   desc: '借个车车开开',
+  //   tip: '318',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/dsffqlkmkh.JPG',
     desc: '拉萨市里',
     tip: '318',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-09%20012502.jpg',
-    desc: '自驾路上',
-    tip: '318',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/2024-04-09%20012502.jpg',
+  //   desc: '自驾路上',
+  //   tip: '318',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/43dfgfgklkl.JPG',
     desc: '此刻 鸟是快乐的 我也是',
@@ -911,11 +911,11 @@ export const photos: Photo[] = [
     desc: '千年盐井',
     tip: '318',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0177_1.JPG',
-    desc: '出片的他们',
-    tip: '318',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0177_1.JPG',
+  //   desc: '出片的他们',
+  //   tip: '318',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/318/DSC_0133.JPG',
     desc: '快乐打卡的他们 ',
@@ -1057,11 +1057,11 @@ export const photos: Photo[] = [
     desc: '是我喜欢的店呀',
     tip: '长沙',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/%E6%9D%9C%E7%94%AB%E6%B1%9F%E9%98%81.JPG',
-    desc: '杜甫江阁',
-    tip: '长沙',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/%E6%9D%9C%E7%94%AB%E6%B1%9F%E9%98%81.JPG',
+  //   desc: '杜甫江阁',
+  //   tip: '长沙',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E9%95%BF%E6%B2%99/cs123.JPG',
     desc: 'IFS',
@@ -1093,11 +1093,11 @@ export const photos: Photo[] = [
     tip: '石家庄',
   },
 
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231006_112044.jpg',
-    desc: '福气护佑',
-    tip: '石家庄',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/IMG_20231006_112044.jpg',
+  //   desc: '福气护佑',
+  //   tip: '石家庄',
+  // },
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/kjkjddfdrythhgf.JPG',
     desc: '沙坡尾',
@@ -1229,47 +1229,47 @@ export const photos: Photo[] = [
     tip: '厦门',
   },
 
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/sgfggdsgfdgfdsgf.JPG',
-    desc: '南普陀寺',
-    tip: '广州',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20100101.jpg',
-    desc: '青岛',
-    tip: '山东',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20190300.jpg',
-    desc: '青岛',
-    tip: '山东',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20103813.jpg',
-    desc: '青岛',
-    tip: '山东',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/%E5%8E%A6%E9%97%A8/sgfggdsgfdgfdsgf.JPG',
+  //   desc: '南普陀寺',
+  //   tip: '广州',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20100101.jpg',
+  //   desc: '青岛',
+  //   tip: '山东',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20190300.jpg',
+  //   desc: '青岛',
+  //   tip: '山东',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-06-08%20103813.jpg',
+  //   desc: '青岛',
+  //   tip: '山东',
+  // },
 
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-23%20025512.jpg',
     desc: '泰山顶的我们',
     tip: '山东',
   },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-23%20005443.jpg',
-    desc: '泰山顶的我们',
-    tip: '山东',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-09-13%20142949.jpg',
-    desc: '青岛崂山',
-    tip: '山东',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-22%20213533.jpg',
-    desc: '泰山南天门',
-    tip: '山东',
-  },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-23%20005443.jpg',
+  //   desc: '泰山顶的我们',
+  //   tip: '山东',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2019-09-13%20142949.jpg',
+  //   desc: '青岛崂山',
+  //   tip: '山东',
+  // },
+  // {
+  //   url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/%E5%B1%B1%E4%B8%9C/2018-09-22%20213533.jpg',
+  //   desc: '泰山南天门',
+  //   tip: '山东',
+  // },
 
   // ...更多图片
 ];
