@@ -286,8 +286,8 @@ export const photos: Photo[] = [
     tip: '大理女孩',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%87%B4%E5%91%BD%E6%B8%A9%E6%9F%94%E5%91%80.png',
-    desc: '致命温柔',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%80%A7%E6%84%9F1.jpg',
+    desc: '4',
     tip: '萤火虫',
   },
   {
@@ -296,28 +296,19 @@ export const photos: Photo[] = [
     tip: '萤火虫',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%80%A7%E6%84%9F2.jpg',
-    desc: '3',
-    tip: '萤火虫',
-  },
-  {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%80%A7%E6%84%9F1.jpg',
-    desc: '4',
-    tip: '萤火虫',
-  },
-  {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%B9%9D%E5%B0%BE2.jpg',
     desc: '九尾',
     tip: '萤火虫',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%B9%9D%E5%B0%BE1.jpg',
-    desc: '九尾',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%80%A7%E6%84%9F2.jpg',
+    desc: '3',
     tip: '萤火虫',
   },
+
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%BB%8A%E5%A4%9C%E4%B8%8D%E5%86%8D.jpeg',
-    desc: '今夜不在',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%B9%9D%E5%B0%BE1.jpg',
+    desc: '九尾',
     tip: '萤火虫',
   },
   {
@@ -326,10 +317,11 @@ export const photos: Photo[] = [
     tip: '萤火虫',
   },
   {
-    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%A4%A7%E5%93%A5%E5%A4%A7%E4%B8%8D%E8%89%AF%E5%B0%91%E5%A5%B32.jpeg',
-    desc: '大哥大 不良少女',
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E4%BB%8A%E5%A4%9C%E4%B8%8D%E5%86%8D.jpeg',
+    desc: '今夜不在',
     tip: '萤火虫',
   },
+
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%A4%A7%E5%93%A5%E5%A4%A7%E4%B8%8D%E8%89%AF%E5%B0%91%E5%A5%B31.jpeg',
     desc: '大哥大 不良少女',
@@ -338,6 +330,16 @@ export const photos: Photo[] = [
   {
     url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E6%98%A5%E9%87%8E%E6%A8%B1.jpg',
     desc: '春野樱',
+    tip: '萤火虫',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E5%A4%A7%E5%93%A5%E5%A4%A7%E4%B8%8D%E8%89%AF%E5%B0%91%E5%A5%B32.jpeg',
+    desc: '大哥大 不良少女',
+    tip: '萤火虫',
+  },
+  {
+    url: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/%E8%87%B4%E5%91%BD%E6%B8%A9%E6%9F%94%E5%91%80.png',
+    desc: '致命温柔',
     tip: '萤火虫',
   },
   {
