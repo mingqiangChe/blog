@@ -15,6 +15,12 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-06
 
 </br>
 
+买创业板指 ETF ，分批买入，越跌越买
+上涨时逐步卖出，直到手中持仓为获利所得，成本为 0
+如此往复
+
+</br>
+
 ---
 
 </br>
