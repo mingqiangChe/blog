@@ -40,7 +40,8 @@ EOF
 sudo chmod +x "$CERTBOT_RENEW_HOOK"
 
 echo -e "📜 申请或续期证书（自动配置 nginx）..."
-sudo certbot certonly --nginx -d "$DOMAIN" --deploy-hook "$CERTBOT_RENEW_HOOK" --agree-tos --non-interactive -m "$EMAIL"
+# sudo certbot certonly --nginx -d "$DOMAIN" --deploy-hook "$CERTBOT_RENEW_HOOK" --agree-tos --non-interactive -m "$EMAIL"
+sudo certbot certonly --nginx -d "$DOMAIN"  -d   react.checheblog.com  --deploy-hook "$CERTBOT_RENEW_HOOK" --agree-tos --non-interactive -m "$EMAIL" 
 
 echo -e "🔍 测试 nginx 配置..."
 sudo nginx -t
