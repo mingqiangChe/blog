@@ -11,82 +11,7 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07
 
 </br>
 
-# 美股投资
-
-</br>
-
-## 长期观察 操作股
-
-</br>
-
-### TSLA
-
-</br>
-
-#### 操作守则
-
-</br>
-
-##### 昨天情况
-
-</br>
-
-##### 今日情况
-
-</br>
-
-##### 明日操作
-
-</br>
-</br>
-
-### NVDA
-
-</br>
-
-#### 操作守则
-
-</br>
-
-##### 昨天情况
-
-</br>
-
-##### 今日情况
-
-</br>
-
-##### 明日操作
-
-</br>
-</br>
-
-### HOOD
-
-</br>
-
-#### 操作守则
-
-</br>
-
-##### 昨天情况
-
-</br>
-
-##### 今日情况
-
-</br>
-
-##### 明日操作
-
-</br>
-</br>
-
----
-
-</br>
-
-## 稳吃息股
+# 稳吃息股
 
 </br>
 
@@ -96,9 +21,28 @@ cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_1/Snipaste_2025-07
 
 ### SPYI
 
-</br></br>
+</br>
+
+## 操作个股
+
+</br>
+
+### RCAT 无人机
+
+</br>
+
+</br>
+
+</br>
+
+</br>
 
 ---
 
 </br>
-</br></br></br>
+
+</br>
+
+</br>
+
+</br>
