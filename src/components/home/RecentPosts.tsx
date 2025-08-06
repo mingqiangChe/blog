@@ -104,7 +104,7 @@ function PostCard({
         {/* 内容 */}
         <section className="p-4 flex-1 flex flex-col justify-between">
           {post.description && (
-            <p className="text-sm text-[var(--ae86-white)]/80 mb-3 line-clamp-3">
+            <p className="text-sm text-[var(--ae86-white)]/80 mb-3 line-clamp-1">
               {post.description}
             </p>
           )}
