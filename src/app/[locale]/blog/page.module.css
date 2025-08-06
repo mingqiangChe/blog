@@ -254,7 +254,7 @@
   /* 限制文本最大行数 */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 

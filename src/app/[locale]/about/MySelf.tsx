@@ -64,11 +64,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // 技能雷达图数据示例
 const skills = [
-  { label: 'React', value: 70 },
-  { label: 'TypeScript', value: 80 },
-  { label: 'Vue3', value: 100 },
-  { label: 'Tailwind', value: 90 },
-  { label: 'Vite', value: 85 },
+  { label: 'code', value: 90 },
+  { label: '旅游', value: 80 },
+  { label: '摄影', value: 90 },
+  { label: '机车', value: 70 },
+  { label: '追剧', value: 75 },
 ];
 
 export default function MySelf() {

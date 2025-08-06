@@ -1,7 +1,7 @@
 ---
 title: 'tailwindcss响应式开发'
 date: '2025-07-16'
-description: 'tailwindcss'
+description: 'tailwindcss 响应式开发'
 tags: ['react']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/tailwindcss.webp'
