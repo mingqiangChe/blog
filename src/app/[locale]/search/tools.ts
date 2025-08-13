@@ -116,6 +116,12 @@ export const navData: NavGroup[] = [
         url: 'https://console.cloud.tencent.com/lighthouse/instance/index?rid=1',
         desc: '服务器',
       },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/debug.png',
+        title: 'debug 工具',
+        url: 'https://pythontutor.com/render.html#mode=edit',
+        desc: 'debug 工具',
+      },
     ],
   },
   {
