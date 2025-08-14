@@ -52,6 +52,19 @@ export const navData: NavGroup[] = [
     group: 'ai',
     items: [
       {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/deepseek-icon.png',
+        title: 'deepseek',
+        url: 'https://chat.deepseek.com/',
+        desc: 'deepseek 对比gpt4 还可以',
+      },
+      {
+        icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/66d72d761b8cf1ddc1c239d5_gemini.png',
+        title: 'gemini',
+        url: 'https://gemini.google.com/app',
+        desc: 'gemini googleAI',
+      },
+
+      {
         icon: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/5644654654.png',
         title: 'perplexity',
         url: 'https://www.perplexity.ai/',
