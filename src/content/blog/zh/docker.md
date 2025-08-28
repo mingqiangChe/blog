@@ -2,7 +2,7 @@
 title: 'Docker + Next.js 部署实战教程'
 date: '2025-06-15'
 description: 'Next.js + Docker + PM2 + Nginx'
-tags: ['部署']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/img/docker.png'
 ---

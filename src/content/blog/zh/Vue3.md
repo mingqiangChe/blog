@@ -2,7 +2,7 @@
 title: 'Vue3'
 date: '2025-07-16'
 description: 'Vue3常用'
-tags: ['vue3']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/vue3.png'
 ---

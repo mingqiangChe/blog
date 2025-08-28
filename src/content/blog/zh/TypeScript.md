@@ -2,7 +2,7 @@
 title: 'TypeScript常用约束'
 date: '2025-07-16'
 description: 'TypeScript常用约束使用'
-tags: ['react']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/typescript.jpeg'
 ---

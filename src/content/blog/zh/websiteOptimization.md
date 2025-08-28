@@ -2,7 +2,7 @@
 title: '网站优化'
 date: '2025-07-09'
 description: '针对网站各方面优化'
-tags: ['计算机']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/seo.jpg'
 ---

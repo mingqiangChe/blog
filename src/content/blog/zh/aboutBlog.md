@@ -2,7 +2,7 @@
 title: '关于博客搭建'
 date: '2025-06-14'
 description: '内容关于这个博客的架构 搭建'
-tags: ['react']
+tags: ['开发']
 author: 'Thomas che'
 cover: 'https://chemingqiang.oss-cn-shenzhen.aliyuncs.com/bag_2/pexels-pixabay-262508.jpg'
 ---
